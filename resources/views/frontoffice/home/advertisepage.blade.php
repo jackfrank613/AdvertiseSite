@@ -1079,7 +1079,7 @@
             // more details for that place.
 
             poly = new google.maps.Polyline({
-                strokeColor: '#000000',
+                strokeColor: '##FF0000',
                 strokeOpacity: 1.0,
                 strokeWeight: 3
             });
@@ -1147,7 +1147,7 @@
                 map.fitBounds(bounds);
                 poly.setMap(null);
                 poly = new google.maps.Polyline({
-                    strokeColor: '#000000',
+                    strokeColor: '#FF0000',
                     strokeOpacity: 1.0,
                     strokeWeight: 3
                 });
@@ -1157,6 +1157,7 @@
                     type: 'POST',
                     url: "{{route('coordinates')}}",
                     data: {
+                        id:id,
                         c_name: city_name,
                         _token: $('input[name=_token]').val(),
                     },

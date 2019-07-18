@@ -194,6 +194,12 @@ class PostAdmobController extends BaseController
         $result = $nominatim->find($search);
         //print_r($result[0]['geojson']['coordinates'][0]);exit;
        // print_r($result);exit;
+       $input_image=array(
+         'id'=>$data['id'],
+         'adress'=>$data['c_name']
+       );
+      PostedAdmob::where('id','=',$data['id'])->update($input_image);
+
        echo json_encode(array('error'=>false,'result'=>$result[0]['geojson']['coordinates'][0]));
         }
         else{
