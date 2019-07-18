@@ -41,7 +41,7 @@
                                         </a>
 
                                     </div>
-                                    <a title="Rechercher" class="trackable" href="#" data-reactid="33">
+                                    <a title="Rechercher" class="trackable" href="{{route('dadmob')}}" data-reactid="33">
                                         <div class="_21saW" data-reactid="34">
                                             <div class="WFlbY" data-reactid="35"><span class="_1vK7W _1MlsO"
                                                     name="search"><svg viewBox="0 0 24 24" data-name="Calque 1"
@@ -187,7 +187,7 @@
                                         </path>
                                     </svg></span><span class="b8icv" data-reactid="78">Déposer une
                                     annonce</span></a></li>
-                        <li class="_3d08G" data-reactid="79"><a title="Rechercher" class="trackable" href="#"
+                        <li class="_3d08G" data-reactid="79"><a title="Rechercher" class="trackable" href="{{route('dadmob')}}"
                                 data-reactid="80"><span class="_1vK7W" name="search"><svg viewBox="0 0 24 24"
                                         data-name="Calque 1" focusable="false">
                                         <path

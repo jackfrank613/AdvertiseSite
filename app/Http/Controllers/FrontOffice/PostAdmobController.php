@@ -206,9 +206,6 @@ class PostAdmobController extends BaseController
           echo json_encode(array('error'=>false,'result'=>"Error"));
         }
 
-
-       
-
     }
 
 }
