@@ -313,7 +313,7 @@
     <!--Dialog-->
     <!-- Home Section -->
     <div id="home" class="banner-area">
-        <div class="bg-img overlay" style="background-image:url('img/background.jpg')"></div>
+        <div class="bg-img overlay" style="background-image:url('public/img/background.jpg')"></div>
 
         <!-- Background Image -->
 
@@ -1187,11 +1187,12 @@
     <!-- /Preloader -->
 
     <!-- jQuery Plugins -->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{asset('js/owl.carousel.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.magnific-popup.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
 
 </body>
 <script>

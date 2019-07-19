@@ -100,7 +100,8 @@
                                                     $categories = $data['categories'];
                                                     $subcategories = $data['subcategories'];
                                                     for($i = 1; $i < count($categories); $i+=2){ $cate=$categories[$i];
-                                                        @endphp <div class="_3BIbD">
+                                                        @endphp 
+                                                        <div class="_3BIbD">
                                                         <div class="PHfT3">
                                                             <div class="_3ytUb subcategory_collapse"
                                                                 data-toggle="collapse"
@@ -762,12 +763,16 @@
                                 $('#category_description').css('display', 'block');
                             } else {
                                 id = data.id;
+                                console.log(data.result);
                                 $('#choose_category').css('display', 'none');
                                 $('#detail_category').html();
                                 $('#detail_category').html(data.result);
 
                             }
 
+                        }
+                        else{
+                            alert(data.result);
                         }
 
                     }

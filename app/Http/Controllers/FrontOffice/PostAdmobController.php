@@ -12,6 +12,7 @@ use App\Category;
 use App\SubCategory;
 use App\PostedAdmob;
 use Illuminate\Http\Request;
+use App\CarMarker;
 use Validator;
 
 
@@ -23,7 +24,7 @@ class PostAdmobController extends BaseController
         $data = [];
         $result=Category::get();
         $data['categories'] = $result->toArray();
-      //  print_r($data);exit();
+      // print_r($data);exit();
         $subcategory = [];
         foreach($result as $category)
         {
@@ -33,33 +34,40 @@ class PostAdmobController extends BaseController
         }
         $data['subcategories'] = $subcategory;
         // print_r($data);exit();     
-
+        // $returnHTML = view('frontoffice.categories.carcategory')->render();
+        // print_r($returnHTML);
         return view('frontoffice.home.advertisepage')->with('data', $data);
 
     }
 
     public function addSelectCategory()
     {
+      
       $data=$_POST;
       $input_categoryType=array(
          'sub_id'=>$data['sub_id'],
          'adName'=>$data['adName'],
          'adType'=>$data['adType'],
       );
-    //   echo json_encode(array('result'=>$input_categoryType['sub_id']));
-    //   exit;
+   
       
-      $id=PostedAdmob::insertGetId($input_categoryType); 
-      $sub_result=SubCategory::where("id", "=", $data['sub_id'])->first()->toArray();
-      // echo json_encode(array('result'=>$id));
-      // exit;
+    //  $id=PostedAdmob::insertGetId($input_categoryType); 
+     // $sub_result=SubCategory::where("id", "=", $data['sub_id'])->first()->toArray();
+      $returnHTML = view('frontoffice.categories.carcategory')->render();
+      
+      echo json_encode(array('error'=>false,'result'=>$returnHTML)); exit;
+   
+     
       if($id>0)
       {
         if($sub_result['option'] !="")
         {
-        $returnHTML = view('categories.'.$sub_result['option'])->render();
-        // print_r($returnHTML);
-        return response()->json( array('error' => false, 'result'=>$returnHTML,'id'=>$id) );
+         
+         //echo json_encode(array('error'=>false,'result'=>$sub_result['option'])); exit;
+         $returnHTML = view('frontoffice.categories.carcategory')->render();
+      
+        echo json_encode(array('error'=>false,'result'=>$returnHTML,'id'=>$id)); exit;
+      
         }
         else{
           echo json_encode(array('error'=>false,'result'=>'next_view','id'=>$id));
@@ -206,6 +214,21 @@ class PostAdmobController extends BaseController
           echo json_encode(array('error'=>false,'result'=>"Error"));
         }
 
+    }
+
+    public function addData(){
+      
+      $input_name=[];
+      $data=$_POST['option'];
+      foreach ($data as $item) 
+      {
+        CarMarker::insert([
+          ''
+          'car_name'=>$item,
+        ]); 
+      }
+     
+      echo json_encode(array('error'=>false,'result'=>"success")); exit;
     }
 
 }

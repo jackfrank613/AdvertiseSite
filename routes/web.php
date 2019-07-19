@@ -54,6 +54,12 @@ Route::group([
       //looking for posted admob.
       Route::get('dadmob','DisplayAdmobController@getDisplaypage')->name('dadmob');
       Route::get('getdata/{page}','DisplayAdmobController@getData');
+      
+      
+      
+      Route::post('adddata/','PostAdmobController@addData')->name('addData');
+
+
 
 
 

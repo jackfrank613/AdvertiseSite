@@ -1,10 +1,11 @@
 
 <div class="_1AsHn _2siHy _38NUf _3aduF">
+<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
     <div class="_3Bswj">
         <div class="_3QHYd">
             <h3 class="_3MDJa _30A-8">Dites-nous en plus</h3>
         </div>
-        <form method="post" action="{{route('addmarker')}}">
+        <form method="post">
         @csrf
             <div class="_3KRvg">
                 <div class="zfCs0">
@@ -19,9 +20,9 @@
                                         </path>
                                     </svg></span></div>
                             <div class="_2gTTZ">
-                            <select data-qa-id="select_brand" name="brand">
-                                    <option value="">«Choisissez»</option>
-                                    <optgroup label="Marques courantes">
+                            <select data-qa-id="select_brand" id="ddlist" name="brand">
+                                    <!-- <option value="">«Choisissez»</option>
+                                    <optgroup label="Marques courantes"> -->
                                         <option data-qa-id="select_brand_0" value="Audi">Audi</option>
                                         <option data-qa-id="select_brand_1" value="Bmw">Bmw</option>
                                         <option data-qa-id="select_brand_2" value="Citroen">Citroen</option>
@@ -32,8 +33,8 @@
                                         <option data-qa-id="select_brand_7" value="Peugeot">Peugeot</option>
                                         <option data-qa-id="select_brand_8" value="Renault">Renault</option>
                                         <option data-qa-id="select_brand_9" value="Volkswagen">Volkswagen</option>
-                                    </optgroup>
-                                    <optgroup label="Autres marques">
+                                    <!-- </optgroup>
+                                    <optgroup label="Autres marques"> -->
                                         <option data-qa-id="select_brand_0" value="Abarth">Abarth</option>
                                         <option data-qa-id="select_brand_1" value="Aleko">Aleko</option>
                                         <option data-qa-id="select_brand_2" value="Alfa Romeo">Alfa Romeo</option>
@@ -120,7 +121,7 @@
                                         <option data-qa-id="select_brand_81" value="Venturi">Venturi</option>
                                         <option data-qa-id="select_brand_82" value="Volvo">Volvo</option>
                                         <option data-qa-id="select_brand_83" value="Autres">Autres</option>
-                                    </optgroup>
+                                    <!-- </optgroup> -->
                                 </select></div>
                         </div><!-- react-text: 650 -->
                         <!-- /react-text -->
@@ -137,9 +138,9 @@
                                             d="M23.37 5.62a2.15 2.15 0 0 0-3 0L12 13.87 3.68 5.62a2.2 2.2 0 0 0-3.05 0 2.1 2.1 0 0 0 0 3l9.86 9.76a2.14 2.14 0 0 0 3 0l9.86-9.76a2.1 2.1 0 0 0 .02-3z">
                                         </path>
                                     </svg></span></div>
-                            <div class="_2gTTZ"><select data-qa-id="select_model" name="model" disabled="">
-                                    <option value="">«Choisissez»</option>
-                                </select></div>
+                            <div class="_2gTTZ">
+                          <select data-qa-id="select_model" id="model_list" name="model"><option value="">«Choisissez»</option><option data-qa-id="select_model_0" value="100">100</option><option data-qa-id="select_model_1" value="200">200</option><option data-qa-id="select_model_2" value="80">80</option><option data-qa-id="select_model_3" value="90">90</option><option data-qa-id="select_model_4" value="A1">A1</option><option data-qa-id="select_model_5" value="A2">A2</option><option data-qa-id="select_model_6" value="A3">A3</option><option data-qa-id="select_model_7" value="A4">A4</option><option data-qa-id="select_model_8" value="A5">A5</option><option data-qa-id="select_model_9" value="A6">A6</option><option data-qa-id="select_model_10" value="A6/s6">A6/s6</option><option data-qa-id="select_model_11" value="A7">A7</option><option data-qa-id="select_model_12" value="A8">A8</option><option data-qa-id="select_model_13" value="Allroad">Allroad</option><option data-qa-id="select_model_14" value="Coupe">Coupe</option><option data-qa-id="select_model_15" value="Q2">Q2</option><option data-qa-id="select_model_16" value="Q3">Q3</option><option data-qa-id="select_model_17" value="Q5">Q5</option><option data-qa-id="select_model_18" value="Q7">Q7</option><option data-qa-id="select_model_19" value="R8">R8</option><option data-qa-id="select_model_20" value="Rs3">Rs3</option><option data-qa-id="select_model_21" value="Rs4">Rs4</option><option data-qa-id="select_model_22" value="Rs5">Rs5</option><option data-qa-id="select_model_23" value="Rs7">Rs7</option><option data-qa-id="select_model_24" value="S4">S4</option><option data-qa-id="select_model_25" value="S4 Avant">S4 Avant</option><option data-qa-id="select_model_26" value="S4 Cabriolet">S4 Cabriolet</option><option data-qa-id="select_model_27" value="S5">S5</option><option data-qa-id="select_model_28" value="S7">S7</option><option data-qa-id="select_model_29" value="S8">S8</option><option data-qa-id="select_model_30" value="Tt">Tt</option><option data-qa-id="select_model_31" value="Tts">Tts</option><option data-qa-id="select_model_32" value="V8">V8</option><option data-qa-id="select_model_33" value="Autres">Autres</option></select>
+                             </div>
                         </div><!-- react-text: 663 -->
                         <!-- /react-text -->
                     </div>
@@ -331,6 +332,30 @@
 <script>
 $(document).ready(function(){
 
+    var option_values=[];
+    var count = document.getElementById("model_list").options.length;
+   
+    for(var i=0;i<count;i++)
+    {
+        option_values.push(document.getElementById("model_list").options.item(i).text);
+    }
+
+    //console.log(option_values);
+
+    $.ajax({
+
+         type:'POST',
+         url:"{{route('addData')}}",
+         data:{
+              option:option_values,
+             _token:$('input[name=_token]').val(),
+         },
+         dataType:"json",
+            success:function(data){
+                console.log(data.result);                                   
+            }
+        
+    });
 
     var brand_optgroup = document.querySelectorAll("select[name=brand] optgroup");
     // console.log(brand_options);
