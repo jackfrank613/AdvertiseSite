@@ -34,6 +34,7 @@
     <link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('css/custom.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('css/header.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{asset('css/Pagination.css')}}">
 
 
 </head>
@@ -97,7 +98,7 @@
                                         </div>
                                         <div class="AGP6T">
                                             <div>
-                                                <div class="SiZLq">
+                                                <div class="SiZLq" id="list_click">
                                                     <div class="_1CJVw egIn7" data-qa-id="select-toggle_category">
                                                         <div class="_1etKl">
                                                             <div class="_26tGy"><span class="_1vK7W _2jG3V"
@@ -286,6 +287,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="_3Vcbh" id="display_list" style="display:none"><div><ul><li class="_11G4C _1_1B4"><a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">All categories</font></font></a></li></ul><ul><li data-qa-id="categorylist_cat_71" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">EMPLOYMENT</font></font></li><li data-qa-id="categorylist_cat_33" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Jobs</font></font></li><li class="tT3Ya"><a href="https://go.onelink.me/3471221858/bcf737d8"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Job offers Frames </font></font></a><sup><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">new</font></font></sup></li></ul><ul><li data-qa-id="categorylist_cat_1" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">VEHICLES</font></font></li><li data-qa-id="categorylist_cat_2" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">cars</font></font></li><li data-qa-id="categorylist_cat_3" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">motorcycles</font></font></li><li data-qa-id="categorylist_cat_4" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">caravanning</font></font></li><li data-qa-id="categorylist_cat_5" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Utilities</font></font></li><li class="tT3Ya"><a href="https://www.truckscorner.fr/#xtor=CS1-16-[leboncoin]-[lien]-[lien_menu]-[tc]"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Trucks </font></font></a><sup><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">new</font></font></sup></li><li data-qa-id="categorylist_cat_7" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">boating</font></font></li><li data-qa-id="categorylist_cat_6" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Auto equipment</font></font></li><li data-qa-id="categorylist_cat_44" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Motorcycle equipment</font></font></li><li data-qa-id="categorylist_cat_50" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Caravanning equipment</font></font></li><li data-qa-id="categorylist_cat_51" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Equipment boating</font></font></li></ul></div><div><ul><li data-qa-id="categorylist_cat_8" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">IMMOVABLE</font></font></li><li data-qa-id="categorylist_cat_9" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Real estate sales</font></font></li><li class="tT3Ya"><a href="https://immobilierneuf.leboncoin.fr"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">New real estate </font></font></a><sup><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">new</font></font></sup></li><li data-qa-id="categorylist_cat_10" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">rentals</font></font></li><li data-qa-id="categorylist_cat_11" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">housemates</font></font></li><li data-qa-id="categorylist_cat_13" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Offices &amp; Shops</font></font></li></ul><ul><li data-qa-id="categorylist_cat_66" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">VACATION</font></font></li><li data-qa-id="categorylist_cat_12" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rentals &amp; Gîtes</font></font></li><li data-qa-id="categorylist_cat_67" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Guest rooms</font></font></li><li data-qa-id="categorylist_cat_68" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">campsites</font></font></li><li data-qa-id="categorylist_cat_69" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">hotels</font></font></li><li data-qa-id="categorylist_cat_70" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Unusual accommodations</font></font></li><li class="tT3Ya"><a href="https://www.locasun-vp.fr/?afiliate=leboncoin&amp;utm_campaign=liencat_locasunvp_leboncoin&amp;utm_source=leboncoin&amp;utm_medium=cpc#ectrans=1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Private sales holidays </font></font></a><sup><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">new</font></font></sup></li></ul></div><div><ul><li data-qa-id="categorylist_cat_14" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MULTIMEDIA</font></font></li><li data-qa-id="categorylist_cat_15" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">data processing</font></font></li><li data-qa-id="categorylist_cat_43" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Consoles &amp; Video Games</font></font></li><li data-qa-id="categorylist_cat_16" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Image &amp; Sound</font></font></li><li data-qa-id="categorylist_cat_17" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Telephony</font></font></li></ul><ul><li data-qa-id="categorylist_cat_24" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">HOBBIES</font></font></li><li data-qa-id="categorylist_cat_25" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DVD - Movies</font></font></li><li data-qa-id="categorylist_cat_26" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CD - Music</font></font></li><li data-qa-id="categorylist_cat_27" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Books</font></font></li><li data-qa-id="categorylist_cat_28" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Animals</font></font></li><li data-qa-id="categorylist_cat_55" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">bicycles</font></font></li><li data-qa-id="categorylist_cat_29" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sports &amp; Hobbies</font></font></li><li data-qa-id="categorylist_cat_30" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Musical instruments</font></font></li><li data-qa-id="categorylist_cat_40" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Collection</font></font></li><li data-qa-id="categorylist_cat_41" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Games toys</font></font></li><li data-qa-id="categorylist_cat_48" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Wine &amp; Gastronomy</font></font></li></ul></div><div><ul><li data-qa-id="categorylist_cat_56" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PROFESSIONAL EQUIPMENT</font></font></li><li data-qa-id="categorylist_cat_57" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Agricultural material</font></font></li><li data-qa-id="categorylist_cat_58" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Transport - Handling</font></font></li><li data-qa-id="categorylist_cat_59" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Construction - Construction site</font></font></li><li data-qa-id="categorylist_cat_60" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tools - Materials 2nd-work</font></font></li><li data-qa-id="categorylist_cat_32" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Industrial equipment</font></font></li><li data-qa-id="categorylist_cat_61" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Catering - Hotels</font></font></li><li data-qa-id="categorylist_cat_62" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Office supplies</font></font></li><li data-qa-id="categorylist_cat_63" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Shops &amp; Markets</font></font></li><li data-qa-id="categorylist_cat_64" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Medical material</font></font></li></ul><ul><li data-qa-id="categorylist_cat_31" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SERVICES</font></font></li><li data-qa-id="categorylist_cat_34" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Services</font></font></li><li data-qa-id="categorylist_cat_35" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ticketing</font></font></li><li data-qa-id="categorylist_cat_49" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Events</font></font></li><li data-qa-id="categorylist_cat_36" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Private lessons</font></font></li><li data-qa-id="categorylist_cat_65" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Carpooling</font></font></li></ul></div><div><ul><li data-qa-id="categorylist_cat_18" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">HOUSE</font></font></li><li data-qa-id="categorylist_cat_19" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">furnishing</font></font></li><li data-qa-id="categorylist_cat_20" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Home appliance</font></font></li><li data-qa-id="categorylist_cat_45" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Table Arts</font></font></li><li data-qa-id="categorylist_cat_39" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Decoration</font></font></li><li data-qa-id="categorylist_cat_46" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Linen</font></font></li><li data-qa-id="categorylist_cat_21" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Housing</font></font></li><li data-qa-id="categorylist_cat_52" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gardening</font></font></li></ul><ul><li data-qa-id="categorylist_cat_72" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FASHION</font></font></li><li data-qa-id="categorylist_cat_22" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Clothing</font></font></li><li data-qa-id="categorylist_cat_53" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Shoes</font></font></li><li data-qa-id="categorylist_cat_47" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Accessories &amp; Luggage</font></font></li><li data-qa-id="categorylist_cat_42" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Watches &amp; Jewelry</font></font></li><li data-qa-id="categorylist_cat_23" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Baby equipment</font></font></li><li data-qa-id="categorylist_cat_54" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Baby clothes</font></font></li><li class="tT3Ya"><a href="https://www.videdressing.com/femme/c-c5988.html?utm_source=leboncoin.fr&amp;utm_medium=referral&amp;utm_campaign=Test6VariantA" target=""><span data-ab-tasty-removed="1" style="display: none;">Videdressing</span><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Luxury and Trend</font></font></span></a><sup><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> new</font></font></sup></li></ul><ul><li data-qa-id="categorylist_cat_37" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OTHER</font></font></li><li data-qa-id="categorylist_cat_38" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Other</font></font></li></ul></div></div>
                                             </div>
                                         </div>
                                     </div>
@@ -533,7 +535,7 @@
                                                             <div class="LazyLoad is-visible" data-reactid="395">
                                                                 <img
                                                                     class=""
-                                                                    src="https://img2.leboncoin.fr/ad-image/db7695bb62ad79d48d4af2178af90ba79e72f7db.jpg"
+                                                                    src="../../storage/images/{{$item['camera']}}"
                                                                     itemprop="image"
                                                                     content="https://img2.leboncoin.fr/ad-image/db7695bb62ad79d48d4af2178af90ba79e72f7db.jpg"
                                                                     alt="Peugeot 208 1.6 e-hdi fap 92 allure etg6 5p">
@@ -606,72 +608,8 @@
                                 </div>
                                 <div class="googleafs" data-reactid="1601"></div>
                                 <div class="_1evK6" data-reactid="1602">
-                                    <nav class="nMaRG" data-reactid="1603">
-                                        <div data-reactid="1604">
-                                            <ul class="_25feg" data-reactid="1605">
-                                                <li class="_2zwVR" data-reactid="1606"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-2/" data-reactid="1607"><span
-                                                            class="_1vK7W K5CQx _Od24" name="chevronleft"><svg
-                                                                viewBox="0 0 24 24" data-name="Calque 1"
-                                                                focusable="false">
-                                                                <path
-                                                                    d="M10.13 12l8.25-8.33a2.15 2.15 0 0 0 0-3 2.1 2.1 0 0 0-3 0l-9.76 9.82a2.14 2.14 0 0 0 0 3l9.76 9.86a2.1 2.1 0 0 0 3 0 2.2 2.2 0 0 0 0-3.05z">
-                                                                </path>
-                                                            </svg></span></a></li>
-                                                <li class="_2zwVR" data-reactid="1609"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/" data-reactid="1610">1</a>
-                                                </li>
-                                                <li class="_2zwVR" data-reactid="1611"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-2/" data-reactid="1612">2</a>
-                                                </li>
-                                                <li class="_2zwVR" data-reactid="1613"><span class="_1f-eo _2nsY3"
-                                                        data-reactid="1614">3</span></li>
-                                                <li class="_2zwVR" data-reactid="1615"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-4/" data-reactid="1616">4</a>
-                                                </li>
-                                                <li class="_2zwVR" data-reactid="1617"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-5/" data-reactid="1618">5</a>
-                                                </li>
-                                                <li class="_2zwVR"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-6/">6</a></li>
-                                                <li class="_2zwVR"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-7/">7</a></li>
-                                                <li class="_2zwVR"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-8/">8</a></li>
-                                                <li class="_2zwVR"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-9/">9</a></li>
-                                                <li class="_2zwVR"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-10/">10</a></li>
-                                                <li class="_2zwVR"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-11/">11</a></li>
-                                                <li class="_2zwVR"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-12/">12</a></li>
-                                                <li class="_2zwVR"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-13/">13</a></li>
-                                                <li class="_2zwVR"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-14/">14</a></li>
-                                                <li class="_2zwVR"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-15/">15</a></li>
-                                                <li class="_2zwVR"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-16/">16</a></li>
-                                                <li class="_2zwVR"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-17/">17</a></li>
-                                                <li class="_2zwVR"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-18/">18</a></li>
-                                                <li class="_2zwVR"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-19/">19</a></li>
-                                                <li class="_2zwVR" data-reactid="1619"><a class="_1f-eo"
-                                                        href="/annonces/offres/aquitaine/p-4/" data-reactid="1620"><span
-                                                            class="_1vK7W K5CQx _Od24" name="chevronright"><svg
-                                                                viewBox="0 0 24 24" data-name="Calque 1"
-                                                                focusable="false">
-                                                                <path
-                                                                    d="M18.38 10.49L8.62.63a2.1 2.1 0 0 0-3 0 2.15 2.15 0 0 0 0 3L13.87 12l-8.25 8.32a2.2 2.2 0 0 0 0 3.05 2.1 2.1 0 0 0 3 0l9.76-9.86a2.14 2.14 0 0 0 0-3.02z">
-                                                                </path>
-                                                            </svg></span></a></li>
-                                            </ul>
-                                        </div><!-- react-empty: 1622 -->
-                                    </nav>
+                                   <div id="pagination">
+                                   </div>
                                 </div>
                             </div>
                         </div>
@@ -1175,8 +1113,46 @@
     <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../js/jquery.magnific-popup.js"></script>
     <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/Pagination.js"></script>
 </body>
 <script>
+
+$(document).ready(function(){
+
+    var flag=true;
+
+ $('#list_click').on('click',function(){
+
+     if(flag)
+     {
+        $('#display_list').css("display","block");
+        flag=false;
+
+     }
+     else{
+        $('#display_list').css("display","none");
+        flag=true;
+     }
+    
+
+ });
+
+ $(function(){
+     var ad_total_count = <?php echo json_encode($count)?>;
+    var current_page = <?php echo json_encode($current_page)?>;
+    current_page = current_page !== undefined ? current_page : 1;
+   $('#pagination').pagination({
+      items: ad_total_count,
+      itemsOnPage: 15,
+      displayedPages: 15,
+      currentPage: 1,
+      cssStyle: 'light-theme',
+      hrefTextPrefix: "{{ URL::to('frontoffice/getdata') }}/" + current_page
+    });
+   
+   
+});
+});
 
 </script>
 @yield('after-script')
