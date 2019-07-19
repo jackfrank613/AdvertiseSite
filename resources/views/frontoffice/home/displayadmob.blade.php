@@ -506,6 +506,10 @@
                                     <div data-reactid="381">
                                         <ul class="undefined" data-reactid="382">
                                         @foreach($result as $item)
+                                        <?php
+                                        $image = explode(",", $item['camera'])[0];
+                                        // echo $image;
+                                        ?>
                                             <li itemscope="" itemtype="http://schema.org/Offer" class="_3DFQ-"
                                                 data-qa-id="aditem_container" data-reactid="383">
                                                 <div data-reactid="384">
@@ -535,7 +539,7 @@
                                                             <div class="LazyLoad is-visible" data-reactid="395">
                                                                 <img
                                                                     class=""
-                                                                    src="../../storage/images/{{$item['camera']}}"
+                                                                    src="{{asset('storage/images/')}}/{{$image}}"
                                                                     itemprop="image"
                                                                     content="https://img2.leboncoin.fr/ad-image/db7695bb62ad79d48d4af2178af90ba79e72f7db.jpg"
                                                                     alt="Peugeot 208 1.6 e-hdi fap 92 allure etg6 5p">
@@ -1110,10 +1114,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="../js/jquery.magnific-popup.js"></script>
-    <script type="text/javascript" src="../js/main.js"></script>
-    <script type="text/javascript" src="../js/Pagination.js"></script>
+    <script type="text/javascript" src="{{asset('js/owl.carousel.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.magnific-popup.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/Pagination.js')}}"></script>
 </body>
 <script>
 
@@ -1140,14 +1144,17 @@ $(document).ready(function(){
  $(function(){
      var ad_total_count = <?php echo json_encode($count)?>;
     var current_page = <?php echo json_encode($current_page)?>;
-    current_page = current_page !== undefined ? current_page : 1;
+    var page_count = <?php echo json_encode($page_count)?>;
+    current_page = (current_page !== "undefined" )? current_page : 1;
+    page_count = (page_count !== "undefined" )? page_count : 40;
+    console.log(current_page);
    $('#pagination').pagination({
       items: ad_total_count,
-      itemsOnPage: 15,
-      displayedPages: 15,
-      currentPage: 1,
+      itemsOnPage: page_count,
+      displayedPages: 10,
+      currentPage: current_page,
       cssStyle: 'light-theme',
-      hrefTextPrefix: "{{ URL::to('frontoffice/getdata') }}/" + current_page
+      hrefTextPrefix: "{{ URL::to('frontoffice/getdata/') }}/"
     });
    
    

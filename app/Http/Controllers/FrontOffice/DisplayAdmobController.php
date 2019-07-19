@@ -12,17 +12,21 @@ class DisplayAdmobController extends Controller
     public function getDisplaypage(){
         
         $count=PostedAdmob::count();
-        $result=PostedAdmob::orderBy('jamii_postedadmob.id','asc')->limit(40)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.id')->get()->toarray();
+        $page_count = 40;
+        $offset = 0;
+        $result=PostedAdmob::orderBy('jamii_postedadmob.id','asc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.id')->get()->toarray();
         $current_page = 1;
-        return view('frontoffice.home.displayadmob')->with(compact('result', 'count', 'current_page'));
+        return view('frontoffice.home.displayadmob')->with(compact('result','count', 'current_page', 'page_count'));
     }
 
     public function getData($page){
-        // print_r($_GET['page']);
-        print_r($page);exit();
-        // $current_page = isset($requset['page'])? $requset['page']: 1;
+    
+        $current_page = $page;
+        $page_count = 40;
+        $offset = ($current_page - 1)*$page_count+1;
         $count=PostedAdmob::count();
-        $result=PostedAdmob::orderBy('jamii_postedadmob.id','asc')->limit(40)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.id')->get()->toarray();
-        return view('frontoffice.home.displayadmob')->with(compact('result', 'count', 'current_page'));
+        $result=PostedAdmob::orderBy('jamii_postedadmob.id','asc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.id')->get()->toarray();
+        
+        return view('frontoffice.home.displayadmob')->with(compact('result','count', 'current_page', 'page_count' ));
     }
 }
