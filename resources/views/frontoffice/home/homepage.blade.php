@@ -313,7 +313,7 @@
     <!--Dialog-->
     <!-- Home Section -->
     <div id="home" class="banner-area">
-        <div class="bg-img overlay" style="background-image:url('public/img/background.jpg')"></div>
+        <div class="bg-img overlay" style="background-image:url('img/background.jpg')"></div>
 
         <!-- Background Image -->
 

@@ -95,5 +95,31 @@
                 </div>
             </div>
         </div>
+        <script>
+    //         var option_values=[];
+    // var count = document.getElementById("model_list").options.length;
+   
+    // for(var i=0;i<count;i++)
+    // {
+    //     option_values.push(document.getElementById("model_list").options.item(i).text);
+    // }
+
+    // console.log(option_values);
+
+    // $.ajax({
+
+    //      type:'POST',
+    //      url:"{{route('addData')}}",
+    //      data:{
+    //           option:option_values,
+    //          _token:$('input[name=_token]').val(),
+    //      },
+    //      dataType:"json",
+    //         success:function(data){
+    //             console.log(data.result);                                   
+    //         }
+        
+    // });
+        </script>
     </body>
 </html>

@@ -1,12 +1,12 @@
 
 <div class="_1AsHn _2siHy _38NUf _3aduF">
-<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+<input type="hidden" name="_token" id="token" value="{{csrf_token()}}">
     <div class="_3Bswj">
         <div class="_3QHYd">
             <h3 class="_3MDJa _30A-8">Dites-nous en plus</h3>
         </div>
-        <form method="post">
-        @csrf
+        <form id="car_upload_form">
+        <input type="hidden" name="_token" id="token" value="{{csrf_token()}}">
             <div class="_3KRvg">
                 <div class="zfCs0">
                     <div><label class="_2GeK6" for="brand">
@@ -20,108 +20,14 @@
                                         </path>
                                     </svg></span></div>
                             <div class="_2gTTZ">
-                            <select data-qa-id="select_brand" id="ddlist" name="brand">
+                            <select data-qa-id="select_brand" id="marker_list" name="brand">
+                            <option value="">«Choisissez»</option>
+                            @foreach($markers as $marker)
                                     <!-- <option value="">«Choisissez»</option>
                                     <optgroup label="Marques courantes"> -->
-                                        <option data-qa-id="select_brand_0" value="Audi">Audi</option>
-                                        <option data-qa-id="select_brand_1" value="Bmw">Bmw</option>
-                                        <option data-qa-id="select_brand_2" value="Citroen">Citroen</option>
-                                        <option data-qa-id="select_brand_3" value="Fiat">Fiat</option>
-                                        <option data-qa-id="select_brand_4" value="Ford">Ford</option>
-                                        <option data-qa-id="select_brand_5" value="Mercedes">Mercedes</option>
-                                        <option data-qa-id="select_brand_6" value="Opel">Opel</option>
-                                        <option data-qa-id="select_brand_7" value="Peugeot">Peugeot</option>
-                                        <option data-qa-id="select_brand_8" value="Renault">Renault</option>
-                                        <option data-qa-id="select_brand_9" value="Volkswagen">Volkswagen</option>
-                                    <!-- </optgroup>
-                                    <optgroup label="Autres marques"> -->
-                                        <option data-qa-id="select_brand_0" value="Abarth">Abarth</option>
-                                        <option data-qa-id="select_brand_1" value="Aleko">Aleko</option>
-                                        <option data-qa-id="select_brand_2" value="Alfa Romeo">Alfa Romeo</option>
-                                        <option data-qa-id="select_brand_3" value="Alpina">Alpina</option>
-                                        <option data-qa-id="select_brand_4" value="Aro">Aro</option>
-                                        <option data-qa-id="select_brand_5" value="Artega">Artega</option>
-                                        <option data-qa-id="select_brand_6" value="Aston Martin">Aston Martin</option>
-                                        <option data-qa-id="select_brand_7" value="Autobianchi">Autobianchi</option>
-                                        <option data-qa-id="select_brand_8" value="Auverland">Auverland</option>
-                                        <option data-qa-id="select_brand_9" value="Bentley">Bentley</option>
-                                        <option data-qa-id="select_brand_10" value="Bertone">Bertone</option>
-                                        <option data-qa-id="select_brand_11" value="Bluecar Groupe Bollore">Bluecar
-                                            Groupe Bollore</option>
-                                        <option data-qa-id="select_brand_12" value="Buick">Buick</option>
-                                        <option data-qa-id="select_brand_13" value="Cadillac">Cadillac</option>
-                                        <option data-qa-id="select_brand_14" value="Chevrolet">Chevrolet</option>
-                                        <option data-qa-id="select_brand_15" value="Chrysler">Chrysler</option>
-                                        <option data-qa-id="select_brand_16" value="Corvette">Corvette</option>
-                                        <option data-qa-id="select_brand_17" value="Dacia">Dacia</option>
-                                        <option data-qa-id="select_brand_18" value="Daewoo">Daewoo</option>
-                                        <option data-qa-id="select_brand_19" value="Daihatsu">Daihatsu</option>
-                                        <option data-qa-id="select_brand_20" value="Dangel">Dangel</option>
-                                        <option data-qa-id="select_brand_21" value="De La Chapelle">De La Chapelle
-                                        </option>
-                                        <option data-qa-id="select_brand_22" value="Dodge">Dodge</option>
-                                        <option data-qa-id="select_brand_23" value="Donkervoort">Donkervoort</option>
-                                        <option data-qa-id="select_brand_24" value="Dr">Dr</option>
-                                        <option data-qa-id="select_brand_25" value="Ds">Ds</option>
-                                        <option data-qa-id="select_brand_26" value="Ferrari">Ferrari</option>
-                                        <option data-qa-id="select_brand_27" value="Fisker">Fisker</option>
-                                        <option data-qa-id="select_brand_28" value="Gme">Gme</option>
-                                        <option data-qa-id="select_brand_29" value="Honda">Honda</option>
-                                        <option data-qa-id="select_brand_30" value="Hummer">Hummer</option>
-                                        <option data-qa-id="select_brand_31" value="Hyundai">Hyundai</option>
-                                        <option data-qa-id="select_brand_32" value="Infiniti">Infiniti</option>
-                                        <option data-qa-id="select_brand_33" value="Innocenti">Innocenti</option>
-                                        <option data-qa-id="select_brand_34" value="Isuzu">Isuzu</option>
-                                        <option data-qa-id="select_brand_35" value="Iveco">Iveco</option>
-                                        <option data-qa-id="select_brand_36" value="Jaguar">Jaguar</option>
-                                        <option data-qa-id="select_brand_37" value="Jeep">Jeep</option>
-                                        <option data-qa-id="select_brand_38" value="Kia">Kia</option>
-                                        <option data-qa-id="select_brand_39" value="Lada">Lada</option>
-                                        <option data-qa-id="select_brand_40" value="Lamborghini">Lamborghini</option>
-                                        <option data-qa-id="select_brand_41" value="Lancia">Lancia</option>
-                                        <option data-qa-id="select_brand_42" value="Land Rover">Land Rover</option>
-                                        <option data-qa-id="select_brand_43" value="Lexus">Lexus</option>
-                                        <option data-qa-id="select_brand_44" value="Lotus">Lotus</option>
-                                        <option data-qa-id="select_brand_45" value="Mahindra">Mahindra</option>
-                                        <option data-qa-id="select_brand_46" value="Maruti">Maruti</option>
-                                        <option data-qa-id="select_brand_47" value="Maserati">Maserati</option>
-                                        <option data-qa-id="select_brand_48" value="Mastretta">Mastretta</option>
-                                        <option data-qa-id="select_brand_49" value="Maybach">Maybach</option>
-                                        <option data-qa-id="select_brand_50" value="Mazda">Mazda</option>
-                                        <option data-qa-id="select_brand_51" value="Mclaren">Mclaren</option>
-                                        <option data-qa-id="select_brand_52" value="Mega">Mega</option>
-                                        <option data-qa-id="select_brand_53" value="Mg">Mg</option>
-                                        <option data-qa-id="select_brand_54" value="Mia">Mia</option>
-                                        <option data-qa-id="select_brand_55" value="Mini">Mini</option>
-                                        <option data-qa-id="select_brand_56" value="Mitsubishi">Mitsubishi</option>
-                                        <option data-qa-id="select_brand_57" value="Morgan">Morgan</option>
-                                        <option data-qa-id="select_brand_58" value="Nissan">Nissan</option>
-                                        <option data-qa-id="select_brand_59" value="Pgo">Pgo</option>
-                                        <option data-qa-id="select_brand_60" value="Piaggio">Piaggio</option>
-                                        <option data-qa-id="select_brand_61" value="Polski/fso">Polski/fso</option>
-                                        <option data-qa-id="select_brand_62" value="Pontiac">Pontiac</option>
-                                        <option data-qa-id="select_brand_63" value="Porsche">Porsche</option>
-                                        <option data-qa-id="select_brand_64" value="Proton">Proton</option>
-                                        <option data-qa-id="select_brand_65" value="Rolls-royce">Rolls-royce</option>
-                                        <option data-qa-id="select_brand_66" value="Rover">Rover</option>
-                                        <option data-qa-id="select_brand_67" value="Saab">Saab</option>
-                                        <option data-qa-id="select_brand_68" value="Santana">Santana</option>
-                                        <option data-qa-id="select_brand_69" value="Seat">Seat</option>
-                                        <option data-qa-id="select_brand_70" value="Shuanghuan">Shuanghuan</option>
-                                        <option data-qa-id="select_brand_71" value="Skoda">Skoda</option>
-                                        <option data-qa-id="select_brand_72" value="Smart">Smart</option>
-                                        <option data-qa-id="select_brand_73" value="Ssangyong">Ssangyong</option>
-                                        <option data-qa-id="select_brand_74" value="Subaru">Subaru</option>
-                                        <option data-qa-id="select_brand_75" value="Suzuki">Suzuki</option>
-                                        <option data-qa-id="select_brand_76" value="Talbot">Talbot</option>
-                                        <option data-qa-id="select_brand_77" value="Tavria">Tavria</option>
-                                        <option data-qa-id="select_brand_78" value="Tesla">Tesla</option>
-                                        <option data-qa-id="select_brand_79" value="Toyota">Toyota</option>
-                                        <option data-qa-id="select_brand_80" value="Tvr">Tvr</option>
-                                        <option data-qa-id="select_brand_81" value="Venturi">Venturi</option>
-                                        <option data-qa-id="select_brand_82" value="Volvo">Volvo</option>
-                                        <option data-qa-id="select_brand_83" value="Autres">Autres</option>
-                                    <!-- </optgroup> -->
+                                        <option data-id="{{$marker['id']}}" value="{{$marker['id']}}">{{$marker['car_name']}}</option>
+                                      
+                             @endforeach
                                 </select></div>
                         </div><!-- react-text: 650 -->
                         <!-- /react-text -->
@@ -139,7 +45,9 @@
                                         </path>
                                     </svg></span></div>
                             <div class="_2gTTZ">
-                          <select data-qa-id="select_model" id="model_list" name="model"><option value="">«Choisissez»</option><option data-qa-id="select_model_0" value="100">100</option><option data-qa-id="select_model_1" value="200">200</option><option data-qa-id="select_model_2" value="80">80</option><option data-qa-id="select_model_3" value="90">90</option><option data-qa-id="select_model_4" value="A1">A1</option><option data-qa-id="select_model_5" value="A2">A2</option><option data-qa-id="select_model_6" value="A3">A3</option><option data-qa-id="select_model_7" value="A4">A4</option><option data-qa-id="select_model_8" value="A5">A5</option><option data-qa-id="select_model_9" value="A6">A6</option><option data-qa-id="select_model_10" value="A6/s6">A6/s6</option><option data-qa-id="select_model_11" value="A7">A7</option><option data-qa-id="select_model_12" value="A8">A8</option><option data-qa-id="select_model_13" value="Allroad">Allroad</option><option data-qa-id="select_model_14" value="Coupe">Coupe</option><option data-qa-id="select_model_15" value="Q2">Q2</option><option data-qa-id="select_model_16" value="Q3">Q3</option><option data-qa-id="select_model_17" value="Q5">Q5</option><option data-qa-id="select_model_18" value="Q7">Q7</option><option data-qa-id="select_model_19" value="R8">R8</option><option data-qa-id="select_model_20" value="Rs3">Rs3</option><option data-qa-id="select_model_21" value="Rs4">Rs4</option><option data-qa-id="select_model_22" value="Rs5">Rs5</option><option data-qa-id="select_model_23" value="Rs7">Rs7</option><option data-qa-id="select_model_24" value="S4">S4</option><option data-qa-id="select_model_25" value="S4 Avant">S4 Avant</option><option data-qa-id="select_model_26" value="S4 Cabriolet">S4 Cabriolet</option><option data-qa-id="select_model_27" value="S5">S5</option><option data-qa-id="select_model_28" value="S7">S7</option><option data-qa-id="select_model_29" value="S8">S8</option><option data-qa-id="select_model_30" value="Tt">Tt</option><option data-qa-id="select_model_31" value="Tts">Tts</option><option data-qa-id="select_model_32" value="V8">V8</option><option data-qa-id="select_model_33" value="Autres">Autres</option></select>
+                            <select data-qa-id="select_model" name="model" id="model_list">
+                            <option value="">«Choisissez»</option>
+                            </select>
                              </div>
                         </div><!-- react-text: 663 -->
                         <!-- /react-text -->
@@ -158,19 +66,19 @@
                                             d="M23.37 5.62a2.15 2.15 0 0 0-3 0L12 13.87 3.68 5.62a2.2 2.2 0 0 0-3.05 0 2.1 2.1 0 0 0 0 3l9.86 9.76a2.14 2.14 0 0 0 3 0l9.86-9.76a2.1 2.1 0 0 0 .02-3z">
                                         </path>
                                     </svg></span></div>
-                            <div class="_2gTTZ"><select data-qa-id="select_regdate" name="regdate">
+                            <div class="_2gTTZ"><select data-qa-id="select_regdate" id="date_list" name="regdate">
                                     <option value="">«Choisissez»</option>
-                                    <option data-qa-id="select_regdate_8" value="2011">2030</option>
-                                    <option data-qa-id="select_regdate_9" value="2010">2029</option>
-                                    <option data-qa-id="select_regdate_10" value="2009">2028</option>
-                                    <option data-qa-id="select_regdate_11" value="2008">2027</option>
-                                    <option data-qa-id="select_regdate_12" value="2007">2026</option>
-                                    <option data-qa-id="select_regdate_13" value="2006">2025</option>
-                                    <option data-qa-id="select_regdate_14" value="2005">2024</option>
-                                    <option data-qa-id="select_regdate_15" value="2004">2023</option>
-                                    <option data-qa-id="select_regdate_16" value="2003">2022</option>
-                                    <option data-qa-id="select_regdate_17" value="2002">2021</option>
-                                    <option data-qa-id="select_regdate_18" value="2001">2020</option>
+                                    <option data-qa-id="select_regdate_8" value="2030">2030</option>
+                                    <option data-qa-id="select_regdate_9" value="2029">2029</option>
+                                    <option data-qa-id="select_regdate_10" value="2028">2028</option>
+                                    <option data-qa-id="select_regdate_11" value="2027">2027</option>
+                                    <option data-qa-id="select_regdate_12" value="2026">2026</option>
+                                    <option data-qa-id="select_regdate_13" value="2025">2025</option>
+                                    <option data-qa-id="select_regdate_14" value="2024">2024</option>
+                                    <option data-qa-id="select_regdate_15" value="2023">2023</option>
+                                    <option data-qa-id="select_regdate_16" value="2022">2022</option>
+                                    <option data-qa-id="select_regdate_17" value="2021">2021</option>
+                                    <option data-qa-id="select_regdate_18" value="2020">2020</option>
 
                                     <option data-qa-id="select_regdate_0" value="2019">2019</option>
                                     <option data-qa-id="select_regdate_1" value="2018">2018</option>
@@ -262,17 +170,17 @@
                             <!-- react-text: 756 -->*
                             <!-- /react-text --></label>
                         <div class="BtHSu _2N99n" data-qa-id="select_toggle_fuel">
-                            <div class="uO-lw" data-qa-id="select_toggle_fuel_1" tabindex="0" value="1" name="fuel">
+                            <div class="uO-lw" data-qa-id="select_toggle_fuel_1" tabindex="0" value="Essence" name="fuel">
                                 Essence</div>
-                            <div class="uO-lw" data-qa-id="select_toggle_fuel_2" tabindex="0" value="2" name="fuel">
+                            <div class="uO-lw" data-qa-id="select_toggle_fuel_2" tabindex="0" value="Diesel" name="fuel">
                                 Diesel</div>
-                            <div class="uO-lw" data-qa-id="select_toggle_fuel_6" tabindex="0" value="6" name="fuel">
+                            <div class="uO-lw" data-qa-id="select_toggle_fuel_6" tabindex="0" value="Hybride" name="fuel">
                                 Hybride</div>
-                            <div class="uO-lw" data-qa-id="select_toggle_fuel_4" tabindex="0" value="4" name="fuel">
+                            <div class="uO-lw" data-qa-id="select_toggle_fuel_4" tabindex="0" value="Electrique" name="fuel">
                                 Electrique</div>
-                            <div class="uO-lw" data-qa-id="select_toggle_fuel_3" tabindex="0" value="3" name="fuel">GPL
+                            <div class="uO-lw" data-qa-id="select_toggle_fuel_3" tabindex="0" value="GPL" name="fuel">GPL
                             </div>
-                            <div class="uO-lw" data-qa-id="select_toggle_fuel_5" tabindex="0" value="5" name="fuel">
+                            <div class="uO-lw" data-qa-id="select_toggle_fuel_5" tabindex="0" value="Autre" name="fuel">
                                 Autre</div>
                         </div>
                     </div>
@@ -283,10 +191,10 @@
                             <!-- /react-text -->
                             <!-- react-text: 768 -->*
                             <!-- /react-text --></label>
-                        <div class="_3EcL2"><label class="_1fypT"><input type="radio" value="1" name="gearbox"
+                        <div class="_3EcL2"><label class="_1fypT"><input type="radio" value="Manuelle" name="gearbox"
                                     class="_1L8pO" checked><span class="T9pXm"><span
                                         class="_3oEwn"></span><span>Manuelle</span></span></label><label
-                                class="_1fypT"><input type="radio" value="2" name="gearbox" class="_1L8pO"><span
+                                class="_1fypT"><input type="radio" value="Automatique" name="gearbox" class="_1L8pO"><span
                                     class="T9pXm"><span class="_3oEwn"></span><span>Automatique</span></span></label>
                         </div>
                     </div>
@@ -324,73 +232,49 @@
                 <!-- /react-text --></span></div>
     </div>
 </div>
+
 <script>
-    var token = <?php echo json_encode([
-        'csrfToken' => csrf_token(),
-    ]); ?>
-</script>
-<script>
+
 $(document).ready(function(){
 
-    var option_values=[];
-    var count = document.getElementById("model_list").options.length;
-   
-    for(var i=0;i<count;i++)
-    {
-        option_values.push(document.getElementById("model_list").options.item(i).text);
-    }
-
-    //console.log(option_values);
-
-    $.ajax({
-
+    var markers = document.getElementById("marker_list");
+    var marker_id;
+    markers.addEventListener("change",function(){
+        marker_id= document.getElementById("marker_list").value;
+        // id=$(this).data('id');
+        console.log(marker_id);
+        $.ajax({
          type:'POST',
-         url:"{{route('addData')}}",
+         url:"{{route('getmodel')}}",
          data:{
-              option:option_values,
+              id:marker_id,
              _token:$('input[name=_token]').val(),
          },
          dataType:"json",
             success:function(data){
-                console.log(data.result);                                   
-            }
-        
+                console.log(data.result);   
+                $('#model_list').empty();
+                for(var i=0;i<data.result.length;i++)
+                {
+                    $('#model_list').append('<option data-qa-id="select_model_1" value="'+data.result[i]['id']+'">'+data.result[i]['model_name']+'</option>');
+                }
+            
+            }      
     });
+    });
+    var carburnts=document.getElementsByClassName("uO-lw");
 
-    var brand_optgroup = document.querySelectorAll("select[name=brand] optgroup");
-    // console.log(brand_options);
-    var data = [];
-    brand_optgroup.forEach(group => {
-        // console.log($(group).attr('label'));
-        var label = $(group).attr('label');
-        var brand_options = group.children;
-        for(var i = 0 ; i < brand_options.length; i++){
-            var temp = {optgroup: label, option: brand_options[i].value};
-            data.push(temp);
-            // console.log(temp);
-        }
-       
-            console.log(data);
-        
-        // console.log(brand_options);
-    });
-    if(data.length != 0){
-        // data['_token'] =  $('input[name="_token"]').val();
-        console.log(data);
-        var base_url = {!! json_encode(url('/')) !!};
-        $.ajax({
-            type:'POST',
-            headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-            url:base_url + "/addmarker",
-            data:data,
-            dataType:"json",
-            success:function(data){
-                console.log(data);                                   
-            }
-        });
+    var myCarburnt=function(){
+        $(carburnts).removeClass("SgsUB");
+        $(this).addClass("SgsUB");
     }
 
+    for(var i=0;i<carburnts.length;i++)
+    {
+        carburnts[i].addEventListener('click',myCarburnt,false);
+    }
+   
+  
 });
+
 </script>

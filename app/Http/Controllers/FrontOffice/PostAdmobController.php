@@ -13,6 +13,7 @@ use App\SubCategory;
 use App\PostedAdmob;
 use Illuminate\Http\Request;
 use App\CarMarker;
+use App\CarModel;
 use Validator;
 
 
@@ -52,19 +53,37 @@ class PostAdmobController extends BaseController
    
       
     //  $id=PostedAdmob::insertGetId($input_categoryType); 
-     // $sub_result=SubCategory::where("id", "=", $data['sub_id'])->first()->toArray();
-      $returnHTML = view('frontoffice.categories.carcategory')->render();
-      
+    //  $sub_result=SubCategory::where("id", "=", $data['sub_id'])->first()->toArray();
+      $returnHTML = view('frontoffice.categories.rental')->render();
       echo json_encode(array('error'=>false,'result'=>$returnHTML)); exit;
-   
-     
+
       if($id>0)
       {
         if($sub_result['option'] !="")
         {
          
+          $sub_option=$sub_result['option'];
          //echo json_encode(array('error'=>false,'result'=>$sub_result['option'])); exit;
-         $returnHTML = view('frontoffice.categories.carcategory')->render();
+         if($sub_option=="carcategory")
+         {
+          $markers=CarMarker::orderBy('id')->get()->toarray();
+          $returnHTML = view('frontoffice.categories.carcategory')->with(compact('markers'))->render();
+         }
+         else if($sub_option=="cavanacategory")
+         {
+          $returnHTML = view('frontoffice.categories.cavanacategory')->render();
+         }
+        else if($sub_option=="clothing"){
+         
+         
+        }
+        else if($sub_option=="motocyclecategory"){
+          $returnHTML = view('frontoffice.categories.motocyclecategory')->render();
+        }
+        else if($sub_option=="utilitiecategory"){
+          $returnHTML = view('frontoffice.categories.utilitiecategory')->render();
+
+        }
       
         echo json_encode(array('error'=>false,'result'=>$returnHTML,'id'=>$id)); exit;
       
@@ -216,19 +235,105 @@ class PostAdmobController extends BaseController
 
     }
 
+    //this function is to input datas (option function)
     public function addData(){
       
-      $input_name=[];
       $data=$_POST['option'];
+   //  echo json_encode(array('error'=>false,'result'=>$data)); exit;
       foreach ($data as $item) 
       {
-        CarMarker::insert([
-          ''
-          'car_name'=>$item,
+        CarModel::insert([
+          'mark_id'=>15,
+          'model_name'=>$item,
         ]); 
       }
-     
       echo json_encode(array('error'=>false,'result'=>"success")); exit;
     }
 
+    public function getCarmodel(){
+      
+      $data=$_POST;
+
+       $result_models=CarModel::where('mark_id','=',$data['id'])->get()->toarray();
+       echo json_encode(array('error'=>false,'result'=>$result_models)); exit;
+
+    }
+
+    public function addCardetail(){
+        
+      $data=$_POST;
+     // echo json_encode(array('error'=>false,'result'=>$data['id'])); exit;
+      $input_cardetail=array(
+        'brand'=>$data['brand'],
+        'model'=>$data['model'],
+        'regdate'=>$data['regdate'],
+        'issuance_date'=>$data['issuance_date'],
+        'mileage'=>$data['mileage']."km",
+        'fuel'=>$data['fuel'],
+        'gearbox'=>$data['gearbox'],
+      );
+    //  echo json_encode(array('error'=>false,'result'=>$input_cardetail)); exit;
+      $result=PostedAdmob::where('id','=',$data['id'])->update($input_cardetail);
+      if($result)
+      {
+        echo json_encode(array('error'=>false,'result'=>"success")); exit;
+      }
+      else{
+        echo json_encode(array('error'=>true,'result'=>"error")); exit;
+      }
+    } 
+
+    public function addCanva()
+    {
+      $data=$_POST;
+      $input_cavans=array(
+        'regdate'=>$data['regdate'],
+        'issuance_date'=>$data['issuance_date'],
+        'mileage'=>$data['mileage']."km",
+      );
+      $result=PostedAdmob::where('id','=',$data['id'])->update($input_cavans);
+      if($result)
+      {
+        echo json_encode(array('error'=>false,'result'=>"success")); exit;
+      }
+      else{
+        echo json_encode(array('error'=>true,'result'=>"error")); exit;
+      }
+
+    }
+    public function addMoto(){
+      $data=$_POST;
+      $input_moto=array(
+        'regdate'=>$data['regdate'],
+        'issuance_date'=>$data['issuance_date'],
+        'mileage'=>$data['mileage']."km",
+        'cubic_capacity'=>$data['cubic_capacity']."cm³",
+      );
+      $result=PostedAdmob::where('id','=',$data['id'])->update($input_moto);
+      if($result)
+      {
+        echo json_encode(array('error'=>false,'result'=>"success")); exit;
+      }
+      else{
+        echo json_encode(array('error'=>true,'result'=>"error")); exit;
+      }
+    }
+    public function addUtil(){
+      $data=$_POST;
+      $input_util=array(
+        'regdate'=>$data['regdate'],
+        'issuance_date'=>$data['issuance_date'],
+        'mileage'=>$data['mileage']."km",
+        'fuel'=>$data['fuel'],
+        'gearbox'=>$data['gearbox'],
+      );
+      $result=PostedAdmob::where('id','=',261)->update($input_util);
+      if($result)
+      {
+        echo json_encode(array('error'=>false,'result'=>"success")); exit;
+      }
+      else{
+        echo json_encode(array('error'=>true,'result'=>"error")); exit;
+      }
+    }
 }

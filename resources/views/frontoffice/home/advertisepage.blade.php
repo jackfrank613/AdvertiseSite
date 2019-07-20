@@ -786,6 +786,184 @@
                 $('#choose_category').css('display', 'block');
                 $('#detail_category').html("");
             });
+            $('#detail_category').on('submit','#car_upload_form', function(event){
+                    event.preventDefault();
+                    var markers = document.getElementById("marker_list");
+                  //  console.log(markers);
+                    var marker_value = markers[markers.selectedIndex].value;
+                    var models = document.getElementById("model_list");
+                    var model_value=models[models.selectedIndex].value;
+                    var dates=document.getElementById("date_list");
+                    var date_value=dates[dates.selectedIndex].value;
+                    var day_value=$('input[name=issuance_date]').val();
+                    var kilo_value=$('input[name=mileage]').val();
+                    var en_type = $('input[name=gearbox]:checked').val();
+                    var fuel = $('.uO-lw.SgsUB').attr('value');
+                    if(marker_value != 0 && model_value != 0 && date_value != "" && day_value != "" && kilo_value !="" && en_type !="" && fuel !="")
+                    {
+                        $.ajax({
+                        type:"POST",
+                        url:"{{route('addCardetail')}}",
+                        data:{
+                            id:id,
+                            brand:marker_value,
+                            model:model_value,
+                            regdate:date_value,
+                            issuance_date:day_value,
+                            mileage:kilo_value,
+                            fuel:fuel,
+                            gearbox:en_type,
+                            _token: $('input[name=_token]').val(),
+                        },
+                        dataType:"json",
+                        success:function(data){
+                            if(!data.error)
+                            {
+                               $('#detail_category').css("display","none");
+                               $('#category_description').css("display","block");
+                            }
+                            else{
+                                alert(data.result);
+                            }
+                        }
+
+                    });
+
+                    }
+                    else{
+                        alert("please fill fields correctly.");
+                    }
+                    
+              });
+
+              $('#detail_category').on('submit','#canva_form',function(event){
+               
+                    event.preventDefault();
+                    var dates=document.getElementById("date_list");
+                    var date_value=dates[dates.selectedIndex].value;
+                    var day_value=$('input[name=issuance_date]').val();
+                    var kilo_value=$('input[name=mileage]').val();
+                     
+                     if(date_value !="Choisissez" && day_value !="" && kilo_value !="")
+                     {
+                        $.ajax({
+                        type:"POST",
+                        url:"{{route('addCanva')}}",
+                        data:{
+                            id:id,
+                            regdate:date_value,
+                            issuance_date:day_value,
+                            mileage:kilo_value,
+                            _token: $('input[name=_token]').val(),
+                        },
+                        dataType:"json",
+                        success:function(data){
+                            console.log(data.result);
+                            if(!data.error)
+                            {
+                               $('#detail_category').css("display","none");
+                               $('#category_description').css("display","block");
+                            }
+                            else{
+                                alert(data.result);
+                            }
+                        }
+
+                    });
+
+                     }
+                     else{
+                        alert("please fill fields correctly.");
+                     }
+
+              });
+
+              $('#detail_category').on('submit','#moto_form',function(event){
+ 
+                    event.preventDefault();
+                    var dates=document.getElementById("date_list");
+                    var date_value=dates[dates.selectedIndex].value;
+                    var day_value=$('input[name=issuance_date]').val();
+                    var kilo_value=$('input[name=mileage]').val();
+                    var cubic_capacity=$('input[name=cubic_capacity]').val();
+                    if(date_value !="Choisissez" && day_value !="" && kilo_value !="")
+                     {
+                        $.ajax({
+                        type:"POST",
+                        url:"{{route('addMoto')}}",
+                        data:{
+                            id:id,
+                            regdate:date_value,
+                            issuance_date:day_value,
+                            mileage:kilo_value,
+                            cubic_capacity:cubic_capacity,
+                            _token: $('input[name=_token]').val(),
+                        },
+                        dataType:"json",
+                        success:function(data){
+                            console.log(data.result);
+                            if(!data.error)
+                            {
+                               $('#detail_category').css("display","none");
+                               $('#category_description').css("display","block");
+                            }
+                            else{
+                                alert(data.result);
+                            }
+                        }
+
+                    });
+
+                     }
+                     else{
+                        alert("please fill fields correctly.");
+                     }
+         
+              });
+              $('#detail_category').on('submit','#util_form',function(event){
+                event.preventDefault();
+                    var dates=document.getElementById("date_list");
+                    var date_value=dates[dates.selectedIndex].value;
+                    var kilo_value=$('input[name=mileage]').val();
+                    var en_type = $('input[name=gearbox]:checked').val();
+                    var day_value=$('input[name=issuance_date]').val();
+                    var fuel = $('.uO-lw.SgsUB').attr('value');
+
+                    if(date_value !=""&& kilo_value !="" && en_type !="" && day_value !="" && fuel !="")
+                    {
+                        $.ajax({
+                        type:"POST",
+                        url:"{{route('addUtil')}}",
+                        data:{
+                            id:id,
+                            regdate:date_value,
+                            issuance_date:day_value,
+                             mileage:kilo_value,
+                             fuel:fuel,
+                             gearbox:en_type,
+                            _token: $('input[name=_token]').val(),
+                        },
+                        dataType:"json",
+                        success:function(data){
+                            console.log(data.result);
+                            if(!data.error)
+                            {
+                               $('#detail_category').css("display","none");
+                               $('#category_description').css("display","block");
+                            }
+                            else{
+                                alert(data.result);
+                            }
+                        }
+
+                    });
+                    }
+                    else{
+                        alert("please fill fields correctly.");
+                    }
+
+
+              });
 
             $('#category_description').on('click', '#backbutton', function () {
 
@@ -831,10 +1009,9 @@
                 } else {
                     alert("Please check fields exactly");
                 }
-
-
-
             });
+
+
 
             $('#category_price').on('click', '#backbutton', function () {
 
@@ -1044,6 +1221,7 @@
         });
 
     </script>
+   
 
     <script>
         // This example adds a search box to a map, using the Google Place Autocomplete
@@ -1193,5 +1371,6 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXAEJOmp7v7uXD-Vrmaw6xjBl_ZExIn7g&libraries=places&callback=initAutocomplete">
     </script>
 </body>
+
 
 </html>
