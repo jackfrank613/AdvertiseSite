@@ -39,6 +39,8 @@ Route::group([
       Route::post('/advertise/addcanva','PostAdmobController@addCanva')->name('addCanva');
       Route::post('/advertise/addmoto','PostAdmobController@addMoto')->name('addMoto');
       Route::post('/advertise/addutil','PostAdmobController@addUtil')->name('addUtil');
+      Route::post('/advertise/addrental','PostAdmobController@addRental')->name('addRental');
+
 
       
       

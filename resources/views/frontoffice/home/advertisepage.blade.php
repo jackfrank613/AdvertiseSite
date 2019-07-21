@@ -964,7 +964,53 @@
 
 
               });
+            $('#detail_category').on('submit','#rental_form',function(event){
+                event.preventDefault();
+                var rental_building = $('._2GSq7._2uOGu').attr('value');
+                var property = $('input[name=furnished]:checked').val();
+                var square=$('input[name=square]').val();
+                var rooms=$('input[name=rooms]').val();
+                var energy=$('.uO-lw.energy._1ElXN').attr('value');
+                var ges=$('.uO-lw.ges._1ElXN').attr('value');
+                console.log(square);
+                if(rental_building !=""&& property !="" && square !="" && rooms !="" && energy !="" && ges !="")
+                {
+                    $.ajax({
+                        type:"POST",
+                        url:"{{route('addRental')}}",
+                        data:{
+                            id:id,
+                            good:rental_building,
+                            energy_rage:energy,
+                            ges:ges,
+                            furnished:property,
+                            rooms:rooms,
+                            square:square,
+                            _token: $('input[name=_token]').val(),
+                        },
+                        dataType:"json",
+                        success:function(data){
+                            console.log(data.result);
+                            if(!data.error)
+                            {
+                               $('#detail_category').css("display","none");
+                               $('#category_description').css("display","block");
+                            }
+                            else{
+                                alert(data.result);
+                            }
+                        }
 
+                    });
+                }
+                else{
+                    alert("please fill fields correctly.");
+
+
+                }
+
+
+            });
             $('#category_description').on('click', '#backbutton', function () {
 
                 $('#category_description').css('display', 'none');

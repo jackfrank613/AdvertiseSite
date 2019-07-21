@@ -54,14 +54,13 @@ class PostAdmobController extends BaseController
       
     //  $id=PostedAdmob::insertGetId($input_categoryType); 
     //  $sub_result=SubCategory::where("id", "=", $data['sub_id'])->first()->toArray();
-      $returnHTML = view('frontoffice.categories.rental')->render();
+      $returnHTML = view('frontoffice.categories.realestate')->render();
       echo json_encode(array('error'=>false,'result'=>$returnHTML)); exit;
 
       if($id>0)
       {
         if($sub_result['option'] !="")
-        {
-         
+        {  
           $sub_option=$sub_result['option'];
          //echo json_encode(array('error'=>false,'result'=>$sub_result['option'])); exit;
          if($sub_option=="carcategory")
@@ -83,7 +82,11 @@ class PostAdmobController extends BaseController
         else if($sub_option=="utilitiecategory"){
           $returnHTML = view('frontoffice.categories.utilitiecategory')->render();
 
-        }
+         }
+         else if($sub_option=="rental")
+         {
+          $returnHTML = view('frontoffice.categories.rental')->render();
+         }
       
         echo json_encode(array('error'=>false,'result'=>$returnHTML,'id'=>$id)); exit;
       
@@ -327,7 +330,30 @@ class PostAdmobController extends BaseController
         'fuel'=>$data['fuel'],
         'gearbox'=>$data['gearbox'],
       );
-      $result=PostedAdmob::where('id','=',261)->update($input_util);
+      $result=PostedAdmob::where('id','=',$data['id'])->update($input_util);
+      if($result)
+      {
+        echo json_encode(array('error'=>false,'result'=>"success")); exit;
+      }
+      else{
+        echo json_encode(array('error'=>true,'result'=>"error")); exit;
+      }
+    }
+    public function addRental(){
+      $data=$_POST;
+   //   echo json_encode(array('error'=>true,'result'=>$data)); exit;
+      $input_rental=array(
+        'good'=>$data['good'],
+        'energy_rage'=>$data['energy_rage'],
+        'ges'=>$data['ges'],
+        'furnished'=>$data['furnished'],
+        'rooms'=>$data['rooms'],
+        'square'=>$data['square'],
+      );
+      // echo json_encode(array('error'=>true,'result'=>$input_rental)); exit;
+
+
+      $result=PostedAdmob::where('id','=',261)->update($input_rental);
       if($result)
       {
         echo json_encode(array('error'=>false,'result'=>"success")); exit;
