@@ -539,7 +539,7 @@
                                                             <div class="LazyLoad is-visible" data-reactid="395">
                                                                 <img
                                                                     class=""
-                                                                    src="{{asset('storage/images/')}}/{{$image}}"
+                                                                    src="{{asset('img/picture')}}/{{$image}}"
                                                                     itemprop="image"
                                                                     content="https://img2.leboncoin.fr/ad-image/db7695bb62ad79d48d4af2178af90ba79e72f7db.jpg"
                                                                     alt="Peugeot 208 1.6 e-hdi fap 92 allure etg6 5p">

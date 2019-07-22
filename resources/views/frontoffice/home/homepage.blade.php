@@ -64,7 +64,7 @@
 
                                 <h1>
                                     <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Login to find your favorites</font>
+                                        <font style="vertical-align: inherit;">Connectez-vous pour retrouver vos favoris</font>
                                     </font>
                                 </h1>
                                 <div class="_2xBxS">
@@ -75,19 +75,10 @@
                                         <div class="_1w6py">
                                             <h2>
                                                 <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">Saved Ads</font>
+                                                    <font style="vertical-align: inherit;">Annonces sauvegardées</font>
                                                 </font>
                                             </h2>
-                                            <p>
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">By browsing connected, you
-                                                        can
-                                                        save the ads that interest you most to monitor them. </font>
-                                                    <font style="vertical-align: inherit;">You can find them whenever
-                                                        you
-                                                        want on all your devices.</font>
-                                                </font>
-                                            </p>
+                                            <p>En naviguant connecté, vous pouvez sauvegarder les annonces qui vous intéressent le plus pour les surveiller. Vous pourrez les retrouver quand vous voulez sur tous vos appareils.</p>
                                         </div>
                                     </div>
                                     <div class="_2eODT">
@@ -97,7 +88,7 @@
                                         <div class="_1w6py">
                                             <h2>
                                                 <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">Saved Searches</font>
+                                                    <font style="vertical-align: inherit;">Recherches sauvegardées</font>
                                                 </font>
                                             </h2>
                                             <p>
@@ -117,7 +108,7 @@
                                     <div class="_3M53r">
                                         <div class="_3gfNn" data-qa-id="title">
                                             <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Log in</font>
+                                                <font style="vertical-align: inherit;">Connexion</font>
                                             </font>
                                         </div>
                                         <div>
@@ -1226,10 +1217,7 @@
                 var data = $('#loginform').serialize();
                 var url = $('#loginform').attr('action');
                 console.log(data);
-                var base_url = {
-                    !!json_encode(url('/')) !!
-                };
-                // console.log();
+              
                 $.ajax({
                     type: 'POST',
                     url: url,

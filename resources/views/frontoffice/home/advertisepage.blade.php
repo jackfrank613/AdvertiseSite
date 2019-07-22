@@ -77,16 +77,7 @@
                                             <div class="_2Xqu9">
                                                 <div class="_27rom" role="combobox" aria-expanded="false"
                                                     aria-haspopup="listbox" aria-labelledby="downshift-2-label">
-                                                    <div class="_2m1Sh">
-                                                        <span class="_1vK7W _1eOK1" name="search">
-                                                            <svg viewBox="0 0 24 24" data-name="Calque 1"
-                                                                focusable="false">
-                                                                <path
-                                                                    d="M23.58 21.45l-7-7a9.42 9.42 0 0 0 1.62-6.87A9.13 9.13 0 0 0 10.34.07a9.25 9.25 0 0 0-2.81 18.27 9.25 9.25 0 0 0 7-1.76l7 7a1.54 1.54 0 0 0 2.11 0 1.56 1.56 0 0 0-.06-2.13zM9.22 15.5a6.37 6.37 0 1 1 6.33-6.37 6.33 6.33 0 0 1-6.33 6.37z">
-                                                                </path>
-                                                            </svg>
-                                                        </span>
-                                                    </div>
+                                                  
 
                                                     <input type="text" aria-autocomplete="list"
                                                         aria-labelledby="downshift-2-label" autocomplete="off" value=""
@@ -427,7 +418,7 @@
                     </div>
                 </div>
             </div>
-            <div class="_14s_w" id="category_photo" style="opacity:0.2">
+            <div class="_14s_w" id="category_photo" style="display:none">
                 <div class="_1AsHn _2siHy">
                     <!-- <div class="_1NSYj"></div> -->
                     <div class="_3Bswj">
@@ -535,10 +526,23 @@
                                 <!-- </form> -->
                             </div>
                     </div>
-                    <div class="_1aYAF"></div>
+                    <div class="_1aYAF">
+                        <div class="_2BPbl">
+                            <div class="o73DF"></div>
+                            <div class="Hunbm"><span class="_1vK7W" name="lightbulboutline"><svg viewBox="0 0 24 24"
+                                        data-name="Calque 1" focusable="false">
+                                        <path
+                                            d="M5.56 4.77l-.43-.42a1.09 1.09 0 0 0-1.53 0 1 1 0 0 0 0 1.47l.4.42a1 1 0 0 0 1.41 0 .92.92 0 0 0 .15-1.47zM2.18 11.48H1.09a1 1 0 1 0 0 2.09h1.09a1.07 1.07 0 0 0 1.09-1.05 1 1 0 0 0-1.09-1.04zM12 4a1 1 0 0 0 1.09-1v-.95a1.09 1.09 0 0 0-2.18 0V3.1A1.06 1.06 0 0 0 12 4zM20.51 4.35a1.09 1.09 0 0 0-1.53 0l-.43.42a1 1 0 0 0 0 1.47 1.07 1.07 0 0 0 1.52 0l.44-.42a1.22 1.22 0 0 0 0-1.47zM12.87 6.24a6.44 6.44 0 0 0-7.42 6.18 6.22 6.22 0 0 0 3.28 5.45V22a1.14 1.14 0 0 0 1.09 1h4.36a1.14 1.14 0 0 0 1.09-1v-4a6.24 6.24 0 0 0 3.17-6.39 6.36 6.36 0 0 0-5.57-5.37zm1.31 9.85l-1.09.62v4.19h-2.18v-4.19l-1.09-.62a4.21 4.21 0 0 1-2.18-3.67A4.29 4.29 0 0 1 12 8.23a4.29 4.29 0 0 1 4.36 4.19 4.21 4.21 0 0 1-2.18 3.67zM22.91 11.48h-1.09a1 1 0 1 0 0 2.09h1.09A1.08 1.08 0 0 0 24 12.52a1 1 0 0 0-1.09-1.04z">
+                                        </path>
+                                    </svg></span></div>
+                            <div class="o73DF"></div>
+                        </div>
+                        <div><span>Pour des raisons de confidentialité, si vous renseignez votre adresse exacte,
+                                celle-ci n’apparaîtra jamais sur votre annonce.</span></div>
+                    </div>
                 </div>
             </div>
-            <div class="_14s_w" id="category_map" style="opacity:0.2">
+            <div class="_14s_w" id="category_map" style="display:none">
                 <div class="_1AsHn _2siHy _1emXg">
                     <!-- <div class="_1NSYj"></div> -->
                     <div class="_3Bswj">
@@ -588,7 +592,7 @@
                     </div>
                 </div>
             </div>
-            <div class="_14s_w" id="category_final_information" style="opacity:0.2">
+            <div class="_14s_w" id="category_final_information" style="display:none">
                 <div class="_1AsHn _2siHy _38NUf _3aduF">
                     <div class="_3Bswj">
                                 <div class="_3QHYd">
@@ -1331,7 +1335,7 @@
                             console.log(data);
                             if (!data.error) {
                                 $('#category_price').css('display', 'none');
-                                $('#category_photo').css('opacity', '1');
+                                $('#category_photo').css('display', 'block');
 
                             } else {
                                 alert(data.result);
@@ -1344,7 +1348,7 @@
             });
             $('#category_photo').on('click', '#backbutton', function () {
                 console.log("test");
-                $('#category_photo').css('opacity', '0.2');
+                $('#category_photo').css('display', 'none');
                 $('#category_price').css('display', 'block');
 
             });
@@ -1396,7 +1400,7 @@
                         success: function (data) {
                             data = JSON.parse(data);
                             if (!data.error) {
-                                    var html ='<div class="_2hSIh _26o9N"><img alt="products" src="../../storage/images/' + data.result +
+                                    var html ='<div class="_2hSIh _26o9N"><img alt="products" src="../img/picture/' + data.result +
                                     '"><span  class="_26mZh" name="close" data-name="' +
                                     data.result +
                                     '"><span class="_1vK7W" ><svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false"><path d="M23.47 20.9l-8.9-8.9 8.9-8.9A1.81 1.81 0 0 0 20.9.55L12 9.43 3.1.53A1.82 1.82 0 0 0 .53 3.1l8.9 8.9-8.9 8.9a1.82 1.82 0 0 0 2.57 2.57l8.9-8.9 8.9 8.9a1.82 1.82 0 0 0 2.57-2.57z"></path></svg></span></span><div class="_35a0H"><span class="_1vK7W _3p-rd" name="cameraoutline"><svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false"><path d="M21.6 3.54h-3.8L15.6 1.1H8.4L6.2 3.54H2.4A2.43 2.43 0 0 0 0 6v14.66a2.43 2.43 0 0 0 2.4 2.44h19.2a2.43 2.43 0 0 0 2.4-2.44V6a2.43 2.43 0 0 0-2.4-2.46zm0 17.12H2.4V6h4.86l2.2-2.45h5.08L16.74 6h4.86zM12 7.21a6.11 6.11 0 1 0 6 6.11 6.06 6.06 0 0 0-6-6.11zM12 17a3.67 3.67 0 1 1 3.6-3.67A3.65 3.65 0 0 1 12 17z"></path></svg></span><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Photo # 2</font></font></p></div></div>';
@@ -1455,7 +1459,7 @@
                             console.log("error");
                         } else {
                             $('#category_photo').css('display', 'none');
-                            $('#category_map').css('opacity', '1');
+                            $('#category_map').css('display', 'block');
                         }
                     },
                     error: function (e) {
@@ -1467,14 +1471,14 @@
 
             $('#category_map').on('click', '#backbutton', function () {
                 console.log("test");
-                $('#category_map').css('opacity', '0.2');
+                $('#category_map').css('display', 'none');
                 $('#category_photo').css('display', 'block');
 
             });
             $('#category_map').on('click', '#forwardbutton', function () {
                 console.log("test");
                 $('#category_map').css('display', 'none');
-                $('#category_final_information').css('opacity', '1');
+                $('#category_final_information').css('display', 'block');
 
             });
             $('#information_form').on('submit', function (event) {
@@ -1498,7 +1502,7 @@
                             console.log("error");
 
                         } else {
-                            console.log(data.result);
+                            location.href = "{{route('admobpayment')}}";
                         }
                     }
                 });

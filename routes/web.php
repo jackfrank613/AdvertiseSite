@@ -48,6 +48,8 @@ Route::group([
 
 
 
+      //admob payment route
+      Route::get('/admobpayment','PaymentAdmobController@getPaymentpage')->name('admobpayment');
 
 
 

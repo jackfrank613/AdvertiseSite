@@ -187,7 +187,8 @@ class PostAdmobController extends BaseController
       
         // $FILES=$_FILES["image"];
         
-        $upload_dir = storage_path('images/');
+        //$upload_dir = storage_path('images/');
+        $upload_dir= public_path('img/picture');
         // $file_local =  $_FILES["select_file"];
         $image = $request->file('select_file');
         
