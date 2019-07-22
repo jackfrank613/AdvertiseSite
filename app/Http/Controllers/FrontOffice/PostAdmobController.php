@@ -62,10 +62,16 @@ class PostAdmobController extends BaseController
          'adName'=>$data['adName'],
          'adType'=>$data['adType'],
       );
-  //  echo json_encode(array('error'=>false,'result'=>$input_categoryType)); exit;
-   
-      
+  //  
+    // $input_categoryType=array(
+    //      'sub_id'=>2,
+    //      'adName'=>"dfdfdf",
+    //      'adType'=>"dfsdfd",
+    //   );
+ 
      $id=PostedAdmob::insertGetId($input_categoryType); 
+     //echo json_encode(array('error'=>false,'result'=>$input_categoryType)); exit;
+   
      $sub_result=SubCategory::where("id", "=", $data['sub_id'])->first()->toArray();
      
       if($id>0)
@@ -74,6 +80,7 @@ class PostAdmobController extends BaseController
         if($sub_result['option'] !="")
         {  
           $sub_option=$sub_result['option'];
+         
          if($sub_option=="carcategory")
          {
           $markers=CarMarker::orderBy('id')->get()->toarray();
