@@ -274,7 +274,7 @@ $(document).ready(function(){
         carburnts[i].addEventListener('click',myCarburnt,false);
     }
 
-    
+
    
   
 });

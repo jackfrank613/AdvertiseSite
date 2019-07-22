@@ -140,32 +140,32 @@
                                 </font><!-- /react-text -->
                             </label>
                             <div class="BtHSu _2N99n" data-qa-id="select_toggle_fuel">
-                                <div class="uO-lw" data-qa-id="select_toggle_fuel_1" tabindex="0" value="1" name="fuel">
+                                <div class="uO-lw" data-qa-id="select_toggle_fuel_1" tabindex="0" value="Essence" name="fuel">
                                     <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">Essence</font>
                                     </font>
                                 </div>
-                                <div class="uO-lw" data-qa-id="select_toggle_fuel_2" tabindex="0" value="2" name="fuel">
+                                <div class="uO-lw" data-qa-id="select_toggle_fuel_2" tabindex="0" value="Diesel" name="fuel">
                                     <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">Diesel</font>
                                     </font>
                                 </div>
-                                <div class="uO-lw" data-qa-id="select_toggle_fuel_6" tabindex="0" value="6" name="fuel">
+                                <div class="uO-lw" data-qa-id="select_toggle_fuel_6" tabindex="0" value="Hybrid" name="fuel">
                                     <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">Hybrid</font>
                                     </font>
                                 </div>
-                                <div class="uO-lw" data-qa-id="select_toggle_fuel_4" tabindex="0" value="4" name="fuel">
+                                <div class="uO-lw" data-qa-id="select_toggle_fuel_4" tabindex="0" value="Electrique" name="fuel">
                                     <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">Electrique</font>
                                     </font>
                                 </div>
-                                <div class="uO-lw" data-qa-id="select_toggle_fuel_3" tabindex="0" value="3" name="fuel">
+                                <div class="uO-lw" data-qa-id="select_toggle_fuel_3" tabindex="0" value="GPL" name="fuel">
                                     <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">GPL</font>
                                     </font>
                                 </div>
-                                <div class="uO-lw" data-qa-id="select_toggle_fuel_5" tabindex="0" value="5" name="fuel">
+                                <div class="uO-lw" data-qa-id="select_toggle_fuel_5" tabindex="0" value="Autre" name="fuel">
                                     <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">Autre</font>
                                     </font>
@@ -184,12 +184,12 @@
                                     <font style="vertical-align: inherit;">*</font>
                                 </font><!-- /react-text -->
                             </label>
-                            <div class="_3EcL2"><label class="_1fypT"><input type="radio" value="1" name="gearbox"
+                            <div class="_3EcL2"><label class="_1fypT"><input type="radio" value="Manuelle" name="gearbox"
                                         class="_1L8pO"><span class="T9pXm"><span class="_3oEwn"></span><span>
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">Manuelle</font>
                                             </font>
-                                        </span></span></label><label class="_1fypT"><input type="radio" value="2"
+                                        </span></span></label><label class="_1fypT"><input type="radio" value="Automatique"
                                         name="gearbox" class="_1L8pO"><span class="T9pXm"><span
                                             class="_3oEwn"></span><span>
                                             <font style="vertical-align: inherit;">

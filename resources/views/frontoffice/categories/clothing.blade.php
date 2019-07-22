@@ -3,86 +3,68 @@
         <div class="_3QHYd">
             <h3 class="_30A-8">Dites-nous en plus</h3>
         </div>
-        <form>
+        <form id="clothing_upload_form">
+        <input type="hidden" name="_token" id="token" value="{{csrf_token()}}">          
             <div class="_3KRvg">
                 <div class="zfCs0">
                     <div><label class="_2GeK6" for="clothing_type">
-                            <!-- react-text: 6318 -->Univers
+                            <!-- react-text: 505 -->Univers
                             <!-- /react-text -->
-                            <!-- react-text: 6319 -->*
+                            <!-- react-text: 506 -->*
                             <!-- /react-text --></label>
-                        <div class="_1etKl _32HCU">
+                        <div class="_1etKl">
                             <div class="_26tGy"><span class="_1vK7W _2jG3V" name="chevrondown"><svg viewBox="0 0 24 24"
                                         data-name="Calque 1" focusable="false">
                                         <path
                                             d="M23.37 5.62a2.15 2.15 0 0 0-3 0L12 13.87 3.68 5.62a2.2 2.2 0 0 0-3.05 0 2.1 2.1 0 0 0 0 3l9.86 9.76a2.14 2.14 0 0 0 3 0l9.86-9.76a2.1 2.1 0 0 0 .02-3z">
                                         </path>
                                     </svg></span></div>
-                            <div class="_2gTTZ"><select data-qa-id="select_clothing_type" name="clothing_type">
-                                    <option value="">«Choisissez»</option>
-                                    <option data-qa-id="select_clothing_type_0" value="1">Femme</option>
-                                    <option data-qa-id="select_clothing_type_1" value="2">Maternité</option>
-                                    <option data-qa-id="select_clothing_type_2" value="3">Homme</option>
-                                    <option data-qa-id="select_clothing_type_3" value="4">Enfant</option>
-                                </select></div>
-                        </div>
-                        <div class="IflFq">
-                            <div class="_2Kpxj _3iULV _3K12h">
-                                <div><span>
-                                        <!-- react-text: 6593 -->Si vous déposez des annonces de soutien-gorge,
-                                        chaussettes, gants renseignez la taille de vos vêtements dans le titre et dans
-                                        le texte de votre annonce.
-                                        <!-- /react-text --><br></span><span>
-                                        <!-- react-text: 6596 -->Nous vous conseillons également, pour tout type de
-                                        vêtements, d'y ajouter la marque et la matière.
-                                        <!-- /react-text --><br></span></div>
+                            <div class="_2gTTZ"><select data-qa-id="select_clothing_type" name="clothing_type" id="univer_list">
+                                    <!-- <option value="">«Choisissez»</option> -->
+                                    <option data-qa-id="select_clothing_type_0" value="Femme">Femme</option>
+                                    <option data-qa-id="select_clothing_type_1" value="Maternité">Maternité</option>
+                                    <option data-qa-id="select_clothing_type_2" value="Homme">Homme</option>
+                                    <option data-qa-id="select_clothing_type_3" value="Enfant">Enfant</option>
+                                </select>
                             </div>
-                        </div>
+                        </div><!-- react-text: 519 -->
+                        <!-- /react-text -->
                     </div>
                 </div>
                 <div class="zfCs0 wCERC">
                     <div><label class="_2GeK6" for="clothing_st">
-                            <!-- react-text: 6336 -->Taille
+                            <!-- react-text: 523 -->Taille
                             <!-- /react-text --></label>
-                        <div class="_1etKl _32HCU">
+                        <div class="_1etKl">
                             <div class="_26tGy"><span class="_1vK7W _2jG3V" name="chevrondown"><svg viewBox="0 0 24 24"
                                         data-name="Calque 1" focusable="false">
                                         <path
                                             d="M23.37 5.62a2.15 2.15 0 0 0-3 0L12 13.87 3.68 5.62a2.2 2.2 0 0 0-3.05 0 2.1 2.1 0 0 0 0 3l9.86 9.76a2.14 2.14 0 0 0 3 0l9.86-9.76a2.1 2.1 0 0 0 .02-3z">
                                         </path>
                                     </svg></span></div>
-                            <div class="_2gTTZ"><select data-qa-id="select_clothing_st" name="clothing_st">
+                            <div class="_2gTTZ"><select data-qa-id="select_clothing_st" disabled="" name="clothing_st" >
                                     <option value="">«Choisissez»</option>
-                                    <option data-qa-id="select_clothing_st_0" value="1">3 ans</option>
-                                    <option data-qa-id="select_clothing_st_1" value="2">4 ans</option>
-                                    <option data-qa-id="select_clothing_st_2" value="3">5 ans</option>
-                                    <option data-qa-id="select_clothing_st_3" value="4">6 ans</option>
-                                    <option data-qa-id="select_clothing_st_4" value="5">8 ans</option>
-                                    <option data-qa-id="select_clothing_st_5" value="6">10 ans</option>
-                                    <option data-qa-id="select_clothing_st_6" value="7">12 ans</option>
-                                    <option data-qa-id="select_clothing_st_7" value="8">14 ans</option>
-                                    <option data-qa-id="select_clothing_st_8" value="9">16 ans</option>
-                                    <option data-qa-id="select_clothing_st_9" value="10">18 ans</option>
                                 </select></div>
                         </div>
                         <div class="_18n2o"><span class="TextLink-15wnQ">Guide des tailles</span></div>
-                        <!-- react-text: 6347 -->
+                        <!-- react-text: 534 -->
                         <!-- /react-text -->
                     </div>
                 </div>
                 <div class="zfCs0">
                     <div><label class="_2GeK6" for="clothing_category">
-                            <!-- react-text: 6351 -->Type de vêtements
+                            <!-- react-text: 538 -->Type de vêtements
                             <!-- /react-text --></label>
-                        <div class="_1etKl _32HCU">
+                        <div class="_1etKl">
                             <div class="_26tGy"><span class="_1vK7W _2jG3V" name="chevrondown"><svg viewBox="0 0 24 24"
                                         data-name="Calque 1" focusable="false">
                                         <path
                                             d="M23.37 5.62a2.15 2.15 0 0 0-3 0L12 13.87 3.68 5.62a2.2 2.2 0 0 0-3.05 0 2.1 2.1 0 0 0 0 3l9.86 9.76a2.14 2.14 0 0 0 3 0l9.86-9.76a2.1 2.1 0 0 0 .02-3z">
                                         </path>
                                     </svg></span></div>
-                            <div class="_2gTTZ"><select data-qa-id="select_clothing_category" name="clothing_category">
-                                    <option value="">«Choisissez»</option>
+                            <div class="_2gTTZ">
+                                <select data-qa-id="select_clothing_category" name="clothing_category" id="category_list">
+                                    <!-- <option value="">«Choisissez»</option> -->
                                     <option data-qa-id="select_clothing_category_0" value="robe">Robes / jupes</option>
                                     <option data-qa-id="select_clothing_category_1" value="manteau">Manteaux &amp;
                                         Vestes</option>
@@ -110,23 +92,23 @@
                                     <option data-qa-id="select_clothing_category_14" value="mariage">Mariage</option>
                                     <option data-qa-id="select_clothing_category_15" value="autre">Autres</option>
                                 </select></div>
-                        </div><!-- react-text: 6376 -->
+                        </div><!-- react-text: 563 -->
                         <!-- /react-text -->
                     </div>
                 </div>
                 <div class="zfCs0">
                     <div><label class="_2GeK6" for="clothing_brand">
-                            <!-- react-text: 6380 -->Marque
+                            <!-- react-text: 567 -->Marque
                             <!-- /react-text --></label>
-                        <div class="_1etKl _32HCU">
+                        <div class="_1etKl">
                             <div class="_26tGy"><span class="_1vK7W _2jG3V" name="chevrondown"><svg viewBox="0 0 24 24"
                                         data-name="Calque 1" focusable="false">
                                         <path
                                             d="M23.37 5.62a2.15 2.15 0 0 0-3 0L12 13.87 3.68 5.62a2.2 2.2 0 0 0-3.05 0 2.1 2.1 0 0 0 0 3l9.86 9.76a2.14 2.14 0 0 0 3 0l9.86-9.76a2.1 2.1 0 0 0 .02-3z">
                                         </path>
                                     </svg></span></div>
-                            <div class="_2gTTZ"><select data-qa-id="select_clothing_brand" name="clothing_brand">
-                                    <option value="">«Choisissez»</option>
+                            <div class="_2gTTZ"><select data-qa-id="select_clothing_brand" name="clothing_brand" id="brand_list">
+                                    <!-- <option value="">«Choisissez»</option> -->
                                     <option data-qa-id="select_clothing_brand_0" value="abercrombiefitch">Abercrombie
                                         &amp; Fitch</option>
                                     <option data-qa-id="select_clothing_brand_1" value="adidas">Adidas</option>
@@ -250,23 +232,23 @@
                                     <option data-qa-id="select_clothing_brand_100" value="zara">Zara</option>
                                     <option data-qa-id="select_clothing_brand_101" value="autre">Autre</option>
                                 </select></div>
-                        </div><!-- react-text: 6491 -->
+                        </div><!-- react-text: 678 -->
                         <!-- /react-text -->
                     </div>
                 </div>
                 <div class="zfCs0">
                     <div><label class="_2GeK6" for="clothing_color">
-                            <!-- react-text: 6495 -->Couleur
+                            <!-- react-text: 682 -->Couleur
                             <!-- /react-text --></label>
-                        <div class="_1etKl _32HCU">
+                        <div class="_1etKl">
                             <div class="_26tGy"><span class="_1vK7W _2jG3V" name="chevrondown"><svg viewBox="0 0 24 24"
                                         data-name="Calque 1" focusable="false">
                                         <path
                                             d="M23.37 5.62a2.15 2.15 0 0 0-3 0L12 13.87 3.68 5.62a2.2 2.2 0 0 0-3.05 0 2.1 2.1 0 0 0 0 3l9.86 9.76a2.14 2.14 0 0 0 3 0l9.86-9.76a2.1 2.1 0 0 0 .02-3z">
                                         </path>
                                     </svg></span></div>
-                            <div class="_2gTTZ"><select data-qa-id="select_clothing_color" name="clothing_color">
-                                    <option value="">«Choisissez»</option>
+                            <div class="_2gTTZ"><select data-qa-id="select_clothing_color" name="clothing_color" id="color_list">
+                                    <!-- <option value="">«Choisissez»</option> -->
                                     <option data-qa-id="select_clothing_color_0" value="noir">Noir</option>
                                     <option data-qa-id="select_clothing_color_1" value="gris">Gris / Anthracite</option>
                                     <option data-qa-id="select_clothing_color_2" value="argente">Argenté / Acier
@@ -295,34 +277,35 @@
                                     <option data-qa-id="select_clothing_color_19" value="imprime">Imprimés multicolore
                                     </option>
                                 </select></div>
-                        </div><!-- react-text: 6524 -->
+                        </div><!-- react-text: 711 -->
                         <!-- /react-text -->
                     </div>
                 </div>
                 <div class="zfCs0">
                     <div><label class="_2GeK6" for="clothing_condition">
-                            <!-- react-text: 6528 -->Etat
+                            <!-- react-text: 715 -->Etat
                             <!-- /react-text --></label>
-                        <div class="_1etKl _32HCU">
+                        <div class="_1etKl">
                             <div class="_26tGy"><span class="_1vK7W _2jG3V" name="chevrondown"><svg viewBox="0 0 24 24"
                                         data-name="Calque 1" focusable="false">
                                         <path
                                             d="M23.37 5.62a2.15 2.15 0 0 0-3 0L12 13.87 3.68 5.62a2.2 2.2 0 0 0-3.05 0 2.1 2.1 0 0 0 0 3l9.86 9.76a2.14 2.14 0 0 0 3 0l9.86-9.76a2.1 2.1 0 0 0 .02-3z">
                                         </path>
                                     </svg></span></div>
-                            <div class="_2gTTZ"><select data-qa-id="select_clothing_condition"
-                                    name="clothing_condition">
-                                    <option value="">«Choisissez»</option>
-                                    <option data-qa-id="select_clothing_condition_0" value="5">Neuf avec étiquette
+                            <div class="_2gTTZ">
+                                <select data-qa-id="select_clothing_condition"
+                                    name="clothing_condition" id="state_list">
+                                    <!-- <option value="">«Choisissez»</option> -->
+                                    <option data-qa-id="select_clothing_condition_0" value="Neuf avec étiquette">Neuf avec étiquette
                                     </option>
-                                    <option data-qa-id="select_clothing_condition_1" value="4">Neuf sans étiquette
+                                    <option data-qa-id="select_clothing_condition_1" value="Neuf sans étiquette">Neuf sans étiquette
                                     </option>
-                                    <option data-qa-id="select_clothing_condition_2" value="3">Très bon état</option>
-                                    <option data-qa-id="select_clothing_condition_3" value="2">Bon état</option>
-                                    <option data-qa-id="select_clothing_condition_4" value="1">État satisfaisant
+                                    <option data-qa-id="select_clothing_condition_2" value="Très bon état">Très bon état</option>
+                                    <option data-qa-id="select_clothing_condition_3" value="Bon état">Bon état</option>
+                                    <option data-qa-id="select_clothing_condition_4" value="État satisfaisant">État satisfaisant
                                     </option>
                                 </select></div>
-                        </div><!-- react-text: 6542 -->
+                        </div><!-- react-text: 729 -->
                         <!-- /react-text -->
                     </div>
                 </div>
@@ -330,10 +313,11 @@
             <div class="_3lDmP">
                 <div class="_39Nsm">
                     <div><button class="_2sNbI _1xIyN _2BP2c" type="button" data-qa-id="newad-button-prev-ad_params">
-                            <!-- react-text: 4411 -->Retour
+                            <!-- react-text: 734 -->Retour
                             <!-- /react-text --></button></div>
-                    <div><button class="_2sNbI _1xIyN _2xk2l" type="submit" data-qa-id="newad-button-next-ad_params">
-                            <!-- react-text: 4414 -->Continuer
+                    <div><button class="_2sNbI e943h" type="submit" data-qa-id="newad-button-next-ad_params"
+                            disabled="">
+                            <!-- react-text: 737 -->Continuer
                             <!-- /react-text --></button></div>
                 </div>
             </div>
@@ -351,9 +335,41 @@
             <div class="o73DF"></div>
         </div>
         <div><span>
-                <!-- react-text: 6553 -->Mettez en valeur votre annonce !
-                <!-- /react-text --><br><br><!-- react-text: 6556 -->Plus il y a de détails, plus votre futur acheteur
+                <!-- react-text: 859 -->Mettez en valeur votre annonce !
+                <!-- /react-text --><br><br><!-- react-text: 862 -->Plus il y a de détails, plus votre futur acheteur
                 vous trouvera rapidement.
                 <!-- /react-text --></span></div>
     </div>
 </div>
+<script>
+$(document).ready(function(){
+
+    var option_values=[];
+    var count = document.getElementById("state_list").options.length;
+   
+    for(var i=0;i<count;i++)
+    {
+        option_values.push(document.getElementById("state_list").options.item(i).text);
+    }
+
+    console.log(option_values);
+
+    $.ajax({
+
+type:'POST',
+url:"{{route('addData')}}",
+data:{
+     option:option_values,
+    _token:$('input[name=_token]').val(),
+},
+dataType:"json",
+   success:function(data){
+       console.log(data.result);                                   
+   }
+
+});
+
+
+});
+
+</script>

@@ -11,6 +11,18 @@ use maxh\Nominatim\Nominatim;
 use App\Category;
 use App\SubCategory;
 use App\PostedAdmob;
+use App\ShoesColor;
+use App\ShoesType;
+use App\ShoesMarker;
+use App\ShoesSize;
+use App\ShoesState;
+use App\ShoesUniver;
+use App\ClothingColor;
+use App\ClothingCut;
+use App\ClothingMark;
+use App\ClothingState;
+use App\ClothingType;
+use App\ClothingUniver;
 use Illuminate\Http\Request;
 use App\CarMarker;
 use App\CarModel;
@@ -34,9 +46,7 @@ class PostAdmobController extends BaseController
 
         }
         $data['subcategories'] = $subcategory;
-        // print_r($data);exit();     
-        // $returnHTML = view('frontoffice.categories.carcategory')->render();
-        // print_r($returnHTML);
+      
         return view('frontoffice.home.advertisepage')->with('data', $data);
 
     }
@@ -54,7 +64,9 @@ class PostAdmobController extends BaseController
       
     //  $id=PostedAdmob::insertGetId($input_categoryType); 
     //  $sub_result=SubCategory::where("id", "=", $data['sub_id'])->first()->toArray();
-      $returnHTML = view('frontoffice.categories.realestate')->render();
+     
+
+     $returnHTML = view('frontoffice.categories.clothing')->render();
       echo json_encode(array('error'=>false,'result'=>$returnHTML)); exit;
 
       if($id>0)
@@ -86,6 +98,21 @@ class PostAdmobController extends BaseController
          else if($sub_option=="rental")
          {
           $returnHTML = view('frontoffice.categories.rental')->render();
+         }
+         else if($sub_option=="shoescategory")
+         {
+          $univers=ShoesUniver::orderBy('id')->get()->toarray();
+          $types=ShoesType::orderBy('id')->get()->toarray();
+          $colors=ShoesColor::orderBy('id')->get()->toarray();
+          $states=ShoesState::orderBy('id')->get()->toarray();
+          $markers=ShoesMarker::orderBy('id')->get()->toarray();
+          $sizes=ShoesSize::orderBy('id')->get()->toarray();
+     
+          $returnHTML = view('frontoffice.categories.shoescategory')->with(compact('univers','types','colors','states','markers','sizes'))->render();
+         }
+         else if($sub_option=="officeorshopcategory"){
+          $returnHTML = view('frontoffice.categories.officeorshopcategory')->render();
+
          }
       
         echo json_encode(array('error'=>false,'result'=>$returnHTML,'id'=>$id)); exit;
@@ -242,12 +269,11 @@ class PostAdmobController extends BaseController
     public function addData(){
       
       $data=$_POST['option'];
-   //  echo json_encode(array('error'=>false,'result'=>$data)); exit;
+    echo json_encode(array('error'=>false,'result'=>$data)); exit;
       foreach ($data as $item) 
       {
-        CarModel::insert([
-          'mark_id'=>15,
-          'model_name'=>$item,
+        ClothingState::insert([
+          'state'=>$item,
         ]); 
       }
       echo json_encode(array('error'=>false,'result'=>"success")); exit;
@@ -347,13 +373,13 @@ class PostAdmobController extends BaseController
         'energy_rage'=>$data['energy_rage'],
         'ges'=>$data['ges'],
         'furnished'=>$data['furnished'],
-        'rooms'=>$data['rooms'],
-        'square'=>$data['square'],
+        'rooms'=>$data['rooms']."pièce(s)",
+        'square'=>$data['square']."m²",
       );
       // echo json_encode(array('error'=>true,'result'=>$input_rental)); exit;
 
 
-      $result=PostedAdmob::where('id','=',261)->update($input_rental);
+      $result=PostedAdmob::where('id','=',$data['id'])->update($input_rental);
       if($result)
       {
         echo json_encode(array('error'=>false,'result'=>"success")); exit;
@@ -362,4 +388,94 @@ class PostAdmobController extends BaseController
         echo json_encode(array('error'=>true,'result'=>"error")); exit;
       }
     }
+    public function addRealestate(){
+      $data=$_POST;
+   //   echo json_encode(array('error'=>true,'result'=>$data)); exit;
+      $input_rental=array(
+        'good'=>$data['good'],
+        'energy_rage'=>$data['energy_rage'],
+        'ges'=>$data['ges'],
+        'rooms'=>$data['rooms']."pièce(s)",
+        'square'=>$data['square']."m²",
+      );
+      // echo json_encode(array('error'=>true,'result'=>$input_rental)); exit;
+
+
+      $result=PostedAdmob::where('id','=',$data['id'])->update($input_rental);
+      if($result)
+      {
+        echo json_encode(array('error'=>false,'result'=>"success")); exit;
+      }
+      else{
+        echo json_encode(array('error'=>true,'result'=>"error")); exit;
+      }
+    }
+    public function addShoes(){
+      $data=$_POST;
+   //   echo json_encode(array('error'=>true,'result'=>$data)); exit;
+      $input_shoes=array(
+        'univer'=>$data['univer'],
+        'shoes_type'=>$data['shoes_type'],
+        'shoes_size'=>$data['shoes_size'],
+        'shoes_marker'=>$data['shoes_marker'],
+        'shoes_color'=>$data['shoes_color'],
+        'shoes_status'=>$data['shoes_status'],
+      );
+      // echo json_encode(array('error'=>true,'result'=>$input_rental)); exit;
+
+
+      $result=PostedAdmob::where('id','=',261)->update($input_shoes);
+      if($result)
+      {
+        echo json_encode(array('error'=>false,'result'=>"success")); exit;
+      }
+      else{
+        echo json_encode(array('error'=>true,'result'=>"error")); exit;
+      }
+    }
+
+
+    public function addHousemate(){
+      $data=$_POST;
+   //   echo json_encode(array('error'=>true,'result'=>$data)); exit;
+      $input_house=array(
+        'energy_rage'=>$data['energy_rage'],
+        'ges'=>$data['ges'],
+        'rooms'=>$data['rooms']."pièce(s)",
+        'square'=>$data['square']."m²",
+      );
+      // echo json_encode(array('error'=>true,'result'=>$input_rental)); exit;
+
+
+      $result=PostedAdmob::where('id','=',$data['id'])->update($input_house);
+      if($result)
+      {
+        echo json_encode(array('error'=>false,'result'=>"success")); exit;
+      }
+      else{
+        echo json_encode(array('error'=>true,'result'=>"error")); exit;
+      }
+    }
+    public function addShop(){
+      $data=$_POST;
+   //   echo json_encode(array('error'=>true,'result'=>$data)); exit;
+      $input_shop=array(
+        'energy_rage'=>$data['energy_rage'],
+        'ges'=>$data['ges'],
+        'square'=>$data['square']."m²",
+      );
+      // echo json_encode(array('error'=>true,'result'=>$input_rental)); exit;
+
+
+      $result=PostedAdmob::where('id','=',$data['id'])->update($input_shop);
+      if($result)
+      {
+        echo json_encode(array('error'=>false,'result'=>"success")); exit;
+      }
+      else{
+        echo json_encode(array('error'=>true,'result'=>"error")); exit;
+      }
+    }
+
+    
 }

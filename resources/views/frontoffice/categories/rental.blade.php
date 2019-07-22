@@ -133,9 +133,11 @@
                     <div><button class="_2sNbI _1xIyN _2BP2c" type="button" data-qa-id="newad-button-prev-ad_params" id="return_button">
                             <!-- react-text: 4411 -->Retour
                             <!-- /react-text --></button></div>
-                    <div><button class="_2sNbI _1xIyN _2xk2l" type="submit" data-qa-id="newad-button-next-ad_params">
+                    <div>
+                        <button class="_2sNbI _1xIyN _2xk2l" type="submit" data-qa-id="newad-button-next-ad_params">
                             <!-- react-text: 4414 -->Continuer
-                            <!-- /react-text --></button></div>
+                            <!-- /react-text --></button>
+                        </div>
                 </div>
             </div>
         </form>

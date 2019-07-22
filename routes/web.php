@@ -40,6 +40,14 @@ Route::group([
       Route::post('/advertise/addmoto','PostAdmobController@addMoto')->name('addMoto');
       Route::post('/advertise/addutil','PostAdmobController@addUtil')->name('addUtil');
       Route::post('/advertise/addrental','PostAdmobController@addRental')->name('addRental');
+      Route::post('/advertise/addrealestate','PostAdmobController@addRealestate')->name('addRealestate');
+      Route::post('/advertise/addshoes','PostAdmobController@addShoes')->name('addShoes');
+      Route::post('/advertise/addhousemate','PostAdmobController@addHousemate')->name('addHousemate');
+      Route::post('/advertise/addshop','PostAdmobController@addShop')->name('addShop');
+
+
+
+
 
 
       
@@ -71,7 +79,7 @@ Route::group([
       
      
       
-    //    Route::post('/adddata/','PostAdmobController@addData')->name('addData');
+        Route::post('/adddata/','PostAdmobController@addData')->name('addData');
 
 
 

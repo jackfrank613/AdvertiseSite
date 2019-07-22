@@ -1008,9 +1008,198 @@
 
 
                 }
+            });
 
+            $('#detail_category').on('submit','#realestate_form',function(event){
+                event.preventDefault();
+                var rental_building = $('._2GSq7._2uOGu').attr('value');
+                var square=$('input[name=square]').val();
+                var rooms=$('input[name=rooms]').val();
+                var energy=$('.uO-lw.energy._1ElXN').attr('value');
+                var ges=$('.uO-lw.ges._1ElXN').attr('value');
+                if(rental_building !=""&& square !="" && rooms !="" && energy !="" && ges !="")
+                {
+                    $.ajax({
+                        type:"POST",
+                        url:"{{route('addRealestate')}}",
+                        data:{
+                            id:id,
+                            good:rental_building,
+                            energy_rage:energy,
+                            ges:ges,
+                            rooms:rooms,
+                            square:square,
+                            _token: $('input[name=_token]').val(),
+                        },
+                        dataType:"json",
+                        success:function(data){
+                            console.log(data.result);
+                            if(!data.error)
+                            {
+                               $('#detail_category').css("display","none");
+                               $('#category_description').css("display","block");
+                            }
+                            else{
+                                alert(data.result);
+                            }
+                        }
+
+                    });
+                }
+                else{
+                    alert("please fill fields correctly.");
+
+
+                }
+               
 
             });
+
+        $('#detail_category').on('submit','#shoes_upload_form',function(event){  
+             event.preventDefault();
+               // console.log("test");
+                var univer= $('#detail_category #univer_list').val();
+             //   console.log(univer);
+                var type=$('#detail_category #type_list').val();
+              //  console.log(type);
+                var size=$('#detail_category #size_list').val();
+                //console.log(size);
+                var color=$('#detail_category #color_list').val();
+              //  console.log(color);
+                var marker=$('#detail_category #marker_list').val();
+                //console.log(marker);
+                var state=$('#detail_category #sate_list').val();
+               // console.log(state);
+
+               if(univer !="" && type !="" && size !="" && color !="" && marker !="" && state !="")
+               {
+                  $.ajax({
+                        type:"POST",
+                        url:"{{route('addShoes')}}",
+                        data:{
+                            id:id,
+                            univer:univer,
+                            shoes_type:type,
+                            shoes_size:size,
+                            shoes_marker:marker,
+                            shoes_color:color,
+                            shoes_status:state,
+                            _token: $('input[name=_token]').val(),
+                        },
+                        dataType:"json",
+                        success:function(data){
+                            console.log(data.result);
+                            if(!data.error)
+                            {
+                               $('#detail_category').css("display","none");
+                               $('#category_description').css("display","block");
+                            }
+                            else{
+                                alert(data.result);
+                            }
+                        }
+
+                    });
+
+               }
+               else{
+
+                alert("please fill fields correctly.");
+            
+               }
+         
+          });
+
+          $('#detail_category').on('submit','#house_mate_form',function(event){  
+             event.preventDefault();
+
+                var square=$('input[name=square]').val();
+                var rooms=$('input[name=rooms]').val();
+                var energy=$('.uO-lw.energy._1ElXN').attr('value');
+                var ges=$('.uO-lw.ges._1ElXN').attr('value');
+              
+               if(square !="" && rooms !="" && energy !="" && ges !="")
+               {
+                  $.ajax({
+                        type:"POST",
+                        url:"{{route('addHousemate')}}",
+                        data:{
+                            id:id,
+                            energy_rage:energy,
+                            ges:ges,
+                            rooms:rooms,
+                            square:square,
+                            _token: $('input[name=_token]').val(),
+                        },
+                        dataType:"json",
+                        success:function(data){
+                            console.log(data.result);
+                            if(!data.error)
+                            {
+                               $('#detail_category').css("display","none");
+                               $('#category_description').css("display","block");
+                            }
+                            else{
+                                alert(data.result);
+                            }
+                        }
+
+                    });
+
+               }
+               else{
+
+                alert("please fill fields correctly.");
+            
+               }
+         
+          });
+
+          $('#detail_category').on('submit','#office_upload_form',function(event){  
+             event.preventDefault();
+
+                var square=$('input[name=square]').val();
+                var energy=$('.uO-lw.energy._1ElXN').attr('value');
+                var ges=$('.uO-lw.ges._1ElXN').attr('value');
+              
+               if(square !=""  && energy !="" && ges !="")
+               {
+                  $.ajax({
+                        type:"POST",
+                        url:"{{route('addShop')}}",
+                        data:{
+                            id:id,
+                            energy_rage:energy,
+                            ges:ges,
+                            square:square,
+                            _token: $('input[name=_token]').val(),
+                        },
+                        dataType:"json",
+                        success:function(data){
+                            console.log(data.result);
+                            if(!data.error)
+                            {
+                               $('#detail_category').css("display","none");
+                               $('#category_description').css("display","block");
+                            }
+                            else{
+                                alert(data.result);
+                            }
+                        }
+
+                    });
+
+               }
+               else{
+
+                alert("please fill fields correctly.");
+            
+               }
+         
+          });
+ 
+
+
             $('#category_description').on('click', '#backbutton', function () {
 
                 $('#category_description').css('display', 'none');
@@ -1057,8 +1246,7 @@
                 }
             });
 
-
-
+       
             $('#category_price').on('click', '#backbutton', function () {
 
                 $('#category_price').css('display', 'none');

@@ -3,7 +3,8 @@
         <div class="_3QHYd">
             <h3 class="_30A-8">Dites-nous en plus</h3>
         </div>
-        <form>
+        <form id="realestate_form">
+        <input type="hidden" name="_token" id="token" value="{{csrf_token()}}">
             <div class="_3KRvg">
                 <div class="_3GY3c">
                     <div class="zfCs0 _2ww5J">
@@ -11,7 +12,7 @@
                                 <!-- react-text: 8482 -->Type de bien
                                 <!-- /react-text --></label>
                             <div class="_3Fc4U" data-qa-id="select_icon_real_estate_type">
-                                <div class="_2GSq7" data-qa-id="select_icon_real_estate_type_1" tabindex="0" value="1"
+                                <div class="_2GSq7" data-qa-id="select_icon_real_estate_type_1" tabindex="0" value="Maison"
                                     name="real_estate_type">
                                     <div class="e4Ae2"><span class="_1vK7W" name="houseoutline"><svg viewBox="0 0 24 24"
                                                 data-name="Calque 1" focusable="false">
@@ -21,7 +22,7 @@
                                             </svg></span></div>
                                     <div class="_2hA8E">Maison</div>
                                 </div>
-                                <div class="_2GSq7" data-qa-id="select_icon_real_estate_type_2" tabindex="0" value="2"
+                                <div class="_2GSq7" data-qa-id="select_icon_real_estate_type_2" tabindex="0" value="Appartement"
                                     name="real_estate_type">
                                     <div class="e4Ae2"><span class="_1vK7W" name="apartment"><svg viewBox="0 0 24 24"
                                                 data-name="Calque 1" focusable="false">
@@ -34,7 +35,7 @@
                                             </svg></span></div>
                                     <div class="_2hA8E">Appartement</div>
                                 </div>
-                                <div class="_2GSq7" data-qa-id="select_icon_real_estate_type_3" tabindex="0" value="3"
+                                <div class="_2GSq7" data-qa-id="select_icon_real_estate_type_3" tabindex="0" value="Terrain"
                                     name="real_estate_type">
                                     <div class="e4Ae2"><span class="_1vK7W" name="ground"><svg viewBox="0 0 24 24"
                                                 data-name="Calque 1" focusable="false">
@@ -44,7 +45,7 @@
                                             </svg></span></div>
                                     <div class="_2hA8E">Terrain</div>
                                 </div>
-                                <div class="_2GSq7" data-qa-id="select_icon_real_estate_type_4" tabindex="0" value="4"
+                                <div class="_2GSq7" data-qa-id="select_icon_real_estate_type_4" tabindex="0" value="Parking"
                                     name="real_estate_type">
                                     <div class="e4Ae2"><span class="_1vK7W" name="parking"><svg height="24" width="24"
                                                 viewBox="0 0 24 24" focusable="false">
@@ -54,7 +55,7 @@
                                             </svg></span></div>
                                     <div class="_2hA8E">Parking</div>
                                 </div>
-                                <div class="_2GSq7" data-qa-id="select_icon_real_estate_type_5" tabindex="0" value="5"
+                                <div class="_2GSq7" data-qa-id="select_icon_real_estate_type_5" tabindex="0" value="Autre"
                                     name="real_estate_type">
                                     <div class="e4Ae2"><span class="_1vK7W" name="deliverylbcoutline"><svg
                                                 viewBox="0 0 24 24" data-name="Calque 1" focusable="false">
@@ -97,21 +98,21 @@
                             </div>
                         </label>
                         <div class="BtHSu _3CqQj" data-qa-id="select_toggle_energy_rate">
-                            <div class="uO-lw _1fJ1g" data-qa-id="select_toggle_energy_rate_a" tabindex="0" value="a"
+                            <div class="uO-lw energy" data-qa-id="select_toggle_energy_rate_a" tabindex="0" value="a"
                                 name="energy_rate">A</div>
-                            <div class="uO-lw _2Y2l_" data-qa-id="select_toggle_energy_rate_b" tabindex="0" value="b"
+                            <div class="uO-lw energy" data-qa-id="select_toggle_energy_rate_b" tabindex="0" value="b"
                                 name="energy_rate">B</div>
-                            <div class="uO-lw umi6E" data-qa-id="select_toggle_energy_rate_c" tabindex="0" value="c"
+                            <div class="uO-lw energy" data-qa-id="select_toggle_energy_rate_c" tabindex="0" value="c"
                                 name="energy_rate">C</div>
-                            <div class="uO-lw _3TpSN" data-qa-id="select_toggle_energy_rate_d" tabindex="0" value="d"
+                            <div class="uO-lw energy" data-qa-id="select_toggle_energy_rate_d" tabindex="0" value="d"
                                 name="energy_rate">D</div>
-                            <div class="uO-lw e9luf" data-qa-id="select_toggle_energy_rate_e" tabindex="0" value="e"
+                            <div class="uO-lw energy" data-qa-id="select_toggle_energy_rate_e" tabindex="0" value="e"
                                 name="energy_rate">E</div>
-                            <div class="uO-lw _3GtdD" data-qa-id="select_toggle_energy_rate_f" tabindex="0" value="f"
+                            <div class="uO-lw energy" data-qa-id="select_toggle_energy_rate_f" tabindex="0" value="f"
                                 name="energy_rate">F</div>
-                            <div class="uO-lw bfb5U" data-qa-id="select_toggle_energy_rate_g" tabindex="0" value="g"
+                            <div class="uO-lw energy" data-qa-id="select_toggle_energy_rate_g" tabindex="0" value="g"
                                 name="energy_rate">G</div>
-                            <div class="uO-lw" data-qa-id="select_toggle_energy_rate_v" tabindex="0" value="v"
+                            <div class="uO-lw energy" data-qa-id="select_toggle_energy_rate_v" tabindex="0" value="v"
                                 name="energy_rate">Vierge</div>
                         </div>
                     </div>
@@ -129,21 +130,21 @@
                             </div>
                         </label>
                         <div class="BtHSu _3CqQj" data-qa-id="select_toggle_ges">
-                            <div class="uO-lw _2SwKK" data-qa-id="select_toggle_ges_a" tabindex="0" value="a"
+                            <div class="uO-lw ges" data-qa-id="select_toggle_ges_a" tabindex="0" value="a"
                                 name="ges">A</div>
-                            <div class="uO-lw _1NufV" data-qa-id="select_toggle_ges_b" tabindex="0" value="b"
+                            <div class="uO-lw ges" data-qa-id="select_toggle_ges_b" tabindex="0" value="b"
                                 name="ges">B</div>
-                            <div class="uO-lw _2C4sq" data-qa-id="select_toggle_ges_c" tabindex="0" value="c"
+                            <div class="uO-lw ges" data-qa-id="select_toggle_ges_c" tabindex="0" value="c"
                                 name="ges">C</div>
-                            <div class="uO-lw plXPd" data-qa-id="select_toggle_ges_d" tabindex="0" value="d" name="ges">
+                            <div class="uO-lw ges" data-qa-id="select_toggle_ges_d" tabindex="0" value="d" name="ges">
                                 D</div>
-                            <div class="uO-lw _2iGMG" data-qa-id="select_toggle_ges_e" tabindex="0" value="e"
+                            <div class="uO-lw ges" data-qa-id="select_toggle_ges_e" tabindex="0" value="e"
                                 name="ges">E</div>
-                            <div class="uO-lw b_t9z" data-qa-id="select_toggle_ges_f" tabindex="0" value="f" name="ges">
+                            <div class="uO-lw ges" data-qa-id="select_toggle_ges_f" tabindex="0" value="f" name="ges">
                                 F</div>
-                            <div class="uO-lw _2vBU9" data-qa-id="select_toggle_ges_g" tabindex="0" value="g"
+                            <div class="uO-lw ges" data-qa-id="select_toggle_ges_g" tabindex="0" value="g"
                                 name="ges">G</div>
-                            <div class="uO-lw" data-qa-id="select_toggle_ges_v" tabindex="0" value="v" name="ges">Vierge
+                            <div class="uO-lw ges" data-qa-id="select_toggle_ges_v" tabindex="0" value="v" name="ges">Vierge
                             </div>
                         </div>
                     </div>
@@ -151,12 +152,15 @@
             </div>
             <div class="_3lDmP">
                 <div class="_39Nsm">
-                    <div><button class="_2sNbI _1xIyN _2BP2c" type="button" data-qa-id="newad-button-prev-ad_params">
+                    <div><button class="_2sNbI _1xIyN _2BP2c" type="button" data-qa-id="newad-button-prev-ad_params" id="return_button">
                             <!-- react-text: 8585 -->Retour
                             <!-- /react-text --></button></div>
-                    <div><button class="_2sNbI _1xIyN _2xk2l" type="submit" data-qa-id="newad-button-next-ad_params">
-                            <!-- react-text: 8588 -->Continuer
-                            <!-- /react-text --></button></div>
+                    <div>
+                    <button class="_2sNbI _1xIyN _2xk2l" type="submit" data-qa-id="newad-button-next-ad_params">
+                            <!-- react-text: 4414 -->Continuer
+                            <!-- /react-text --></button>
+                        
+                        </div>
                 </div>
             </div>
         </form>
@@ -179,3 +183,45 @@
                 <!-- /react-text --></span></div>
     </div>
 </div>
+<script>
+$(document).ready(function(){
+
+
+       var carburnts=document.getElementsByClassName("_2GSq7");
+
+        var myCarburnt=function(){
+        $(carburnts).removeClass("_2uOGu");
+        $(this).addClass("_2uOGu");
+        }
+
+        for(var i=0;i<carburnts.length;i++)
+        {
+        carburnts[i].addEventListener('click',myCarburnt,false);
+        }
+
+        var energies=document.getElementsByClassName("energy");
+
+        var myEnergy=function(){
+        $(energies).removeClass("_1ElXN");
+        $(this).addClass("_1ElXN");
+        }
+
+        for(var i=0;i<energies.length;i++)
+        {
+        energies[i].addEventListener('click',myEnergy,false);
+        }
+
+        var geses=document.getElementsByClassName("ges");
+
+        var myGes=function(){
+        $(geses).removeClass("_1ElXN");
+        $(this).addClass("_1ElXN");
+        }
+
+        for(var i=0;i<geses.length;i++)
+        {
+        geses[i].addEventListener('click',myGes,false);
+        }
+
+});
+</script>

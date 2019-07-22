@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
 
     <!-- Custom stlylesheet -->
-    
+
     <link type="text/css" rel="stylesheet" href="{{asset('css/mainpage.css')}}" />
     <!-- <link type="text/css" rel="stylesheet" href="{{asset('css/productionpage.css')}}" /> -->
     <!-- <link type="text/css" rel="stylesheet" href="{{asset('css/auth.css')}}" /> -->
@@ -61,7 +61,7 @@
                     <div class="_1lEHL">
                         <div class="_3oF3k">
                             <div class="PZs61">
-                            
+
                                 <h1>
                                     <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">Login to find your favorites</font>
@@ -375,7 +375,9 @@
                         <div class="RcaAX" data-reactid="142">
                             <section class="_1ifAE" data-reactid="143">
                                 <div class="_2jqYS" data-reactid="144">
-                                    <div class="_3kk_Z" data-reactid="145"><svg version="1.1"
+                                    <div class="_3kk_Z" data-reactid="145">
+                                        
+                                    <svg version="1.1"
                                             xmlns="http://www.w3.org/2000/svg"
                                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                             viewBox="0 0 640 700" enable-background="new 0 0 640 700"
@@ -812,7 +814,9 @@
                                                     d=" M299.9,407.9c3.3-3.1,5.5-1.6,7.3-0.5c2.1,1.2,4.2,2.6,6.2,3.6 c1.3,0.7,5.7,0.4,9.5,0.5c2.9,0,5.1,0.3,5.8,0.5c1.3-1.7,3.7-4.7,3.7-7.9 c0-2.5-0.4-10.4,4.8-15.2c3.9-3.6,13.7-5.1,13.9-8.2c0.3-4.6-7.3-16.1-6.5-24.4 c0.6-6.5,10.7-2.2,7.8-15.3c-0.5-2.3,0.8-7.2-1.1-10.8c-2.1-3.9-9.3-5.1-12.5-9 c-0.1-0.1-0.4-0.3-1.1-0.9c-0.8-0.7-2.1-1.7-3.9-2.5c-2.2-1-5.2-1.6-8.5-2.1 c-1.1-0.2-2.4-0.4-3.7-0.3c-0.8,0-1.6,0-2.3,0.2c-2.6-0.1-6,4.7-8.7,4.6 c-2.3-0.1-4.5-0.2-6.7-0.3c-1.6-0.1-3.2,0.2-4.7,0.7c-1.2,0.4-2.4,0.9-3.5,0.8 c-3.4-0.6-6.7-1.8-8.3-2.3c0,0,0,0,0,0c1.2-3-3.7-8.8-11.3-13.7 c-2.4-1.5-1.2-4.5-1.5-7.7c-0.4-4-2.1-8.3-3.6-11.8c-1.6-3.7-13-2.2-18.9-5.2 c-4.9-2.5-7.8-12.4-15.1-13.8c-2.4-0.5-4.9,5.2-7,4.9c-6.1-0.9-9.9-4.4-15.4-4.3 c-2.6,0.1-3.3,4.2-6.8,5c-6.7,1.6-12.5-0.1-12.2,6.1c0.2,3.9,5.9,11.6,9,18.8 c4.3,10,6,19.8,2.8,22.5c-1.7,1.5-5.6-0.3-9.8-2.6c-1.6-0.9-4.1,4.8-5.7,3.9 c-3.6-2.1-0.8-6.3-4.6-7c-4.2-0.8-4.2,4.9-6.4,7c-0.4,0.4-3.8,9.1,2.8,16.1 c2.8,3-1.5,11.3-4.6,15.1c-1.3,1.6-2.3,4.3-1.5,7.7c0.3,1.5,1.3,3.6,2.9,3.8 c2.4,0.4,4.4,1.2,5.7,1.8c6.5,2.9,12.6,18.2,13.1,19.8c0,0,0,0-0.1,0 c1.7,3.6,4,13.7,5.2,19.4c-1.5,1.1-4.8-3.2-10.2-17.8c-1.5-4-7.5-15.8-16.9-14 c2.3,3.6,1.8,15.1,1.7,24.2c0,3.4-0.4,10.2-2,14.2c-2,3-2.7,3.5-5,11.4 c3.8-1.3,8.1-1.1,9.5,3.3c0.6,1.8,0.5,3.8-0.6,4.9c-0.5,0.5-6,1.6-7.9,4.2 c-0.7,1-2,3.8-2.1,5.3c-0.4,3.8-0.5,5.1-1.7,11.5c-0.6,3.6-1.5,8.3-2.4,13.2 c-0.6,3.3-1.4,7.2-1.8,9.5c-0.8,4.2-1.9,11-3.5,15c-0.8,1.9-1.8,3.1-2.8,5.1 c-1.1,2.2-1,3.3-1.3,5.3c-0.2,1.8-0.8,4-2.5,5.7c-3.3,3.2-8.3,6.3-10.3,6.8 c1,2.3,3.8,5.5,7.6,5.9c1,0.1,3.3-0.1,4.9,0.9c1.3,0.8,2.3,2.9,1.5,7.8 c-0.1,0.7-0.9,4.7,0.4,5c1,0.2,4-2.2,5.2-3.9c3.2,3.6,9,6.8,15,9.7 c0.8,0.4,7.6,2.7,13.3,2.9c1.4,0.1,3.6,1.1,4.2,3c0.5,1.5,1.7,4.6,3.3,5 c2.3,0.7,4.9,1.1,6.9,1c1.5-0.1,2.4-0.3,3.9-0.8c-0.6-4.6,2.2-14.1,6-16.4 c5-3.1,11.5-15.6,10.2-21.6c-1.2-5.6-5.7-9.4-9.6-11.8c0.3-2.9-3.7-16-0.5-23.9 c1.5-3.6,11.5,3.1,13.7,0.9c1.7-1.7,5.6-3.7,12.1-4.4c1.5-0.2,1.8-2.1,3.2-2.7 c4.6-1.9,22.4-2.7,26-7.1c2-2.5-1.5-9.6-1.1-12.5c0.4-2.9,5.5-4.2,5.6-6.3 c0-0.9-1.1-4.8,0.5-8.6c0.8-2,5.9-1.4,7-3.8c1-2,6-7.4,10.2-13.5 c2.2-3.1,3.9-6.8,5.9-9"
                                                     data-reactid="236"></path>
                                             </g>
-                                        </svg></div>
+                                        </svg>
+                                    
+                                    </div>
                                 </div>
                                 <div class="_2lehD _11PoU" data-reactid="237">
                                     <div class="_11AC0" data-reactid="238">
@@ -1209,42 +1213,43 @@
             $('#Regsiter_modal').modal('toggle');
             $('#Login_modal').modal('toggle');
         });
-        $('#loginform').on('submit', function(e){
+        $('#loginform').on('submit', function (e) {
             e.preventDefault();
             var email = $('input[name=email]').val();
             var password = $('input[name=password]').val();
-            if(email == "" || password == ""){
+            if (email == "" || password == "") {
                 document.getElementById('login_request_error').innerHTML = "Error";
                 setTimeout(() => {
                     document.getElementById('login_request_error').innerHTML = "";
                 }, 2000);
-            }else{
+            } else {
                 var data = $('#loginform').serialize();
                 var url = $('#loginform').attr('action');
                 console.log(data);
-                var base_url = {!! json_encode(url('/')) !!};
+                var base_url = {
+                    !!json_encode(url('/')) !!
+                };
                 // console.log();
                 $.ajax({
-                    type:'POST',
-                    url:url,
-                    data:data,
+                    type: 'POST',
+                    url: url,
+                    data: data,
                     dataType: "json",
-                    success:function(data) {
+                    success: function (data) {
                         console.log(data);
-                        if(data.error)
-                        {
-                            document.getElementById('login_request_error').innerHTML = data.result;
+                        if (data.error) {
+                            document.getElementById('login_request_error').innerHTML = data
+                                .result;
                             setTimeout(() => {
-                                document.getElementById('login_request_error').innerHTML = "";
+                                document.getElementById('login_request_error')
+                                    .innerHTML = "";
                             }, 2000);
 
-                        }    
-                        else 
-                        {
-                               window.location= base_url + "/profile/myadmob";
+                        } else {
+                            window.location = base_url + "/profile/myadmob";
 
                         }
-                        
+
                     }
                 });
             }
@@ -1252,6 +1257,6 @@
     });
 
 </script>
-  @yield('after-script')
+@yield('after-script')
 
 </html>
