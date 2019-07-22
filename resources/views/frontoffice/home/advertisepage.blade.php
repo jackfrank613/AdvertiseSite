@@ -1197,6 +1197,63 @@
                }
          
           });
+
+          $('#detail_category').on('submit','#clothing_upload_form',function(event){  
+             event.preventDefault();
+
+                // console.log("test");
+                var univer= $('#detail_category #univer_list').val();
+             //   console.log(univer);
+                var cut=$('#detail_category #cut_list').val();
+              //  console.log(type);
+                var type=$('#detail_category #category_list').val();
+                //console.log(size);
+                var color=$('#detail_category #color_list').val();
+              //  console.log(color);
+                var marker=$('#detail_category #brand_list').val();
+                //console.log(marker);
+                var state=$('#detail_category #state_list').val();
+               // console.log(state);
+
+               if(univer !="" && type !="" && cut !="" && color !="" && marker !="" && state !="")
+               {
+                  $.ajax({
+                        type:"POST",
+                        url:"{{route('addClothing')}}",
+                        data:{
+                            id:id,
+                            clothing_univer:univer,
+                            clothing_type:type,
+                            clothing_cut:cut,
+                            clothing_mark:marker,
+                            clothing_color:color,
+                            clothing_state:state,
+                            _token: $('input[name=_token]').val(),
+                        },
+                        dataType:"json",
+                        success:function(data){
+                            console.log(data.result);
+                            if(!data.error)
+                            {
+                               $('#detail_category').css("display","none");
+                               $('#category_description').css("display","block");
+                            }
+                            else{
+                                alert(data.result);
+                            }
+                        }
+
+                    });
+
+               }
+               else{
+
+                alert("please fill fields correctly.");
+            
+               }
+         
+          });
+
  
 
 

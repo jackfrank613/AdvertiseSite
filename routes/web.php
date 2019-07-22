@@ -44,6 +44,8 @@ Route::group([
       Route::post('/advertise/addshoes','PostAdmobController@addShoes')->name('addShoes');
       Route::post('/advertise/addhousemate','PostAdmobController@addHousemate')->name('addHousemate');
       Route::post('/advertise/addshop','PostAdmobController@addShop')->name('addShop');
+      Route::post('/advertise/addclothing','PostAdmobController@addClothing')->name('addClothing');
+
 
 
 
@@ -55,6 +57,9 @@ Route::group([
 
        //get the carmodel list
        Route::post('/advertise/getmodel','PostAdmobController@getCarmodel')->name('getmodel');
+       //get the clothing cut list
+       Route::post('/advertise/getcut','PostAdmobController@getCuts')->name('getCuts');
+
 
 
       //navigation route of header bar

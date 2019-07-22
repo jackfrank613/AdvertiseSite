@@ -4,7 +4,7 @@
             <h3 class="_30A-8">Dites-nous en plus</h3>
         </div>
         <form id="clothing_upload_form">
-        <input type="hidden" name="_token" id="token" value="{{csrf_token()}}">          
+            <input type="hidden" name="_token" id="token" value="{{csrf_token()}}">
             <div class="_3KRvg">
                 <div class="zfCs0">
                     <div><label class="_2GeK6" for="clothing_type">
@@ -19,12 +19,13 @@
                                             d="M23.37 5.62a2.15 2.15 0 0 0-3 0L12 13.87 3.68 5.62a2.2 2.2 0 0 0-3.05 0 2.1 2.1 0 0 0 0 3l9.86 9.76a2.14 2.14 0 0 0 3 0l9.86-9.76a2.1 2.1 0 0 0 .02-3z">
                                         </path>
                                     </svg></span></div>
-                            <div class="_2gTTZ"><select data-qa-id="select_clothing_type" name="clothing_type" id="univer_list">
-                                    <!-- <option value="">«Choisissez»</option> -->
-                                    <option data-qa-id="select_clothing_type_0" value="Femme">Femme</option>
-                                    <option data-qa-id="select_clothing_type_1" value="Maternité">Maternité</option>
-                                    <option data-qa-id="select_clothing_type_2" value="Homme">Homme</option>
-                                    <option data-qa-id="select_clothing_type_3" value="Enfant">Enfant</option>
+                            <div class="_2gTTZ"><select data-qa-id="select_clothing_type" name="clothing_type"
+                                    id="univer_list">
+                                    <option value="">«Choisissez»</option>
+                                    @foreach($univers as $univer)
+                                    <option data-qa-id="select_clothing_type_0" value="{{$univer['id']}}">
+                                        {{$univer['c_univer']}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div><!-- react-text: 519 -->
@@ -42,9 +43,12 @@
                                             d="M23.37 5.62a2.15 2.15 0 0 0-3 0L12 13.87 3.68 5.62a2.2 2.2 0 0 0-3.05 0 2.1 2.1 0 0 0 0 3l9.86 9.76a2.14 2.14 0 0 0 3 0l9.86-9.76a2.1 2.1 0 0 0 .02-3z">
                                         </path>
                                     </svg></span></div>
-                            <div class="_2gTTZ"><select data-qa-id="select_clothing_st" disabled="" name="clothing_st" >
+                            <div class="_2gTTZ">
+                                <select data-qa-id="select_clothing_st" name="clothing_st" id="cut_list">
                                     <option value="">«Choisissez»</option>
-                                </select></div>
+                                   
+                                </select>
+                            </div>
                         </div>
                         <div class="_18n2o"><span class="TextLink-15wnQ">Guide des tailles</span></div>
                         <!-- react-text: 534 -->
@@ -63,34 +67,13 @@
                                         </path>
                                     </svg></span></div>
                             <div class="_2gTTZ">
-                                <select data-qa-id="select_clothing_category" name="clothing_category" id="category_list">
-                                    <!-- <option value="">«Choisissez»</option> -->
-                                    <option data-qa-id="select_clothing_category_0" value="robe">Robes / jupes</option>
-                                    <option data-qa-id="select_clothing_category_1" value="manteau">Manteaux &amp;
-                                        Vestes</option>
-                                    <option data-qa-id="select_clothing_category_2" value="haut">Hauts / T-Shirts /
-                                        Polos</option>
-                                    <option data-qa-id="select_clothing_category_3" value="pantalon">Pantalons</option>
-                                    <option data-qa-id="select_clothing_category_4" value="pull">Pulls / Gilets /
-                                        Mailles</option>
-                                    <option data-qa-id="select_clothing_category_5" value="jean">Jeans</option>
-                                    <option data-qa-id="select_clothing_category_6" value="chemise">Chemises /
-                                        Chemisiers</option>
-                                    <option data-qa-id="select_clothing_category_7" value="costume">Costumes / Tailleurs
-                                    </option>
-                                    <option data-qa-id="select_clothing_category_8" value="short">Shorts / Pantacourts /
-                                        Bermudas</option>
-                                    <option data-qa-id="select_clothing_category_9" value="sport">Sports / Danse
-                                    </option>
-                                    <option data-qa-id="select_clothing_category_10" value="maillot">Maillots de bain
-                                        &amp; vêtements de plage</option>
-                                    <option data-qa-id="select_clothing_category_11" value="lingerie">Lingerie</option>
-                                    <option data-qa-id="select_clothing_category_12" value="sousvetement">Sous-vêtements
-                                        &amp; vêtements de nuit</option>
-                                    <option data-qa-id="select_clothing_category_13" value="deguisement">Déguisement
-                                    </option>
-                                    <option data-qa-id="select_clothing_category_14" value="mariage">Mariage</option>
-                                    <option data-qa-id="select_clothing_category_15" value="autre">Autres</option>
+                                <select data-qa-id="select_clothing_category" name="clothing_category"
+                                    id="category_list">
+                                    <option value="">«Choisissez»</option>
+                                    @foreach($types as $type)
+                                    <option data-qa-id="select_clothing_category_0" value="{{$type['id']}}">
+                                        {{$type['type_name']}}</option>
+                                    @endforeach
                                 </select></div>
                         </div><!-- react-text: 563 -->
                         <!-- /react-text -->
@@ -107,130 +90,14 @@
                                             d="M23.37 5.62a2.15 2.15 0 0 0-3 0L12 13.87 3.68 5.62a2.2 2.2 0 0 0-3.05 0 2.1 2.1 0 0 0 0 3l9.86 9.76a2.14 2.14 0 0 0 3 0l9.86-9.76a2.1 2.1 0 0 0 .02-3z">
                                         </path>
                                     </svg></span></div>
-                            <div class="_2gTTZ"><select data-qa-id="select_clothing_brand" name="clothing_brand" id="brand_list">
-                                    <!-- <option value="">«Choisissez»</option> -->
-                                    <option data-qa-id="select_clothing_brand_0" value="abercrombiefitch">Abercrombie
-                                        &amp; Fitch</option>
-                                    <option data-qa-id="select_clothing_brand_1" value="adidas">Adidas</option>
-                                    <option data-qa-id="select_clothing_brand_2" value="aigle">Aigle</option>
-                                    <option data-qa-id="select_clothing_brand_3" value="alainmanoukian">Alain Manoukian
-                                    </option>
-                                    <option data-qa-id="select_clothing_brand_4" value="armani">Armani</option>
-                                    <option data-qa-id="select_clothing_brand_5" value="asos">Asos</option>
-                                    <option data-qa-id="select_clothing_brand_6" value="benetton">Benetton</option>
-                                    <option data-qa-id="select_clothing_brand_7" value="bershka">Bershka</option>
-                                    <option data-qa-id="select_clothing_brand_8" value="billabong">Billabong</option>
-                                    <option data-qa-id="select_clothing_brand_9" value="bizzbee">Bizzbee</option>
-                                    <option data-qa-id="select_clothing_brand_10" value="bonobo">Bonobo</option>
-                                    <option data-qa-id="select_clothing_brand_11" value="brice">Brice</option>
-                                    <option data-qa-id="select_clothing_brand_12" value="burberry">Burberry</option>
-                                    <option data-qa-id="select_clothing_brand_13" value="burton">Burton</option>
-                                    <option data-qa-id="select_clothing_brand_14" value="ca">C&amp;A</option>
-                                    <option data-qa-id="select_clothing_brand_15" value="cachecache">Cache Cache
-                                    </option>
-                                    <option data-qa-id="select_clothing_brand_16" value="calvinklein">Calvin Klein
-                                    </option>
-                                    <option data-qa-id="select_clothing_brand_17" value="camaieu">Camaieu</option>
-                                    <option data-qa-id="select_clothing_brand_18" value="canadagoose">Canada Goose
-                                    </option>
-                                    <option data-qa-id="select_clothing_brand_19" value="carhartt">Carhartt</option>
-                                    <option data-qa-id="select_clothing_brand_20" value="caroll">Caroll</option>
-                                    <option data-qa-id="select_clothing_brand_21" value="catimini">Catimini</option>
-                                    <option data-qa-id="select_clothing_brand_22" value="celio">Celio</option>
-                                    <option data-qa-id="select_clothing_brand_23" value="chevignon">Chevignon</option>
-                                    <option data-qa-id="select_clothing_brand_24" value="chipie">Chipie</option>
-                                    <option data-qa-id="select_clothing_brand_25" value="comptoirdescotonniers">Comptoir
-                                        Des Cotonniers</option>
-                                    <option data-qa-id="select_clothing_brand_26" value="copcopine">Cop copine</option>
-                                    <option data-qa-id="select_clothing_brand_27" value="cyrillus">Cyrillus</option>
-                                    <option data-qa-id="select_clothing_brand_28" value="damart">Damart</option>
-                                    <option data-qa-id="select_clothing_brand_29" value="ddp">Ddp</option>
-                                    <option data-qa-id="select_clothing_brand_30" value="desigual">Desigual</option>
-                                    <option data-qa-id="select_clothing_brand_31" value="devred">Devred</option>
-                                    <option data-qa-id="select_clothing_brand_32" value="diesel">Diesel</option>
-                                    <option data-qa-id="select_clothing_brand_33" value="dpam">DPAM</option>
-                                    <option data-qa-id="select_clothing_brand_34" value="ellesse">Ellesse</option>
-                                    <option data-qa-id="select_clothing_brand_35" value="esprit">Esprit</option>
-                                    <option data-qa-id="select_clothing_brand_36" value="etam">Etam</option>
-                                    <option data-qa-id="select_clothing_brand_37" value="fredperry">Fred Perry</option>
-                                    <option data-qa-id="select_clothing_brand_38" value="gstar">G-Star</option>
-                                    <option data-qa-id="select_clothing_brand_39" value="gap">Gap</option>
-                                    <option data-qa-id="select_clothing_brand_40" value="gemo">Gemo</option>
-                                    <option data-qa-id="select_clothing_brand_41" value="graindemalice">Grain de malice
-                                    </option>
-                                    <option data-qa-id="select_clothing_brand_42" value="guess">Guess</option>
-                                    <option data-qa-id="select_clothing_brand_43" value="hm">H&amp;M</option>
-                                    <option data-qa-id="select_clothing_brand_44" value="hollister">Hollister</option>
-                                    <option data-qa-id="select_clothing_brand_45" value="hugoboss">Hugo Boss</option>
-                                    <option data-qa-id="select_clothing_brand_46" value="ikks">Ikks</option>
-                                    <option data-qa-id="select_clothing_brand_47" value="jacadi">Jacadi</option>
-                                    <option data-qa-id="select_clothing_brand_48" value="jackjones">Jack &amp; Jones
-                                    </option>
-                                    <option data-qa-id="select_clothing_brand_49" value="jacquelineriu">Jacqueline Riu
-                                    </option>
-                                    <option data-qa-id="select_clothing_brand_50" value="jennyfer">Jennyfer</option>
-                                    <option data-qa-id="select_clothing_brand_51" value="jules">Jules</option>
-                                    <option data-qa-id="select_clothing_brand_52" value="kway">K-Way</option>
-                                    <option data-qa-id="select_clothing_brand_53" value="kaporal">Kaporal</option>
-                                    <option data-qa-id="select_clothing_brand_54" value="kappa">Kappa</option>
-                                    <option data-qa-id="select_clothing_brand_55" value="kenzo">Kenzo</option>
-                                    <option data-qa-id="select_clothing_brand_56" value="kookai">Kookai</option>
-                                    <option data-qa-id="select_clothing_brand_57" value="lacoste">Lacoste</option>
-                                    <option data-qa-id="select_clothing_brand_58" value="lafuma">Lafuma</option>
-                                    <option data-qa-id="select_clothing_brand_59" value="letempsdescerises">Le Temps des
-                                        Cerises</option>
-                                    <option data-qa-id="select_clothing_brand_60" value="lee">Lee</option>
-                                    <option data-qa-id="select_clothing_brand_61" value="leecooper">Lee Cooper</option>
-                                    <option data-qa-id="select_clothing_brand_62" value="levis">Levi's</option>
-                                    <option data-qa-id="select_clothing_brand_63" value="mango">Mango</option>
-                                    <option data-qa-id="select_clothing_brand_64" value="mim">Mim</option>
-                                    <option data-qa-id="select_clothing_brand_65" value="morgan">Morgan</option>
-                                    <option data-qa-id="select_clothing_brand_66" value="nafnaf">Naf Naf</option>
-                                    <option data-qa-id="select_clothing_brand_67" value="napapijri">Napapijri</option>
-                                    <option data-qa-id="select_clothing_brand_68" value="nike">Nike</option>
-                                    <option data-qa-id="select_clothing_brand_69" value="oneill">O'Neill</option>
-                                    <option data-qa-id="select_clothing_brand_70" value="oakwood">Oakwood</option>
-                                    <option data-qa-id="select_clothing_brand_71" value="okaidi">Okaidi</option>
-                                    <option data-qa-id="select_clothing_brand_72" value="orchestra">Orchestra</option>
-                                    <option data-qa-id="select_clothing_brand_73" value="oxbow">Oxbow</option>
-                                    <option data-qa-id="select_clothing_brand_74" value="pepejeans">Pepe Jeans</option>
-                                    <option data-qa-id="select_clothing_brand_75" value="petitbateau">Petit Bateau
-                                    </option>
-                                    <option data-qa-id="select_clothing_brand_76" value="pimkie">Pimkie</option>
-                                    <option data-qa-id="select_clothing_brand_77" value="promod">Promod</option>
-                                    <option data-qa-id="select_clothing_brand_78" value="puma">Puma</option>
-                                    <option data-qa-id="select_clothing_brand_79" value="quechua">Quechua</option>
-                                    <option data-qa-id="select_clothing_brand_80" value="quiksilver">Quiksilver</option>
-                                    <option data-qa-id="select_clothing_brand_81" value="ralphlauren">Ralph Lauren
-                                    </option>
-                                    <option data-qa-id="select_clothing_brand_82" value="redskins">Redskins</option>
-                                    <option data-qa-id="select_clothing_brand_83" value="reebok">Reebok</option>
-                                    <option data-qa-id="select_clothing_brand_84" value="roxy">Roxy</option>
-                                    <option data-qa-id="select_clothing_brand_85" value="sandro">Sandro</option>
-                                    <option data-qa-id="select_clothing_brand_86" value="sergeblanco">Serge Blanco
-                                    </option>
-                                    <option data-qa-id="select_clothing_brand_87" value="sergentmajor">Sergent Major
-                                    </option>
-                                    <option data-qa-id="select_clothing_brand_88" value="stradivarius">Stradivarius
-                                    </option>
-                                    <option data-qa-id="select_clothing_brand_89" value="superdry">Superdry</option>
-                                    <option data-qa-id="select_clothing_brand_90" value="tapealoeil">Tape a loeil
-                                    </option>
-                                    <option data-qa-id="select_clothing_brand_91" value="teddysmith">Teddy smith
-                                    </option>
-                                    <option data-qa-id="select_clothing_brand_92" value="thekooples">The Kooples
-                                    </option>
-                                    <option data-qa-id="select_clothing_brand_93" value="thenorthface">The north face
-                                    </option>
-                                    <option data-qa-id="select_clothing_brand_94" value="timberland">Timberland</option>
-                                    <option data-qa-id="select_clothing_brand_95" value="tommyhilfiger">Tommy Hilfiger
-                                    </option>
-                                    <option data-qa-id="select_clothing_brand_96" value="uniqlo">Uniqlo</option>
-                                    <option data-qa-id="select_clothing_brand_97" value="versace">Versace</option>
-                                    <option data-qa-id="select_clothing_brand_98" value="vertbaudet">Vertbaudet</option>
-                                    <option data-qa-id="select_clothing_brand_99" value="zapa">Zapa</option>
-                                    <option data-qa-id="select_clothing_brand_100" value="zara">Zara</option>
-                                    <option data-qa-id="select_clothing_brand_101" value="autre">Autre</option>
+                            <div class="_2gTTZ"><select data-qa-id="select_clothing_brand" name="clothing_brand"
+                                    id="brand_list">
+                                    <option value="">«Choisissez»</option>
+                                    @foreach($marks as $mark)
+                                    <option data-qa-id="select_clothing_brand_0" value="{{$mark['id']}}">
+                                        {{$mark['mark_name']}}</option>
+
+                                    @endforeach
                                 </select></div>
                         </div><!-- react-text: 678 -->
                         <!-- /react-text -->
@@ -247,35 +114,13 @@
                                             d="M23.37 5.62a2.15 2.15 0 0 0-3 0L12 13.87 3.68 5.62a2.2 2.2 0 0 0-3.05 0 2.1 2.1 0 0 0 0 3l9.86 9.76a2.14 2.14 0 0 0 3 0l9.86-9.76a2.1 2.1 0 0 0 .02-3z">
                                         </path>
                                     </svg></span></div>
-                            <div class="_2gTTZ"><select data-qa-id="select_clothing_color" name="clothing_color" id="color_list">
-                                    <!-- <option value="">«Choisissez»</option> -->
-                                    <option data-qa-id="select_clothing_color_0" value="noir">Noir</option>
-                                    <option data-qa-id="select_clothing_color_1" value="gris">Gris / Anthracite</option>
-                                    <option data-qa-id="select_clothing_color_2" value="argente">Argenté / Acier
-                                    </option>
-                                    <option data-qa-id="select_clothing_color_3" value="blanc">Blanc</option>
-                                    <option data-qa-id="select_clothing_color_4" value="creme">Crème / Blanc cassé /
-                                        Écru</option>
-                                    <option data-qa-id="select_clothing_color_5" value="beige">Beige / Camel</option>
-                                    <option data-qa-id="select_clothing_color_6" value="jaune">Jaune / Moutarde</option>
-                                    <option data-qa-id="select_clothing_color_7" value="orange">Orange / Corail</option>
-                                    <option data-qa-id="select_clothing_color_8" value="rouge">Rouge / Bordeaux</option>
-                                    <option data-qa-id="select_clothing_color_9" value="rose">Rose / Fushia</option>
-                                    <option data-qa-id="select_clothing_color_10" value="violet">Violet / Mauve</option>
-                                    <option data-qa-id="select_clothing_color_11" value="lavande">Lavande / Lilas
-                                    </option>
-                                    <option data-qa-id="select_clothing_color_12" value="bleu">Bleu / Ciel</option>
-                                    <option data-qa-id="select_clothing_color_13" value="marine">Marine / Turquoise
-                                    </option>
-                                    <option data-qa-id="select_clothing_color_14" value="vert">Vert</option>
-                                    <option data-qa-id="select_clothing_color_15" value="kaki">Kaki</option>
-                                    <option data-qa-id="select_clothing_color_16" value="marron">Marron</option>
-                                    <option data-qa-id="select_clothing_color_17" value="dore">Doré / Bronze / Cuivre
-                                    </option>
-                                    <option data-qa-id="select_clothing_color_18" value="multicolore">Multicolore
-                                    </option>
-                                    <option data-qa-id="select_clothing_color_19" value="imprime">Imprimés multicolore
-                                    </option>
+                            <div class="_2gTTZ"><select data-qa-id="select_clothing_color" name="clothing_color"
+                                    id="color_list">
+                                    <option value="">«Choisissez»</option>
+                                    @foreach($colors as $color)
+                                    <option data-qa-id="select_clothing_color_0" value="{{$color['id']}}">
+                                        {{$color['color']}}</option>
+                                    @endforeach
                                 </select></div>
                         </div><!-- react-text: 711 -->
                         <!-- /react-text -->
@@ -293,17 +138,15 @@
                                         </path>
                                     </svg></span></div>
                             <div class="_2gTTZ">
-                                <select data-qa-id="select_clothing_condition"
-                                    name="clothing_condition" id="state_list">
-                                    <!-- <option value="">«Choisissez»</option> -->
-                                    <option data-qa-id="select_clothing_condition_0" value="Neuf avec étiquette">Neuf avec étiquette
-                                    </option>
-                                    <option data-qa-id="select_clothing_condition_1" value="Neuf sans étiquette">Neuf sans étiquette
-                                    </option>
-                                    <option data-qa-id="select_clothing_condition_2" value="Très bon état">Très bon état</option>
-                                    <option data-qa-id="select_clothing_condition_3" value="Bon état">Bon état</option>
-                                    <option data-qa-id="select_clothing_condition_4" value="État satisfaisant">État satisfaisant
-                                    </option>
+                                <select data-qa-id="select_clothing_condition" name="clothing_condition"
+                                    id="state_list">
+                                    <option value="">«Choisissez»</option>
+                                    @foreach($states as $state)
+                                    <option data-qa-id="select_clothing_condition_0" value="{{$state['id']}}">
+                                        {{$state['state']}}</option>
+
+
+                                    @endforeach
                                 </select></div>
                         </div><!-- react-text: 729 -->
                         <!-- /react-text -->
@@ -312,13 +155,15 @@
             </div>
             <div class="_3lDmP">
                 <div class="_39Nsm">
-                    <div><button class="_2sNbI _1xIyN _2BP2c" type="button" data-qa-id="newad-button-prev-ad_params">
+                    <div><button class="_2sNbI _1xIyN _2BP2c" type="button" data-qa-id="newad-button-prev-ad_params"
+                            id="return_button">
                             <!-- react-text: 734 -->Retour
                             <!-- /react-text --></button></div>
-                    <div><button class="_2sNbI e943h" type="submit" data-qa-id="newad-button-next-ad_params"
-                            disabled="">
-                            <!-- react-text: 737 -->Continuer
-                            <!-- /react-text --></button></div>
+                    <div>
+                        <button class="_2sNbI _1xIyN _2xk2l" type="submit" data-qa-id="newad-button-next-ad_params">
+                            <!-- react-text: 4414 -->Continuer
+                            <!-- /react-text --></button>
+                    </div>
                 </div>
             </div>
         </form>
@@ -342,34 +187,35 @@
     </div>
 </div>
 <script>
-$(document).ready(function(){
+    $(document).ready(function () {
 
-    var option_values=[];
-    var count = document.getElementById("state_list").options.length;
-   
-    for(var i=0;i<count;i++)
-    {
-        option_values.push(document.getElementById("state_list").options.item(i).text);
-    }
+       var univers=document.getElementById("univer_list");
+       var univer_id
+       univers.addEventListener("change",function(){
+        univer_id=document.getElementById("univer_list").value;
 
-    console.log(option_values);
+        $.ajax({
+         type:'POST',
+         url:"{{route('getCuts')}}",
+         data:{
+              id:univer_id,
+             _token:$('input[name=_token]').val(),
+         },
+         dataType:"json",
+            success:function(data){
+                console.log(data.result);   
+                $('#cut_list').empty();
+                for(var i=0;i<data.result.length;i++)
+                {
+                    $('#cut_list').append('<option data-qa-id="select_model_1" value="'+data.result[i]['id']+'">'+data.result[i]['cut_name']+'</option>');
+                }
+            
+            }      
+    });
 
-    $.ajax({
-
-type:'POST',
-url:"{{route('addData')}}",
-data:{
-     option:option_values,
-    _token:$('input[name=_token]').val(),
-},
-dataType:"json",
-   success:function(data){
-       console.log(data.result);                                   
-   }
-
-});
+       });
 
 
-});
+    });
 
 </script>

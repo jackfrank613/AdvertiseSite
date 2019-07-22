@@ -46,6 +46,8 @@ class PostAdmobController extends BaseController
 
         }
         $data['subcategories'] = $subcategory;
+
+     
       
         return view('frontoffice.home.advertisepage')->with('data', $data);
 
@@ -60,21 +62,18 @@ class PostAdmobController extends BaseController
          'adName'=>$data['adName'],
          'adType'=>$data['adType'],
       );
+  //  echo json_encode(array('error'=>false,'result'=>$input_categoryType)); exit;
    
       
-    //  $id=PostedAdmob::insertGetId($input_categoryType); 
-    //  $sub_result=SubCategory::where("id", "=", $data['sub_id'])->first()->toArray();
+     $id=PostedAdmob::insertGetId($input_categoryType); 
+     $sub_result=SubCategory::where("id", "=", $data['sub_id'])->first()->toArray();
      
-
-     $returnHTML = view('frontoffice.categories.clothing')->render();
-      echo json_encode(array('error'=>false,'result'=>$returnHTML)); exit;
-
       if($id>0)
       {
+        
         if($sub_result['option'] !="")
         {  
           $sub_option=$sub_result['option'];
-         //echo json_encode(array('error'=>false,'result'=>$sub_result['option'])); exit;
          if($sub_option=="carcategory")
          {
           $markers=CarMarker::orderBy('id')->get()->toarray();
@@ -85,8 +84,13 @@ class PostAdmobController extends BaseController
           $returnHTML = view('frontoffice.categories.cavanacategory')->render();
          }
         else if($sub_option=="clothing"){
-         
-         
+          $colors=ClothingColor::orderBy('id')->get()->toarray();
+          $marks=ClothingMark::orderBy('id')->get()->toarray();
+          $states=ClothingState::orderBy('id')->get()->toarray();
+          $types=ClothingType::orderBy('id')->get()->toarray();
+          $univers=ClothingUniver::orderBy('id')->get()->toarray();
+          $returnHTML = view('frontoffice.categories.clothing')->with(compact('univers','types','states','marks','colors'))->render();
+      
         }
         else if($sub_option=="motocyclecategory"){
           $returnHTML = view('frontoffice.categories.motocyclecategory')->render();
@@ -110,7 +114,7 @@ class PostAdmobController extends BaseController
      
           $returnHTML = view('frontoffice.categories.shoescategory')->with(compact('univers','types','colors','states','markers','sizes'))->render();
          }
-         else if($sub_option=="officeorshopcategory"){
+         else{
           $returnHTML = view('frontoffice.categories.officeorshopcategory')->render();
 
          }
@@ -269,11 +273,12 @@ class PostAdmobController extends BaseController
     public function addData(){
       
       $data=$_POST['option'];
-    echo json_encode(array('error'=>false,'result'=>$data)); exit;
+    //echo json_encode(array('error'=>false,'result'=>$data)); exit;
       foreach ($data as $item) 
       {
-        ClothingState::insert([
-          'state'=>$item,
+        ClothingCut::insert([
+          'un_id'=>4,
+          'cut_name'=>$item,
         ]); 
       }
       echo json_encode(array('error'=>false,'result'=>"success")); exit;
@@ -285,6 +290,14 @@ class PostAdmobController extends BaseController
 
        $result_models=CarModel::where('mark_id','=',$data['id'])->get()->toarray();
        echo json_encode(array('error'=>false,'result'=>$result_models)); exit;
+
+    }
+    public function getCuts(){
+      
+      $data=$_POST;
+     // echo json_encode(array('error'=>false,'result'=>$data['un_id'])); exit;
+       $result_cuts=ClothingCut::where('un_id','=',$data['id'])->get()->toarray();
+       echo json_encode(array('error'=>false,'result'=>$result_cuts)); exit;
 
     }
 
@@ -424,7 +437,7 @@ class PostAdmobController extends BaseController
       // echo json_encode(array('error'=>true,'result'=>$input_rental)); exit;
 
 
-      $result=PostedAdmob::where('id','=',261)->update($input_shoes);
+      $result=PostedAdmob::where('id','=',$data['id'])->update($input_shoes);
       if($result)
       {
         echo json_encode(array('error'=>false,'result'=>"success")); exit;
@@ -433,7 +446,29 @@ class PostAdmobController extends BaseController
         echo json_encode(array('error'=>true,'result'=>"error")); exit;
       }
     }
+    public function addClothing(){
+      $data=$_POST;
+   //   echo json_encode(array('error'=>true,'result'=>$data)); exit;
+      $input_shoes=array(
+        'clothing_univer'=>$data['clothing_univer'],
+        'clothing_type'=>$data['clothing_type'],
+        'clothing_cut'=>$data['clothing_cut'],
+        'clothing_mark'=>$data['clothing_mark'],
+        'clothing_color'=>$data['clothing_color'],
+        'clothing_state'=>$data['clothing_state'],
+      );
+      // echo json_encode(array('error'=>true,'result'=>$input_rental)); exit;
 
+
+      $result=PostedAdmob::where('id','=',$data['id'])->update($input_shoes);
+      if($result)
+      {
+        echo json_encode(array('error'=>false,'result'=>"success")); exit;
+      }
+      else{
+        echo json_encode(array('error'=>true,'result'=>"error")); exit;
+      }
+    }
 
     public function addHousemate(){
       $data=$_POST;
