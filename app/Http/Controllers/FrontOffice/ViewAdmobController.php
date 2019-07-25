@@ -79,7 +79,7 @@ class ViewAdmobController extends Controller
         //
         $admob=PostedAdmob::where('id',$id)->leftJoin('jamii_user_table','jamii_user_table.u_id','=','jamii_postedadmob.user_id')->first()->toarray();
         $similars=PostedAdmob::where('sub_id',$admob['sub_id'])->where('id','!=',$id)->limit(4)->get()->toarray();
-      //  print_r($admob);exit;
+        // print_r($admob);exit;
          return view('frontoffice.home.showitem')->with(compact('admob','similars'));
     }
 

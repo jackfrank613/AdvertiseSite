@@ -19,7 +19,7 @@ class HomeController extends Controller
     }
 
     public function getParticular(){
-      
+        //Session::put('userid',"test");
         return view('frontoffice/ath/particularpage');
 
     }
@@ -72,10 +72,10 @@ class HomeController extends Controller
             
             $id = JamiiUser::create($input_data)->id;
                 // session(['userid' => $id]);
-                Session::put('userid',$id);
+                Session::put('userid',"test");
                // echo session()->get('userid'); exit;
           //  echo json_encode(array('error'=>false,'result'=> "Register successfully"));exit;
-
+ Session::put('userid',"test");
             if($id > 0){
                 
                 // echo json_encode(array('error'=>false,'result'=> session()->get('userid')));exit;

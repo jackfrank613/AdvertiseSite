@@ -98,11 +98,7 @@ Route::group([
       
         Route::post('/adddata/','PostAdmobController@addData')->name('addData');
 
-
-        
-
-
-
-
-
   });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

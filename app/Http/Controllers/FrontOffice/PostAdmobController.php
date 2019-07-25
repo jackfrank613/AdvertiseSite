@@ -7,6 +7,8 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 use maxh\Nominatim\Nominatim;
 use App\Category;
 use App\SubCategory;
@@ -23,12 +25,11 @@ use App\ClothingMark;
 use App\ClothingState;
 use App\ClothingType;
 use App\ClothingUniver;
-use Illuminate\Http\Request;
 use App\CarMarker;
 use App\CarModel;
 use App\JamiiUser;
 use Validator;
-use Illuminate\Support\Facades\Session;
+
 
 
 class PostAdmobController extends BaseController
@@ -36,8 +37,9 @@ class PostAdmobController extends BaseController
    
     public function initCategory(Request $request)
     {
-       $value = Session::get('userid');
-       print_r($value);exit;
+      
+      //  $value = Session::get('userid');
+      //  print_r($value);exit;
         $data = [];
         $result=Category::get();
         $data['categories'] = $result->toArray();
@@ -51,9 +53,7 @@ class PostAdmobController extends BaseController
         }
         $data['subcategories'] = $subcategory;
      
-       
-       
-        return view('frontoffice.home.advertisepage')->with(compact('data','email'));
+        return view('frontoffice.home.advertisepage')->with(compact('data'));
 
     }
 
@@ -242,6 +242,7 @@ class PostAdmobController extends BaseController
           'id' => $data['id'],
           'enable'=>$data['enable'],
           'create_time'=>$date,
+          'user_id'=>4,
         );
           // echo json_encode(array('result'=>$data['id']));
          $result=PostedAdmob::where('id',"=",$data['id'])->update($input_category_information);

@@ -1232,7 +1232,7 @@
                         } else {
                             console.log(data.result);
 
-                           //  window.location = base_url + "/frontoffice/aditems";
+                           window.location = base_url + "/frontoffice/advertise";
                              
                         }
 
