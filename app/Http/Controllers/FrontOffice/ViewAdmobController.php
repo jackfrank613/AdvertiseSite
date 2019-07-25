@@ -26,24 +26,24 @@ class ViewAdmobController extends Controller
         $offset = 0;
         $particular_count=JamiiUser::where('type','=','particular')->get()->count();
         $professional_count=JamiiUser::where('type','=','professional')->get()->count();
-        $admobs=PostedAdmob::orderBy('jamii_postedadmob.updated_at','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->get()->toarray();
+        $admobs=PostedAdmob::orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->get()->toarray();
         
         $current_page = 1;
         $today = date('Y-m-d');
         $yesterday = date('Y-m-d', strtotime('-1 days'));
         // echo $yesterday;exit;
         foreach($admobs as $one){
-            $date=date('Y-m-d',strtotime($one['updated_at']));
+            $date=date('Y-m-d',strtotime($one['create_time']));
             if(strtotime($date) == strtotime($today)){
-                $one['updated_at'] = "Today " . date('H:i',strtotime($one['updated_at']));
+                $one['create_time'] = "Today " . date('H:i',strtotime($one['create_time']));
             }else if(strtotime($date) == strtotime($yesterday)){
-                $one['updated_at'] = "Yesterday " . date('H:i',strtotime($one['updated_at']));
+                $one['create_time'] = "Yesterday " . date('H:i',strtotime($one['create_time']));
                 
             }
             $result[] = $one;
         }
 
-       // print_r($result);exit;
+        //print_r($result);exit;
         return view('frontoffice.home.displayadmob')->with(compact('result','count', 'current_page', 'page_count','particular_count','professional_count'));
     }
 
@@ -78,9 +78,9 @@ class ViewAdmobController extends Controller
     {
         //
         $admob=PostedAdmob::where('id',$id)->leftJoin('jamii_user_table','jamii_user_table.u_id','=','jamii_postedadmob.user_id')->first()->toarray();
-       // print_r($admob);exit;
-
-       return view('frontoffice.home.showitem')->with(compact('admob'));
+        $similars=PostedAdmob::where('sub_id',$admob['sub_id'])->where('id','!=',$id)->limit(4)->get()->toarray();
+      //  print_r($admob);exit;
+         return view('frontoffice.home.showitem')->with(compact('admob','similars'));
     }
 
     /**

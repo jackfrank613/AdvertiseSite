@@ -323,8 +323,8 @@
                    
                 }
                 else{
-                   
-                    window.location= base_url + "/frontoffice/dadmob";
+                   console.log(data.result);
+                   window.location= base_url + "/frontoffice/advertise";
                 }
 
             },

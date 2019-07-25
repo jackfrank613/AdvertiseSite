@@ -297,7 +297,7 @@ $(document).ready(function(){
                 console.log(data);
                 if(!data.error)
                 {
-                     window.location= base_url + "/frontoffice/dadmob";
+                     window.location= base_url + "/frontoffice/aditems";
                 }
                 else{
                     document.getElementById('professional_request_error').innerHTML = '<i class="fa fa-warning" style="vertical-align: baseline;"></i>' + data.result;

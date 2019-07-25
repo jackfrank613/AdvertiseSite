@@ -26,18 +26,22 @@ use App\ClothingUniver;
 use Illuminate\Http\Request;
 use App\CarMarker;
 use App\CarModel;
+use App\JamiiUser;
 use Validator;
+use Illuminate\Support\Facades\Session;
 
 
 class PostAdmobController extends BaseController
 {
    
-    public function initCategory()
+    public function initCategory(Request $request)
     {
+       $value = Session::get('userid');
+       print_r($value);exit;
         $data = [];
         $result=Category::get();
         $data['categories'] = $result->toArray();
-      // print_r($data);exit();
+      
         $subcategory = [];
         foreach($result as $category)
         {
@@ -46,32 +50,35 @@ class PostAdmobController extends BaseController
 
         }
         $data['subcategories'] = $subcategory;
-
      
-      
-        return view('frontoffice.home.advertisepage')->with('data', $data);
+       
+       
+        return view('frontoffice.home.advertisepage')->with(compact('data','email'));
 
     }
 
     public function addSelectCategory()
     {
       
+     
       $data=$_POST;
+     
       $input_categoryType=array(
          'sub_id'=>$data['sub_id'],
          'adName'=>$data['adName'],
          'adType'=>$data['adType'],
       );
-  //  
+   
     // $input_categoryType=array(
-    //      'sub_id'=>2,
+    //      'sub_id'=>33,
     //      'adName'=>"dfdfdf",
     //      'adType'=>"dfsdfd",
     //   );
- 
-     $id=PostedAdmob::insertGetId($input_categoryType); 
-     //echo json_encode(array('error'=>false,'result'=>$input_categoryType)); exit;
    
+      $id=PostedAdmob::insertGetId($input_categoryType); 
+     
+    //  echo json_encode(array('error'=>false,'result'=>$input_categoryType)); exit;
+    
      $sub_result=SubCategory::where("s_id", "=", $data['sub_id'])->first()->toArray();
      
       if($id>0)
@@ -228,11 +235,13 @@ class PostAdmobController extends BaseController
       public function addInformation(){
        
          $data=$_POST;
+         $date = date('Y-m-d H:i:s');
          $input_category_information=array(
           'email'=>$data['email'],
           'phone'=>$data['phone'],
           'id' => $data['id'],
           'enable'=>$data['enable'],
+          'create_time'=>$date,
         );
           // echo json_encode(array('result'=>$data['id']));
          $result=PostedAdmob::where('id',"=",$data['id'])->update($input_category_information);

@@ -34,6 +34,7 @@
     <link type="text/css" rel="stylesheet" href="{{asset('css/custom.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('css/header.css')}}">
     <link type="text/css" rel="stylesheet" href="{{asset('css/showitem.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{asset('css/image-slider.css')}}">
 
 
 
@@ -91,7 +92,7 @@
                                 </div>
                                 <div class="_1wspb trackable" data-qa-id="adview_button_contact_sticky">
                                     <div>
-                                  
+
                                         <button class="_2sNbI _1xIyN GXQkc _2xk2l"><span class="_1vK7W _1eOK1 QKFCn"
                                                 name="message"><svg viewBox="0 0 24 24" data-name="Calque 1"
                                                     focusable="false">
@@ -99,8 +100,8 @@
                                                         d="M21.6 0H2.4A2.41 2.41 0 0 0 0 2.4v14.4a2.41 2.41 0 0 0 2.4 2.4h16.8L24 24V2.4A2.41 2.41 0 0 0 21.6 0zM18 14.4h-7.2a1.29 1.29 0 0 1-1.2-1.2 1.29 1.29 0 0 1 1.2-1.2H18a1.29 1.29 0 0 1 1.2 1.2 1.29 1.29 0 0 1-1.2 1.2zm0-3.6H6a1.29 1.29 0 0 1-1.2-1.2A1.29 1.29 0 0 1 6 8.4h12a1.29 1.29 0 0 1 1.2 1.2 1.29 1.29 0 0 1-1.2 1.2zm0-3.6H6A1.29 1.29 0 0 1 4.8 6 1.29 1.29 0 0 1 6 4.8h12A1.29 1.29 0 0 1 19.2 6 1.29 1.29 0 0 1 18 7.2z">
                                                     </path>
                                                 </svg></span><span>Envoyer un message</span></button>
-                                        
-                                            </div>
+
+                                    </div>
                                 </div><span class="trackable"><button class="_2sNbI ObuDQ GXQkc _2xk2l _2SmEn"
                                         data-qa-id="offer-button"><span class="_1vK7W _1eOK1 QKFCn"
                                             name="deliverylbcoutline"><svg viewBox="0 0 24 24" data-name="Calque 1"
@@ -224,7 +225,7 @@
                                     </div>
                                     <div data-qa-id="adview_date">
                                         <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">{{$admob['updated_at']}}</font>
+                                            <font style="vertical-align: inherit;">{{$admob['create_time']}}</font>
                                         </font>
                                     </div>
                                 </div>
@@ -258,7 +259,7 @@
                                     </div>
                                     <div class="_3ey2y">
                                         <div class="_2DA_H trackable" data-qa-id="adview_description_link_report"><a
-                                                href="https://www.leboncoin.fr/support/form/0?id=1&amp;subject=15&amp;ad=1650442866">
+                                                href="#">
                                                 <div class="_3jAsY">
                                                     <div class="_3KcVT"><span class="_1vK7W" name="warning"><svg
                                                                 viewBox="0 0 24 24" data-name="Calque 1"
@@ -283,88 +284,14 @@
                                         <div class="LazyLoad is-visible">
                                             <div class="_2-Wn4" data-qa-id="adview_location_map">
                                                 <div class="sF8mr" data-qa-id="locationMap_container">
-                                                    <div class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
-                                                        tabindex="0">
-                                                        <!-- react-empty: 6168 -->
-                                                        <!-- react-empty: 6169 -->
-                                                        <!-- react-empty: 6170 -->
-                                                        <div class="leaflet-pane leaflet-map-pane"
-                                                            style="transform: translate3d(0px, 0px, 0px);">
-                                                            <div class="leaflet-pane leaflet-tile-pane">
-                                                                <div class="leaflet-layer "
-                                                                    style="z-index: 1; opacity: 1;">
-                                                                    <div class="leaflet-tile-container leaflet-zoom-animated"
-                                                                        style="z-index: 20; transform: translate3d(0px, 0px, 0px) scale(1);">
-                                                                        <img alt="" role="presentation"
-                                                                            src="https://proxytile-4.leboncoin.fr/maptile/2.1/maptile/newest/normal.day/12/2037/1462/256/png8?lg=fre"
-                                                                            class="leaflet-tile leaflet-tile-loaded"
-                                                                            style="width: 256px; height: 256px; transform: translate3d(217px, -68px, 0px); opacity: 1;"><img
-                                                                            alt="" role="presentation"
-                                                                            src="https://proxytile-3.leboncoin.fr/maptile/2.1/maptile/newest/normal.day/12/2036/1462/256/png8?lg=fre"
-                                                                            class="leaflet-tile leaflet-tile-loaded"
-                                                                            style="width: 256px; height: 256px; transform: translate3d(-39px, -68px, 0px); opacity: 1;"><img
-                                                                            alt="" role="presentation"
-                                                                            src="https://proxytile-1.leboncoin.fr/maptile/2.1/maptile/newest/normal.day/12/2038/1462/256/png8?lg=fre"
-                                                                            class="leaflet-tile leaflet-tile-loaded"
-                                                                            style="width: 256px; height: 256px; transform: translate3d(473px, -68px, 0px); opacity: 1;">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="leaflet-pane leaflet-shadow-pane"></div>
-                                                            <div class="leaflet-pane leaflet-overlay-pane"><svg
-                                                                    pointer-events="none" class="leaflet-zoom-animated"
-                                                                    width="815" height="138" viewBox="-68 -11 815 138"
-                                                                    style="transform: translate3d(-68px, -11px, 0px);">
-                                                                    <g>
-                                                                        <path class="leaflet-interactive"
-                                                                            stroke="#4183d7" stroke-opacity="1"
-                                                                            stroke-width="3" stroke-linecap="round"
-                                                                            stroke-linejoin="round" fill="#4183d7"
-                                                                            fill-opacity="0.2" fill-rule="evenodd"
-                                                                            d="M199 90L211 63L211 47L207 42L216 25L212 24L211 21L209 20L216 10L214 3L204 -7L208 -9L211 -13L213 -13L213 -11L215 -14L347 -14L356 -7L385 36L394 36L393 35L399 35L411 31L410 42L405 51L401 55L395 72L396 75L391 81L393 86L406 96L404 102L384 98L377 99L376 129L292 130L292 127L290 125L284 128L283 127L295 116L295 113L301 106L302 103L300 92L293 95L286 102L284 100L248 97L203 90z">
-                                                                        </path>
-                                                                    </g>
-                                                                </svg></div>
-                                                            <div class="leaflet-pane leaflet-marker-pane"></div>
-                                                            <div class="leaflet-pane leaflet-tooltip-pane"></div>
-                                                            <div class="leaflet-pane leaflet-popup-pane"></div>
-                                                            <div class="leaflet-proxy leaflet-zoom-animated"></div>
-                                                        </div>
-                                                        <div class="leaflet-control-container">
-                                                            <div class="leaflet-top leaflet-left">
-                                                                <div
-                                                                    class="leaflet-control-zoom leaflet-bar leaflet-control">
-                                                                    <a class="leaflet-control-zoom-in" href="#"
-                                                                        title="Zoom in" role="button"
-                                                                        aria-label="Zoom in">+</a><a
-                                                                        class="leaflet-control-zoom-out" href="#"
-                                                                        title="Zoom out" role="button"
-                                                                        aria-label="Zoom out">−</a></div>
-                                                            </div>
-                                                            <div class="leaflet-top leaflet-right"></div>
-                                                            <div class="leaflet-bottom leaflet-left"></div>
-                                                            <div class="leaflet-bottom leaflet-right">
-                                                                <div
-                                                                    class="leaflet-control-attribution leaflet-control">
-                                                                    <a href="http://leafletjs.com"
-                                                                        title="A JS library for interactive maps">Leaflet</a>
-                                                                    | <a href="http://here.com/terms" target="_blank"
-                                                                        rel="noopener" tabindex="-1">© 2019 HERE</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <div id="map"></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="_1aCZv" data-qa-id="adview_location_informations"><span>
-                                                <!-- react-text: 5973 -->Saujon
-                                                <!-- /react-text -->
-                                                <!-- react-text: 5974 -->
-                                                <!-- /react-text -->
-                                                <!-- react-text: 5975 -->17600
-                                                <!-- /react-text --></span>
-                                            <div class="_2eUnk"><button class="_2sNbI _1xIyN _2BP2c UbPim">
+                                        <div class="_1aCZv" data-qa-id="adview_location_informations">
+                                            <span>{{$admob['adress']}}</span>
+                                            <div class="_2eUnk"><button
+                                                    class="_2sNbI _1xIyN _2BP2c UbPim mapmodal_button">
                                                     <!-- react-text: 5978 -->Voir sur la carte
                                                     <!-- /react-text --></button></div>
                                         </div>
@@ -431,179 +358,50 @@
                             </div>
                             <div>
                                 <ul class="_3stQa">
-                                    <li class="_3D9GO"><a class="xA__p trackable" title="Taille haie"
-                                            href="/vi/1631761656.htm/">
-                                            <figure class="_2nHTx">
-                                                <div class="_5ZXm_">
-                                                    <div class="_2ge_d"><img
-                                                            src="https://img7.leboncoin.fr/ad-small/8b9f7068e70b6e30fc5bddbc6da83dddd8afb256.jpg"
-                                                            class="_29EFB" alt="Taille haie"></div>
-                                                    <figcaption class="_1CCIO"><span class="_1vK7W"
-                                                            name="camera_old"><svg height="32" width="32"
-                                                                viewBox="0 0 32 32" class="_1f3Hk" focusable="false">
-                                                                <g fill="none">
-                                                                    <circle cx="16" cy="16" fill="#000" r="4.267">
-                                                                    </circle>
-                                                                    <path
-                                                                        d="M12 2.667L9.56 5.333H5.333A2.675 2.675 0 0 0 2.667 8v16c0 1.467 1.2 2.667 2.666 2.667h21.334c1.466 0 2.666-1.2 2.666-2.667V8c0-1.467-1.2-2.667-2.666-2.667H22.44L20 2.667h-8z"
-                                                                        fill="#000"></path>
-                                                                    <path d="M0 0h32v32H0z"></path>
-                                                                </g>
-                                                            </svg></span>
-                                                        <div class="_1pYJt">2</div>
-                                                    </figcaption>
-                                                </div>
-                                            </figure>
-                                            <div class="_34QNM">
-                                                <div class="_3RDHA">Taille haie</div>
-                                                <p class="_1-aXU">Saint-Médard-en-Jalles</p>
-                                                <div class="_386c2 _2Fe1I"><span class="_1F5u3">
-                                                        <!-- react-text: 6222 -->70
-                                                        <!-- /react-text -->
-                                                        <!-- react-text: 6223 --> €
-                                                        <!-- /react-text --></span>
-                                                    <div class="_1fCKz"></div>
-                                                </div>
+                                    @foreach ($similars as $one)
+                                    <li class="_3D9GO">
+                                    <a class="xA__p trackable" title="Taille haie"
+                                    href="{{URL::to('frontoffice/aditems')}}/{{$one['id']}}">
+                                        <figure class="_2nHTx">
+                                            <div class="_5ZXm_">
+                                                <div class="_2ge_d">
+                                                    <img
+                                                        src="{{asset('img/picture')}}/{{explode(",",$one['camera'])[0]}}"
+                                                        class="_29EFB" alt="Taille haie"></div>
+                                                <figcaption class="_1CCIO"><span class="_1vK7W"
+                                                        name="camera_old"><svg height="32" width="32"
+                                                            viewBox="0 0 32 32" class="_1f3Hk" focusable="false">
+                                                            <g fill="none">
+                                                                <circle cx="16" cy="16" fill="#000" r="4.267">
+                                                                </circle>
+                                                                <path
+                                                                    d="M12 2.667L9.56 5.333H5.333A2.675 2.675 0 0 0 2.667 8v16c0 1.467 1.2 2.667 2.666 2.667h21.334c1.466 0 2.666-1.2 2.666-2.667V8c0-1.467-1.2-2.667-2.666-2.667H22.44L20 2.667h-8z"
+                                                                    fill="#000"></path>
+                                                                <path d="M0 0h32v32H0z"></path>
+                                                            </g>
+                                                        </svg></span>
+                                                    <div class="_1pYJt">{{count(explode(",",$one['camera']))}}</div>
+                                                </figcaption>
                                             </div>
-                                        </a></li>
-                                    <li class="_3D9GO"><a class="xA__p trackable" title="Taille haie bosch"
-                                            href="/vi/1619837053.htm/">
-                                            <figure class="_2nHTx">
-                                                <div class="_5ZXm_">
-                                                    <div class="_2ge_d"><img
-                                                            src="https://img3.leboncoin.fr/ad-small/9945f05e954947321dc904bb65a84245dcf089ad.jpg"
-                                                            class="_29EFB" alt="Taille haie bosch"></div>
-                                                    <figcaption class="_1CCIO"><span class="_1vK7W"
-                                                            name="camera_old"><svg height="32" width="32"
-                                                                viewBox="0 0 32 32" class="_1f3Hk" focusable="false">
-                                                                <g fill="none">
-                                                                    <circle cx="16" cy="16" fill="#000" r="4.267">
-                                                                    </circle>
-                                                                    <path
-                                                                        d="M12 2.667L9.56 5.333H5.333A2.675 2.675 0 0 0 2.667 8v16c0 1.467 1.2 2.667 2.666 2.667h21.334c1.466 0 2.666-1.2 2.666-2.667V8c0-1.467-1.2-2.667-2.666-2.667H22.44L20 2.667h-8z"
-                                                                        fill="#000"></path>
-                                                                    <path d="M0 0h32v32H0z"></path>
-                                                                </g>
-                                                            </svg></span>
-                                                        <div class="_1pYJt">2</div>
-                                                    </figcaption>
-                                                </div>
-                                            </figure>
-                                            <div class="_34QNM">
-                                                <div class="_3RDHA">Taille haie bosch</div>
-                                                <p class="_1-aXU">Le Château-d'Oléron</p>
-                                                <div class="_386c2 _2Fe1I"><span class="_1F5u3">
-                                                        <!-- react-text: 6239 -->70
-                                                        <!-- /react-text -->
-                                                        <!-- react-text: 6240 --> €
-                                                        <!-- /react-text --></span>
-                                                    <div class="_1fCKz"></div>
-                                                </div>
+                                        </figure>
+                                        <div class="_34QNM">
+                                            <div class="_3RDHA">Taille haie</div>
+                                            <p class="_1-aXU">Saint-Médard-en-Jalles</p>
+                                            <div class="_386c2 _2Fe1I"><span class="_1F5u3">
+                                                    <!-- react-text: 6222 -->{{$one['price']}}
+                                                    <!-- /react-text -->
+                                                    <!-- react-text: 6223 --> €
+                                                    <!-- /react-text --></span>
+                                                <div class="_1fCKz"></div>
                                             </div>
-                                        </a></li>
-                                    <li class="_3D9GO"><a class="xA__p trackable" title="Taille haie sur perche"
-                                            href="/vi/1607489050.htm/">
-                                            <figure class="_2nHTx">
-                                                <div class="_5ZXm_">
-                                                    <div class="_2ge_d"><img
-                                                            src="https://img7.leboncoin.fr/ad-small/2762a7c2af4c7de2b4a1354ab16678ed7711d97a.jpg"
-                                                            class="_29EFB" alt="Taille haie sur perche"></div>
-                                                    <figcaption class="_1CCIO"><span class="_1vK7W"
-                                                            name="camera_old"><svg height="32" width="32"
-                                                                viewBox="0 0 32 32" class="_1f3Hk" focusable="false">
-                                                                <g fill="none">
-                                                                    <circle cx="16" cy="16" fill="#000" r="4.267">
-                                                                    </circle>
-                                                                    <path
-                                                                        d="M12 2.667L9.56 5.333H5.333A2.675 2.675 0 0 0 2.667 8v16c0 1.467 1.2 2.667 2.666 2.667h21.334c1.466 0 2.666-1.2 2.666-2.667V8c0-1.467-1.2-2.667-2.666-2.667H22.44L20 2.667h-8z"
-                                                                        fill="#000"></path>
-                                                                    <path d="M0 0h32v32H0z"></path>
-                                                                </g>
-                                                            </svg></span>
-                                                        <div class="_1pYJt">2</div>
-                                                    </figcaption>
-                                                </div>
-                                            </figure>
-                                            <div class="_34QNM">
-                                                <div class="_3RDHA">Taille haie sur perche</div>
-                                                <p class="_1-aXU">Le Taillan-Médoc</p>
-                                                <div class="_386c2 _2Fe1I"><span class="_1F5u3">
-                                                        <!-- react-text: 6256 -->70
-                                                        <!-- /react-text -->
-                                                        <!-- react-text: 6257 --> €
-                                                        <!-- /react-text --></span>
-                                                    <div class="_1fCKz"></div>
-                                                </div>
-                                            </div>
-                                        </a></li>
-                                    <li class="_3D9GO"><a class="xA__p trackable" title="Taille haie"
-                                            href="/vi/1625999286.htm/">
-                                            <figure class="_2nHTx">
-                                                <div class="_5ZXm_">
-                                                    <div class="_2ge_d"><img
-                                                            src="https://img0.leboncoin.fr/ad-small/6f2bc4d3ff305ee0c23936288ae8cdaacd3a7b87.jpg"
-                                                            class="_29EFB" alt="Taille haie"></div>
-                                                    <figcaption class="_1CCIO"><span class="_1vK7W"
-                                                            name="camera_old"><svg height="32" width="32"
-                                                                viewBox="0 0 32 32" class="_1f3Hk" focusable="false">
-                                                                <g fill="none">
-                                                                    <circle cx="16" cy="16" fill="#000" r="4.267">
-                                                                    </circle>
-                                                                    <path
-                                                                        d="M12 2.667L9.56 5.333H5.333A2.675 2.675 0 0 0 2.667 8v16c0 1.467 1.2 2.667 2.666 2.667h21.334c1.466 0 2.666-1.2 2.666-2.667V8c0-1.467-1.2-2.667-2.666-2.667H22.44L20 2.667h-8z"
-                                                                        fill="#000"></path>
-                                                                    <path d="M0 0h32v32H0z"></path>
-                                                                </g>
-                                                            </svg></span>
-                                                        <div class="_1pYJt">2</div>
-                                                    </figcaption>
-                                                </div>
-                                            </figure>
-                                            <div class="_34QNM">
-                                                <div class="_3RDHA">Taille haie</div>
-                                                <p class="_1-aXU">Mérignac</p>
-                                                <div class="_386c2 _2Fe1I"><span class="_1F5u3">
-                                                        <!-- react-text: 6273 -->80
-                                                        <!-- /react-text -->
-                                                        <!-- react-text: 6274 --> €
-                                                        <!-- /react-text --></span>
-                                                    <div class="_1fCKz"></div>
-                                                </div>
-                                            </div>
-                                        </a></li>
+                                        </div>
+                                    </a>
+                                  </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
-                        <div class="oykX4 _240CF sMU1c _12oyt _1wREY _1dt4D">
-                            <div>
-                                <div class="VB_Xx advertisingFooterXL">
-                                    <div class="teal-apn-lta-pv-container ">
-                                        <div>
-                                            <div id="google_adview-xl" class="apn-afs">
-                                                <div id="afscontainer1-xl"
-                                                    style="width: 100%; font-weight: normal; text-align: center; height: 140px;">
-                                                    <iframe frameborder="0" marginwidth="0" marginheight="0"
-                                                        allowtransparency="true" scrolling="no" width="100%"
-                                                        name="{&quot;name&quot;:&quot;master-1&quot;,&quot;master-1&quot;:{&quot;container&quot;:&quot;afscontainer1-xl&quot;,&quot;linkTarget&quot;:&quot;_blank&quot;,&quot;lines&quot;:3,&quot;colorAdBorder&quot;:&quot;FAFAFA&quot;,&quot;colorText&quot;:&quot;1a1a1a&quot;,&quot;colorTitleLink&quot;:&quot;336699&quot;,&quot;colorDomainLink&quot;:&quot;4078C0&quot;,&quot;colorBackground&quot;:&quot;FFFFFF&quot;,&quot;colorLocation&quot;:&quot;1a1a1a&quot;,&quot;fontFamily&quot;:&quot;trebuchet ms, sans serif&quot;,&quot;fontSizeTitle&quot;:&quot;14px&quot;,&quot;fontSizeDescription&quot;:&quot;13px&quot;,&quot;fontSizeDomainLink&quot;:&quot;14px&quot;,&quot;fontSizeLocation&quot;:11,&quot;titleBold&quot;:1,&quot;rolloverAdBackgroundColor&quot;:&quot;F7F7F7&quot;,&quot;noTitleUnderline&quot;:true,&quot;lineHeightDomainLink&quot;:35,&quot;domainLinkAboveDescription&quot;:false,&quot;width&quot;:&quot;100%&quot;,&quot;type&quot;:&quot;ads&quot;,&quot;hl&quot;:&quot;fr&quot;,&quot;columns&quot;:1,&quot;horizontalAlignment&quot;:&quot;left&quot;,&quot;resultsPageQueryParam&quot;:&quot;query&quot;,&quot;adLayout&quot;:&quot;sellerFirst&quot;,&quot;styleId&quot;:&quot;6319749081&quot;}}"
-                                                        id="master-1"
-                                                        src="https://www.google.com/afs/ads?q=Taille%20haie%20WOLF&amp;lo=false&amp;adpage=1&amp;r=m&amp;client=pdp-scm-leboncoin&amp;hl=fr&amp;type=0&amp;psid=6319749081&amp;oe=UTF-8&amp;ie=UTF-8&amp;fexp=21404&amp;format=n3&amp;ad=n3&amp;nocache=4641563983326250&amp;num=0&amp;output=uds_ads_only&amp;v=3&amp;adext=sr1&amp;bsl=8&amp;u_his=30&amp;u_tz=480&amp;dt=1563983326252&amp;u_w=1920&amp;u_h=1080&amp;biw=1410&amp;bih=888&amp;psw=1410&amp;psh=2002&amp;frm=0&amp;uio=sl0lo0sr1ff6st14sd13sv14sc11lv35va0af7-&amp;cont=afscontainer1-xl&amp;jsv=95398&amp;rurl=https%3A%2F%2Fwww.leboncoin.fr%2Fjardinage%2F1650442866.htm%2F#master-1"
-                                                        style="visibility: visible; height: 140px;"
-                                                        title="Annonces Google"></iframe></div>
-                                            </div>
-                                            <div id="google_adview-l" class="apn-afs">
-                                                <div id="afscontainer1-l"></div>
-                                            </div>
-                                            <div id="google_adview-m" class="apn-afs">
-                                                <div id="afscontainer1-m"></div>
-                                            </div>
-                                            <div id="google_adview-s" class="apn-afs">
-                                                <div id="afscontainer1-s"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
                     </section>
                     <section class="_1_H-h">
                         <div class="_2-Dyg _2-42k">
@@ -696,7 +494,7 @@
                                                                                         d="M23.67 22.05L1.87.43a1.08 1.08 0 0 0-1.54 0A1 1 0 0 0 .33 2l.67.71 3.4 3.37v13.47a2.2 2.2 0 0 0 2.21 2.17h13.54l2 2a1.06 1.06 0 0 0 1.54 0 1.16 1.16 0 0 0-.02-1.67zm-14.2-11l2 1.95H10a1.17 1.17 0 0 1-1.08-1 .86.86 0 0 1 .55-.92zm.55 6.3a1.1 1.1 0 0 1-1.1-1.09A1.18 1.18 0 0 1 10 15.2h3.63l2.2 2.18zM16.62 10.86a1.17 1.17 0 0 1 1.1 1.14 1.31 1.31 0 0 1-.44.86l4.85 4.78V7.38a2.14 2.14 0 0 0-.66-1.52L16.18.65A2.2 2.2 0 0 0 14.64 0H6.72a2.39 2.39 0 0 0-1.66.76l10.24 10.1zm-2.2-4.34V1.63l6.06 6h-5a1.09 1.09 0 0 1-1.06-1.11z">
                                                                                     </path>
                                                                                 </svg></span></span></a></span>
-                                                        
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -704,23 +502,26 @@
                                                 <div class="_2sPVF trackable"
                                                     data-qa-id="adview_button_contact_contact">
                                                     <div>
-                                                    <a href="{{URL::to('frontoffice/aditems/sendmessage')}}/{{$admob['user_id']}}/{{$admob['name']}}">
-                                                        <button class="_2sNbI _1xIyN GXQkc _2xk2l" id="message_click" style="background:#f56b2a"><span
-                                                                class="_1vK7W _1eOK1 QKFCn" name="message" ><svg
-                                                                    viewBox="0 0 24 24" data-name="Calque 1"
-                                                                    focusable="false">
-                                                                    <path
-                                                                        d="M21.6 0H2.4A2.41 2.41 0 0 0 0 2.4v14.4a2.41 2.41 0 0 0 2.4 2.4h16.8L24 24V2.4A2.41 2.41 0 0 0 21.6 0zM18 14.4h-7.2a1.29 1.29 0 0 1-1.2-1.2 1.29 1.29 0 0 1 1.2-1.2H18a1.29 1.29 0 0 1 1.2 1.2 1.29 1.29 0 0 1-1.2 1.2zm0-3.6H6a1.29 1.29 0 0 1-1.2-1.2A1.29 1.29 0 0 1 6 8.4h12a1.29 1.29 0 0 1 1.2 1.2 1.29 1.29 0 0 1-1.2 1.2zm0-3.6H6A1.29 1.29 0 0 1 4.8 6 1.29 1.29 0 0 1 6 4.8h12A1.29 1.29 0 0 1 19.2 6 1.29 1.29 0 0 1 18 7.2z">
-                                                                    </path>
-                                                                </svg></span><span>Envoyer un message</span></button>
-                                                    </a>
+                                                        <a
+                                                            href="{{URL::to('frontoffice/aditems/sendmessage')}}/{{$admob['user_id']}}/{{$admob['name']}}">
+                                                            <button class="_2sNbI _1xIyN GXQkc _2xk2l"
+                                                                id="message_click" style="background:#f56b2a"><span
+                                                                    class="_1vK7W _1eOK1 QKFCn" name="message"><svg
+                                                                        viewBox="0 0 24 24" data-name="Calque 1"
+                                                                        focusable="false">
+                                                                        <path
+                                                                            d="M21.6 0H2.4A2.41 2.41 0 0 0 0 2.4v14.4a2.41 2.41 0 0 0 2.4 2.4h16.8L24 24V2.4A2.41 2.41 0 0 0 21.6 0zM18 14.4h-7.2a1.29 1.29 0 0 1-1.2-1.2 1.29 1.29 0 0 1 1.2-1.2H18a1.29 1.29 0 0 1 1.2 1.2 1.29 1.29 0 0 1-1.2 1.2zm0-3.6H6a1.29 1.29 0 0 1-1.2-1.2A1.29 1.29 0 0 1 6 8.4h12a1.29 1.29 0 0 1 1.2 1.2 1.29 1.29 0 0 1-1.2 1.2zm0-3.6H6A1.29 1.29 0 0 1 4.8 6 1.29 1.29 0 0 1 6 4.8h12A1.29 1.29 0 0 1 19.2 6 1.29 1.29 0 0 1 18 7.2z">
+                                                                        </path>
+                                                                    </svg></span><span>Envoyer un
+                                                                    message</span></button>
+                                                        </a>
                                                     </div>
                                                 </div>
-                                                  <span class="trackable"><button
-                                                        class="_2sNbI ObuDQ GXQkc _2xk2l _2SmEn"
-                                                        data-qa-id="offer-button" style="display: none" ><span class="_1vK7W _1eOK1 QKFCn"
-                                                            name="deliverylbcoutline"><svg viewBox="0 0 24 24"
-                                                                data-name="Calque 1" focusable="false">
+                                                <span class="trackable"><button class="_2sNbI ObuDQ GXQkc _2xk2l _2SmEn"
+                                                        data-qa-id="offer-button" style="display: none"><span
+                                                            class="_1vK7W _1eOK1 QKFCn" name="deliverylbcoutline"><svg
+                                                                viewBox="0 0 24 24" data-name="Calque 1"
+                                                                focusable="false">
                                                                 <path
                                                                     d="M24 4.77v-.1a1 1 0 0 0-.07-.23v-.05c0-.05 0 0 0 0a.79.79 0 0 0-.17-.2v-.05a.94.94 0 0 0-.37-.14l-11-3.9a.91.91 0 0 0-.67 0L.59 4.42a.88.88 0 0 0-.59.83V17a.92.92 0 0 0 .49.8l11.72 6.11a1 1 0 0 0 .45.11.87.87 0 0 0 .49-.14l10.41-6.24a.91.91 0 0 0 .44-.77v-12-.1zm-11.87-2.9L20.76 5l-2.89 1.41L9.3 3zm-.39 19.72l-9.87-5.15V6.63l9.87 4zm.9-12.54L3.38 5.28l3.44-1.34 8.89 3.56zm9.49 7.3l-8.52 5.11V10.6L17 8.9v3a.94.94 0 0 0 1.87 0V8l3.26-1.7z">
                                                                 </path>
@@ -735,6 +536,19 @@
                     </section>
                 </section>
             </section>
+        </div>
+        <div class="modal _3vig1 globalContent contentAfterOpen" id="map_modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body" style="height:500px">
+                            <div id="dialog_map" style="height:100%"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
     </section>
@@ -762,14 +576,80 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="{{asset('js/owl.carousel.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/image-slider.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/jquery.magnific-popup.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/Pagination.js')}}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXAEJOmp7v7uXD-Vrmaw6xjBl_ZExIn7g&libraries=places">
+    </script>
 </body>
 <script>
+    var poly;
+    var address ="{{$admob['adress']}}";
+
+    function initAutocomplete() {
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({
+            'address': address
+        }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var Lat = results[0].geometry.location.lat();
+                console.log(Lat);
+                var Lng = results[0].geometry.location.lng();
+                var myLatlng = new google.maps.LatLng(Lat, Lng);
+                var myOptions = {
+                    zoom: 14,
+                    center: new google.maps.LatLng(Lat, Lng)
+                };
+                var map = new google.maps.Map(
+                    document.getElementById("map"), myOptions);
+
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    title: address
+                });
+                marker.setMap(map);
+            } else {
+                alert("Something got wrong " + status);
+            }
+        });
+        google.maps.event.addDomListener(window, "load", initAutocomplete);
+
+    }
+    function dialog_map_init() {
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({
+            'address': address
+        }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var Lat = results[0].geometry.location.lat();
+                console.log(Lat);
+                var Lng = results[0].geometry.location.lng();
+                var myLatlng = new google.maps.LatLng(Lat, Lng);
+                var myOptions = {
+                    zoom: 14,
+                    center: new google.maps.LatLng(Lat, Lng)
+                };
+                var map = new google.maps.Map(
+                    document.getElementById("dialog_map"), myOptions);
+
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    title: address
+                });
+                marker.setMap(map);
+            } else {
+                alert("Something got wrong " + status);
+            }
+        });
+        // google.maps.event.addDomListener(window, "load", dialog_map_init);
+
+    }
+
     $(document).ready(function () {
-        
+
+        initAutocomplete();
+
         var slideIndex = 1;
         showDivs(slideIndex);
 
@@ -807,10 +687,14 @@
             $('#number_click').css("display", "block");
         });
 
-
-
     });
+    $('.mapmodal_button').click(function () {
+        dialog_map_init();
+        $('#map_modal').modal('toggle');
+    })
+
 </script>
+
 @yield('after-script')
 
 </html>

@@ -6,12 +6,15 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\JamiiUser;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+
 
 class HomeController extends Controller
 {
     // hompage call
     public function getHomepage()
     {
+       
         return view('frontoffice/home/homepage');
     }
 
@@ -68,10 +71,15 @@ class HomeController extends Controller
             );
             
             $id = JamiiUser::create($input_data)->id;
-            echo json_encode(array('error'=>false,'result'=> $id));exit;
-            if($id > 0){
-                echo json_encode(array('error'=>false,'result'=> "Register successfully"));exit;
+                // session(['userid' => $id]);
+                Session::put('userid',$id);
+               // echo session()->get('userid'); exit;
+          //  echo json_encode(array('error'=>false,'result'=> "Register successfully"));exit;
 
+            if($id > 0){
+                
+                // echo json_encode(array('error'=>false,'result'=> session()->get('userid')));exit;
+                echo json_encode(Session::get('userid'));exit;
             }else {
                 echo json_encode(array('error'=>true,'result'=> "Register failed"));exit;
             }

@@ -586,7 +586,7 @@
                                                                 
                                                             <p class="mAnae" itemprop="availabilityStarts"
                                                                 data-qa-id="listitem_date" content="Aujourd'hui, 15:01"
-                                                                data-reactid="413">{{$item['updated_at']}}</p>
+                                                                data-reactid="413">{{$item['create_time']}}</p>
                                                         </div>
                                                     </section>
                                                 </a>

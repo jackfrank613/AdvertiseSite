@@ -609,8 +609,9 @@
                                                                 <!-- /react-text -->
                                                                 <!-- react-text: 600 -->*
                                                                 <!-- /react-text --></label>
-                                                            <div class="_2wuZK"><input type="text" class="_2erBM QY7wN" disabled=""
-                                                                    data-qa-id="newad-input_email" value="jackfrank613@gmail.com"
+                                                            <div class="_2wuZK">
+                                                                <input type="text" class="_2erBM QY7wN" disabled=""
+                                                                    data-qa-id="newad-input_email" value="{{$email}}"
                                                                     name="email"></div>
                                                         </div>
                                                     </div>
