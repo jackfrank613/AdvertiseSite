@@ -120,7 +120,7 @@
                                                                 @endphp
                                                                 <div class="PXI8z">
                                                                     <div class="eILDV subcategory"
-                                                                        data-subid="{{$sub_cate['id']}}">
+                                                                        data-subid="{{$sub_cate['s_id']}}">
                                                                         {{$sub_cate['sname']}}</div>
                                                                 </div>
                                                                 @php
@@ -178,7 +178,7 @@
                                                             @endphp
                                                             <div class="PXI8z">
                                                                 <div class="eILDV subcategory"
-                                                                    data-subid="{{$sub_cate['id']}}">
+                                                                    data-subid="{{$sub_cate['s_id']}}">
                                                                     {{$sub_cate['sname']}}</div>
                                                             </div>
                                                             @php

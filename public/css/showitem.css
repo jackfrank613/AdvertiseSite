@@ -1,0 +1,12 @@
+.mySlides {display:none;}
+.oykX4 {
+    border-bottom: 1px solid #cad1d9;
+  }
+  @media (min-width: 971px)
+  {
+    .oykX4 {
+        margin: 0;
+    }
+  }
+
+ 

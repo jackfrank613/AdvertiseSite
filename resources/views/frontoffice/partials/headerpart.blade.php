@@ -1,4 +1,5 @@
-<header role="banner">
+<header role="banner" >
+<div id="totalbar">
     <div class="_1gYyO">
         <div class="_3sMB4">
             <div class="_1i0e0 _3Tx6j _1Mheader">
@@ -22,7 +23,7 @@
                             <nav class="_2cE2d">
                                 <div class="ZGBSO">
                                     <div class="evhnB">
-                                        <a title="Déposer une annonce" data-qa-id="header_newad_link" href="#"
+                                        <a title="Déposer une annonce" data-qa-id="header_newad_link" href="{{route('advertise')}}"
                                             class="trackable" data-reactid="28">
                                             <div class="_21saW _3vGiz" data-reactid="29">
                                                 <div class="WFlbY" data-reactid="30"><span class="_1vK7W _1MlsO"
@@ -41,7 +42,7 @@
                                         </a>
 
                                     </div>
-                                    <a title="Rechercher" class="trackable" href="{{route('dadmob')}}" data-reactid="33">
+                                    <a title="Rechercher" class="trackable" href="{{route('viewadmob')}}" data-reactid="33">
                                         <div class="_21saW" data-reactid="34">
                                             <div class="WFlbY" data-reactid="35"><span class="_1vK7W _1MlsO"
                                                     name="search"><svg viewBox="0 0 24 24" data-name="Calque 1"
@@ -62,7 +63,8 @@
                     </div>
                     <div class="s_gWv">
                         <div class="_1tksy">
-                            <a title="Mes recherches" class="trackable" data-toggle="modal" data-target="#Login_modal" data-reactid="40">
+                        
+                            <a title="Mes recherches" class="trackable"  href="{{route('research')}}"  data-reactid="40">
                                 <div class="_3Vuug" data-reactid="41">
                                     <div class="_6rJYh" data-reactid="42"><span class="_1vK7W _71Wec"
                                             name="notifoutline"><svg viewBox="0 0 24 24" data-name="Calque 1"
@@ -105,7 +107,7 @@
                                     <div class="_5GFF2" data-text="Messages" data-reactid="54">Messages</div>
                                 </div>
                             </a>
-                            <div class="_3Vuug _1ZnAB _1H2hI" data-reactid="55"
+                            <div class="_3Vuug _1ZnAB _1H2hI" data-toggle="modal" data-target="#Login_modal" data-reactid="55"
                                 data-qa-id="profilarea-logged" id="drop_group">
                                 <div class="_6rJYh" data-reactid="56">
                                     <span class="_1vK7W _71Wec" name="useroutline">
@@ -144,7 +146,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                             
                         </div>
                     </div>
 
@@ -187,7 +189,7 @@
                                         </path>
                                     </svg></span><span class="b8icv" data-reactid="78">Déposer une
                                     annonce</span></a></li>
-                        <li class="_3d08G" data-reactid="79"><a title="Rechercher" class="trackable" href="{{route('dadmob')}}"
+                        <li class="_3d08G" data-reactid="79"><a title="Rechercher" class="trackable" href="{{route('viewadmob')}}"
                                 data-reactid="80"><span class="_1vK7W" name="search"><svg viewBox="0 0 24 24"
                                         data-name="Calque 1" focusable="false">
                                         <path
@@ -263,6 +265,7 @@
             </div>
         </div>
     </div>
+</div>
 </header>
 @section('after-script')
 <script>
@@ -287,6 +290,13 @@
             }
           
         });
+        $(window).on('scroll', function() {
+        if (Math.round($(window).scrollTop()) > 100) {
+          $('.totalbar').addClass('scrolled');
+        } else {
+          $('.totalbar').removeClass('scrolled');
+        }
+      });
     });
 </script>
 @endsection

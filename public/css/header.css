@@ -188,3 +188,6 @@
   background: #8835d9;
   border-color: #8835d9;
 }
+.scrolled {
+  transition: 0.5s ease;
+ }

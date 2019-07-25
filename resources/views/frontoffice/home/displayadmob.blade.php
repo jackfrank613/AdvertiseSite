@@ -403,7 +403,8 @@
                             <div class="_3afM1">
                                 <div>
                                     <div><span class="_2oGk4">Prix entre</span>
-                                        <div class="_1uP35"><select data-qa-id="select-price_min">
+                                        <div class="_1uP35">
+                                            <select data-qa-id="select-price_min">
                                                 <option>Prix min</option>
                                                 <option value="">0</option>
                                                 <option value="10">10</option>
@@ -484,13 +485,13 @@
                                                 data-reactid="365">
                                                 <!-- react-text: 366 -->Particuliers
                                                 <!-- /react-text --><span data-reactid="367"><span class="_2ilNG"
-                                                        data-reactid="368">1 121 864</span></span></label></div>
+                                                        data-reactid="368">{{$particular_count}}</span></span></label></div>
                                         <div data-reactid="369"><input type="checkbox" name="adlist_filter"
                                                 data-qa-id="result_pro" id="result_pro" value="pro" data-reactid="370"
                                                 checked=""><label for="result_pro" data-reactid="371">
                                                 <!-- react-text: 372 -->Professionnels
                                                 <!-- /react-text --><span data-reactid="373"><span class="_2ilNG"
-                                                        data-reactid="374">129 966</span></span></label></div>
+                                                        data-reactid="374">{{$professional_count}}</span></span></label></div>
                                         <div class="selectWrapper" data-reactid="375"><select class="select"
                                                 data-reactid="376">
                                                 <option selected="" value="time-desc" data-reactid="377">Tri : Plus
@@ -531,9 +532,10 @@
                                                         </div>
                                                     </div>
                                                     <div class="aYw-j" data-reactid="391"></div>
-                                                </div><a title="Peugeot 208 1.6 e-hdi fap 92 allure etg6 5p"
+                                                </div>
+                                                <a title="Peugeot 208 1.6 e-hdi fap 92 allure etg6 5p"
                                                     class="clearfix trackable" rel="nofollow"
-                                                    href="/voitures/1647690628.htm/" data-reactid="392">
+                                                    href="{{URL::to('frontoffice/aditems')}}/{{$item['id']}}" data-reactid="392">
                                                     <div class="_3dPxM" data-reactid="393"><span class="_a3cT"
                                                             data-reactid="394">
                                                             <div class="LazyLoad is-visible" data-reactid="395">
@@ -550,7 +552,7 @@
                                                                     <path
                                                                         d="M12 8.556c1.988 0 3.6 1.642 3.6 3.667 0 2.024-1.612 3.666-3.6 3.666s-3.6-1.642-3.6-3.666c0-2.025 1.612-3.667 3.6-3.667zm0 9.778c3.313 0 6-2.738 6-6.111 0-3.375-2.687-6.112-6-6.112-3.312 0-6 2.737-6 6.112 0 3.373 2.688 6.11 6 6.11zm9.6-15.89c1.32 0 2.4 1.1 2.4 2.444v14.667C24 20.9 22.92 22 21.6 22H2.4C1.08 22 0 20.9 0 19.555V4.89c0-1.345 1.08-2.445 2.4-2.445h3.804L7.68.795A2.415 2.415 0 0 1 9.456 0h5.088c.672 0 1.32.294 1.764.794l1.488 1.65H21.6z"
                                                                         fill="#000"></path>
-                                                                </svg></span><span data-reactid="398">3</span></span>
+                                                                </svg></span><span data-reactid="398">{{count(explode(",",$item['camera']))}}</span></span>
                                                     </div>
                                                     <section class="_2EDA9" data-reactid="399">
                                                         <div data-reactid="400">
@@ -584,7 +586,7 @@
                                                                 
                                                             <p class="mAnae" itemprop="availabilityStarts"
                                                                 data-qa-id="listitem_date" content="Aujourd'hui, 15:01"
-                                                                data-reactid="413">Aujourd'hui, 15:01</p>
+                                                                data-reactid="413">{{$item['updated_at']}}</p>
                                                         </div>
                                                     </section>
                                                 </a>
@@ -637,7 +639,7 @@
                                                 </div>
                                             </div><a title="PROMO villa10 per,pisc vue pano ss vis a vis calme"
                                                 class="_2fKRW" data-qa-id="aditem_container"
-                                                href="/locations_gites/1643088160.htm/" data-reactid="1633"><span
+                                                href="#" data-reactid="1633"><span
                                                     class="_1sbqp" data-reactid="1634">À LA UNE</span>
                                                 <div class="_2-jsN" data-reactid="1635">
                                                     <div class="LazyLoad is-visible" data-reactid="1636">
@@ -737,7 +739,7 @@
                                                 </div>
                                             </div><a title="Rachete comptant mobilier ancien tableaux bibelots"
                                                 class="_2fKRW" data-qa-id="aditem_container"
-                                                href="/ameublement/1645306598.htm/" data-reactid="1672"><span
+                                                href="#" data-reactid="1672"><span
                                                     class="_1sbqp" data-reactid="1673">À LA UNE</span>
                                                 <div class="_2-jsN" data-reactid="1674">
                                                     <div class="LazyLoad is-visible" data-reactid="1675">
@@ -799,7 +801,7 @@
                                                 </div>
                                             </div><a title="Batiment metal de 8m par 15m" class="_2fKRW"
                                                 data-qa-id="aditem_container"
-                                                href="/equipements_industriels/1636449964.htm/"
+                                                href="#"
                                                 data-reactid="1696"><span class="_1sbqp" data-reactid="1697">À LA
                                                     UNE</span>
                                                 <div class="_2-jsN" data-reactid="1698">
@@ -897,189 +899,189 @@
                             <div class="_3UM0h">
                                 <ul>
                                     <li class="_3f3p2"><a title="EMPLOI" class="trackable"
-                                            href="/_emploi_/offres/aquitaine/">EMPLOI</a></li>
+                                            href="#">EMPLOI</a></li>
                                     <li class=""><a title="Offres d'emploi" class="trackable"
                                             href="/offres_d_emploi/offres/aquitaine/">Offres d'emploi</a></li>
-                                    <li class=""><a href="https://go.onelink.me/3471221858/bcf737d8" target="_self"
+                                    <li class=""><a href="#" target="_self"
                                             title="Offres d'emploi Cadres" class="trackable">Offres d'emploi Cadres</a>
                                     </li>
                                     <li class="_3f3p2"><a title="VEHICULES" class="trackable"
-                                            href="/_vehicules_/offres/aquitaine/">VEHICULES</a></li>
+                                            href="#">VEHICULES</a></li>
                                     <li class=""><a title="Voitures" class="trackable"
-                                            href="/voitures/offres/aquitaine/">Voitures</a></li>
+                                    href="#">Voitures</a></li>
                                     <li class=""><a title="Motos" class="trackable"
-                                            href="/motos/offres/aquitaine/">Motos</a></li>
+                                    href="#">Motos</a></li>
                                     <li class=""><a title="Caravaning" class="trackable"
-                                            href="/caravaning/offres/aquitaine/">Caravaning</a></li>
+                                    href="#">Caravaning</a></li>
                                     <li class=""><a title="Utilitaires" class="trackable"
-                                            href="/utilitaires/offres/aquitaine/">Utilitaires</a></li>
+                                    href="#">Utilitaires</a></li>
                                     <li class=""><a
-                                            href="https://www.truckscorner.fr/#xtor=CS1-16-[leboncoin]-[lien]-[lien_menu]-[tc]"
+                                    href="#"
                                             target="_self" title="Camions" class="trackable">Camions</a></li>
                                     <li class=""><a title="Nautisme" class="trackable"
-                                            href="/nautisme/offres/aquitaine/">Nautisme</a></li>
+                                    href="#">Nautisme</a></li>
                                     <li class=""><a title="Equipement Auto" class="trackable"
-                                            href="/equipement_auto/offres/aquitaine/">Equipement Auto</a></li>
+                                    href="#">Equipement Auto</a></li>
                                     <li class=""><a title="Equipement Moto" class="trackable"
-                                            href="/equipement_moto/offres/aquitaine/">Equipement Moto</a></li>
+                                    href="#">Equipement Moto</a></li>
                                     <li class=""><a title="Equipement Caravaning" class="trackable"
-                                            href="/equipement_caravaning/offres/aquitaine/">Equipement Caravaning</a>
+                                    href="#">Equipement Caravaning</a>
                                     </li>
                                     <li class=""><a title="Equipement Nautisme" class="trackable"
-                                            href="/equipement_nautisme/offres/aquitaine/">Equipement Nautisme</a></li>
+                                    href="#">Equipement Nautisme</a></li>
                                     <li class="_3f3p2"><a title="IMMOBILIER" class="trackable"
-                                            href="/_immobilier_/offres/aquitaine/">IMMOBILIER</a></li>
+                                            href="#">IMMOBILIER</a></li>
                                     <li class=""><a title="Ventes immobilières" class="trackable"
-                                            href="/ventes_immobilieres/offres/aquitaine/">Ventes immobilières</a></li>
-                                    <li class=""><a href="https://immobilierneuf.leboncoin.fr" target="_self"
+                                    href="#">Ventes immobilières</a></li>
+                                    <li class=""><a href="#" target="_self"
                                             title="Immobilier Neuf" class="trackable">Immobilier Neuf</a></li>
                                     <li class=""><a title="Locations" class="trackable"
-                                            href="/locations/offres/aquitaine/">Locations</a></li>
+                                    href="#">Locations</a></li>
                                     <li class=""><a title="Colocations" class="trackable"
-                                            href="/colocations/offres/aquitaine/">Colocations</a></li>
+                                    href="#">Colocations</a></li>
                                     <li class=""><a title="Bureaux &amp; Commerces" class="trackable"
-                                            href="/bureaux_commerces/offres/aquitaine/">Bureaux &amp; Commerces</a></li>
+                                    href="#">Bureaux &amp; Commerces</a></li>
                                 </ul>
                             </div>
                             <div class="_3UM0h">
                                 <ul>
                                     <li class="_3f3p2"><a title="VACANCES" class="trackable"
-                                            href="/_vacances_/offres/aquitaine/">VACANCES</a></li>
+                                    href="#">VACANCES</a></li>
                                     <li class=""><a title="Locations &amp; Gîtes" class="trackable"
-                                            href="/locations_gites/offres/aquitaine/">Locations &amp; Gîtes</a></li>
+                                    href="#">Locations &amp; Gîtes</a></li>
                                     <li class=""><a title="Chambres d'hôtes" class="trackable"
-                                            href="/chambres_d_hotes/offres/aquitaine/">Chambres d'hôtes</a></li>
+                                    href="#">Chambres d'hôtes</a></li>
                                     <li class=""><a title="Campings" class="trackable"
-                                            href="/campings/offres/aquitaine/">Campings</a></li>
+                                    href="#">Campings</a></li>
                                     <li class=""><a title="Hôtels" class="trackable"
-                                            href="/hotels/offres/aquitaine/">Hôtels</a></li>
+                                    href="#">Hôtels</a></li>
                                     <li class=""><a title="Hébergements insolites" class="trackable"
-                                            href="/hebergements_insolites/offres/aquitaine/">Hébergements insolites</a>
+                                    href="#">Hébergements insolites</a>
                                     </li>
                                     <li class=""><a
-                                            href="https://www.locasun-vp.fr/?afiliate=leboncoin&amp;utm_campaign=liencat_locasunvp_leboncoin&amp;utm_source=leboncoin&amp;utm_medium=cpc#ectrans=1"
+                                    href="#"
                                             target="_self" title="Ventes privées vacances" class="trackable">Ventes
                                             privées vacances</a></li>
                                     <li class="_3f3p2"><a title="MAISON" class="trackable"
-                                            href="/_maison_/offres/aquitaine/">MAISON</a></li>
+                                    href="#">MAISON</a></li>
                                     <li class=""><a title="Ameublement" class="trackable"
-                                            href="/ameublement/offres/aquitaine/">Ameublement</a></li>
+                                    href="#">Ameublement</a></li>
                                     <li class=""><a title="Electroménager" class="trackable"
-                                            href="/electromenager/offres/aquitaine/">Electroménager</a></li>
+                                    href="#">Electroménager</a></li>
                                     <li class=""><a title="Arts de la table" class="trackable"
-                                            href="/arts_de_la_table/offres/aquitaine/">Arts de la table</a></li>
+                                    href="#">Arts de la table</a></li>
                                     <li class=""><a title="Décoration" class="trackable"
-                                            href="/decoration/offres/aquitaine/">Décoration</a></li>
+                                    href="#">Décoration</a></li>
                                     <li class=""><a title="Linge de maison" class="trackable"
-                                            href="/linge_de_maison/offres/aquitaine/">Linge de maison</a></li>
+                                    href="#">Linge de maison</a></li>
                                     <li class=""><a title="Bricolage" class="trackable"
-                                            href="/bricolage/offres/aquitaine/">Bricolage</a></li>
+                                    href="#">Bricolage</a></li>
                                     <li class=""><a title="Jardinage" class="trackable"
-                                            href="/jardinage/offres/aquitaine/">Jardinage</a></li>
+                                    href="#">Jardinage</a></li>
                                     <li class="_3f3p2"><a title="MODE" class="trackable"
-                                            href="/_mode_/offres/aquitaine/">MODE</a></li>
+                                    href="#">MODE</a></li>
                                     <li class=""><a title="Vêtements" class="trackable"
-                                            href="/vetements/offres/aquitaine/">Vêtements</a></li>
+                                    href="#">Vêtements</a></li>
                                     <li class=""><a title="Chaussures" class="trackable"
-                                            href="/chaussures/offres/aquitaine/">Chaussures</a></li>
+                                    href="#">Chaussures</a></li>
                                     <li class=""><a title="Accessoires &amp; Bagagerie" class="trackable"
-                                            href="/accessoires_bagagerie/offres/aquitaine/">Accessoires &amp;
+                                    href="#">Accessoires &amp;
                                             Bagagerie</a></li>
                                     <li class=""><a title="Montres &amp; Bijoux" class="trackable"
-                                            href="/montres_bijoux/offres/aquitaine/">Montres &amp; Bijoux</a></li>
+                                    href="#">Montres &amp; Bijoux</a></li>
                                     <li class=""><a title="Equipement bébé" class="trackable"
-                                            href="/equipement_bebe/offres/aquitaine/">Equipement bébé</a></li>
+                                    href="#">Equipement bébé</a></li>
                                     <li class=""><a title="Vêtements bébé" class="trackable"
-                                            href="/vetements_bebe/offres/aquitaine/">Vêtements bébé</a></li>
+                                    href="#">Vêtements bébé</a></li>
                                     <li class=""><a
-                                            href="https://www.videdressing.com/femme/c-c5988.html?utm_source=leboncoin.fr&amp;utm_medium=referral&amp;utm_campaign=Test4Default"
+                                    href="#"
                                             target="_self" title="Videdressing" class="trackable">Videdressing</a></li>
                                 </ul>
                             </div>
                             <div class="_3UM0h">
                                 <ul>
                                     <li class="_3f3p2"><a title="MULTIMEDIA" class="trackable"
-                                            href="/_multimedia_/offres/aquitaine/">MULTIMEDIA</a></li>
+                                    href="#">MULTIMEDIA</a></li>
                                     <li class=""><a title="Informatique" class="trackable"
-                                            href="/informatique/offres/aquitaine/">Informatique</a></li>
+                                    href="#">Informatique</a></li>
                                     <li class=""><a title="Consoles &amp; Jeux vidéo" class="trackable"
                                             href="/consoles_jeux_video/offres/aquitaine/">Consoles &amp; Jeux vidéo</a>
                                     </li>
                                     <li class=""><a title="Image &amp; Son" class="trackable"
-                                            href="/image_son/offres/aquitaine/">Image &amp; Son</a></li>
+                                    href="#">Image &amp; Son</a></li>
                                     <li class=""><a title="Téléphonie" class="trackable"
-                                            href="/telephonie/offres/aquitaine/">Téléphonie</a></li>
+                                    href="#">Téléphonie</a></li>
                                     <li class="_3f3p2"><a title="LOISIRS" class="trackable"
-                                            href="/_loisirs_/offres/aquitaine/">LOISIRS</a></li>
+                                    href="#">LOISIRS</a></li>
                                     <li class=""><a title="DVD / Films" class="trackable"
-                                            href="/dvd_films/offres/aquitaine/">DVD / Films</a></li>
+                                    href="#">DVD / Films</a></li>
                                     <li class=""><a title="CD / Musique" class="trackable"
-                                            href="/cd_musique/offres/aquitaine/">CD / Musique</a></li>
+                                    href="#">CD / Musique</a></li>
                                     <li class=""><a title="Livres" class="trackable"
-                                            href="/livres/offres/aquitaine/">Livres</a></li>
+                                    href="#">Livres</a></li>
                                     <li class=""><a title="Animaux" class="trackable"
-                                            href="/animaux/offres/aquitaine/">Animaux</a></li>
+                                    href="#">Animaux</a></li>
                                     <li class=""><a title="Vélos" class="trackable"
-                                            href="/velos/offres/aquitaine/">Vélos</a></li>
+                                    href="#">Vélos</a></li>
                                     <li class=""><a title="Sports &amp; Hobbies" class="trackable"
-                                            href="/sports_hobbies/offres/aquitaine/">Sports &amp; Hobbies</a></li>
+                                    href="#">Sports &amp; Hobbies</a></li>
                                     <li class=""><a title="Instruments de musique" class="trackable"
-                                            href="/instruments_de_musique/offres/aquitaine/">Instruments de musique</a>
+                                    href="#">Instruments de musique</a>
                                     </li>
                                     <li class=""><a title="Collection" class="trackable"
-                                            href="/collection/offres/aquitaine/">Collection</a></li>
+                                    href="#">Collection</a></li>
                                     <li class=""><a title="Jeux &amp; Jouets" class="trackable"
-                                            href="/jeux_jouets/offres/aquitaine/">Jeux &amp; Jouets</a></li>
+                                    href="#">Jeux &amp; Jouets</a></li>
                                     <li class=""><a title="Vins &amp; Gastronomie" class="trackable"
-                                            href="/vins_gastronomie/offres/aquitaine/">Vins &amp; Gastronomie</a></li>
+                                    href="#">Vins &amp; Gastronomie</a></li>
                                 </ul>
                             </div>
                             <div class="_3UM0h">
                                 <ul>
                                     <li class="_3f3p2"><a title="MATERIEL PROFESSIONNEL" class="trackable"
-                                            href="/_materiel_professionnel_/offres/aquitaine/">MATERIEL
+                                    href="#">MATERIEL
                                             PROFESSIONNEL</a></li>
                                     <li class=""><a title="Matériel Agricole" class="trackable"
-                                            href="/materiel_agricole/offres/aquitaine/">Matériel Agricole</a></li>
+                                    href="#">Matériel Agricole</a></li>
                                     <li class=""><a title="Transport - Manutention" class="trackable"
-                                            href="/transport_manutention/offres/aquitaine/">Transport - Manutention</a>
+                                    href="#">Transport - Manutention</a>
                                     </li>
                                     <li class=""><a title="BTP - Chantier Gros-oeuvre" class="trackable"
-                                            href="/btp_chantier_gros_oeuvre/offres/aquitaine/">BTP - Chantier
+                                    href="#">BTP - Chantier
                                             Gros-oeuvre</a></li>
                                     <li class=""><a title="Outillage - Matériaux 2nd-oeuvre" class="trackable"
-                                            href="/outillage_materiaux_2nd_oeuvre/offres/aquitaine/">Outillage -
+                                    href="#">Outillage -
                                             Matériaux 2nd-oeuvre</a></li>
                                     <li class=""><a title="Équipements Industriels" class="trackable"
-                                            href="/equipements_industriels/offres/aquitaine/">Équipements
+                                    href="#">Équipements
                                             Industriels</a></li>
                                     <li class=""><a title="Restauration - Hôtellerie" class="trackable"
-                                            href="/restauration_hotellerie/offres/aquitaine/">Restauration -
+                                    href="#">Restauration -
                                             Hôtellerie</a></li>
                                     <li class=""><a title="Fournitures de Bureau" class="trackable"
-                                            href="/fournitures_de_bureau/offres/aquitaine/">Fournitures de Bureau</a>
+                                    href="#">Fournitures de Bureau</a>
                                     </li>
                                     <li class=""><a title="Commerces &amp; Marchés" class="trackable"
-                                            href="/commerces_marches/offres/aquitaine/">Commerces &amp; Marchés</a></li>
+                                    href="#">Commerces &amp; Marchés</a></li>
                                     <li class=""><a title="Matériel Médical" class="trackable"
-                                            href="/materiel_medical/offres/aquitaine/">Matériel Médical</a></li>
+                                    href="#">Matériel Médical</a></li>
                                     <li class="_3f3p2"><a title="SERVICES" class="trackable"
-                                            href="/_services_/offres/aquitaine/">SERVICES</a></li>
+                                    href="#">SERVICES</a></li>
                                     <li class=""><a title="Prestations de services" class="trackable"
-                                            href="/prestations_de_services/offres/aquitaine/">Prestations de
+                                    href="#">Prestations de
                                             services</a></li>
                                     <li class=""><a title="Billetterie" class="trackable"
-                                            href="/billetterie/offres/aquitaine/">Billetterie</a></li>
+                                    href="#">Billetterie</a></li>
                                     <li class=""><a title="Evénements" class="trackable"
-                                            href="/evenements/offres/aquitaine/">Evénements</a></li>
+                                    href="#">Evénements</a></li>
                                     <li class=""><a title="Cours particuliers" class="trackable"
-                                            href="/cours_particuliers/offres/aquitaine/">Cours particuliers</a></li>
+                                    href="#">Cours particuliers</a></li>
                                     <li class=""><a title="Covoiturage" class="trackable"
-                                            href="/covoiturage/offres/aquitaine/">Covoiturage</a></li>
+                                    href="#">Covoiturage</a></li>
                                     <li class="_3f3p2"><a title="Autres" class="trackable"
-                                            href="/autres/offres/aquitaine/">Autres</a></li>
+                                    href="#">Autres</a></li>
                                     <li class=""><a title="Autres" class="trackable"
-                                            href="/autres/offres/aquitaine/">Autres</a></li>
+                                    href="#">Autres</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1141,6 +1143,7 @@ $(document).ready(function(){
 
  });
 
+
  $(function(){
      var ad_total_count = <?php echo json_encode($count)?>;
     var current_page = <?php echo json_encode($current_page)?>;
@@ -1159,6 +1162,17 @@ $(document).ready(function(){
    
    
 });
+
+ $('#offer').on('change',function(){
+  
+  
+
+ });
+
+ $('#demand').on('change',function(){
+
+  
+ });
 });
 
 </script>

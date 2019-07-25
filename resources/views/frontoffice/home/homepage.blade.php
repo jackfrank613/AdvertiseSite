@@ -41,7 +41,7 @@
 <body>
     <!-- Header -->
 
-    @include('frontoffice.partials.headerpart')
+    @include('frontoffice.partials.header')
     <!-- /Header -->
 
     <!--Dialog-->
@@ -91,12 +91,7 @@
                                                     <font style="vertical-align: inherit;">Recherches sauvegardées</font>
                                                 </font>
                                             </h2>
-                                            <p>
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">Save your searches for easier
-                                                        viewing of new results.</font>
-                                                </font>
-                                            </p>
+                                            <p>Sauvegardez vos recherches pour consulter plus facilement les nouveaux résultats.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -119,7 +114,7 @@
                                                     <div><label class="TMFen" for="email">
                                                             <!-- react-text: 36 -->
                                                             <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">E-mail adress
+                                                                <font style="vertical-align: inherit;">Adresse email
                                                                 </font>
                                                             </font><!-- /react-text -->
                                                         </label>
@@ -133,7 +128,7 @@
                                                             <div><label class="TMFen" for="password">
                                                                     <!-- react-text: 43 -->
                                                                     <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">Password
+                                                                        <font style="vertical-align: inherit;">Mot de passe
                                                                         </font>
                                                                     </font><!-- /react-text -->
                                                                 </label>
@@ -146,8 +141,8 @@
                                                             </div><a data-qa-id="link-forgotten-password" class="_-0qA4"
                                                                 href="#">
                                                                 <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Forgot your
-                                                                        password ?</font>
+                                                                    <font style="vertical-align: inherit;">Mot de passe oublié ?</font>
+                                                        
                                                                 </font>
                                                             </a>
                                                         </div>
@@ -160,7 +155,7 @@
                                                                                                 border-radius: 5px;">
                                                         <!-- react-text: 48 -->
                                                         <font style="vertical-align: inherit;">
-                                                            <font style="vertical-align: inherit;">To log in</font>
+                                                            <font style="vertical-align: inherit;">Se connecter</font>
                                                         </font><!-- /react-text -->
                                                     </button>
                                                     <h5 id="login_request_error"></h5>
@@ -173,9 +168,9 @@
                                             <div class="_1uVWE">
                                                 <p class="hv-Tf">
                                                     <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">You do not have an
+                                                        <font style="vertical-align: inherit;">Vous n’avez pas de compte ? </font>
                                                             account ?
-                                                        </font>
+                                                       
                                                     </font>
                                                 </p><button id="create_account"
                                                     class="_2sNbI _1xIyN GXQkc _2BP2c trackable"
@@ -183,7 +178,7 @@
                                                     data-target="#Regsiter_modal">
                                                     <!-- react-text: 54 -->
                                                     <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">Create an account</font>
+                                                        <font style="vertical-align: inherit;">Créer un compte</font>
                                                     </font>
                                                 </button>
                                             </div>
@@ -1216,6 +1211,7 @@
             } else {
                 var data = $('#loginform').serialize();
                 var url = $('#loginform').attr('action');
+                var base_url = {!! json_encode(url('/')) !!};
                 console.log(data);
               
                 $.ajax({
@@ -1234,7 +1230,9 @@
                             }, 2000);
 
                         } else {
-                            window.location = base_url + "/profile/myadmob";
+                         
+                             window.location = base_url + "/frontoffice/dadmob";
+                             console.log(data.result);
 
                         }
 

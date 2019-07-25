@@ -5,6 +5,7 @@ namespace App\Http\Controllers\FrontOffice;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\PostedAdmob;
+use App\JamiiUser;
 class DisplayAdmobController extends Controller
 {
     //
@@ -14,9 +15,11 @@ class DisplayAdmobController extends Controller
         $count=PostedAdmob::count();
         $page_count = 40;
         $offset = 0;
+        $particular_count=JamiiUser::where('type','=','particular')->get()->count();
+        $professional_count=JamiiUser::where('type','=','professional')->get()->count();
         $result=PostedAdmob::orderBy('jamii_postedadmob.id','asc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.id')->get()->toarray();
         $current_page = 1;
-        return view('frontoffice.home.displayadmob')->with(compact('result','count', 'current_page', 'page_count'));
+        return view('frontoffice.home.displayadmob')->with(compact('result','count', 'current_page', 'page_count','particular_count','professional_count'));
     }
 
     public function getData($page){

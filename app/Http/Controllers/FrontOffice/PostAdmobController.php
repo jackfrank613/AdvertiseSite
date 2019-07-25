@@ -72,7 +72,7 @@ class PostAdmobController extends BaseController
      $id=PostedAdmob::insertGetId($input_categoryType); 
      //echo json_encode(array('error'=>false,'result'=>$input_categoryType)); exit;
    
-     $sub_result=SubCategory::where("id", "=", $data['sub_id'])->first()->toArray();
+     $sub_result=SubCategory::where("s_id", "=", $data['sub_id'])->first()->toArray();
      
       if($id>0)
       {

@@ -75,17 +75,17 @@ h4,
 h5,
 h6 {
     color: #004;
-    font-weight: 700;
+    font-weight: 600;
     margin-top: 10px;
     margin-bottom: 20px;
 }
 
 h1 {
-    font-size: 35px;
+    font-size: 17px;
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 17px;
 }
 
 h3 {

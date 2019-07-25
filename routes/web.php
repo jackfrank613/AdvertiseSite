@@ -14,18 +14,22 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-
+ 
+ 
 Route::group([
     'prefix'=>'frontoffice',
     'namespace'=>'FrontOffice',
   ],function(){
       //homepage  route
       Route::get('/','HomeController@getHomepage')->name('home');
-      Route::get('/homelogin','HomeController@getHomelogin')->name('homelogin');
+      //signup login route
+      Route::post('/homelogin','HomeController@getHomelogin')->name('homelogin');
       Route::get('/particular','HomeController@getParticular')->name('particular');
       Route::get('/professional','HomeController@getProfessional')->name('professional');
-
+      Route::post('/signup','HomeController@createParticularUser')->name('signup');
+      Route::post('/prosignup','HomeController@createUserprofessional')->name('prosignup');
+     
+    
       //post admob
       Route::get('/advertise','PostAdmobController@initCategory')->name('advertise');
       Route::post('/advertise/postcategory','PostAdmobController@addSelectCategory')->name('postcategory');
@@ -81,13 +85,21 @@ Route::group([
 
       //looking for posted admob.
       Route::get('/dadmob','DisplayAdmobController@getDisplaypage')->name('dadmob');
+      //fixed posted admob controller
+      Route::get('/aditems','ViewAdmobController@index')->name('viewadmob');
+      Route::get('/aditems/{id}','ViewAdmobController@show')->name('showadmob');
+      Route::get('/aditems/sendmessage/{userid}/{name}','ViewAdmobController@sendMailbox')->name('sendmessage');
       Route::get('/getdata/{page}','DisplayAdmobController@getData');
+      //looking for different advertises
+      Route::post('/dadmob/getoffer','DisplayAdmobController@getOffer')->name('searchoffer');
       
       
      
       
         Route::post('/adddata/','PostAdmobController@addData')->name('addData');
 
+
+        
 
 
 

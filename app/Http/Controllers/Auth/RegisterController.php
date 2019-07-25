@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -61,12 +61,94 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    // protected function create(array $data)
+    // {
+    //     return User::create([
+    //         'name' => $data['name'],
+    //         'email' => $data['email'],
+    //         'password' => Hash::make($data['password']),
+    //     ]);
+    // }
+
+    public function createUser(Request $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+
+        echo json_encode(array('error'=>true,'result'=>"test"));
+        exit;
+        $condition  = array('email' => $request->email);
+        $exist_check=Particular::where($condition)->count();
+    
+        if($exist_check>0)
+        {
+            
+            echo json_encode(array('error'=>true,'result'=>"The email is exist already"));
+            // exit;
+        }
+        else{
+           
+            $input_data=array(
+                'name' => $request['name'],
+                'email' => $request['email'],
+                'password' => Hash::make($request['password']),
+                'type'=>$request['type'],
+            );
+           
+            $id = Particular::create($input_data)->id;
+            // echo json_encode(array('result' => $id));
+            // exit;
+            if($id > 0){
+                echo json_encode(array('error'=>false,'result'=> "Register successfully"));
+
+            }else {
+                echo json_encode(array('error'=>true,'result'=> "Register failed"));
+            }
+        }
+        // exit;
+    }
+
+
+    public function createUserprofessional(Request $request)
+    {
+        $condition  = array('email' => $request->email);
+       
+        $exist_check=Particular::where($condition)->count();
+
+        // echo json_encode(array('result' => $result));
+        // // return response()->json(array('msg'=> $msg), 200);
+        // exit;
+        if($exist_check > 0)
+        {         
+            
+            echo json_encode(array('error'=>true,'result'=>"The email is exist already"));
+            //  exit;
+        }
+        else{
+            $input_data = array(
+                'firstname' => $request['firstname'],
+                'lastname' => $request['lastname'],
+                'email' => $request['email'],
+                'password' => Hash::make($request['password']),
+                'civility' =>$request['gender'],
+                'name' =>$request['firstname'],
+                'com_name' =>$request['company_name'],
+                'siret' =>$request['siret'],
+                'heading'=>$request['activity_sector'],
+                'address' =>$request['billing_address'],
+                'zip' =>$request['location'],
+                'phone' =>$request['phone'],
+                'type'=>"professional",
+            );
+            $id = Professional::create($input_data)->id;
+            if($id > 0){
+                echo json_encode(array('error'=>false,'result'=> "Register successfully"));
+
+            }else {
+                echo json_encode(array('error'=>true,'result'=> "Register failed"));
+
+            }
+        }
+        // exit;
+     //echo json_encode(array('result' => $request->email));
+
     }
 }
