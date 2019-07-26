@@ -32,7 +32,7 @@ Route::group([
     
       //post admob
       Route::get('/advertise','PostAdmobController@initCategory')->name('advertise');
-      Route::get('/advertise/postcategory','PostAdmobController@addSelectCategory')->name('postcategory');
+      Route::post('/advertise/postcategory','PostAdmobController@addSelectCategory')->name('postcategory');
       Route::post('/advertise/postdescription','PostAdmobController@addDescriptionCategory')->name('postdescription');
       Route::post('/advertise/postprice','PostAdmobController@addPriceCategory')->name('postprice');
       Route::post('/advertise/uploadpicture','PostAdmobController@loadPictureCategory')->name('uploadpicture');
@@ -49,8 +49,6 @@ Route::group([
       Route::post('/advertise/addhousemate','PostAdmobController@addHousemate')->name('addHousemate');
       Route::post('/advertise/addshop','PostAdmobController@addShop')->name('addShop');
       Route::post('/advertise/addclothing','PostAdmobController@addClothing')->name('addClothing');
-
-
 
       //admob payment route
       Route::get('/admobpayment','PaymentAdmobController@getPaymentpage')->name('admobpayment');

@@ -158,7 +158,9 @@
                                                             <font style="vertical-align: inherit;">Se connecter</font>
                                                         </font><!-- /react-text -->
                                                     </button>
-                                                    <h5 id="login_request_error"></h5>
+                                                    @if(Session::has('error_message'))
+                                                    <h5 style="color:red">{{ Session::get('error_message') }}</h5>
+                                                    @endif
                                                 </form>
                                             </div>
                                         </div>
@@ -1199,47 +1201,47 @@
             $('#Regsiter_modal').modal('toggle');
             $('#Login_modal').modal('toggle');
         });
-        $('#loginform').on('submit', function (e) {
-            e.preventDefault();
-            var email = $('input[name=email]').val();
-            var password = $('input[name=password]').val();
-            if (email == "" || password == "") {
-                document.getElementById('login_request_error').innerHTML = "Error";
-                setTimeout(() => {
-                    document.getElementById('login_request_error').innerHTML = "";
-                }, 2000);
-            } else {
-                var data = $('#loginform').serialize();
-                var url = $('#loginform').attr('action');
-                var base_url = {!! json_encode(url('/')) !!};
-                console.log(data);
+        // $('#loginform').on('submit', function (e) {
+        //     e.preventDefault();
+        //     var email = $('input[name=email]').val();
+        //     var password = $('input[name=password]').val();
+        //     if (email == "" || password == "") {
+        //         document.getElementById('login_request_error').innerHTML = "Error";
+        //         setTimeout(() => {
+        //             document.getElementById('login_request_error').innerHTML = "";
+        //         }, 2000);
+        //     } else {
+        //         var data = $('#loginform').serialize();
+        //         var url = $('#loginform').attr('action');
+        //         var base_url = {!! json_encode(url('/')) !!};
+        //         console.log(data);
               
-                $.ajax({
-                    type: 'POST',
-                    url: url,
-                    data: data,
-                    dataType: "json",
-                    success: function (data) {
-                        console.log(data);
-                        if (data.error) {
-                            document.getElementById('login_request_error').innerHTML = data
-                                .result;
-                            setTimeout(() => {
-                                document.getElementById('login_request_error')
-                                    .innerHTML = "";
-                            }, 2000);
+        //         $.ajax({
+        //             type: 'POST',
+        //             url: url,
+        //             data: data,
+        //             dataType: "json",
+        //             success: function (data) {
+        //                 console.log(data);
+        //                 if (data.error) {
+        //                     document.getElementById('login_request_error').innerHTML = data
+        //                         .result;
+        //                     setTimeout(() => {
+        //                         document.getElementById('login_request_error')
+        //                             .innerHTML = "";
+        //                     }, 2000);
 
-                        } else {
-                            console.log(data.result);
+        //                 } else {
+        //                     console.log(data.result);
 
-                           window.location = base_url + "/frontoffice/advertise";
+        //                    window.location = base_url + "/frontoffice/advertise";
                              
-                        }
+        //                 }
 
-                    }
-                });
-            }
-        });
+        //             }
+        //         });
+        //     }
+        // });
     });
 
 </script>

@@ -28,60 +28,52 @@ class HomeController extends Controller
         return view('frontoffice/ath/professionalpage');
     }
     public function getHomelogin(Request $request)
-    {     
-        echo json_encode(array('result' => $request->email));
-        exit;
-      $condition  = array('email' => $request->email, 'password' => md5($request->password));
-    
-      $exist_check=JamiiUser::where($condition)->count();
-    //   echo json_encode(array('result' => $exist_check));
-    //   exit;
+    {    
+        $condition  = array('email' => $request->email, 'password' => md5($request->password)); 
+      // print_r($condition);exit;
+        $request->session()->put('user', 'testing');
+        $exist_check=JamiiUser::where($condition)->count();
+       // print_r($exist_check);exit;
       if($exist_check>0)
       {
-        echo json_encode(array('error'=> false, 'result' => "Login successfully."));
+        return redirect('frontoffice/advertise'); 
       }
       else{
-        echo json_encode(array('error'=> true, 'result' => "Login failed"));
+        return back()->with('error_message', 'Login failed.')->withInput();
       }
   
     }
 
 
-    public function createParticularUser()
+    public function createParticularUser(Request $request)
     {
-
-        $data=$_POST;   
-        $condition  = array('email' => $data['email'],'password'=>$data['password']);
+        
+       // $data=$_POST;   
+        $condition  = array('email' => $request->email);
         $exist_check=JamiiUser::where($condition)->count();
-      
-       
+      //  print_r($exist_check);exit;
         if($exist_check>0)
         {
-            
-            echo json_encode(array('error'=>true,'result'=>"The email is exist already"));exit;
-          
+            return back()->with('error_message', 'Invalid Username or Password')->withInput();
         }
         else{
            
             $input_data=array(
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'password' => Hash::make($data['password']),
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => md5($request->password),
                 'type'=>"particular",
             );
             
             $id = JamiiUser::create($input_data)->id;
-                // session(['userid' => $id]);
-                Session::put('userid',"test");
-               // echo session()->get('userid'); exit;
-          //  echo json_encode(array('error'=>false,'result'=> "Register successfully"));exit;
- Session::put('userid',"test");
+            session(['user_id' => $id]);
+
             if($id > 0){
                 
-                // echo json_encode(array('error'=>false,'result'=> session()->get('userid')));exit;
-                echo json_encode(Session::get('userid'));exit;
+                return redirect('frontoffice/advertise');
+                //echo json_encode(Session::get('userid'));exit;
             }else {
-                echo json_encode(array('error'=>true,'result'=> "Register failed"));exit;
+                return back()->with('error_message', 'Invalid Username or Password')->withInput();
             }
         }
        
@@ -95,37 +87,34 @@ class HomeController extends Controller
        
         $exist_check=JamiiUser::where($condition)->count();
 
-       // echo json_encode(array('result' => $exist_check));exit;
-        // // return response()->json(array('msg'=> $msg), 200);
-        // exit;
         if($exist_check > 0)
         {         
             
-            echo json_encode(array('error'=>true,'result'=>"The email is exist already"));
-            //  exit;
+            return back()->with('error_message', 'Invalid Username or Password')->withInput();
         }
         else{
             $input_data = array(
-                'firstname' => $request['firstname'],
-                'lastname' => $request['lastname'],
-                'email' => $request['email'],
-                'password' => Hash::make($request['password']),
-                'civility' =>$request['gender'],
-                'name' =>$request['firstname'],
-                'com_name' =>$request['company_name'],
-                'siret' =>$request['siret'],
-                'heading'=>$request['activity_sector'],
-                'address' =>$request['billing_address'],
-                'zip' =>$request['location'],
-                'phone' =>$request['phone'],
+                'firstname' => $request->firstname,
+                'lastname' => $request->lastname,
+                'email' => $request->email,
+                'password' => md5($request->password),
+                'civility' =>$request->gender,
+                'name' =>$request->firstname,
+                'com_name' =>$request->company_name,
+                'siret' =>$request->siret,
+                'heading'=>$request->activity_sector,
+                'address' =>$request->billing_address,
+                'zip' =>$request->location,
+                'phone' =>$request->phone,
                 'type'=>"professional",
             );
             $id = JamiiUser::create($input_data)->id;
+            session(['user_id' => $id]);
             if($id > 0){
-                echo json_encode(array('error'=>false,'result'=> "Register successfully"));
+                return redirect('frontoffice/advertise');
 
             }else {
-                echo json_encode(array('error'=>true,'result'=> "Register failed"));
+                return back()->with('error_message', 'Invalid Username or Password')->withInput();
 
             }
         }

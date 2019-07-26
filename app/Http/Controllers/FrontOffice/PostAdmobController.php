@@ -38,8 +38,7 @@ class PostAdmobController extends BaseController
     public function initCategory(Request $request)
     {
       
-      //  $value = Session::get('userid');
-      //  print_r($value);exit;
+     //  print_r($user_id);exit;
         $data = [];
         $result=Category::get();
         $data['categories'] = $result->toArray();
@@ -52,15 +51,19 @@ class PostAdmobController extends BaseController
 
         }
         $data['subcategories'] = $subcategory;
+        $user_id=session('user_id');
+        $user=JamiiUser::where('u_id',$user_id)->first();
+        $email=$user->email;
+      //  print_r($email);exit;
      
-        return view('frontoffice.home.advertisepage')->with(compact('data'));
+        return view('frontoffice.home.advertisepage')->with(compact('data','email','user_id'));
 
     }
 
-    public function addSelectCategory()
+    public function addSelectCategory(Request $request)
     {
       
-      print_r("test");exit;
+      // print_r($request);exit;
      
       $data=$_POST;
      
@@ -244,7 +247,7 @@ class PostAdmobController extends BaseController
           'id' => $data['id'],
           'enable'=>$data['enable'],
           'create_time'=>$date,
-          'user_id'=>4,
+          'user_id'=>$data['user_id'],
         );
           // echo json_encode(array('result'=>$data['id']));
          $result=PostedAdmob::where('id',"=",$data['id'])->update($input_category_information);

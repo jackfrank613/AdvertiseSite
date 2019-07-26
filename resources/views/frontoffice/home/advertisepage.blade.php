@@ -613,7 +613,7 @@
                                                                 <!-- /react-text --></label>
                                                             <div class="_2wuZK">
                                                                 <input type="text" class="_2erBM QY7wN" disabled=""
-                                                                    data-qa-id="newad-input_email" value=""
+                                                                    data-qa-id="newad-input_email" value="{{$email}}"
                                                                     name="email"></div>
                                                         </div>
                                                     </div>
@@ -718,7 +718,7 @@
         var id;
         $(document).ready(function () {
             // document.getElementById('choose_category').
-
+            var userid={{$user_id}};
             $('.subcategory').on('click', function () {
                 sub_id = $(this).data('subid');
                 console.log(sub_id);
@@ -1500,6 +1500,7 @@
                         id: id,
                         email: email,
                         phone: phone,
+                        user_id:userid,
                         enable: 1,
                         _token: $('input[name=_token]').val(),
                     },

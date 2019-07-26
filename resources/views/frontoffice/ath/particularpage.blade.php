@@ -211,7 +211,9 @@
                                         <font style="vertical-align: inherit;">Créer mon Compte Personnel</font>
                                     </font><!-- /react-text -->
                                 </button>
-                                <h5 id="register_request_error"></h5>
+                                 @if(Session::has('error_message'))
+                                 <h5 style="color:red">{{ Session::get('error_message') }}</h5>
+                                 @endif
                             </form>
                         </section>
                     </div>
@@ -281,59 +283,59 @@
 </body>
    <script>
    $(document).ready(function(){
-  //  console.log("dfdf");
-    $('#create_part_form').on('submit',function(e){
-     e.preventDefault();
-     var name=$('input[name=name]').val();
-     var email=$('input[name=email]').val();
-     var password=$('input[name=password]').val();
-     var conpassword=$('input[name=confirmationPassword]').val();
-    // console.log(password);
-    if(email == "" || name == "" || password == "" && password !=conpassword)
-    {
-      document.getElementById('register_request_error').innerHTML = "Error";
-      setTimeout(() => {
-                    document.getElementById('register_request_error').innerHTML = "";
-                }, 2000);
+//   //  console.log("dfdf");
+//     $('#create_part_form').on('submit',function(e){
+//      e.preventDefault();
+//      var name=$('input[name=name]').val();
+//      var email=$('input[name=email]').val();
+//      var password=$('input[name=password]').val();
+//      var conpassword=$('input[name=confirmationPassword]').val();
+//     // console.log(password);
+//     if(email == "" || name == "" || password == "" && password !=conpassword)
+//     {
+//       document.getElementById('register_request_error').innerHTML = "Error";
+//       setTimeout(() => {
+//                     document.getElementById('register_request_error').innerHTML = "";
+//                 }, 2000);
 
-    }
-    else{
-        var data = $('#create_part_form').serialize();
-        var url = $('#create_part_form').attr('action');
-        var base_url = {!! json_encode(url('/')) !!};
-        $.ajax({
-            type:'POST',
-            url:"{{route('signup')}}",
-            data:{
-                name:name,
-                email:email,
-                password:password,
-                _token: $('input[name=_token]').val(),
-            },
-            dataType:"json",
-            success:function(data){
-                console.log(data);
-                if(data.error)
-                {
+//     }
+//     else{
+//         var data = $('#create_part_form').serialize();
+//         var url = $('#create_part_form').attr('action');
+//         var base_url = {!! json_encode(url('/')) !!};
+//         $.ajax({
+//             type:'POST',
+//             url:"{{route('signup')}}",
+//             data:{
+//                 name:name,
+//                 email:email,
+//                 password:password,
+//                 _token: $('input[name=_token]').val(),
+//             },
+//             dataType:"json",
+//             success:function(data){
+//                 console.log(data);
+//                 if(data.error)
+//                 {
                    
-                    document.getElementById('register_request_error').innerHTML = data.result;
-                    setTimeout(() => {
-                    document.getElementById('register_request_error').innerHTML = "";
-                }, 2000);
+//                     document.getElementById('register_request_error').innerHTML = data.result;
+//                     setTimeout(() => {
+//                     document.getElementById('register_request_error').innerHTML = "";
+//                 }, 2000);
                    
-                }
-                else{
-                   console.log(data.result);
-                   window.location= base_url + "/frontoffice/advertise";
-                }
+//                 }
+//                 else{
+//                    console.log(data.result);
+//                    window.location= base_url + "/frontoffice/advertise";
+//                 }
 
-            },
-            error: function(error){
-                console.log(error);
-            }
-        });
-    }
-    });
+//             },
+//             error: function(error){
+//                 console.log(error);
+//             }
+//         });
+//     }
+//     });
 
    });
    </script>

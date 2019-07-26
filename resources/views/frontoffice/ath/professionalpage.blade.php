@@ -209,7 +209,12 @@
                                                                                                 border-radius: 5px;">
                             <!-- react-text: 995 -->Créer mon Compte Professionnel
                             <!-- /react-text --></button>
-                           <p style="margin-top:20px; color:#f56b2a" id="professional_request_error"></p>
+                            @if(Session::has('error_message'))
+                           <p style="margin-top:20px; color:#f56b2a" id="professional_request_error">
+                            {{Session::get('error_message')}}
+        
+                          </p>
+                          @endif
                     </form>
                 </section>
             </div>
@@ -266,63 +271,63 @@
 <script>
 $(document).ready(function(){
  
- $('#store_creation_form').on('submit',function(e){
+//  $('#store_creation_form').on('submit',function(e){
 
-    e.preventDefault();
-    var inputs = document.querySelectorAll('#store_creation_form .validate ');
-    var validate = true;
-    inputs.forEach(input => {
-        // console.log($(input).val());
+//     e.preventDefault();
+//     var inputs = document.querySelectorAll('#store_creation_form .validate ');
+//     var validate = true;
+//     inputs.forEach(input => {
+//         // console.log($(input).val());
         
-        if($(input).val() == ""){
-            validate = false;
-        }
-    });
-    var gender = $('input[name=gender]:checked').val();
-    var cvs = $('input[name=cgv_pro]').is(':checked');
-    var password=$('input[name=password]').val();
-    var confirmpassword=$('input[name=passwordConfirmation]').val();
-    //console.log(cvs);
-    if(cvs && validate != false && typeof gender != "undefined" && password == confirmpassword){
-        var data=$('#store_creation_form').serialize();
-         console.log(data);
-        var url = $('#store_creation_form').attr('action');
-        var base_url = {!! json_encode(url('/')) !!};
-        $.ajax({
-            type:'POST',
-            url:url,
-            data:data,
-            dataType:"json",
-            success:function(data){
-                console.log(data);
-                if(!data.error)
-                {
-                     window.location= base_url + "/frontoffice/aditems";
-                }
-                else{
-                    document.getElementById('professional_request_error').innerHTML = '<i class="fa fa-warning" style="vertical-align: baseline;"></i>' + data.result;
+//         if($(input).val() == ""){
+//             validate = false;
+//         }
+//     });
+//     var gender = $('input[name=gender]:checked').val();
+//     var cvs = $('input[name=cgv_pro]').is(':checked');
+//     var password=$('input[name=password]').val();
+//     var confirmpassword=$('input[name=passwordConfirmation]').val();
+//     //console.log(cvs);
+//     if(cvs && validate != false && typeof gender != "undefined" && password == confirmpassword){
+//         var data=$('#store_creation_form').serialize();
+//          console.log(data);
+//         var url = $('#store_creation_form').attr('action');
+//         var base_url = {!! json_encode(url('/')) !!};
+//         $.ajax({
+//             type:'POST',
+//             url:url,
+//             data:data,
+//             dataType:"json",
+//             success:function(data){
+//                 console.log(data);
+//                 if(!data.error)
+//                 {
+//                      window.location= base_url + "/frontoffice/aditems";
+//                 }
+//                 else{
+//                     document.getElementById('professional_request_error').innerHTML = '<i class="fa fa-warning" style="vertical-align: baseline;"></i>' + data.result;
 
-                }
+//                 }
 
-            },
-            error:function(error)
-            {
-                console.log(error);
-                }
-        });
-        //console.log(data);
-    }
-    else if(!cvs || validate == false || typeof gender == "undefined"){
-        document.getElementById('professional_request_error').innerHTML = '<i class="fa fa-warning" style="vertical-align: baseline;"></i>' + "Please, fill all information.";
-    }
-    else {
-        document.getElementById('professional_request_error').innerHTML ='<i class="fa fa-warning" style="vertical-align: baseline;"></i>' + "Password is not matched.";
-    }
-    setTimeout(function(){
-        document.getElementById('professional_request_error').innerHTML = "";
-    }, 3000);
+//             },
+//             error:function(error)
+//             {
+//                 console.log(error);
+//                 }
+//         });
+//         //console.log(data);
+//     }
+//     else if(!cvs || validate == false || typeof gender == "undefined"){
+//         document.getElementById('professional_request_error').innerHTML = '<i class="fa fa-warning" style="vertical-align: baseline;"></i>' + "Please, fill all information.";
+//     }
+//     else {
+//         document.getElementById('professional_request_error').innerHTML ='<i class="fa fa-warning" style="vertical-align: baseline;"></i>' + "Password is not matched.";
+//     }
+//     setTimeout(function(){
+//         document.getElementById('professional_request_error').innerHTML = "";
+//     }, 3000);
 
- });
+//  });
 
 
 });

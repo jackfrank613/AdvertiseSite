@@ -26,7 +26,7 @@ class ViewAdmobController extends Controller
         $offset = 0;
         $particular_count=JamiiUser::where('type','=','particular')->get()->count();
         $professional_count=JamiiUser::where('type','=','professional')->get()->count();
-        $admobs=PostedAdmob::orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->get()->toarray();
+        $admobs=PostedAdmob::where('enable',1)->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->get()->toarray();
         
         $current_page = 1;
         $today = date('Y-m-d');
