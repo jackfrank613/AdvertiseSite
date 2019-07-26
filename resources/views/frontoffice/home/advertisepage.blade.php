@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{-- <meta name="token" content="{{csrf_token()}}"> --}}
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <title>Jamii</title>
@@ -228,6 +229,7 @@
             </div>
             <div class="_14s_w tShLp" id="choose_category" style="display:none">
                 <div class="UDd7g">
+
                     <div class="_2kY5F">
                         <div class="_1AsHn _2siHy _38NUf">
                             <div class="_3Bswj">
@@ -746,12 +748,13 @@
                 console.log(sub_category);
                 var adType = $('input[name=adType]:checked').val();
                 var url = $('#new_button_subcategory').attr('action');
+                console.log(url);
                 // var base_url = {
                 //     !!json_encode(url('/')) !!
                 // };
                 $.ajax({
                     type: 'POST',
-                    url: url,
+                    url: "{{route('postcategory')}}",
                     data: {
                         sub_id: sub_id,
                         adName: sub_category,
@@ -780,6 +783,9 @@
                             alert(data.result);
                         }
 
+                    },
+                    error: function(error){
+                        console.log(error);
                     }
                 });
 
@@ -1503,7 +1509,7 @@
                             console.log("error");
 
                         } else {
-                            location.href = "{{route('admobpayment')}}";
+                            location.href = "{{route('viewadmob')}}";
                         }
                     }
                 });

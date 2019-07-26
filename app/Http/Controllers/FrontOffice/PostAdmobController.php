@@ -60,6 +60,7 @@ class PostAdmobController extends BaseController
     public function addSelectCategory()
     {
       
+      print_r("test");exit;
      
       $data=$_POST;
      
@@ -75,6 +76,7 @@ class PostAdmobController extends BaseController
     //      'adType'=>"dfsdfd",
     //   );
    
+    
       $id=PostedAdmob::insertGetId($input_categoryType); 
      
     //  echo json_encode(array('error'=>false,'result'=>$input_categoryType)); exit;

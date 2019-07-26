@@ -156,7 +156,7 @@
 
         </div>
     </div>
-    </div>
+
     <div class="_1xnOe" id="generate_nav">
         <div class="_3idpJ" data-reactid="64"></div>
         <div class="_-Pgg9" data-reactid="65">
