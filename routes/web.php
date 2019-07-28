@@ -92,9 +92,11 @@ Route::group([
       Route::post('/dadmob/getoffer','DisplayAdmobController@getOffer')->name('searchoffer');
       
       
-     
-      
-        Route::post('/adddata/','PostAdmobController@addData')->name('addData');
+       // not register user route call
+
+       Route::get('/cusadmob','CusAdmobPostController@index')->name('cusadmob');
+       Route::post('/cusadmob/uploadpic','CusAdmobPostController@upLoadpic')->name('uploadpic');
+       Route::post('/adddata/','PostAdmobController@addData')->name('addData');
 
   });
 // Auth::routes();

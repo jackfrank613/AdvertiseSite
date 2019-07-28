@@ -11335,12 +11335,12 @@ div[class*=small-container] h2 {
 }
 
 .box-grey-light>.title {
-    background: #e6ebef
+    background: #666;
 }
 
 .box-grey-dark>.title {
-    background: #a8b4c0;
-    color: #fff
+    background: #666;
+    color: #fff;
 }
 
 .box-grey-dark>.title .link-like,
@@ -11353,7 +11353,7 @@ div[class*=small-container] h2 {
 }
 
 .box-orange>.title {
-    background: #f56b2a;
+    background: #666;
     color: #fff
 }
 

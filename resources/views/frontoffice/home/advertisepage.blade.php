@@ -31,8 +31,8 @@
 
 
     <link type="text/css" rel="stylesheet" href="{{asset('css/mainpage.css')}}" />
-    <!-- <link type="text/css" rel="stylesheet" href="{{asset('css/productionpage.css')}}" /> -->
-    <!-- <link type="text/css" rel="stylesheet" href="{{asset('css/auth.css')}}" /> -->
+    {{-- <!-- <link type="text/css" rel="stylesheet" href="{{asset('css/productionpage.css')}}" /> -->
+    <!-- <link type="text/css" rel="stylesheet" href="{{asset('css/auth.css')}}" /> --> --}}
     <link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('css/custom.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('css/header.css')}}">

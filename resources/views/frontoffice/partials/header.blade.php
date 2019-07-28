@@ -23,7 +23,7 @@
                                 <nav class="_2cE2d">
                                     <div class="ZGBSO">
                                         <div class="evhnB">
-                                            <a title="Déposer une annonce" data-qa-id="header_newad_link" href="#"
+                                            <a title="Déposer une annonce" data-qa-id="header_newad_link" href="{{route('cusadmob')}}"
                                                 class="trackable" data-reactid="28">
                                                 <div class="_21saW _3vGiz" data-reactid="29">
                                                     <div class="WFlbY" data-reactid="30"><span class="_1vK7W _1MlsO"

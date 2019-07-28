@@ -1,0 +1,137 @@
+.headerContent{
+    min-height: 6rem;
+    top:0;
+    left: 0;
+    right: 0;
+    width:100%;
+    background: #f56b2a;
+}
+.content-center{
+    max-width: 1066px!important;
+    min-width: 320px!important;
+    margin: 0 auto!important;
+}
+._cuslogo{
+    font-family: 'Alex Brush';
+    font-size: 30px;
+    color:white;
+     padding-top: 10px;
+}
+.headerNav {
+    position: relative;
+    display: inline-block;
+    /* height: 60px; */
+    height: 6rem;
+    /* margin-left: 20px; */
+    margin-left: 2rem;
+    vertical-align: middle;
+}
+.headerNav li {
+    display: inline-block;
+    height: 100%;
+    vertical-align: top;
+}
+.headerNav a, .headerNav button {
+    position: relative;
+    display: block;
+    /* padding: 0 10px; */
+    padding: 0 1rem;
+    /* line-height: 60px; */
+    line-height: 6rem;
+    color: #fff;
+    letter-spacing: -0.5px;
+    font-family: "OpenSansSemiBold",sans-serif;
+    text-transform: uppercase;
+    /* font-size: 13px; */
+    font-size: 1.3rem;
+}
+.headerNav_main {
+    /* height: 60px; */
+    height: 6rem;
+    /* line-height: 60px; */
+    line-height: 6rem;
+}
+.button_flat{
+    height: 6rem;
+    line-height: 6rem;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    color: #fff;
+    border-radius: 0;
+    border-top: 0;
+    border-bottom: 0;
+}
+.button_secondary{
+    background: transparent;
+}
+@media (max-width: 1067px)
+{
+    .content-center {
+        padding: 0 1rem;
+    }
+}
+
+.header_aside {
+    float: right;
+    z-index: 20;
+    padding:10px;
+}
+
+.displayMenu{
+    font-size: 1.4rem;
+    box-shadow: none;
+    overflow: visible;
+}
+.button-white-mobile{
+    color: #f56b2a;
+    background: #fff;
+}
+.button-white-mobile {
+    /* padding: 0 10px; */
+    padding: 0 1rem;
+}
+.custom-large-hidden{
+    top:10px;
+}
+@media (max-width:971px)
+{
+    .custom-small-hidden{
+        display: none!important;
+    }
+    .nav_hidden{
+        display: none!important;
+    }
+    .logo_button {
+        display: none !important;
+    }
+}
+#main {
+    position: relative;
+    /* padding: 20px 0; */
+    padding: 2rem 0;
+    background: #fafafa;
+    /* -webkit-transition: padding,0.3s;
+    -moz-transition: padding,0.3s; */
+    transition: padding,0.3s;
+}
+.content-center {
+    max-width: 1066px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+.grey {
+    color: #666;
+}
+.clearfix::after, .line::after {
+    content: "";
+    display: table;
+    clear: both;
+    border-collapse: collapse;
+}
+#newad_form #newad_forms {
+    position: relative;
+}
+.font_style{
+    font-size: 15px;
+    font-weight: 100;
+}
