@@ -1039,12 +1039,12 @@
                 // console.log(attribute);
                 $('#Lclist').css("display", "none");
                 $('._Cname').html(attribute);
-              };
+            };
               for (var i = 0; i < classname.length; i++) {
                 classname[i].addEventListener('click', myFunction, false);
               }
 
-        });
+});
   
     </script>
 

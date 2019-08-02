@@ -45,15 +45,17 @@
     <!-- Header -->
 
     <section>
+
         <div class="_3iQ0i" style="pointer-events: inherit;">
             <div class="_1ydbl">
-                <div class="_3mkBC" style="display:flex;"><label class="radio" for="offer"><input type="radio"
-                            id="offer" name="ad_type" value="offer"><!-- react-text: 653 -->Offres
-                        <!-- /react-text --></label><label class="radio" for="demand" style="margin-top:0px"><input
-                            type="radio" id="demand" name="ad_type" value="demand"><!-- react-text: 656 -->Demandes
-                        <!-- /react-text --></label></div>
-                <div class="MoDD- ypWAz">
-                    <form>
+                <form id="search_result" method="POST" action="{{route('filter')}}">
+                    <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                    <div class="_3mkBC" style="display:flex;"><label class="radio" for="offer"><input type="radio"
+                                id="offer" name="ad_type" value="sell" checked><!-- react-text: 653 -->Offres
+                            <!-- /react-text --></label><label class="radio" for="demand" style="margin-top:0px"><input
+                                type="radio" id="demand" name="ad_type" value="buy"><!-- react-text: 656 -->Demandes
+                            <!-- /react-text --></label></div>
+                    <div class="MoDD- ypWAz">
                         <div class="KcIeW">
                             <div class="_1mlgr">
                                 <section>
@@ -77,9 +79,10 @@
                                                             <!-- react-text: 673 -->Valider
                                                             <!-- /react-text --></button></div>
                                                 </div>
-                                                <div class="bVqYZ"><input class="_2erBM _20_tk "
-                                                        data-qa-id="input-searchtext" value=""
-                                                        placeholder="Que recherchez-vous ?" maxlength="500"
+                                                <div class="bVqYZ">
+                                                    <input class="_2erBM _20_tk "
+                                                        data-qa-id="input-searchtext" id="searchtext" value=""
+                                                        placeholder="Que recherchez-vous ?" maxlength="500" name="search"
                                                         autocomplete="off">
                                                     <ul class="_2W7Z8">
                                                         <li class="_2r36r trackable"><span><span
@@ -93,6 +96,48 @@
                                                                     <!-- react-text: 2643 -->Toutes catégories
                                                                     <!-- /react-text --></span></span></li>
                                                     </ul>
+                                                </div>
+                                                <div class="_1okrU _2tSFG hidden">
+                                                    <div>
+                                                        <ul class="mwDh_">
+                                                            <li class="_13C73"
+                                                                data-qa-id="cta-keywords_suggestion-desktop">
+                                                                <div class="_2EKK7"><span class="_1Fe7S"><span
+                                                                            class="_1oSml _3_8LY"></span></span><span class="_1xVDP"
+                                                                        data-qa-id="text-keywords_suggestion-desktop"><span
+                                                                            class="_3gkYY">
+                                                                            <font style="vertical-align: inherit;">
+                                                                                <font style="vertical-align: inherit;">
+                                                                                    text</font>
+                                                                            </font>
+                                                                        </span><!-- react-text: 27194 -->
+                                                                        <font style="vertical-align: inherit;">
+                                                                            <font style="vertical-align: inherit;"> ile
+                                                                            </font>
+                                                                        </font><!-- /react-text -->
+                                                                    </span><span class="_3MNzo">
+                                                                        <!-- react-text: 27196 -->
+                                                                        <!-- /react-text -->
+                                                                        <!-- react-text: 27197 -->
+                                                                        <font style="vertical-align: inherit;">
+                                                                            <font style="vertical-align: inherit;">in
+                                                                            </font><span class="_3j9Ur"
+                                                                                data-qa-id="text-keywords_suggestion_category-desktop">
+                                                                                <font style="vertical-align: inherit;">
+                                                                                    Industrial Equipment</font>
+                                                                            </span>
+                                                                        </font><!-- /react-text -->
+                                                                        <!-- react-text: 27198 -->
+                                                                        <!-- /react-text --><span class="_3j9Ur"
+                                                                            data-qa-id="text-keywords_suggestion_category-desktop">
+                                                                            <font style="vertical-align: inherit;">
+                                                                            </font>
+                                                                        </span>
+                                                                    </span></div>
+                                                            </li>
+                                                          
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -108,168 +153,9 @@
                                                                             d="M23.37 5.62a2.15 2.15 0 0 0-3 0L12 13.87 3.68 5.62a2.2 2.2 0 0 0-3.05 0 2.1 2.1 0 0 0 0 3l9.86 9.76a2.14 2.14 0 0 0 3 0l9.86-9.76a2.1 2.1 0 0 0 .02-3z">
                                                                         </path>
                                                                     </svg></span></div>
-                                                            <div class="_2gTTZ"><select autocomplete="off">
-                                                                    <option value="">Toutes catégories</option>
-                                                                    <option data-qa-id="categorylist_cat_71" value="71"
-                                                                        class="_1_1B4">-- EMPLOI --</option>
-                                                                    <option value="33" data-qa-id="categorylist_cat_33">
-                                                                        Offres d'emploi</option>
-                                                                    <option
-                                                                        value="https://go.onelink.me/3471221858/bcf737d8">
-                                                                        Offres d'emploi Cadres</option>
-                                                                    <option data-qa-id="categorylist_cat_1" value="1"
-                                                                        class="_1_1B4">-- VÉHICULES --</option>
-                                                                    <option value="2" data-qa-id="categorylist_cat_2">
-                                                                        Voitures</option>
-                                                                    <option value="3" data-qa-id="categorylist_cat_3">
-                                                                        Motos</option>
-                                                                    <option value="4" data-qa-id="categorylist_cat_4">
-                                                                        Caravaning</option>
-                                                                    <option value="5" data-qa-id="categorylist_cat_5">
-                                                                        Utilitaires</option>
-                                                                    <option
-                                                                        value="https://www.truckscorner.fr/#xtor=CS1-16-[leboncoin]-[lien]-[lien_menu]-[tc]">
-                                                                        Camions</option>
-                                                                    <option value="6" data-qa-id="categorylist_cat_6">
-                                                                        Équipement auto</option>
-                                                                    <option value="44" data-qa-id="categorylist_cat_44">
-                                                                        Équipement moto</option>
-                                                                    <option value="50" data-qa-id="categorylist_cat_50">
-                                                                        Équipement caravaning</option>
-                                                                    <option value="7" data-qa-id="categorylist_cat_7">
-                                                                        Nautisme</option>
-                                                                    <option value="51" data-qa-id="categorylist_cat_51">
-                                                                        Équipement nautisme</option>
-                                                                    <option data-qa-id="categorylist_cat_8" value="8"
-                                                                        class="_1_1B4">-- IMMOBILIER --</option>
-                                                                    <option value="9" data-qa-id="categorylist_cat_9">
-                                                                        Ventes immobilières</option>
-                                                                    <option value="https://immobilierneuf.leboncoin.fr">
-                                                                        Immobilier Neuf</option>
-                                                                    <option value="10" data-qa-id="categorylist_cat_10">
-                                                                        Locations</option>
-                                                                    <option value="11" data-qa-id="categorylist_cat_11">
-                                                                        Colocations</option>
-                                                                    <option value="13" data-qa-id="categorylist_cat_13">
-                                                                        Bureaux &amp; Commerces</option>
-                                                                    <option data-qa-id="categorylist_cat_66" value="66"
-                                                                        class="_1_1B4">-- VACANCES --</option>
-                                                                    <option value="12" data-qa-id="categorylist_cat_12">
-                                                                        Locations &amp; Gîtes</option>
-                                                                    <option value="67" data-qa-id="categorylist_cat_67">
-                                                                        Chambres d'hôtes</option>
-                                                                    <option value="68" data-qa-id="categorylist_cat_68">
-                                                                        Campings</option>
-                                                                    <option value="69" data-qa-id="categorylist_cat_69">
-                                                                        Hôtels</option>
-                                                                    <option value="70" data-qa-id="categorylist_cat_70">
-                                                                        Hébergements insolites</option>
-                                                                    <option
-                                                                        value="https://www.locasun-vp.fr/?afiliate=leboncoin&amp;utm_campaign=liencat_locasunvp_leboncoin&amp;utm_source=leboncoin&amp;utm_medium=cpc#ectrans=1">
-                                                                        Ventes privées vacances</option>
-                                                                    <option data-qa-id="categorylist_cat_14" value="14"
-                                                                        class="_1_1B4">-- MULTIMÉDIA --</option>
-                                                                    <option value="15" data-qa-id="categorylist_cat_15">
-                                                                        Informatique</option>
-                                                                    <option value="43" data-qa-id="categorylist_cat_43">
-                                                                        Consoles &amp; Jeux vidéo</option>
-                                                                    <option value="16" data-qa-id="categorylist_cat_16">
-                                                                        Image &amp; Son</option>
-                                                                    <option value="17" data-qa-id="categorylist_cat_17">
-                                                                        Téléphonie</option>
-                                                                    <option data-qa-id="categorylist_cat_18" value="18"
-                                                                        class="_1_1B4">-- MAISON --</option>
-                                                                    <option value="19" data-qa-id="categorylist_cat_19">
-                                                                        Ameublement</option>
-                                                                    <option value="20" data-qa-id="categorylist_cat_20">
-                                                                        Électroménager</option>
-                                                                    <option value="45" data-qa-id="categorylist_cat_45">
-                                                                        Arts de la table</option>
-                                                                    <option value="39" data-qa-id="categorylist_cat_39">
-                                                                        Décoration</option>
-                                                                    <option value="46" data-qa-id="categorylist_cat_46">
-                                                                        Linge de maison</option>
-                                                                    <option value="21" data-qa-id="categorylist_cat_21">
-                                                                        Bricolage</option>
-                                                                    <option value="52" data-qa-id="categorylist_cat_52">
-                                                                        Jardinage</option>
-                                                                    <option data-qa-id="categorylist_cat_72" value="72"
-                                                                        class="_1_1B4">-- MODE --</option>
-                                                                    <option value="22" data-qa-id="categorylist_cat_22">
-                                                                        Vêtements</option>
-                                                                    <option value="53" data-qa-id="categorylist_cat_53">
-                                                                        Chaussures</option>
-                                                                    <option value="47" data-qa-id="categorylist_cat_47">
-                                                                        Accessoires &amp; Bagagerie</option>
-                                                                    <option value="42" data-qa-id="categorylist_cat_42">
-                                                                        Montres &amp; Bijoux</option>
-                                                                    <option value="23" data-qa-id="categorylist_cat_23">
-                                                                        Équipement bébé</option>
-                                                                    <option value="54" data-qa-id="categorylist_cat_54">
-                                                                        Vêtements bébé</option>
-                                                                    <option
-                                                                        value="https://www.videdressing.com/femme/c-c5988.html?utm_source=leboncoin.fr&amp;utm_medium=referral&amp;utm_campaign=Test4Default">
-                                                                        Videdressing</option>
-                                                                    <option data-qa-id="categorylist_cat_24" value="24"
-                                                                        class="_1_1B4">-- LOISIRS --</option>
-                                                                    <option value="25" data-qa-id="categorylist_cat_25">
-                                                                        DVD - Films</option>
-                                                                    <option value="26" data-qa-id="categorylist_cat_26">
-                                                                        CD - Musique</option>
-                                                                    <option value="27" data-qa-id="categorylist_cat_27">
-                                                                        Livres</option>
-                                                                    <option value="28" data-qa-id="categorylist_cat_28">
-                                                                        Animaux</option>
-                                                                    <option value="55" data-qa-id="categorylist_cat_55">
-                                                                        Vélos</option>
-                                                                    <option value="29" data-qa-id="categorylist_cat_29">
-                                                                        Sports &amp; Hobbies</option>
-                                                                    <option value="30" data-qa-id="categorylist_cat_30">
-                                                                        Instruments de musique</option>
-                                                                    <option value="40" data-qa-id="categorylist_cat_40">
-                                                                        Collection</option>
-                                                                    <option value="41" data-qa-id="categorylist_cat_41">
-                                                                        Jeux &amp; Jouets</option>
-                                                                    <option value="48" data-qa-id="categorylist_cat_48">
-                                                                        Vins &amp; Gastronomie</option>
-                                                                    <option data-qa-id="categorylist_cat_56" value="56"
-                                                                        class="_1_1B4">-- MATÉRIEL PROFESSIONNEL --
-                                                                    </option>
-                                                                    <option value="57" data-qa-id="categorylist_cat_57">
-                                                                        Matériel agricole</option>
-                                                                    <option value="58" data-qa-id="categorylist_cat_58">
-                                                                        Transport - Manutention</option>
-                                                                    <option value="59" data-qa-id="categorylist_cat_59">
-                                                                        BTP - Chantier gros-oeuvre</option>
-                                                                    <option value="60" data-qa-id="categorylist_cat_60">
-                                                                        Outillage - Matériaux 2nd-oeuvre</option>
-                                                                    <option value="32" data-qa-id="categorylist_cat_32">
-                                                                        Équipements industriels</option>
-                                                                    <option value="61" data-qa-id="categorylist_cat_61">
-                                                                        Restauration - Hôtellerie</option>
-                                                                    <option value="62" data-qa-id="categorylist_cat_62">
-                                                                        Fournitures de bureau</option>
-                                                                    <option value="63" data-qa-id="categorylist_cat_63">
-                                                                        Commerces &amp; Marchés</option>
-                                                                    <option value="64" data-qa-id="categorylist_cat_64">
-                                                                        Matériel médical</option>
-                                                                    <option data-qa-id="categorylist_cat_31" value="31"
-                                                                        class="_1_1B4">-- SERVICES --</option>
-                                                                    <option value="34" data-qa-id="categorylist_cat_34">
-                                                                        Prestations de services</option>
-                                                                    <option value="35" data-qa-id="categorylist_cat_35">
-                                                                        Billetterie</option>
-                                                                    <option value="49" data-qa-id="categorylist_cat_49">
-                                                                        Évènements</option>
-                                                                    <option value="36" data-qa-id="categorylist_cat_36">
-                                                                        Cours particuliers</option>
-                                                                    <option value="65" data-qa-id="categorylist_cat_65">
-                                                                        Covoiturage</option>
-                                                                    <option data-qa-id="categorylist_cat_37" value="37"
-                                                                        class="_1_1B4">-- AUTRES --</option>
-                                                                    <option value="38" data-qa-id="categorylist_cat_38">
-                                                                        Autres</option>
-                                                                </select></div>
+                                                            <div class="_2gTTZ">
+                                                               
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="_3X-Yv" data-qa-id="select-toggle_category">
@@ -282,21 +168,218 @@
                                                                         </path>
                                                                     </svg></span></div>
                                                             <div class="_2gTTZ">
-                                                                <div>Informatique</div>
+                                                                <div class="_Cname">Informatique</div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="_3Vcbh" id="display_list" style="display:none"><div><ul><li class="_11G4C _1_1B4"><a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">All categories</font></font></a></li></ul><ul><li data-qa-id="categorylist_cat_71" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">EMPLOYMENT</font></font></li><li data-qa-id="categorylist_cat_33" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Jobs</font></font></li><li class="tT3Ya"><a href="https://go.onelink.me/3471221858/bcf737d8"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Job offers Frames </font></font></a><sup><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">new</font></font></sup></li></ul><ul><li data-qa-id="categorylist_cat_1" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">VEHICLES</font></font></li><li data-qa-id="categorylist_cat_2" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">cars</font></font></li><li data-qa-id="categorylist_cat_3" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">motorcycles</font></font></li><li data-qa-id="categorylist_cat_4" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">caravanning</font></font></li><li data-qa-id="categorylist_cat_5" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Utilities</font></font></li><li class="tT3Ya"><a href="https://www.truckscorner.fr/#xtor=CS1-16-[leboncoin]-[lien]-[lien_menu]-[tc]"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Trucks </font></font></a><sup><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">new</font></font></sup></li><li data-qa-id="categorylist_cat_7" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">boating</font></font></li><li data-qa-id="categorylist_cat_6" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Auto equipment</font></font></li><li data-qa-id="categorylist_cat_44" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Motorcycle equipment</font></font></li><li data-qa-id="categorylist_cat_50" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Caravanning equipment</font></font></li><li data-qa-id="categorylist_cat_51" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Equipment boating</font></font></li></ul></div><div><ul><li data-qa-id="categorylist_cat_8" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">IMMOVABLE</font></font></li><li data-qa-id="categorylist_cat_9" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Real estate sales</font></font></li><li class="tT3Ya"><a href="https://immobilierneuf.leboncoin.fr"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">New real estate </font></font></a><sup><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">new</font></font></sup></li><li data-qa-id="categorylist_cat_10" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">rentals</font></font></li><li data-qa-id="categorylist_cat_11" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">housemates</font></font></li><li data-qa-id="categorylist_cat_13" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Offices &amp; Shops</font></font></li></ul><ul><li data-qa-id="categorylist_cat_66" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">VACATION</font></font></li><li data-qa-id="categorylist_cat_12" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rentals &amp; Gîtes</font></font></li><li data-qa-id="categorylist_cat_67" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Guest rooms</font></font></li><li data-qa-id="categorylist_cat_68" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">campsites</font></font></li><li data-qa-id="categorylist_cat_69" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">hotels</font></font></li><li data-qa-id="categorylist_cat_70" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Unusual accommodations</font></font></li><li class="tT3Ya"><a href="https://www.locasun-vp.fr/?afiliate=leboncoin&amp;utm_campaign=liencat_locasunvp_leboncoin&amp;utm_source=leboncoin&amp;utm_medium=cpc#ectrans=1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Private sales holidays </font></font></a><sup><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">new</font></font></sup></li></ul></div><div><ul><li data-qa-id="categorylist_cat_14" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MULTIMEDIA</font></font></li><li data-qa-id="categorylist_cat_15" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">data processing</font></font></li><li data-qa-id="categorylist_cat_43" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Consoles &amp; Video Games</font></font></li><li data-qa-id="categorylist_cat_16" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Image &amp; Sound</font></font></li><li data-qa-id="categorylist_cat_17" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Telephony</font></font></li></ul><ul><li data-qa-id="categorylist_cat_24" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">HOBBIES</font></font></li><li data-qa-id="categorylist_cat_25" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DVD - Movies</font></font></li><li data-qa-id="categorylist_cat_26" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CD - Music</font></font></li><li data-qa-id="categorylist_cat_27" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Books</font></font></li><li data-qa-id="categorylist_cat_28" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Animals</font></font></li><li data-qa-id="categorylist_cat_55" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">bicycles</font></font></li><li data-qa-id="categorylist_cat_29" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sports &amp; Hobbies</font></font></li><li data-qa-id="categorylist_cat_30" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Musical instruments</font></font></li><li data-qa-id="categorylist_cat_40" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Collection</font></font></li><li data-qa-id="categorylist_cat_41" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Games toys</font></font></li><li data-qa-id="categorylist_cat_48" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Wine &amp; Gastronomy</font></font></li></ul></div><div><ul><li data-qa-id="categorylist_cat_56" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PROFESSIONAL EQUIPMENT</font></font></li><li data-qa-id="categorylist_cat_57" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Agricultural material</font></font></li><li data-qa-id="categorylist_cat_58" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Transport - Handling</font></font></li><li data-qa-id="categorylist_cat_59" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Construction - Construction site</font></font></li><li data-qa-id="categorylist_cat_60" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tools - Materials 2nd-work</font></font></li><li data-qa-id="categorylist_cat_32" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Industrial equipment</font></font></li><li data-qa-id="categorylist_cat_61" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Catering - Hotels</font></font></li><li data-qa-id="categorylist_cat_62" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Office supplies</font></font></li><li data-qa-id="categorylist_cat_63" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Shops &amp; Markets</font></font></li><li data-qa-id="categorylist_cat_64" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Medical material</font></font></li></ul><ul><li data-qa-id="categorylist_cat_31" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SERVICES</font></font></li><li data-qa-id="categorylist_cat_34" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Services</font></font></li><li data-qa-id="categorylist_cat_35" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ticketing</font></font></li><li data-qa-id="categorylist_cat_49" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Events</font></font></li><li data-qa-id="categorylist_cat_36" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Private lessons</font></font></li><li data-qa-id="categorylist_cat_65" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Carpooling</font></font></li></ul></div><div><ul><li data-qa-id="categorylist_cat_18" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">HOUSE</font></font></li><li data-qa-id="categorylist_cat_19" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">furnishing</font></font></li><li data-qa-id="categorylist_cat_20" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Home appliance</font></font></li><li data-qa-id="categorylist_cat_45" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Table Arts</font></font></li><li data-qa-id="categorylist_cat_39" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Decoration</font></font></li><li data-qa-id="categorylist_cat_46" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Linen</font></font></li><li data-qa-id="categorylist_cat_21" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Housing</font></font></li><li data-qa-id="categorylist_cat_52" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gardening</font></font></li></ul><ul><li data-qa-id="categorylist_cat_72" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FASHION</font></font></li><li data-qa-id="categorylist_cat_22" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Clothing</font></font></li><li data-qa-id="categorylist_cat_53" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Shoes</font></font></li><li data-qa-id="categorylist_cat_47" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Accessories &amp; Luggage</font></font></li><li data-qa-id="categorylist_cat_42" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Watches &amp; Jewelry</font></font></li><li data-qa-id="categorylist_cat_23" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Baby equipment</font></font></li><li data-qa-id="categorylist_cat_54" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Baby clothes</font></font></li><li class="tT3Ya"><a href="https://www.videdressing.com/femme/c-c5988.html?utm_source=leboncoin.fr&amp;utm_medium=referral&amp;utm_campaign=Test6VariantA" target=""><span data-ab-tasty-removed="1" style="display: none;">Videdressing</span><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Luxury and Trend</font></font></span></a><sup><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> new</font></font></sup></li></ul><ul><li data-qa-id="categorylist_cat_37" class="_1_1B4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OTHER</font></font></li><li data-qa-id="categorylist_cat_38" class="tT3Ya"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Other</font></font></li></ul></div></div>
+                                                <div class="_3Vcbh" style="display:none" id="Lclist">
+                                                    <div>
+                                                        <ul>
+                                                            <li class="_11G4C _1_1B4"><a id="Trselect">Toutes
+                                                                    catégories</a></li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li data-qa-id="categorylist_cat_71" data-id="EMPLOI"
+                                                                class="_1_1B4 _Ctitle">EMPLOI</li>
+                                                            <li data-qa-id="categorylist_cat_33"
+                                                                class="tT3Ya">Offres d'emploi</li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li data-qa-id="categorylist_cat_1" data-id="VÉHICULES"
+                                                                class="_1_1B4 _Ctitle">VÉHICULES</li>
+                                                            <li data-qa-id="categorylist_cat_2" data-id="2" value="Voitures"
+                                                                class="tT3Ya">Voitures</li>
+                                                            <li data-qa-id="categorylist_cat_3" data-id="3" value="Motos"
+                                                                class="tT3Ya">Motos</li>
+                                                            <li data-qa-id="categorylist_cat_4" data-id="4" value="Caravaning"
+                                                                class="tT3Ya">Caravaning</li>
+                                                            <li data-qa-id="categorylist_cat_5" data-id="5" value="Utilitaires"
+                                                                class="tT3Ya">Utilitaires</li>
+                                                            <li data-qa-id="categorylist_cat_6" data-id="6" value="Équipement auto"
+                                                                class="tT3Ya">Équipement auto</li>
+                                                            <li data-qa-id="categorylist_cat_44" data-id="7" value="Équipement moto"
+                                                                class="tT3Ya">Équipement moto</li>
+                                                            <li data-qa-id="categorylist_cat_50" data-id="8" value="Équipement caravaning"
+                                                                class="tT3Ya">Équipement caravaning</li>
+                                                            <li data-qa-id="categorylist_cat_7" data-id="9" value="Nautisme"
+                                                                class="tT3Ya">Nautisme</li>
+                                                            <li data-qa-id="categorylist_cat_51" data-id="10" value="Équipement nautisme"
+                                                                class="tT3Ya">Équipement nautisme</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div>
+                                                        <ul>
+                                                            <li data-qa-id="categorylist_cat_8" data-id="IMMOBILIER" id="category_cat_immobiler"
+                                                                class="_1_1B4 _Ctitle">IMMOBILIER</li>
+                                                            <li data-qa-id="categorylist_cat_9" data-id="11" value="Ventes immobilières"
+                                                                class="tT3Ya">Ventes immobilières</li>
+                                                            <li data-qa-id="categorylist_cat_10" data-id="12" value="Locations"
+                                                                class="tT3Ya">Locations</li>
+                                                            <li data-qa-id="categorylist_cat_11" data-id="13" value="Colocations"
+                                                                class="tT3Ya">Colocations</li>
+                                                            <li data-qa-id="categorylist_cat_13" data-id="14" value="Bureaux &amp; Commerces"
+                                                                class="tT3Ya">Bureaux &amp; Commerces
+                                                            </li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li data-qa-id="categorylist_cat_66" data-id="VACANCES" id="category_cat_immobiler"
+                                                                class="_1_1B4 _Ctitle">VACANCES</li>
+                                                            <li data-qa-id="categorylist_cat_12" data-id="15" value="Locations &amp; Gîtes"
+                                                                class="tT3Ya">Locations &amp; Gîtes</li>
+                                                            <li data-qa-id="categorylist_cat_67" data-id="16" value="Chambres d'hôtes"
+                                                                class="tT3Ya">Chambres d'hôtes</li>
+                                                            <li data-qa-id="categorylist_cat_68" data-id="17" value="Campings"
+                                                                class="tT3Ya">Campings</li>
+                                                            <li data-qa-id="categorylist_cat_69" data-id="18" value="Hôtels"
+                                                                class="tT3Ya">Hôtels</li>
+                                                            <li data-qa-id="categorylist_cat_70" data-id="19" value="Hébergements insolites"
+                                                                class="tT3Ya">Hébergements insolites
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div>
+                                                        <ul>
+                                                            <li data-qa-id="categorylist_cat_14" data-id="MULTIMÉDIA"
+                                                                class="_1_1B4 _Ctitle" >MULTIMÉDIA</li>
+                                                            <li data-qa-id="categorylist_cat_15" data-id="20" value="Informatique"
+                                                                class="tT3Ya">Informatique</li> 
+                                                            <li data-qa-id="categorylist_cat_43" data-id="21" value="Consoles &amp; Jeux vidéo"
+                                                                class="tT3Ya">Consoles &amp; Jeux vidéo
+                                                            </li>
+                                                            <li data-qa-id="categorylist_cat_16" data-id="22" value="Image &amp; Son"
+                                                                class="tT3Ya">Image &amp; Son</li>
+                                                            <li data-qa-id="categorylist_cat_17" data-id="23" value="Téléphonie"
+                                                                class="tT3Ya">Téléphonie</li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li data-qa-id="categorylist_cat_24" data-id="LOISIRS"
+                                                                class="_1_1B4 _Ctitle">LOISIRS</li>
+                                                            <li data-qa-id="categorylist_cat_25" data-id="24" value="DVD - Films"
+                                                                class="tT3Ya">DVD - Films</li>
+                                                            <li data-qa-id="categorylist_cat_26" data-id="25" value="CD - Musique"
+                                                                class="tT3Ya">CD - Musique</li>
+                                                            <li data-qa-id="categorylist_cat_27" data-id="26" value="Livres"
+                                                                class="tT3Ya">Livres</li>
+                                                            <li data-qa-id="categorylist_cat_28" data-id="27" value="Animaux"
+                                                                class="tT3Ya">Animaux</li>
+                                                            <li data-qa-id="categorylist_cat_55" data-id="28" value="Vélos"
+                                                                class="tT3Ya">Vélos</li>
+                                                            <li data-qa-id="categorylist_cat_29" data-id="29" value="Sports &amp; Hobbies"
+                                                                class="tT3Ya">Sports &amp; Hobbies</li>
+                                                            <li data-qa-id="categorylist_cat_30" data-id="30" value="Instruments de musique"
+                                                                class="tT3Ya">Instruments de musique
+                                                            </li>
+                                                            <li data-qa-id="categorylist_cat_40" data-id="31" value="Collection"
+                                                                class="tT3Ya">Collection</li>
+                                                            <li data-qa-id="categorylist_cat_41" data-id="32" value="Jeux &amp; Jouets"
+                                                                class="tT3Ya">Jeux &amp; Jouets</li>
+                                                            <li data-qa-id="categorylist_cat_48" data-id="33" value="Vins &amp; Gastronomie"
+                                                                class="tT3Ya">Vins &amp; Gastronomie
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div>
+                                                        <ul>
+                                                            <li data-qa-id="categorylist_cat_56" data-id="MATÉRIEL PROFESSIONNEL"
+                                                                class="_1_1B4 _Ctitle">MATÉRIEL PROFESSIONNEL
+                                                            </li>
+                                                            <li data-qa-id="categorylist_cat_57" data-id="34" value="Matériel agricole"
+                                                                class="tT3Ya">Matériel agricole</li>
+                                                            <li data-qa-id="categorylist_cat_58" data-id="35" value="Transport - Manutention"
+                                                                class="tT3Ya">Transport - Manutention
+                                                            </li>
+                                                            <li data-qa-id="categorylist_cat_59" data-id="36" value="BTP - Chantier gros-oeuvre"
+                                                                class="tT3Ya">BTP - Chantier gros-oeuvre
+                                                            </li>
+                                                            <li data-qa-id="categorylist_cat_60" data-id="37" value="Outillage - Matériaux
+                                                            2nd-oeuvre"
+                                                                class="tT3Ya">Outillage - Matériaux
+                                                                2nd-oeuvre</li>
+                                                            <li data-qa-id="categorylist_cat_32" data-id="38" value="Équipements industriels"
+                                                                class="tT3Ya">Équipements industriels
+                                                            </li>
+                                                            <li data-qa-id="categorylist_cat_61" data-id="39" value="Restauration - Hôtellerie"
+                                                                class="tT3Ya">Restauration - Hôtellerie
+                                                            </li>
+                                                            <li data-qa-id="categorylist_cat_62" data-id="40" value="Fournitures de bureau"
+                                                                class="tT3Ya">Fournitures de bureau</li>
+                                                            <li data-qa-id="categorylist_cat_63" data-id="41" value="Matériel médical"
+                                                                class="tT3Ya">Commerces &amp; Marchés
+                                                            </li>
+                                                            <li data-qa-id="categorylist_cat_64" data-id="42" value=""
+                                                                class="tT3Ya">Matériel médical</li> 
+                                                        </ul>
+                                                        <ul>
+                                                            <li data-qa-id="categorylist_cat_31" data-id="SERVICES"
+                                                                class="_1_1B4 _Ctitle">SERVICES</li>
+                                                            <li data-qa-id="categorylist_cat_34" data-id="43" value="Billetterie"
+                                                                class="tT3Ya">Prestations de services
+                                                            </li>
+                                                            <li data-qa-id="categorylist_cat_35" data-id="44" value=""
+                                                                class="tT3Ya">Billetterie</li>
+                                                            <li data-qa-id="categorylist_cat_49" data-id="45" value="Évènements"
+                                                                class="tT3Ya">Évènements</li>
+                                                            <li data-qa-id="categorylist_cat_36" data-id="46" value="Cours particuliers"
+                                                                class="tT3Ya">Cours particuliers</li>
+                                                            <li data-qa-id="categorylist_cat_65" data-id="47" value="Covoiturage"
+                                                                class="tT3Ya">Covoiturage</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div>
+                                                        <ul>
+                                                            <li data-qa-id="categorylist_cat_18" data-id="MAISON"
+                                                                class="_1_1B4 _Ctitle">MAISON</li> 
+                                                            <li data-qa-id="categorylist_cat_19" data-id="48" value="Ameublement"
+                                                                class="tT3Ya">Ameublement</li>
+                                                            <li data-qa-id="categorylist_cat_20" data-id="49" value="Électroménager"
+                                                                class="tT3Ya">Électroménager</li>
+                                                            <li data-qa-id="categorylist_cat_45" data-id="50" value="Arts de la table"
+                                                                class="tT3Ya">Arts de la table</li> 
+                                                            <li data-qa-id="categorylist_cat_39" data-id="51" value="Décoration"
+                                                                class="tT3Ya">Décoration</li>
+                                                            <li data-qa-id="categorylist_cat_46" data-id="52" value="Linge de maison"
+                                                                class="tT3Ya">Linge de maison</li>
+                                                            <li data-qa-id="categorylist_cat_21" data-id="53" value="Bricolage"
+                                                                class="tT3Ya">Bricolage</li>
+                                                            <li data-qa-id="categorylist_cat_52" data-id="54" value="Jardinage"
+                                                                class="tT3Ya">Jardinage</li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li data-qa-id="categorylist_cat_72" data-id="MODE" 
+                                                                class="_1_1B4 _Ctitle">MODE</li>
+                                                            <li data-qa-id="categorylist_cat_22" data-id="55" value="Vêtements"
+                                                                class="tT3Ya">Vêtements</li>
+                                                            <li data-qa-id="categorylist_cat_53" data-id="56" value="Chaussures"
+                                                                class="tT3Ya">Chaussures</li>
+                                                            <li data-qa-id="categorylist_cat_47" data-id="57" value="Accessoires &amp;
+                                                            Bagagerie"
+                                                                class="tT3Ya">Accessoires &amp;
+                                                                Bagagerie</li>
+                                                            <li data-qa-id="categorylist_cat_42" data-id="58" value="Montres &amp; Bijoux"
+                                                                class="tT3Ya">Montres &amp; Bijoux</li>
+                                                            <li data-qa-id="categorylist_cat_23" data-id="59" value="Équipement bébé"
+                                                                class="tT3Ya">Équipement bébé</li>
+                                                            <li data-qa-id="categorylist_cat_54" data-id="60" value="Vêtements bébé"
+                                                                class="tT3Ya">Vêtements bébé</li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li data-qa-id="categorylist_cat_37" data-id="AUTRES"
+                                                                class="_1_1B4 _Ctitle">AUTRES</li>
+                                                            <li data-qa-id="categorylist_cat_38" data-id="61" value="Autres"
+                                                                class="tT3Ya">Autres</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="TwSJ3">
                                         <div class="_3Hx4s"><label class="WzIvr"><input type="checkbox" id="ctitle"
-                                                    name="it" data-qa-id="checkbox-title_only" value="on">
+                                                    name="it" data-qa-id="checkbox-title_only" value="1">
                                                 <!-- react-text: 773 -->Recherche dans le titre uniquement
                                                 <!-- /react-text --></label><label class="WzIvr"><input type="checkbox"
-                                                    id="curgent" name="ur" data-qa-id="checkbox-urgent" value="on">
+                                                    id="curgent" name="ur" data-qa-id="checkbox-urgent" value="2">
                                                 <!-- react-text: 776 -->Annonces
                                                 <!-- /react-text -->
                                                 <!-- react-text: 777 -->
@@ -354,8 +437,10 @@
                                                                         input#undefined::-ms-clear {
                                                                             display: none;
                                                                         }
+
                                                                     </style><input placeholder="Ville ou code postal"
                                                                         autocomplete="off"
+                                                                        name="distance"
                                                                         data-qa-id="input-cityzipcode" role="combobox"
                                                                         aria-expanded="false" aria-owns=""
                                                                         aria-haspopup="false"
@@ -379,10 +464,12 @@
                                 </section>
                             </div>
                             <div class="_3iU_B">
-                                <div class="_2bh4L trackable" data-qa-id="input-search_button"><button
-                                        class="_2sNbI _1xIyN GXQkc _2xk2l">
+                                <div class="_2bh4L trackable" data-qa-id="input-search_button">
+                                   
+                                        <button class="_2sNbI _1xIyN GXQkc _2xk2l" type="submit">
                                         <!-- react-text: 818 -->Rechercher
-                                        <!-- /react-text --></button></div>
+                                        <!-- /react-text --></button>
+                                    </div>
                                 <div class="_2id4H">
                                     <div class="_19y-B">
                                         <div class="_3jAsY">
@@ -404,7 +491,7 @@
                                 <div>
                                     <div><span class="_2oGk4">Prix entre</span>
                                         <div class="_1uP35">
-                                            <select data-qa-id="select-price_min">
+                                            <select data-qa-id="select-price_min" id="min_price">
                                                 <option>Prix min</option>
                                                 <option value="">0</option>
                                                 <option value="10">10</option>
@@ -420,7 +507,7 @@
                                                 <option value="500">500</option>
                                                 <option value="1000">1 000</option>
                                             </select></div><span class="_2oGk4 XtGYX">et</span>
-                                        <div class="_1uP35"><select data-qa-id="select-price_max">
+                                        <div class="_1uP35"><select data-qa-id="select-price_max" id="max_price">
                                                 <option>Prix max</option>
                                                 <option value="10">10</option>
                                                 <option value="20">20</option>
@@ -440,8 +527,8 @@
                                 </div>
                             </div>
                         </section><!-- react-empty: 827 -->
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
 
             <div class="apn-hbl apn-hb"><span id="hbl-s" class="teal-apn"></span></div>
@@ -485,13 +572,15 @@
                                                 data-reactid="365">
                                                 <!-- react-text: 366 -->Particuliers
                                                 <!-- /react-text --><span data-reactid="367"><span class="_2ilNG"
-                                                        data-reactid="368">{{$particular_count}}</span></span></label></div>
+                                                        data-reactid="368">{{$particular_count}}</span></span></label>
+                                        </div>
                                         <div data-reactid="369"><input type="checkbox" name="adlist_filter"
                                                 data-qa-id="result_pro" id="result_pro" value="pro" data-reactid="370"
                                                 checked=""><label for="result_pro" data-reactid="371">
                                                 <!-- react-text: 372 -->Professionnels
                                                 <!-- /react-text --><span data-reactid="373"><span class="_2ilNG"
-                                                        data-reactid="374">{{$professional_count}}</span></span></label></div>
+                                                        data-reactid="374">{{$professional_count}}</span></span></label>
+                                        </div>
                                         <div class="selectWrapper" data-reactid="375"><select class="select"
                                                 data-reactid="376">
                                                 <option selected="" value="time-desc" data-reactid="377">Tri : Plus
@@ -506,8 +595,8 @@
                                     </div>
                                     <div data-reactid="381">
                                         <ul class="undefined" data-reactid="382">
-                                        @foreach($result as $item)
-                                        <?php
+                                            @foreach($result as $item)
+                                            <?php
                                         $image = explode(",", $item['camera'])[0];
                                         // echo $image;
                                         ?>
@@ -535,13 +624,12 @@
                                                 </div>
                                                 <a title="Peugeot 208 1.6 e-hdi fap 92 allure etg6 5p"
                                                     class="clearfix trackable" rel="nofollow"
-                                                    href="{{URL::to('frontoffice/aditems')}}/{{$item['id']}}" data-reactid="392">
+                                                    href="{{URL::to('frontoffice/aditems')}}/{{$item['id']}}"
+                                                    data-reactid="392">
                                                     <div class="_3dPxM" data-reactid="393"><span class="_a3cT"
                                                             data-reactid="394">
                                                             <div class="LazyLoad is-visible" data-reactid="395">
-                                                                <img
-                                                                    class=""
-                                                                    src="{{asset('img/picture')}}/{{$image}}"
+                                                                <img class="" src="{{asset('img/picture')}}/{{$image}}"
                                                                     itemprop="image"
                                                                     content="https://img2.leboncoin.fr/ad-image/db7695bb62ad79d48d4af2178af90ba79e72f7db.jpg"
                                                                     alt="Peugeot 208 1.6 e-hdi fap 92 allure etg6 5p">
@@ -552,15 +640,16 @@
                                                                     <path
                                                                         d="M12 8.556c1.988 0 3.6 1.642 3.6 3.667 0 2.024-1.612 3.666-3.6 3.666s-3.6-1.642-3.6-3.666c0-2.025 1.612-3.667 3.6-3.667zm0 9.778c3.313 0 6-2.738 6-6.111 0-3.375-2.687-6.112-6-6.112-3.312 0-6 2.737-6 6.112 0 3.373 2.688 6.11 6 6.11zm9.6-15.89c1.32 0 2.4 1.1 2.4 2.444v14.667C24 20.9 22.92 22 21.6 22H2.4C1.08 22 0 20.9 0 19.555V4.89c0-1.345 1.08-2.445 2.4-2.445h3.804L7.68.795A2.415 2.415 0 0 1 9.456 0h5.088c.672 0 1.32.294 1.764.794l1.488 1.65H21.6z"
                                                                         fill="#000"></path>
-                                                                </svg></span><span data-reactid="398">{{count(explode(",",$item['camera']))}}</span></span>
+                                                                </svg></span><span
+                                                                data-reactid="398">{{count(explode(",",$item['camera']))}}</span></span>
                                                     </div>
                                                     <section class="_2EDA9" data-reactid="399">
                                                         <div data-reactid="400">
                                                             <p class="_2tubl" data-reactid="401">
-                                                            <span itemprop="name"
-                                                                    data-qa-id="aditem_title" data-reactid="402">{{$item['subject']}}</span>
-                                            
-                                                                    </p>
+                                                                <span itemprop="name" data-qa-id="aditem_title"
+                                                                    data-reactid="402">{{$item['subject']}}</span>
+
+                                                            </p>
                                                             <div class="_2OJ8g" itemprop="priceSpecification"
                                                                 itemscope=""
                                                                 itemtype="http://schema.org/PriceSpecification"
@@ -582,8 +671,9 @@
                                                                 <!-- /react-text -->
                                                             </p>
                                                             <p class="_2qeuk" itemprop="availableAtOrFrom"
-                                                                data-qa-id="aditem_location" data-reactid="412">{{$item['adress']}}</p>
-                                                                
+                                                                data-qa-id="aditem_location" data-reactid="412">
+                                                                {{$item['adress']}}</p>
+
                                                             <p class="mAnae" itemprop="availabilityStarts"
                                                                 data-qa-id="listitem_date" content="Aujourd'hui, 15:01"
                                                                 data-reactid="413">{{$item['create_time']}}</p>
@@ -596,7 +686,7 @@
                                                 <div class="__react_component_tooltip place-top type-dark "
                                                     id="toggleSavedAd_0" data-id="tooltip" data-reactid="416"></div>
                                             </li>
-                                         @endforeach
+                                            @endforeach
                                             <div class="_4cOP1" data-reactid="1596">
                                                 <!-- react-empty: 1597 --><button
                                                     class="_2sNbI _1xIyN _2xk2l _2B6ae _1Q7d5 _2qyUu"
@@ -614,8 +704,8 @@
                                 </div>
                                 <div class="googleafs" data-reactid="1601"></div>
                                 <div class="_1evK6" data-reactid="1602">
-                                   <div id="pagination">
-                                   </div>
+                                    <div id="pagination">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -638,9 +728,9 @@
                                                     </div>
                                                 </div>
                                             </div><a title="PROMO villa10 per,pisc vue pano ss vis a vis calme"
-                                                class="_2fKRW" data-qa-id="aditem_container"
-                                                href="#" data-reactid="1633"><span
-                                                    class="_1sbqp" data-reactid="1634">À LA UNE</span>
+                                                class="_2fKRW" data-qa-id="aditem_container" href="#"
+                                                data-reactid="1633"><span class="_1sbqp" data-reactid="1634">À LA
+                                                    UNE</span>
                                                 <div class="_2-jsN" data-reactid="1635">
                                                     <div class="LazyLoad is-visible" data-reactid="1636">
                                                         <div>
@@ -738,9 +828,9 @@
                                                     </div>
                                                 </div>
                                             </div><a title="Rachete comptant mobilier ancien tableaux bibelots"
-                                                class="_2fKRW" data-qa-id="aditem_container"
-                                                href="#" data-reactid="1672"><span
-                                                    class="_1sbqp" data-reactid="1673">À LA UNE</span>
+                                                class="_2fKRW" data-qa-id="aditem_container" href="#"
+                                                data-reactid="1672"><span class="_1sbqp" data-reactid="1673">À LA
+                                                    UNE</span>
                                                 <div class="_2-jsN" data-reactid="1674">
                                                     <div class="LazyLoad is-visible" data-reactid="1675">
                                                         <div>
@@ -800,9 +890,8 @@
                                                     </div>
                                                 </div>
                                             </div><a title="Batiment metal de 8m par 15m" class="_2fKRW"
-                                                data-qa-id="aditem_container"
-                                                href="#"
-                                                data-reactid="1696"><span class="_1sbqp" data-reactid="1697">À LA
+                                                data-qa-id="aditem_container" href="#" data-reactid="1696"><span
+                                                    class="_1sbqp" data-reactid="1697">À LA
                                                     UNE</span>
                                                 <div class="_2-jsN" data-reactid="1698">
                                                     <div class="LazyLoad is-visible" data-reactid="1699">
@@ -898,190 +987,155 @@
                         <div class="_1i0e0 _1YhkB">
                             <div class="_3UM0h">
                                 <ul>
-                                    <li class="_3f3p2"><a title="EMPLOI" class="trackable"
-                                            href="#">EMPLOI</a></li>
+                                    <li class="_3f3p2"><a title="EMPLOI" class="trackable" href="#">EMPLOI</a></li>
                                     <li class=""><a title="Offres d'emploi" class="trackable"
                                             href="/offres_d_emploi/offres/aquitaine/">Offres d'emploi</a></li>
-                                    <li class=""><a href="#" target="_self"
-                                            title="Offres d'emploi Cadres" class="trackable">Offres d'emploi Cadres</a>
+                                    <li class=""><a href="#" target="_self" title="Offres d'emploi Cadres"
+                                            class="trackable">Offres d'emploi Cadres</a>
                                     </li>
-                                    <li class="_3f3p2"><a title="VEHICULES" class="trackable"
-                                            href="#">VEHICULES</a></li>
-                                    <li class=""><a title="Voitures" class="trackable"
-                                    href="#">Voitures</a></li>
-                                    <li class=""><a title="Motos" class="trackable"
-                                    href="#">Motos</a></li>
-                                    <li class=""><a title="Caravaning" class="trackable"
-                                    href="#">Caravaning</a></li>
-                                    <li class=""><a title="Utilitaires" class="trackable"
-                                    href="#">Utilitaires</a></li>
-                                    <li class=""><a
-                                    href="#"
-                                            target="_self" title="Camions" class="trackable">Camions</a></li>
-                                    <li class=""><a title="Nautisme" class="trackable"
-                                    href="#">Nautisme</a></li>
-                                    <li class=""><a title="Equipement Auto" class="trackable"
-                                    href="#">Equipement Auto</a></li>
-                                    <li class=""><a title="Equipement Moto" class="trackable"
-                                    href="#">Equipement Moto</a></li>
-                                    <li class=""><a title="Equipement Caravaning" class="trackable"
-                                    href="#">Equipement Caravaning</a>
+                                    <li class="_3f3p2"><a title="VEHICULES" class="trackable" href="#">VEHICULES</a>
                                     </li>
-                                    <li class=""><a title="Equipement Nautisme" class="trackable"
-                                    href="#">Equipement Nautisme</a></li>
-                                    <li class="_3f3p2"><a title="IMMOBILIER" class="trackable"
-                                            href="#">IMMOBILIER</a></li>
-                                    <li class=""><a title="Ventes immobilières" class="trackable"
-                                    href="#">Ventes immobilières</a></li>
-                                    <li class=""><a href="#" target="_self"
-                                            title="Immobilier Neuf" class="trackable">Immobilier Neuf</a></li>
-                                    <li class=""><a title="Locations" class="trackable"
-                                    href="#">Locations</a></li>
-                                    <li class=""><a title="Colocations" class="trackable"
-                                    href="#">Colocations</a></li>
-                                    <li class=""><a title="Bureaux &amp; Commerces" class="trackable"
-                                    href="#">Bureaux &amp; Commerces</a></li>
+                                    <li class=""><a title="Voitures" class="trackable" href="#">Voitures</a></li>
+                                    <li class=""><a title="Motos" class="trackable" href="#">Motos</a></li>
+                                    <li class=""><a title="Caravaning" class="trackable" href="#">Caravaning</a></li>
+                                    <li class=""><a title="Utilitaires" class="trackable" href="#">Utilitaires</a></li>
+                                    <li class=""><a href="#" target="_self" title="Camions"
+                                            class="trackable">Camions</a></li>
+                                    <li class=""><a title="Nautisme" class="trackable" href="#">Nautisme</a></li>
+                                    <li class=""><a title="Equipement Auto" class="trackable" href="#">Equipement
+                                            Auto</a></li>
+                                    <li class=""><a title="Equipement Moto" class="trackable" href="#">Equipement
+                                            Moto</a></li>
+                                    <li class=""><a title="Equipement Caravaning" class="trackable" href="#">Equipement
+                                            Caravaning</a>
+                                    </li>
+                                    <li class=""><a title="Equipement Nautisme" class="trackable" href="#">Equipement
+                                            Nautisme</a></li>
+                                    <li class="_3f3p2"><a title="IMMOBILIER" class="trackable" href="#">IMMOBILIER</a>
+                                    </li>
+                                    <li class=""><a title="Ventes immobilières" class="trackable" href="#">Ventes
+                                            immobilières</a></li>
+                                    <li class=""><a href="#" target="_self" title="Immobilier Neuf"
+                                            class="trackable">Immobilier Neuf</a></li>
+                                    <li class=""><a title="Locations" class="trackable" href="#">Locations</a></li>
+                                    <li class=""><a title="Colocations" class="trackable" href="#">Colocations</a></li>
+                                    <li class=""><a title="Bureaux &amp; Commerces" class="trackable" href="#">Bureaux
+                                            &amp; Commerces</a></li>
                                 </ul>
                             </div>
                             <div class="_3UM0h">
                                 <ul>
-                                    <li class="_3f3p2"><a title="VACANCES" class="trackable"
-                                    href="#">VACANCES</a></li>
-                                    <li class=""><a title="Locations &amp; Gîtes" class="trackable"
-                                    href="#">Locations &amp; Gîtes</a></li>
-                                    <li class=""><a title="Chambres d'hôtes" class="trackable"
-                                    href="#">Chambres d'hôtes</a></li>
-                                    <li class=""><a title="Campings" class="trackable"
-                                    href="#">Campings</a></li>
-                                    <li class=""><a title="Hôtels" class="trackable"
-                                    href="#">Hôtels</a></li>
+                                    <li class="_3f3p2"><a title="VACANCES" class="trackable" href="#">VACANCES</a></li>
+                                    <li class=""><a title="Locations &amp; Gîtes" class="trackable" href="#">Locations
+                                            &amp; Gîtes</a></li>
+                                    <li class=""><a title="Chambres d'hôtes" class="trackable" href="#">Chambres
+                                            d'hôtes</a></li>
+                                    <li class=""><a title="Campings" class="trackable" href="#">Campings</a></li>
+                                    <li class=""><a title="Hôtels" class="trackable" href="#">Hôtels</a></li>
                                     <li class=""><a title="Hébergements insolites" class="trackable"
-                                    href="#">Hébergements insolites</a>
+                                            href="#">Hébergements insolites</a>
                                     </li>
-                                    <li class=""><a
-                                    href="#"
-                                            target="_self" title="Ventes privées vacances" class="trackable">Ventes
+                                    <li class=""><a href="#" target="_self" title="Ventes privées vacances"
+                                            class="trackable">Ventes
                                             privées vacances</a></li>
-                                    <li class="_3f3p2"><a title="MAISON" class="trackable"
-                                    href="#">MAISON</a></li>
-                                    <li class=""><a title="Ameublement" class="trackable"
-                                    href="#">Ameublement</a></li>
-                                    <li class=""><a title="Electroménager" class="trackable"
-                                    href="#">Electroménager</a></li>
-                                    <li class=""><a title="Arts de la table" class="trackable"
-                                    href="#">Arts de la table</a></li>
-                                    <li class=""><a title="Décoration" class="trackable"
-                                    href="#">Décoration</a></li>
-                                    <li class=""><a title="Linge de maison" class="trackable"
-                                    href="#">Linge de maison</a></li>
-                                    <li class=""><a title="Bricolage" class="trackable"
-                                    href="#">Bricolage</a></li>
-                                    <li class=""><a title="Jardinage" class="trackable"
-                                    href="#">Jardinage</a></li>
-                                    <li class="_3f3p2"><a title="MODE" class="trackable"
-                                    href="#">MODE</a></li>
-                                    <li class=""><a title="Vêtements" class="trackable"
-                                    href="#">Vêtements</a></li>
-                                    <li class=""><a title="Chaussures" class="trackable"
-                                    href="#">Chaussures</a></li>
+                                    <li class="_3f3p2"><a title="MAISON" class="trackable" href="#">MAISON</a></li>
+                                    <li class=""><a title="Ameublement" class="trackable" href="#">Ameublement</a></li>
+                                    <li class=""><a title="Electroménager" class="trackable" href="#">Electroménager</a>
+                                    </li>
+                                    <li class=""><a title="Arts de la table" class="trackable" href="#">Arts de la
+                                            table</a></li>
+                                    <li class=""><a title="Décoration" class="trackable" href="#">Décoration</a></li>
+                                    <li class=""><a title="Linge de maison" class="trackable" href="#">Linge de
+                                            maison</a></li>
+                                    <li class=""><a title="Bricolage" class="trackable" href="#">Bricolage</a></li>
+                                    <li class=""><a title="Jardinage" class="trackable" href="#">Jardinage</a></li>
+                                    <li class="_3f3p2"><a title="MODE" class="trackable" href="#">MODE</a></li>
+                                    <li class=""><a title="Vêtements" class="trackable" href="#">Vêtements</a></li>
+                                    <li class=""><a title="Chaussures" class="trackable" href="#">Chaussures</a></li>
                                     <li class=""><a title="Accessoires &amp; Bagagerie" class="trackable"
-                                    href="#">Accessoires &amp;
+                                            href="#">Accessoires &amp;
                                             Bagagerie</a></li>
-                                    <li class=""><a title="Montres &amp; Bijoux" class="trackable"
-                                    href="#">Montres &amp; Bijoux</a></li>
-                                    <li class=""><a title="Equipement bébé" class="trackable"
-                                    href="#">Equipement bébé</a></li>
-                                    <li class=""><a title="Vêtements bébé" class="trackable"
-                                    href="#">Vêtements bébé</a></li>
-                                    <li class=""><a
-                                    href="#"
-                                            target="_self" title="Videdressing" class="trackable">Videdressing</a></li>
+                                    <li class=""><a title="Montres &amp; Bijoux" class="trackable" href="#">Montres
+                                            &amp; Bijoux</a></li>
+                                    <li class=""><a title="Equipement bébé" class="trackable" href="#">Equipement
+                                            bébé</a></li>
+                                    <li class=""><a title="Vêtements bébé" class="trackable" href="#">Vêtements bébé</a>
+                                    </li>
+                                    <li class=""><a href="#" target="_self" title="Videdressing"
+                                            class="trackable">Videdressing</a></li>
                                 </ul>
                             </div>
                             <div class="_3UM0h">
                                 <ul>
-                                    <li class="_3f3p2"><a title="MULTIMEDIA" class="trackable"
-                                    href="#">MULTIMEDIA</a></li>
-                                    <li class=""><a title="Informatique" class="trackable"
-                                    href="#">Informatique</a></li>
+                                    <li class="_3f3p2"><a title="MULTIMEDIA" class="trackable" href="#">MULTIMEDIA</a>
+                                    </li>
+                                    <li class=""><a title="Informatique" class="trackable" href="#">Informatique</a>
+                                    </li>
                                     <li class=""><a title="Consoles &amp; Jeux vidéo" class="trackable"
                                             href="/consoles_jeux_video/offres/aquitaine/">Consoles &amp; Jeux vidéo</a>
                                     </li>
-                                    <li class=""><a title="Image &amp; Son" class="trackable"
-                                    href="#">Image &amp; Son</a></li>
-                                    <li class=""><a title="Téléphonie" class="trackable"
-                                    href="#">Téléphonie</a></li>
-                                    <li class="_3f3p2"><a title="LOISIRS" class="trackable"
-                                    href="#">LOISIRS</a></li>
-                                    <li class=""><a title="DVD / Films" class="trackable"
-                                    href="#">DVD / Films</a></li>
-                                    <li class=""><a title="CD / Musique" class="trackable"
-                                    href="#">CD / Musique</a></li>
-                                    <li class=""><a title="Livres" class="trackable"
-                                    href="#">Livres</a></li>
-                                    <li class=""><a title="Animaux" class="trackable"
-                                    href="#">Animaux</a></li>
-                                    <li class=""><a title="Vélos" class="trackable"
-                                    href="#">Vélos</a></li>
-                                    <li class=""><a title="Sports &amp; Hobbies" class="trackable"
-                                    href="#">Sports &amp; Hobbies</a></li>
-                                    <li class=""><a title="Instruments de musique" class="trackable"
-                                    href="#">Instruments de musique</a>
+                                    <li class=""><a title="Image &amp; Son" class="trackable" href="#">Image &amp;
+                                            Son</a></li>
+                                    <li class=""><a title="Téléphonie" class="trackable" href="#">Téléphonie</a></li>
+                                    <li class="_3f3p2"><a title="LOISIRS" class="trackable" href="#">LOISIRS</a></li>
+                                    <li class=""><a title="DVD / Films" class="trackable" href="#">DVD / Films</a></li>
+                                    <li class=""><a title="CD / Musique" class="trackable" href="#">CD / Musique</a>
                                     </li>
-                                    <li class=""><a title="Collection" class="trackable"
-                                    href="#">Collection</a></li>
-                                    <li class=""><a title="Jeux &amp; Jouets" class="trackable"
-                                    href="#">Jeux &amp; Jouets</a></li>
-                                    <li class=""><a title="Vins &amp; Gastronomie" class="trackable"
-                                    href="#">Vins &amp; Gastronomie</a></li>
+                                    <li class=""><a title="Livres" class="trackable" href="#">Livres</a></li>
+                                    <li class=""><a title="Animaux" class="trackable" href="#">Animaux</a></li>
+                                    <li class=""><a title="Vélos" class="trackable" href="#">Vélos</a></li>
+                                    <li class=""><a title="Sports &amp; Hobbies" class="trackable" href="#">Sports &amp;
+                                            Hobbies</a></li>
+                                    <li class=""><a title="Instruments de musique" class="trackable"
+                                            href="#">Instruments de musique</a>
+                                    </li>
+                                    <li class=""><a title="Collection" class="trackable" href="#">Collection</a></li>
+                                    <li class=""><a title="Jeux &amp; Jouets" class="trackable" href="#">Jeux &amp;
+                                            Jouets</a></li>
+                                    <li class=""><a title="Vins &amp; Gastronomie" class="trackable" href="#">Vins &amp;
+                                            Gastronomie</a></li>
                                 </ul>
                             </div>
                             <div class="_3UM0h">
                                 <ul>
                                     <li class="_3f3p2"><a title="MATERIEL PROFESSIONNEL" class="trackable"
-                                    href="#">MATERIEL
+                                            href="#">MATERIEL
                                             PROFESSIONNEL</a></li>
-                                    <li class=""><a title="Matériel Agricole" class="trackable"
-                                    href="#">Matériel Agricole</a></li>
-                                    <li class=""><a title="Transport - Manutention" class="trackable"
-                                    href="#">Transport - Manutention</a>
+                                    <li class=""><a title="Matériel Agricole" class="trackable" href="#">Matériel
+                                            Agricole</a></li>
+                                    <li class=""><a title="Transport - Manutention" class="trackable" href="#">Transport
+                                            - Manutention</a>
                                     </li>
-                                    <li class=""><a title="BTP - Chantier Gros-oeuvre" class="trackable"
-                                    href="#">BTP - Chantier
+                                    <li class=""><a title="BTP - Chantier Gros-oeuvre" class="trackable" href="#">BTP -
+                                            Chantier
                                             Gros-oeuvre</a></li>
                                     <li class=""><a title="Outillage - Matériaux 2nd-oeuvre" class="trackable"
-                                    href="#">Outillage -
+                                            href="#">Outillage -
                                             Matériaux 2nd-oeuvre</a></li>
                                     <li class=""><a title="Équipements Industriels" class="trackable"
-                                    href="#">Équipements
+                                            href="#">Équipements
                                             Industriels</a></li>
                                     <li class=""><a title="Restauration - Hôtellerie" class="trackable"
-                                    href="#">Restauration -
+                                            href="#">Restauration -
                                             Hôtellerie</a></li>
-                                    <li class=""><a title="Fournitures de Bureau" class="trackable"
-                                    href="#">Fournitures de Bureau</a>
+                                    <li class=""><a title="Fournitures de Bureau" class="trackable" href="#">Fournitures
+                                            de Bureau</a>
                                     </li>
-                                    <li class=""><a title="Commerces &amp; Marchés" class="trackable"
-                                    href="#">Commerces &amp; Marchés</a></li>
-                                    <li class=""><a title="Matériel Médical" class="trackable"
-                                    href="#">Matériel Médical</a></li>
-                                    <li class="_3f3p2"><a title="SERVICES" class="trackable"
-                                    href="#">SERVICES</a></li>
+                                    <li class=""><a title="Commerces &amp; Marchés" class="trackable" href="#">Commerces
+                                            &amp; Marchés</a></li>
+                                    <li class=""><a title="Matériel Médical" class="trackable" href="#">Matériel
+                                            Médical</a></li>
+                                    <li class="_3f3p2"><a title="SERVICES" class="trackable" href="#">SERVICES</a></li>
                                     <li class=""><a title="Prestations de services" class="trackable"
-                                    href="#">Prestations de
+                                            href="#">Prestations de
                                             services</a></li>
-                                    <li class=""><a title="Billetterie" class="trackable"
-                                    href="#">Billetterie</a></li>
-                                    <li class=""><a title="Evénements" class="trackable"
-                                    href="#">Evénements</a></li>
-                                    <li class=""><a title="Cours particuliers" class="trackable"
-                                    href="#">Cours particuliers</a></li>
-                                    <li class=""><a title="Covoiturage" class="trackable"
-                                    href="#">Covoiturage</a></li>
-                                    <li class="_3f3p2"><a title="Autres" class="trackable"
-                                    href="#">Autres</a></li>
-                                    <li class=""><a title="Autres" class="trackable"
-                                    href="#">Autres</a></li>
+                                    <li class=""><a title="Billetterie" class="trackable" href="#">Billetterie</a></li>
+                                    <li class=""><a title="Evénements" class="trackable" href="#">Evénements</a></li>
+                                    <li class=""><a title="Cours particuliers" class="trackable" href="#">Cours
+                                            particuliers</a></li>
+                                    <li class=""><a title="Covoiturage" class="trackable" href="#">Covoiturage</a></li>
+                                    <li class="_3f3p2"><a title="Autres" class="trackable" href="#">Autres</a></li>
+                                    <li class=""><a title="Autres" class="trackable" href="#">Autres</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1122,58 +1176,115 @@
     <script type="text/javascript" src="{{asset('js/Pagination.js')}}"></script>
 </body>
 <script>
+    $(document).ready(function () {
 
-$(document).ready(function(){
+        var flag = true;
+        var classname = document.getElementsByClassName("_Ctitle");  
+        var subnames=document.getElementsByClassName("tT3Ya");
+         var mySubfunction=function(){
+         
+               var attribute_sub=this.getAttribute("value");
+               $('#Lclist').css("display","none");
+               $('._Cname').html(attribute_sub);
+         };
+         for(var i=0;i<subnames.length;i++)
+         {
+            subnames[i].addEventListener('click', mySubfunction, false);
+         }
+            $('#list_click').on('click', function () {
+                  console.log('test');
+                if (flag) {
+                    $('#Lclist').css("display", "flex");
+                    flag = false;
+                } else {
+                    $('#Lclist').css("display", "none");
+                    flag = true;
+                }
 
-    var flag=true;
 
- $('#list_click').on('click',function(){
+            });
+            $("#Trselect").on('click',function(){
+              $('#Lclist').css("display", "none");
+              $('._Cname').html("Toutes catégories");
+            });
 
-     if(flag)
-     {
-        $('#display_list').css("display","block");
-        flag=false;
+            var myFunction = function() {
+                var attribute = this.getAttribute("data-id");
+                // console.log(attribute);
+                $('#Lclist').css("display", "none");
+                $('._Cname').html(attribute);
+            };
+            for (var i = 0; i < classname.length; i++) {
+                classname[i].addEventListener('click', myFunction, false);
+              }
 
-     }
-     else{
-        $('#display_list').css("display","none");
-        flag=true;
-     }
-    
+        $(function () {
+            var ad_total_count = <?php echo json_encode($count) ?> ;
+            var current_page = <?php echo json_encode($current_page) ?> ;
+            var page_count = <?php echo json_encode($page_count) ?> ;
+            current_page = (current_page !== "undefined") ? current_page : 1;
+            page_count = (page_count !== "undefined") ? page_count : 40;
+            console.log(current_page);
+            $('#pagination').pagination({
+                items: ad_total_count,
+                itemsOnPage: page_count,
+                displayedPages: 10,
+                currentPage: current_page,
+                cssStyle: 'light-theme',
+                hrefTextPrefix: "{{ URL::to('frontoffice/getdata/') }}/"
+            });
 
- });
 
 
- $(function(){
-     var ad_total_count = <?php echo json_encode($count)?>;
-    var current_page = <?php echo json_encode($current_page)?>;
-    var page_count = <?php echo json_encode($page_count)?>;
-    current_page = (current_page !== "undefined" )? current_page : 1;
-    page_count = (page_count !== "undefined" )? page_count : 40;
-    console.log(current_page);
-   $('#pagination').pagination({
-      items: ad_total_count,
-      itemsOnPage: page_count,
-      displayedPages: 10,
-      currentPage: current_page,
-      cssStyle: 'light-theme',
-      hrefTextPrefix: "{{ URL::to('frontoffice/getdata/') }}/"
+        });
+
+
+
+        
+
+    $('#search_result').on('submit',function(e){
+        e.preventDefault();
+       var type=$('input[name=ad_type]:checked').val();
+       var title=$('input[name=it]').val();
+       var urgent=$('input[name=urgent]').val();
+       var search=$('input[name=search]').val();
+       var location=$('#searcharea').val();
+       var distance=$('input[name=distance]').val();
+       var min_price=$('#min_price').val();
+       var max_price=$('#max_price').val();
+      
+       $.ajax({
+           type:'POST',
+           url:"{{route('filter')}}",
+           data:{
+              ad_type:type,
+              title:title,
+              urgent:urgent,
+              search:search,
+              location:location,
+              distance:distance,
+              min_price:min_price,
+              max_price:max_price,
+              _token:$('input[name=_token]').val()
+            },
+            dataType: "json",
+           success:function(data){
+            console.log(data);
+           },
+           error:function(e)
+           {
+               console.log(e);
+             
+           }
+       });
     });
-   
-   
-});
-
- $('#offer').on('change',function(){
-  
-  
-
- });
-
- $('#demand').on('change',function(){
 
   
- });
-});
+        
+    
+    
+    
+    });
 
 </script>
 @yield('after-script')

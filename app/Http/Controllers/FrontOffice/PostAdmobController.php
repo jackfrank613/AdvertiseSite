@@ -51,7 +51,7 @@ class PostAdmobController extends BaseController
 
         }
         $data['subcategories'] = $subcategory;
-        $user_id=session('user_id');
+        $user_id=4;
         $user=JamiiUser::where('u_id',$user_id)->first();
         $email=$user->email;
       //  print_r($email);exit;

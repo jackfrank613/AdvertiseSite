@@ -27,7 +27,7 @@
                 <a class="displayMenu button-white-mobile custom-large-hidden">
                     MENU
                 </a>
-                <a href="#" class="logo_button">
+                <a href="{{route('home')}}" class="logo_button">
                     <span class="_cuslogo">Jamii</span>
                 </a>
                 <nav class="headerNav nav_hidden" role="navigation">
@@ -75,6 +75,7 @@
                     <h1 class="grey">Déposer une annonce</h1>
                 </header>
                 <form method="post" action="/ai/verify/1" name="formular" enctype="multipart/form-data" id="formular">
+                    <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                     <div id="news_forms">
                         <section>
                             <div id="form_part_ads" class="mtm">
@@ -184,11 +185,32 @@
                                             <aside class="pictures-list">
                                                 <div class="file_container mrm mts" id="uploadPhoto-0"
                                                     data-state="not_uploaded">
+                                                  
                                                     <input type="file" class="picture"
                                                         accept="image/bmp,image/gif,image/jpeg,image/png,image/x-ms-bmp"
                                                         name="image0" id="image0">
                                                     <p class="uppercase">Photo principale</p><i
                                                         class="fa fa-camera" style="font-size:40px"></i>
+                                                    <div class="layout loader">
+                                                        <span class="loadersvg">
+                                                                <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                                width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+                                                               <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+                                                                 s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+                                                                 c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
+                                                               <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+                                                                 C22.32,8.481,24.301,9.057,26.013,10.047z">
+                                                                 <animateTransform attributeType="xml"
+                                                                   attributeName="transform"
+                                                                   type="rotate"
+                                                                   from="0 20 20"
+                                                                   to="360 20 20"
+                                                                   dur="0.5s"
+                                                                   repeatCount="indefinite"/>
+                                                                 </path>
+                                                               </svg>
+                                                        </span>
+                                                    </div>
                                                 </div>
                                                 <div class="file_container mrm mts" id="uploadPhoto-1"
                                                     data-state="not_uploaded"><input type="file" class="picture"
@@ -314,7 +336,7 @@
                                                             <input type="checkbox" id="no_salesmen" name="no_salesmen" value="1">
                                                             <span>
                                                                     Je ne souhaite pas être sollicité par des sociétés étrangères au site leboncoin.fr
-                                                                </span> 
+                                                            </span> 
                                                        </div>
                                                    </div>
                                             </div>
@@ -406,10 +428,45 @@ $(document).ready(function(){
   
   $('input[name=image0]').on('change',function(){
     var formData=new FormData();
-  
-   // $('#uploadPhoto-0').append('<div class="layout loader"><span class="loaderGif"></span></div>');
-   console.log("test");
- 
+    var file = document.getElementById("image0").files[0];
+    formData.append('upload_image',file);
+    formData.append('_token',$('input[name=_token]').val());
+    console.log(formData);
+    $.ajax({
+
+        type: "POST",
+        enctype: 'multipart/form-data',
+        url: "{{route('uploadpic')}}",
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success:function(data){
+             data = JSON.parse(data);
+             if(data.error)
+             {
+                alert('Please, insert your image correctly.')
+             }
+             else{
+                 
+                //  var html='<img src="../img/picture/' + data.result + '" style="width:168px;height:100px"><i class="fa fa-trash-o" style="font-size:24px" id="delete"><span class="path1"></span><span class="path2"></span></i>'
+                //  $('#uploadPhoto-0').html(html);
+
+             }
+        },
+        error:function(e){
+            console.log(e);
+        }
+
+    });
+   
+  });
+
+//   $('#uploadPhoto-0').on('click','#delete',function(){
+//     $('#uploadPhoto-0').html('');
+//     var html1='<input type="file" class="picture" accept="image/bmp,image/gif,image/jpeg,image/png,image/x-ms-bmp" name="image0" id="image0"><p class="uppercase">Photo principale</p><i class="fa fa-camera" style="font-size:40px"></i>'
+//     $('#uploadPhoto-0').html(html1);
+//   });
 
 
 });
