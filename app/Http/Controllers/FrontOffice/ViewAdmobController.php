@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Builder;
 
 
+
 class ViewAdmobController extends Controller
 {
     /**
@@ -17,34 +18,50 @@ class ViewAdmobController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //  
+        $ad_type=isset($request->ad_type)? $request->ad_type: "type";
+        $search=isset($request->search)? $request->search: "search";
+        $location=isset($request->location)?$request->location: "location";
+        $distance=isset($request->distance)?$request->distance : "distance";
+        if($search == "type" || $ad_type == "search" || $location == "location" || $distance == "distance"){
 
-        $count=PostedAdmob::count();
-        $page_count = 40;
-        $offset = 0;
-        $particular_count=JamiiUser::where('type','=','particular')->get()->count();
-        $professional_count=JamiiUser::where('type','=','professional')->get()->count();
-        $admobs=PostedAdmob::where('enable',1)->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->get()->toarray();
-        
-        $current_page = 1;
-        $today = date('Y-m-d');
-        $yesterday = date('Y-m-d', strtotime('-1 days'));
-        // echo $yesterday;exit;
-        foreach($admobs as $one){
-            $date=date('Y-m-d',strtotime($one['create_time']));
-            if(strtotime($date) == strtotime($today)){
-                $one['create_time'] = "Today " . date('H:i',strtotime($one['create_time']));
-            }else if(strtotime($date) == strtotime($yesterday)){
-                $one['create_time'] = "Yesterday " . date('H:i',strtotime($one['create_time']));
-                
-            }
-            $result[] = $one;
+
+     //return view('frontoffice.home.displayadmob')->with(compact('ad_type','search','location','distance'));
+
+            
         }
+        // $count=PostedAdmob::count();
+        // $page_count = 40;
+        // $offset = 0;
+        // $particular_count=JamiiUser::where('type','=','particular')->get()->count();
+        // $professional_count=JamiiUser::where('type','=','professional')->get()->count();
+        // $admobs=PostedAdmob::where('enable',1)->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->get()->toarray();
+        // $admobs=PostedAdmob::where('enable',1)->orderBy('jamii_postedadmob.create_time','desc')->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->paginate(10);
+        
+        // $pagenate_items=PostedAdmob::where('enable',1)->paginate(40);
+        // // print_r(count($pagenate_items));exit;
+
+        // $current_page = 1;
+        // $today = date('Y-m-d');
+        // $yesterday = date('Y-m-d', strtotime('-1 days'));
+        // // echo $yesterday;exit;
+        // foreach($admobs as $one){
+        //     $date=date('Y-m-d',strtotime($one['create_time']));
+        //     if(strtotime($date) == strtotime($today)){
+        //         $one['create_time'] = "Today " . date('H:i',strtotime($one['create_time']));
+        //     }else if(strtotime($date) == strtotime($yesterday)){
+        //         $one['create_time'] = "Yesterday " . date('H:i',strtotime($one['create_time']));
+                
+        //     }
+        //     $result[] = $one;
+        // }
 
         //print_r($result);exit;
-        return view('frontoffice.home.displayadmob')->with(compact('result','count', 'current_page', 'page_count','particular_count','professional_count'));
+        return view('frontoffice.home.displayadmob')->with(compact('ad_type','search','location','distance'));
+
+    //    return view('frontoffice.home.displayadmob')->with(compact('result','count', 'current_page', 'page_count','particular_count','professional_count','pagenate_items','admobs'));
     }
 
     /**

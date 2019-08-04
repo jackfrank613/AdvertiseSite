@@ -302,7 +302,7 @@
                 </div>
             </div>
             <div class="_14s_w" id="detail_category">
-                `
+                
             </div>
             <div class="_14s_w" id="category_description" style="display:none">
                 <div class="_1AsHn _2siHy _38NUf _3aduF">

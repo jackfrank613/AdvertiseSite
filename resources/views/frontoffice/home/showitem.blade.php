@@ -81,7 +81,7 @@
                                                     $images=explode(",",$admob['camera']);
                                                     ?>
                                                 @foreach ($images as $one)
-                                                <img class="mySlides" src="{{asset('img/picture')}}/{{$one}}"
+                                                <img class="mySlides" src="{{asset('public/img/picture')}}/{{$one}}"
                                                     style="width:100%">
                                                 @endforeach
 
@@ -114,7 +114,7 @@
                                                         @foreach ($images as $one)
                                                         <span class="Lqamr" data-qa-id="slideshow_thumbnails_item">
                                                             <div alt=""
-                                                                style="background-image: url(&quot;{{asset('img/picture')}}/{{$one}}&quot;);">
+                                                                style="background-image: url(&quot;{{asset('public/img/picture')}}/{{$one}}&quot;);">
                                                             </div>
                                                         </span>
                                                         @endforeach
@@ -285,7 +285,7 @@
                                             <div class="_5ZXm_">
                                                 <div class="_2ge_d">
                                                     <img
-                                                        src="{{asset('img/picture')}}/{{explode(",",$one['camera'])[0]}}"
+                                                        src="{{asset('public/img/picture')}}/{{explode(",",$one['camera'])[0]}}"
                                                         class="_29EFB" alt="Taille haie"></div>
                                                 <figcaption class="_1CCIO"><span class="_1vK7W"
                                                         name="camera_old"><svg height="32" width="32"

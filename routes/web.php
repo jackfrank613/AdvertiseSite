@@ -52,7 +52,9 @@ Route::group([
 
       //admob payment route
       Route::get('/admobpayment','PaymentAdmobController@getPaymentpage')->name('admobpayment');
-      Route::post('/aditems/filter','FilterController@filterFunction')->name('filter');
+      Route::get('/aditems/filter','FilterController@filterFunction')->name('filter');
+      Route::post('/aditems/filterads','FilterController@filter_ads')->name('filterads');
+      
       
 
 
@@ -100,6 +102,7 @@ Route::group([
        Route::post('/cusadmob/uploadpic','CusAdmobPostController@upLoadpic')->name('uploadpic');
        Route::post('/adddata/','PostAdmobController@addData')->name('addData');
 
+    
   });
 // Auth::routes();
 
