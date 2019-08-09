@@ -52,8 +52,8 @@ Route::group([
 
       //admob payment route
       Route::get('/admobpayment','PaymentAdmobController@getPaymentpage')->name('admobpayment');
+      Route::get('/cardpay','PaymentAdmobController@getCardpayment')->name('cardpay');
 
-      
       Route::get('/aditems/filter','FilterController@filterFunction')->name('filter');
       Route::post('/aditems/filterads','FilterController@filter_ads')->name('filterads');
       Route::get('/aditems/filterSearch','FilterController@filterSearch')->name('filterSearch');

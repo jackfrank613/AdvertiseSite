@@ -12,4 +12,9 @@ class PaymentAdmobController extends Controller
     {
         return view('frontoffice/home/paymentadmobpage');
     }
+
+    public function getCardpayment(){
+
+        return view('frontoffice/home/cardpayment');
+    }
 }

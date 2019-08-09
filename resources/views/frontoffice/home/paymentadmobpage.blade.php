@@ -57,7 +57,7 @@
                                 </svg></span></a></div>
                     Boostez votre annonce !
                 </h1>
-                <form class="jQ9_D">
+                <form class="jQ9_D" method="POST" accept="">
                     <ul class="_3uJrb">
                         <li class="O1pUl _29GcC" data-qa-id="galleryOptions">
                             <div class="_3AVwH">
@@ -233,20 +233,21 @@
                                         href="/deposer-une-annonce/options/apercu/gallery">Aperçu</a>
                                 </div>
                             </div>
-                            <div class="rq5Gw"><a data-name="gallery" data-qa-id="gallery" id="seven_visible" data-value="17" class="Uxtbb visible"><span
-                                        data-name="gallery" class="FTchl"></span><span class="mj0hi"><span
-                                            class="_3UZbV">pendant 7 jours</span><span class="_2V8v8">
-                                            <!-- react-text: 4661 -->17
-                                            <!-- /react-text -->
-                                            <!-- react-text: 4662 --> €
-                                            <!-- /react-text --></span></span></a><a data-name="gallery30"
-                                    data-qa-id="gallery30" data-value="45" id="thirty_visible" class="Uxtbb visible"><span data-name="gallery30"
-                                        class="FTchl"></span><span class="mj0hi"><span class="_3UZbV">pendant 30
-                                            jours</span><span class="_2V8v8">
-                                            <!-- react-text: 4668 -->45
-                                            <!-- /react-text -->
-                                            <!-- react-text: 4669 --> €
-                                            <!-- /react-text --></span></span></a></div>
+                            <div class="rq5Gw">
+                                <a data-name="gallery" data-qa-id="gallery" id="seven_visible" data-value="17" class="side-ad Uxtbb visible">
+                                    <span data-name="gallery" class="FTchl"></span><span class="mj0hi">
+                                        <span class="_3UZbV">pendant 7 jours</span>
+                                        <span class="_2V8v8">17 €</span>
+                                    </span>
+                                </a>
+                                <a data-name="gallery30" data-qa-id="gallery30" data-value="45" id="thirty_visible" class="side-ad Uxtbb visible">
+                                    <span data-name="gallery30" class="FTchl"></span><span class="mj0hi">
+                                        <span class="_3UZbV">pendant 30 jours</span>
+                                        <span class="_2V8v8">45 € </span>
+                                    </span>
+                                </a>
+                                            
+                            </div>
                         </li>
                         <li class="O1pUl _29GcC _1ehwn" data-qa-id="daily_bumpOptions">
                             <div class="_3AVwH">
@@ -455,21 +456,21 @@
                                         href="/deposer-une-annonce/options/apercu/daily_bump">Aperçu</a>
                                 </div>
                             </div>
-                            <div class="rq5Gw"><a data-name="daily_bump" data-qa-id="daily_bump" data-value="30" id="seven_first" class="Uxtbb first"><span
+                            <div class="rq5Gw"><a data-name="daily_bump" data-qa-id="daily_bump" data-value="30" id="seven_first" class="top-ad Uxtbb first"><span
                                         data-name="daily_bump" class="FTchl"></span><span class="mj0hi"><span
                                             class="_3UZbV">chaque jour pendant 7 jours</span><span class="_2V8v8">
                                             <!-- react-text: 4788 -->30
                                             <!-- /react-text -->
                                             <!-- react-text: 4789 --> €
                                             <!-- /react-text --></span></span></a><a data-name="daily_bump30"
-                                    data-qa-id="daily_bump30" id="thirty_first" data-value="85" class="Uxtbb first"><span data-name="daily_bump30"
+                                    data-qa-id="daily_bump30" id="thirty_first" data-value="85" class="top-ad Uxtbb first"><span data-name="daily_bump30"
                                         class="FTchl"></span><span class="mj0hi"><span class="_3UZbV">chaque jour
                                             pendant 30 jours</span><span class="_2V8v8">
                                             <!-- react-text: 4795 -->85
                                             <!-- /react-text -->
                                             <!-- react-text: 4796 --> €
                                             <!-- /react-text --></span></span></a><a data-name="sub_toplist"
-                                    data-qa-id="sub_toplist" id="sixty_first" data-value="34" class="Uxtbb first"><span data-name="sub_toplist"
+                                    data-qa-id="sub_toplist" id="sixty_first" data-value="34" class="top-ad Uxtbb first"><span data-name="sub_toplist"
                                         class="FTchl"></span><span class="mj0hi"><span class="_3UZbV">chaque semaine
                                             pendant 60 jours</span><span class="_2V8v8">
                                             <!-- react-text: 4802 -->34
@@ -663,7 +664,7 @@
                                         href="/deposer-une-annonce/options/apercu/urgent">Aperçu</a>
                                 </div>
                             </div>
-                            <div class="rq5Gw"><a data-name="urgent" data-qa-id="urgent" id="sixty_urgent" data-value="8" class="Uxtbb"><span
+                            <div class="rq5Gw"><a data-name="urgent" data-qa-id="urgent" id="sixty_urgent" data-value="8" class="star-ad Uxtbb"><span
                                         data-name="urgent" class="FTchl"></span><span class="mj0hi"><span
                                             class="_3UZbV">pendant 60 jours</span><span class="_2V8v8">
                                             <!-- react-text: 4913 -->8
@@ -678,7 +679,17 @@
                         <!-- react-text: 5472 --> sans booster mon annonce
                         <!-- /react-text --></button>
 
-                        <div class="_3oVtB" id="real_pay" data-qa-id="stickyBarElement" style="display:none"><div class="_2gBdJ _3Z0Dn"><div class="_3M9Fx"><div><span class="xNOu1" data-qa-id="stickyPriceElement"></span></div><div class="_1HH9H" data-qa-id="stickyPaymentLink">Détail du paiement</div></div><div><button class="_2sNbI _1xIyN _2xk2l _1lcUU" type="button" data-qa-id="stickySubmitButton"><!-- react-text: 5493 -->Valider et payer<!-- /react-text --></button></div></div></div>
+                        <div class="_3oVtB" id="real_pay" data-qa-id="stickyBarElement" style="display:none">
+                            <div class="_2gBdJ _3Z0Dn">
+                                <div class="_3M9Fx">
+                                    <div>
+                                        <span class="xNOu1" data-qa-id="stickyPriceElement">
+                                            </span>
+                                        </div>
+                                        <div class="_1HH9H" data-qa-id="stickyPaymentLink">Détail du paiement</div>
+                                    </div>
+                                    <div>
+                        <button class="_2sNbI _1xIyN _2xk2l _1lcUU" id="btn_pay" type="button" data-qa-id="stickySubmitButton"><!-- react-text: 5493 -->Valider et payer<!-- /react-text --></button></div></div></div>
                 </form>
             </div>
         </div>
@@ -717,61 +728,63 @@
       var flag=true;
       var one=0;
       var sum=0;
-      var vclass=document.getElementsByClassName('visible');
-      var myVisible=function(){
-        
-          $(vclass).removeClass("_278OL");
-          $(this).addClass("_278OL");
-          $('#out_pay').css('display','none');
-          $('#real_pay').css('display','block');
-          sum+=$(this).data('value');
-          $('.xNOu1').html(sum+" €")
-      }
-     
-      for(var i=0;i<vclass.length;i++)
-      {
-          vclass[i].addEventListener('click',myVisible,false);
-      }
 
+      /// ad value variable
+      var side_ad_val = 0;
+      var top_ad_val = 0;
+      var star_ad_val = 0;
+        //   ***end ***///
 
-      var fclass=document.getElementsByClassName('first');
-      var myFirst=function(){
-          
-          $(fclass).removeClass("_278OL");
-          $(this).addClass("_278OL");
-          $('#out_pay').css('display','none');
-          $('#real_pay').css('display','block');
-          sum+=$(this).data('value');
-          $('.xNOu1').html(sum+" €")
-      }
-     
-      for(var i=0;i<fclass.length;i++)
-      {
-        fclass[i].addEventListener('click',myFirst,false);
-      }
-      
-
-      $('#sixty_urgent').on('click',function(){
-
-          if(flag)
-          {
-          $('#sixty_urgent').addClass("_278OL");
-          $('#out_pay').css('display','none');
-          $('#real_pay').css('display','block');
-          sum+=$(this).data('value');
-          $('.xNOu1').html(sum+" €");
-          flag=false;
+    var value=0;
+      function ad_value(){
+          value = side_ad_val + top_ad_val + star_ad_val;
+          if(value == 0){
+            $('#out_pay').css('display','block');
+            $('#real_pay').css('display','none');
+          }else{
+            $('.xNOu1').html(value+" €");
+            $('#out_pay').css('display','none');
+            $('#real_pay').css('display','block');
           }
-          else{
-          $('#sixty_urgent').removeClass("_278OL");
-          $('#out_pay').css('display','block');
-          $('#real_pay').css('display','none');
-          flag=true;
-          }
+      }
+        $('.side-ad').click(function(){
+            if($(this).hasClass("_278OL")){
+                $(this).removeClass("_278OL");
+                side_ad_val -= parseInt($(this).data('value'));
+            }else {
+                $('.side-ad').removeClass("_278OL");
+                $(this).addClass("_278OL");
+                side_ad_val = parseInt($(this).data('value'));
+            }
+            ad_value();
+        })
+        $('.top-ad').click(function(){
+            if($(this).hasClass("_278OL")){
+                $(this).removeClass("_278OL");
+                top_ad_val -= parseInt($(this).data('value'));
+            }else {
+                $('.top-ad').removeClass("_278OL");
+                $(this).addClass("_278OL");
+                top_ad_val = parseInt($(this).data('value'));
+            }
+            ad_value();
+        })
+        $('.star-ad').click(function(){
+            if($(this).hasClass("_278OL")){
+                $(this).removeClass("_278OL");
+                star_ad_val -= parseInt($(this).data('value'));
+            }else {
+                $('.star-ad').removeClass("_278OL");
+                $(this).addClass("_278OL");
+                star_ad_val = parseInt($(this).data('value'));
+            }
+            ad_value();
+        });
+        $('#btn_pay').click(function(){
+           console.log(value);
+
+        });
         
-
-      })
-
     });
 
 </script>
