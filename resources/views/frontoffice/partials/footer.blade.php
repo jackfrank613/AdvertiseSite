@@ -101,7 +101,7 @@
                                     <div class="_1et7J" data-reactid="558">des questions ?</div>
                                     <ul data-reactid="559">
                                         <li class="jU6hB" data-reactid="560"><a
-                                        href="#"" title="Aide"
+                                        href="{{asset(route('help'))}}"" title="Aide"
                                                 class="trackable" data-reactid="561">Aide</a></li>
                                         <li class="jU6hB" data-reactid="562"><a rel="nofollow"
                                         href="#" title="Nous contacter"

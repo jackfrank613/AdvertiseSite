@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
+     
     <title>Jamii</title>
 
     <!-- Google font -->
@@ -48,7 +48,7 @@
 
         <div class="_3iQ0i" style="pointer-events: inherit;">
             <div class="_1ydbl">
-                <form id="search_result" method="GET" action="{{route('filter')}}">
+                <form id="search_result" method="GET" action="{{route('viewadmob')}}">
                     <input type="hidden" name="_token" id="token" value="{{csrf_token()}}">
                     <div class="_3mkBC" style="display:flex;"><label class="radio" for="offer"><input type="radio"
                                 id="offer" name="ad_type" value="sell" checked><!-- react-text: 653 -->Offres
@@ -518,7 +518,7 @@
                                 <div>
                                     <div><span class="_2oGk4">Prix entre</span>
                                         <div class="_1uP35">
-                                            <select data-qa-id="select-price_min" id="min_price">
+                                            <select data-qa-id="select-price_min" name="min_price" id="min_price">
                                                 <option>Prix min</option>
                                                 <option value="">0</option>
                                                 <option value="10">10</option>
@@ -534,7 +534,7 @@
                                                 <option value="500">500</option>
                                                 <option value="1000">1 000</option>
                                             </select></div><span class="_2oGk4 XtGYX">et</span>
-                                        <div class="_1uP35"><select data-qa-id="select-price_max" id="max_price">
+                                        <div class="_1uP35"><select data-qa-id="select-price_max" name="max_price" id="max_price">
                                                 <option>Prix max</option>
                                                 <option value="10">10</option>
                                                 <option value="20">20</option>
@@ -840,7 +840,7 @@
                                 </div>
                             </div>
                             <div class="advertisingSkyscraper" data-reactid="1720">
-                                <div class="initPosition" data-reactid="1721" style="height: 6281px;">
+                                <div class="initPosition" data-reactid="1721" >
                                     <div class="_39t72" data-reactid="1722"
                                         style="width: 310px; height: 620px; position: relative;">
                                         <div class="apn-sk skyscraper _3beIN _3O6XM" data-reactid="1723"><span id="sk-l"
@@ -1160,19 +1160,28 @@
             var search = "{{$search}}";
             var location = "{{$location}}";
             var distance = "{{$distance}}";
-            console.log(location);
+            var total_count="{{$count}}";
+            var page_count="{{$page_count}}";
+            var currentPage="{{$current_page}}";
+            var urgent="{{$urgent}}";
+            var title="{{$title}}";
+            var min_price="{{$min_price}}";
+            var max_price="{{$max_price}}";
             $.ajax({
                 type: 'POST',
                 url: "{{route('filterads')}}",
                 data: {
                     ad_type: type,
-                    // title: title,
-                    // urgent: urgent,
+                    title: title,
+                    urgent: urgent,
                     search: search,
                     location: location,
                     distance: distance,
-                    // min_price: min_price,
-                    // max_price: max_price,
+                    min_price: min_price,
+                    max_price: max_price,
+                    total_count:total_count,
+                    page_count:page_count,
+                    currentPage:currentPage,
                      _token:$('input[name=_token]').val(),
                 },
                 dataType:'json', 
@@ -1185,8 +1194,6 @@
                     console.log(e);
                 }
             });
-
-
     });
 </script>
 @yield('after-script')

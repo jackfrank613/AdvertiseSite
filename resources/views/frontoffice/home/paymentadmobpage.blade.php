@@ -115,7 +115,7 @@
                                                         <use fill="#F56B2A" xlink:href="#gallery_mobile__c"></use>
                                                         <image mask="url(#gallery_mobile__d)" x="-19" y="-48"
                                                             width="179" height="120"
-                                                            xlink:href="https://img1.leboncoin.fr/ad-image/396d86d27f0e607c797c99f34490f12489ef8b4f.jpg"
+                                                            xlink:href="https://img5.leboncoin.fr/ad-image/037d216478a483c0f97d3dbe3b616522a0b90889.jpg"
                                                             preserveAspectRatio="xMidYMid slice"></image>
                                                         <rect fill="#F56B2A" x="1" y="57" width="106.598" height="3.955"
                                                             rx="1.978"></rect>
@@ -161,7 +161,7 @@
                                                         <use fill="#F56B2A" xlink:href="#gallery_desk__d"></use>
                                                         <image mask="url(#gallery_desk__e)" x="-20" y="-25.756"
                                                             width="132" height="88.667"
-                                                            xlink:href="https://img1.leboncoin.fr/ad-image/396d86d27f0e607c797c99f34490f12489ef8b4f.jpg"
+                                                            xlink:href="https://img5.leboncoin.fr/ad-image/037d216478a483c0f97d3dbe3b616522a0b90889.jpg"
                                                             preserveAspectRatio="xMidYMid slice"></image>
                                                         <use fill="#CAD1D9" xlink:href="#gallery_desk__f"></use>
                                                         <rect fill="#F56B2A" y="57" width="70" height="3.955"
@@ -224,28 +224,28 @@
                                 <div class="_341lq">augmentez votre visibilité</div>
                                 <div class="_1BNBn">
                                     <p class="_1539y"><span>
-                                            <!-- react-text: 3058 -->Démarquez-vous dans votre région avec un format
+                                            <!-- react-text: 4650 -->Démarquez-vous dans votre région avec un format
                                             <!-- /react-text -->
-                                            <!-- react-text: 3059 -->
+                                            <!-- react-text: 4651 -->
                                             <!-- /react-text --><span class="_3FMat">« A la Une »</span>
-                                            <!-- react-text: 3061 --> plus visible.
+                                            <!-- react-text: 4653 --> plus visible.
                                             <!-- /react-text --></span></p><a class="nVtvL" data-qa-id="galleryPreview"
                                         href="/deposer-une-annonce/options/apercu/gallery">Aperçu</a>
                                 </div>
                             </div>
-                            <div class="rq5Gw"><a data-name="gallery30" data-qa-id="gallery30" class="Uxtbb"><span
-                                        data-name="gallery30" class="FTchl"></span><span class="mj0hi"><span
-                                            class="_3UZbV">pendant 30 jours</span><span class="_2V8v8">
-                                            <!-- react-text: 3069 -->45
+                            <div class="rq5Gw"><a data-name="gallery" data-qa-id="gallery" id="seven_visible" data-value="17" class="Uxtbb visible"><span
+                                        data-name="gallery" class="FTchl"></span><span class="mj0hi"><span
+                                            class="_3UZbV">pendant 7 jours</span><span class="_2V8v8">
+                                            <!-- react-text: 4661 -->17
                                             <!-- /react-text -->
-                                            <!-- react-text: 3070 --> €
-                                            <!-- /react-text --></span></span></a><a data-name="gallery"
-                                    data-qa-id="gallery" class="Uxtbb"><span data-name="gallery"
-                                        class="FTchl"></span><span class="mj0hi"><span class="_3UZbV">pendant 7
+                                            <!-- react-text: 4662 --> €
+                                            <!-- /react-text --></span></span></a><a data-name="gallery30"
+                                    data-qa-id="gallery30" data-value="45" id="thirty_visible" class="Uxtbb visible"><span data-name="gallery30"
+                                        class="FTchl"></span><span class="mj0hi"><span class="_3UZbV">pendant 30
                                             jours</span><span class="_2V8v8">
-                                            <!-- react-text: 3076 -->17
+                                            <!-- react-text: 4668 -->45
                                             <!-- /react-text -->
-                                            <!-- react-text: 3077 --> €
+                                            <!-- react-text: 4669 --> €
                                             <!-- /react-text --></span></span></a></div>
                         </li>
                         <li class="O1pUl _29GcC _1ehwn" data-qa-id="daily_bumpOptions">
@@ -334,7 +334,7 @@
                                                     <use fill="#F56B2A" xlink:href="#daily_bump_mobile__h"></use>
                                                     <image mask="url(#daily_bump_mobile__i)" x="-8" y="-1" width="75"
                                                         height="50"
-                                                        xlink:href="https://img1.leboncoin.fr/ad-image/396d86d27f0e607c797c99f34490f12489ef8b4f.jpg"
+                                                        xlink:href="https://img5.leboncoin.fr/ad-image/037d216478a483c0f97d3dbe3b616522a0b90889.jpg"
                                                         preserveAspectRatio="xMidYMid slice"></image>
                                                     <rect fill="#F56B2A" mask="url(#daily_bump_mobile__i)" x="48.462"
                                                         y="11.364" width="84" height="5.682" rx="2"></rect>
@@ -432,7 +432,7 @@
                                                         <use fill="#F56B2A" xlink:href="#daily_bump_desk__j"></use>
                                                         <image mask="url(#daily_bump_desk__k)" x="-7" y="-2" width="75"
                                                             height="50"
-                                                            xlink:href="https://img1.leboncoin.fr/ad-image/396d86d27f0e607c797c99f34490f12489ef8b4f.jpg"
+                                                            xlink:href="https://img5.leboncoin.fr/ad-image/037d216478a483c0f97d3dbe3b616522a0b90889.jpg"
                                                             preserveAspectRatio="xMidYMid slice"></image>
                                                         <rect fill="#F56B2A" mask="url(#daily_bump_desk__k)" x="48.462"
                                                             y="11.364" width="84" height="5.682" rx="2"></rect>
@@ -455,26 +455,26 @@
                                         href="/deposer-une-annonce/options/apercu/daily_bump">Aperçu</a>
                                 </div>
                             </div>
-                            <div class="rq5Gw"><a data-name="daily_bump" data-qa-id="daily_bump" class="Uxtbb"><span
+                            <div class="rq5Gw"><a data-name="daily_bump" data-qa-id="daily_bump" data-value="30" id="seven_first" class="Uxtbb first"><span
                                         data-name="daily_bump" class="FTchl"></span><span class="mj0hi"><span
                                             class="_3UZbV">chaque jour pendant 7 jours</span><span class="_2V8v8">
-                                            <!-- react-text: 3196 -->30
+                                            <!-- react-text: 4788 -->30
                                             <!-- /react-text -->
-                                            <!-- react-text: 3197 --> €
+                                            <!-- react-text: 4789 --> €
                                             <!-- /react-text --></span></span></a><a data-name="daily_bump30"
-                                    data-qa-id="daily_bump30" class="Uxtbb"><span data-name="daily_bump30"
+                                    data-qa-id="daily_bump30" id="thirty_first" data-value="85" class="Uxtbb first"><span data-name="daily_bump30"
                                         class="FTchl"></span><span class="mj0hi"><span class="_3UZbV">chaque jour
                                             pendant 30 jours</span><span class="_2V8v8">
-                                            <!-- react-text: 3203 -->85
+                                            <!-- react-text: 4795 -->85
                                             <!-- /react-text -->
-                                            <!-- react-text: 3204 --> €
+                                            <!-- react-text: 4796 --> €
                                             <!-- /react-text --></span></span></a><a data-name="sub_toplist"
-                                    data-qa-id="sub_toplist" class="Uxtbb"><span data-name="sub_toplist"
+                                    data-qa-id="sub_toplist" id="sixty_first" data-value="34" class="Uxtbb first"><span data-name="sub_toplist"
                                         class="FTchl"></span><span class="mj0hi"><span class="_3UZbV">chaque semaine
                                             pendant 60 jours</span><span class="_2V8v8">
-                                            <!-- react-text: 3210 -->34
+                                            <!-- react-text: 4802 -->34
                                             <!-- /react-text -->
-                                            <!-- react-text: 3211 --> €
+                                            <!-- react-text: 4803 --> €
                                             <!-- /react-text --></span></span></a></div>
                         </li>
                         <li class="O1pUl _29GcC" data-qa-id="urgentOptions">
@@ -514,7 +514,7 @@
                                                         <use fill="#CBD1D9" xlink:href="#urgent_mobile__c"></use>
                                                         <image mask="url(#urgent_mobile__d)" x="-11" y="-9" width="63"
                                                             height="42"
-                                                            xlink:href="https://img1.leboncoin.fr/ad-image/396d86d27f0e607c797c99f34490f12489ef8b4f.jpg"
+                                                            xlink:href="https://img5.leboncoin.fr/ad-image/037d216478a483c0f97d3dbe3b616522a0b90889.jpg"
                                                             preserveAspectRatio="xMidYMid slice"></image>
                                                         <rect fill="#CAD1D9" x="36.469" y="2.303" width="72"
                                                             height="4.607" rx="2"></rect>
@@ -613,7 +613,7 @@
                                                         <use fill="#CBD1D9" xlink:href="#urgent_desk__h"></use>
                                                         <image mask="url(#urgent_desk__i)" x="-11" y="-7" width="60.5"
                                                             height="41"
-                                                            xlink:href="https://img1.leboncoin.fr/ad-image/396d86d27f0e607c797c99f34490f12489ef8b4f.jpg"
+                                                            xlink:href="https://img5.leboncoin.fr/ad-image/037d216478a483c0f97d3dbe3b616522a0b90889.jpg"
                                                             preserveAspectRatio="xMidYMid slice"></image>
                                                         <rect fill="#CAD1D9" x="34.841" y="2.303" width="90"
                                                             height="4.607" rx="2.303"></rect>
@@ -663,16 +663,22 @@
                                         href="/deposer-une-annonce/options/apercu/urgent">Aperçu</a>
                                 </div>
                             </div>
-                            <div class="rq5Gw"><a data-name="urgent" data-qa-id="urgent" class="Uxtbb"><span
+                            <div class="rq5Gw"><a data-name="urgent" data-qa-id="urgent" id="sixty_urgent" data-value="8" class="Uxtbb"><span
                                         data-name="urgent" class="FTchl"></span><span class="mj0hi"><span
                                             class="_3UZbV">pendant 60 jours</span><span class="_2V8v8">
-                                            <!-- react-text: 3321 -->8
+                                            <!-- react-text: 4913 -->8
                                             <!-- /react-text -->
-                                            <!-- react-text: 3322 --> €
+                                            <!-- react-text: 4914 --> €
                                             <!-- /react-text --></span></span></a></div>
                         </li>
                     </ul>
+                    <button class="_2sNbI _1xIyN _2xk2l _1FJuS" id="out_pay" type="submit" data-qa-id="submitButton">
+                        <!-- react-text: 5471 -->Déposer
+                        <!-- /react-text -->
+                        <!-- react-text: 5472 --> sans booster mon annonce
+                        <!-- /react-text --></button>
 
+                        <div class="_3oVtB" id="real_pay" data-qa-id="stickyBarElement" style="display:none"><div class="_2gBdJ _3Z0Dn"><div class="_3M9Fx"><div><span class="xNOu1" data-qa-id="stickyPriceElement"></span></div><div class="_1HH9H" data-qa-id="stickyPaymentLink">Détail du paiement</div></div><div><button class="_2sNbI _1xIyN _2xk2l _1lcUU" type="button" data-qa-id="stickySubmitButton"><!-- react-text: 5493 -->Valider et payer<!-- /react-text --></button></div></div></div>
                 </form>
             </div>
         </div>
@@ -708,10 +714,66 @@
 </body>
 <script>
     $(document).ready(function () {
+      var flag=true;
+      var one=0;
+      var sum=0;
+      var vclass=document.getElementsByClassName('visible');
+      var myVisible=function(){
+        
+          $(vclass).removeClass("_278OL");
+          $(this).addClass("_278OL");
+          $('#out_pay').css('display','none');
+          $('#real_pay').css('display','block');
+          sum+=$(this).data('value');
+          $('.xNOu1').html(sum+" €")
+      }
+     
+      for(var i=0;i<vclass.length;i++)
+      {
+          vclass[i].addEventListener('click',myVisible,false);
+      }
 
 
+      var fclass=document.getElementsByClassName('first');
+      var myFirst=function(){
+          
+          $(fclass).removeClass("_278OL");
+          $(this).addClass("_278OL");
+          $('#out_pay').css('display','none');
+          $('#real_pay').css('display','block');
+          sum+=$(this).data('value');
+          $('.xNOu1').html(sum+" €")
+      }
+     
+      for(var i=0;i<fclass.length;i++)
+      {
+        fclass[i].addEventListener('click',myFirst,false);
+      }
+      
+
+      $('#sixty_urgent').on('click',function(){
+
+          if(flag)
+          {
+          $('#sixty_urgent').addClass("_278OL");
+          $('#out_pay').css('display','none');
+          $('#real_pay').css('display','block');
+          sum+=$(this).data('value');
+          $('.xNOu1').html(sum+" €");
+          flag=false;
+          }
+          else{
+          $('#sixty_urgent').removeClass("_278OL");
+          $('#out_pay').css('display','block');
+          $('#real_pay').css('display','none');
+          flag=true;
+          }
+        
+
+      })
 
     });
+
 </script>
 @yield('after-script')
 

@@ -21,47 +21,79 @@ class ViewAdmobController extends Controller
     public function index(Request $request)
     {
         //  
+       
         $ad_type=isset($request->ad_type)? $request->ad_type: "type";
         $search=isset($request->search)? $request->search: "search";
         $location=isset($request->location)?$request->location: "location";
         $distance=isset($request->distance)?$request->distance : "distance";
-        if($search == "type" || $ad_type == "search" || $location == "location" || $distance == "distance"){
-
-
-     //return view('frontoffice.home.displayadmob')->with(compact('ad_type','search','location','distance'));
-
-            
-        }
-        // $count=PostedAdmob::count();
-        // $page_count = 40;
-        // $offset = 0;
-        // $particular_count=JamiiUser::where('type','=','particular')->get()->count();
-        // $professional_count=JamiiUser::where('type','=','professional')->get()->count();
-        // $admobs=PostedAdmob::where('enable',1)->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->get()->toarray();
-        // $admobs=PostedAdmob::where('enable',1)->orderBy('jamii_postedadmob.create_time','desc')->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->paginate(10);
+        $current_page=isset($request->page)?$request->page:1;
+        $min_price=isset($request->min_price)?$request->min_price:"Prix min";
+        //  print_r($min_price);exit;
+        $max_price=isset($request->max_price)?$request->max_price:"Prix max";
+        $urgent=isset($request->ur)?$urgent->$request->ur:0;
+        $title=isset($request->it)?$request->it:0;
+        $page_count=isset($request->page_count)?$request->page_count:20;
+        $count=isset($request->count)?$request->count:PostedAdmob::count();
+        $offset=0;
+        if($search == "search" && $ad_type == "type" &&  $location == "location" && $distance == "distance" && $min_price == "Prix min" && $max_price == "Prix max" && $urgent == 0 && $title == 0){
         
-        // $pagenate_items=PostedAdmob::where('enable',1)->paginate(40);
-        // // print_r(count($pagenate_items));exit;
+           
+           // print_r($count);exit;
+           if($current_page == 1)
+           {
+               $offset=0;
+           }
+           else
+           {
+               $offset = $page_count*($current_page-1)+1;
+           }
+            // print_r($offset);exit;
+             $admobs=PostedAdmob::where('enable',1)->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->get()->toarray();
+            //  $count=count($admobs);
+            // print_r($count);exit;
+           
+        }
+        else{
+            if($ad_type == "sell")
+            {
+                if($search != "search")
+                {
 
-        // $current_page = 1;
-        // $today = date('Y-m-d');
-        // $yesterday = date('Y-m-d', strtotime('-1 days'));
-        // // echo $yesterday;exit;
-        // foreach($admobs as $one){
-        //     $date=date('Y-m-d',strtotime($one['create_time']));
-        //     if(strtotime($date) == strtotime($today)){
-        //         $one['create_time'] = "Today " . date('H:i',strtotime($one['create_time']));
-        //     }else if(strtotime($date) == strtotime($yesterday)){
-        //         $one['create_time'] = "Yesterday " . date('H:i',strtotime($one['create_time']));
-                
-        //     }
-        //     $result[] = $one;
-        // }
+                   $count=PostedAdmob::where('enable',1)->where('subject','like',$search)->get()->count();
+                   
+                  // print_r($count);exit;
 
-        //print_r($result);exit;
-        return view('frontoffice.home.displayadmob')->with(compact('ad_type','search','location','distance'));
 
-    //    return view('frontoffice.home.displayadmob')->with(compact('result','count', 'current_page', 'page_count','particular_count','professional_count','pagenate_items','admobs'));
+                }
+                else if($search !="search" || $min_price != "Prix min" || $max_price != "Prix max")
+                {
+
+                }
+                else if($urgent != 0)
+                {
+
+                }
+                else if($min_price != "Prix min" || $max_price != "Prix max")
+                {
+
+                }
+                else if($search !="search" || $min_price != "Prix min" || $max_price != "Prix max" || $urgent != 0)
+                {
+
+                }
+                else if($search !="search" || $min_price != "Prix min" || $max_price != "Prix max" || $title != 0)
+                {
+
+                }
+                else{
+                    
+                }
+
+            }
+        }
+        // print_r($request->page);exit;
+        return view('frontoffice.home.displayadmob')->with(compact('ad_type','search','location','distance','current_page','count','page_count','min_price','max_price','title','urgent'));
+   //    return view('frontoffice.home.displayadmob')->with(compact('result','count', 'current_page', 'page_count','particular_count','professional_count','pagenate_items','admobs'));
     }
 
     /**

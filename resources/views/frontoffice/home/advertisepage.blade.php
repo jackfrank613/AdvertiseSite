@@ -25,7 +25,7 @@
     <link type="text/css" rel="stylesheet" href="{{asset('css/magnific-popup.css')}}" />
 
     <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/font-awesome.min.css')}}">
 
     <!-- Custom stlylesheet -->
 

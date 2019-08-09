@@ -24,82 +24,131 @@ class FilterController extends Controller
     public function filter_ads(Request $request)
 
     {
+           $data=$_POST;
+        
+           $ad_type=$data['ad_type'];
+           $search=$data['search'];
+           $location=$data['location'];
+           $distance=$data['distance'];
+           $min_price=$data['min_price'];
+           $max_price=$data['max_price'];
+           $urgent=$data['urgent'];
+           $title=$data['title'];
+           $count=$data['total_count'];
+           $page_count=$data['page_count'];
+           $current_page=$data['currentPage'];
+           $admobs=[];
+           $offset=0;
+        //  echo json_encode(array("result"=>$min_price));exit;
+         if($search == "search" && $ad_type == "type" &&  $location == "location" && $distance == "distance" && $min_price == "Prix min" && $max_price == "Prix max" && $urgent == 0 && $title == 0)
 
-
-         $data=$_POST;
-       
-         if($data['ad_type'] == "type" && $data['search'] == "search" && $data['location'] && $data['distance'] == "distance")
-
-         {
-            $count=PostedAdmob::count();
-            $page_count = 40;
-            $offset = 0;
+         {       
+           
+            // 
+            if($current_page == 1)
+            {
+                $offset=0;
+            }
+            else
+            {
+                $offset = $page_count*($current_page-1)+1;
+            }
+           // 
             $particular_count=JamiiUser::where('type','=','particular')->get()->count();
             $professional_count=JamiiUser::where('type','=','professional')->get()->count();
             $admobs=PostedAdmob::where('enable',1)->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->get()->toarray();
-          //  $admobs=PostedAdmob::where('enable',1)->orderBy('jamii_postedadmob.create_time','desc')->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->paginate(10);
-            
-           // $pagenate_items=PostedAdmob::where('enable',1)->paginate(40);
-            // print_r(count($pagenate_items));exit;
-    
-            $current_page = 1;
-            $today = date('Y-m-d');
-            $yesterday = date('Y-m-d', strtotime('-1 days'));
-            // echo $yesterday;exit;
-            foreach($admobs as $one){
-                $date=date('Y-m-d',strtotime($one['create_time']));
-                if(strtotime($date) == strtotime($today)){
-                    $one['create_time'] = "Today " . date('H:i',strtotime($one['create_time']));
-                }else if(strtotime($date) == strtotime($yesterday)){
-                    $one['create_time'] = "Yesterday " . date('H:i',strtotime($one['create_time']));
-                    
-                }
-                $result[] = $one;
-            }
-    
-           //offer result or demands result
-          // $offer_result=PostedAdmob::where('adType',$data['ad_type'])->where('enable','=',1)->get();
-           
-           //max price result
-        //  $result=PostedAdmob::whereBetween('price', [$data['min_price'], $data['max_price']])->paginate(1);
-        
-
+           // echo json_encode(array("result"=>$admobs));exit;
          }
          else{
-          
-            $page_count = 40;
-            $offset = 0;
-            $particulars=[];
-            $professionals=[];
+           
+           
+            if($ad_type == "sell")
+            {
+                if($current_page == 1)
+                {
+                    $offset=0;
+                }
+                else
+                {
+                    $offset = $page_count*($current_page-1)+1;
+                }
+   
+                if($search != "search")
+                {
+               
+                
+                    $admobs=PostedAdmob::where('enable',1)->where('subject','like',$search)->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->leftJoin('jamii_user_table','jamii_postedadmob.user_id','=','jamii_user_table.u_id')->get()->toarray();
+                    $particular_count=PostedAdmob::where('enable',1)->where('subject','like',$search)->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->leftJoin('jamii_user_table','jamii_postedadmob.user_id','=','jamii_user_table.u_id')->where('type','particular')->get()->count();
+                    $professional_count=PostedAdmob::where('enable',1)->where('subject','like',$search)->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->leftJoin('jamii_user_table','jamii_postedadmob.user_id','=','jamii_user_table.u_id')->where('type','professional')->get()->count();
+                    $count=count($admobs);
+                   // echo json_encode(array("result"=>$admobs));exit; 
 
-            $admobs=PostedAdmob::where('enable',1)->where('adType',$data['ad_type'])->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->get()->toarray();
-            $count=count($admobs);
-            foreach($admobs as $admob)
-            {  
-                $particulars=JamiiUser::where('type','=','particular')->where('u_id',$admob['user_id'])->get();
-                $professionals=JamiiUser::where('type','=','professional')->where('u_id',$admob['user_id'])->get();
-            }
-            
-           $particular_count=count($particulars);
-           $professional_count=count($professionals);
+                                    
+                }
+                else if($search !="search" && $min_price != "Prix min"  && $max_price != "Prix max")
+                {
+                   // echo json_encode(array("result"=>$min_price));exit;
+                    $admobs=PostedAdmob::where('enable',1)->where('subject',$search)->whereBetween('price',array($min_price,$max_price))->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->leftJoin('jamii_user_table','jamii_postedadmob.user_id','=','jamii_user_table.u_id')->get()->toarray();
+                    $particular_count=PostedAdmob::where('enable',1)->where('subject','like',$search)->whereBetween('price',array($min_price,$max_price))->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->leftJoin('jamii_user_table','jamii_postedadmob.user_id','=','jamii_user_table.u_id')->where('type','particular')->get()->count();
+                    $professional_count=PostedAdmob::where('enable',1)->where('subject','like',$search)->whereBetween('price',array($min_price,$max_price))->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->leftJoin('jamii_user_table','jamii_postedadmob.user_id','=','jamii_user_table.u_id')->where('type','professional')->get()->count();
 
-           $current_page = 1;
-           $today = date('Y-m-d');
-           $yesterday = date('Y-m-d', strtotime('-1 days'));
-           // echo $yesterday;exit;
-           foreach($admobs as $one){
-               $date=date('Y-m-d',strtotime($one['create_time']));
-               if(strtotime($date) == strtotime($today)){
-                   $one['create_time'] = "Today " . date('H:i',strtotime($one['create_time']));
-               }else if(strtotime($date) == strtotime($yesterday)){
-                   $one['create_time'] = "Yesterday " . date('H:i',strtotime($one['create_time']));
+                    $count=count($admobs);
+                }
+                else if($urgent != 0)
+                {
+
+                     
+                }
+                else if($min_price != "Prix min"  && $max_price != "Prix max")
+                {
                    
-               }
-               $result[] = $one;
-           }
-         }
-         $returnHTML=view('frontoffice.others.firstadmobe')->with(compact('result','count', 'current_page', 'page_count','particular_count','professional_count'))->render();
-          echo json_encode(array("result"=>$returnHTML));exit; 
+                    $admobs=PostedAdmob::where('enable',1)->whereBetween('price',array($min_price,$max_price))->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->leftJoin('jamii_user_table','jamii_postedadmob.user_id','=','jamii_user_table.u_id')->get()->toarray();
+                   
+                    $particular_count=PostedAdmob::where('enable',1)->whereBetween('price',array($min_price,$max_price))->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->leftJoin('jamii_user_table','jamii_postedadmob.user_id','=','jamii_user_table.u_id')->where('type','particular')->get()->count();
+                   
+                    $professional_count=PostedAdmob::where('enable',1)->whereBetween('price',array($min_price,$max_price))->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->leftJoin('jamii_user_table','jamii_postedadmob.user_id','=','jamii_user_table.u_id')->where('type','professional')->get()->count();
+                   
+                    //echo json_encode(array("result"=>$professional_count));exit;
+                    $count=count($admobs);
+                   
+                }
+                else if($search !="search"  && $min_price != "Prix min"  && $max_price != "Prix max"  && $urgent != 0)
+                {
+
+                  
+                     
+
+                }
+                else if($search !="search"  && $min_price != "Prix min"  && $max_price != "Prix max"  && $title != 0)
+                {
+
+                }
+                else{
+                    
+                }  
         
-    }
+            }
+       
+         }
+        
+         $today = date('Y-m-d');
+         $yesterday = date('Y-m-d', strtotime('-1 days'));
+         foreach($admobs as $one){
+             $date=date('Y-m-d',strtotime($one['create_time']));
+             if(strtotime($date) == strtotime($today)){
+                 $one['create_time'] = "Today " . date('H:i',strtotime($one['create_time']));
+             }else if(strtotime($date) == strtotime($yesterday)){
+                 $one['create_time'] = "Yesterday " . date('H:i',strtotime($one['create_time']));
+                 
+             }
+             $result[]= $one;
+            }
+        
+        
+         //echo json_encode(array("result"=>$result));exit; 
+
+         $returnHTML=view('frontoffice.others.firstadmobe')->with(compact('result','count', 'current_page', 'page_count','particular_count','professional_count','min_price','max_price','ad_type','search','location','distance','urgent','title'))->render();
+          echo json_encode(array("result"=>$returnHTML));exit; 
+    
+   }
 }

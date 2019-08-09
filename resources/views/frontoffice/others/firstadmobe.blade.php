@@ -127,20 +127,29 @@
 
 <script>
     $(document).ready(function () {
+        $('#preloader').css('display', 'none');
         $(function () {
             var ad_total_count = "{{$count}}";
             var current_page = "{{$current_page}}";
             var page_count ="{{$page_count}}" ;
+            var min_price="{{$min_price}}";
+            var max_price="{{$max_price}}";
+            var ad_type="{{$ad_type}}";
+            var search="{{$search}}";
+            var location="{{$location}}";
+            var distance="{{$distance}}";
+            var urgent="{{$urgent}}";
+            var title="{{$title}}";
             current_page = (current_page !== "undefined") ? current_page : 1;
-            page_count = (page_count !== "undefined") ? page_count : 40;
-            console.log(current_page);
+            page_count = (page_count !== "undefined") ? page_count : 20;
+            console.log(min_price);
             $('#pagination').pagination({
                 items: ad_total_count,
                 itemsOnPage: page_count,
                 displayedPages: 10,
                 currentPage: current_page,
                 cssStyle: 'light-theme',
-                hrefTextPrefix: "{{ URL::to('frontoffice/getdata/') }}/"
+                hrefTextPrefix: "{{ URL::to('frontoffice/aditems') }}?" + "ad_type="+ad_type+"&search="+search+"&location="+location+"&distance="+distance+"&urgent="+urgent+"&title="+title+"&min_price="+min_price+"&max_price="+max_price+"&page="
             });
 
         });
