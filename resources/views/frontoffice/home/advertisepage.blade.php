@@ -121,7 +121,7 @@
                                                                 @endphp
                                                                 <div class="PXI8z">
                                                                     <div class="eILDV subcategory"
-                                                                        data-subid="{{$sub_cate['s_id']}}">
+                                                                        data-subid="{{$sub_cate['s_id']}}" data-subname="{{$sub_cate['sname']}}">
                                                                         {{$sub_cate['sname']}}</div>
                                                                 </div>
                                                                 @php
@@ -152,7 +152,8 @@
                                                 $categories = $data['categories'];
                                                 $subcategories = $data['subcategories'];
                                                 for($i = 0; $i < count($categories); $i+=2){ $cate=$categories[$i];
-                                                    @endphp <div class="_3BIbD">
+                                                    @endphp 
+                                                    <div class="_3BIbD">
                                                     <div class="PHfT3">
                                                         <div class="_3ytUb subcategory_collapse" data-toggle="collapse"
                                                             data-target="#category{{$cate['id']}}">
@@ -179,7 +180,7 @@
                                                             @endphp
                                                             <div class="PXI8z">
                                                                 <div class="eILDV subcategory"
-                                                                    data-subid="{{$sub_cate['s_id']}}">
+                                                                    data-subid="{{$sub_cate['s_id']}}" data-subname="{{$sub_cate['sname']}}">
                                                                     {{$sub_cate['sname']}}</div>
                                                             </div>
                                                             @php
@@ -251,6 +252,7 @@
                                                         </svg></span></div>
                                                 <div class="_2gTTZ">
                                                     <div id="select_subcategory">Voitures</div>
+                                                    <input type="hidden" name="sub_category" value="">
                                                 </div>
                                             </div>
                                         </div>
@@ -722,9 +724,10 @@
             $('.subcategory').on('click', function () {
                 sub_id = $(this).data('subid');
                 console.log(sub_id);
-                var sub_name = this.innerHTML;
-                document.getElementById('select_subcategory').innerHTML = this.innerHTML;
-
+                // var sub_name = this.innerHTML;
+                var sub_name = $(this).data('subname');
+                document.getElementById('select_subcategory').innerHTML = sub_name;
+                $('input[name=sub_category]').val(sub_name);
                 $('#choose_category').css('display', 'block');
                 $('#total_category').css('display', 'none');
             });
@@ -742,16 +745,15 @@
             $('#new_button_subcategory').on('submit', function (e) {
                 e.preventDefault();
                 // var data=$('#new_button_subcategory').serialize();
-                var sub_category = document.getElementById('select_subcategory').innerHTML;
-                console.log(sub_category);
-                sub_category = sub_category.replace(/\s/g, '');
-                console.log(sub_category);
+              //  var sub_category = document.getElementById('select_subcategory').innerHTML;
+                // console.log(sub_category);
+                // sub_category = sub_category.replace(/\s/g, '');
+                // console.log(sub_category);
+                var sub_category = $('input[name=sub_category]').val();
                 var adType = $('input[name=adType]:checked').val();
                 var url = $('#new_button_subcategory').attr('action');
                 console.log(url);
-                // var base_url = {
-                //     !!json_encode(url('/')) !!
-                // };
+             
                 $.ajax({
                     type: 'POST',
                     url: "{{route('postcategory')}}",
@@ -1492,7 +1494,6 @@
                 event.preventDefault();
                 var email = $('input[name=email]').val();
                 var phone = $('input[name=phone]').val();
-                console.log(id);
                 $.ajax({
                     type: 'POST',
                     url: "{{route('information')}}",
@@ -1510,8 +1511,12 @@
                             console.log("error");
 
                         } else {
-                            location.href = "{{route('viewadmob')}}";
+                          
+                            location.href="{{route('admobpayment')}}"
                         }
+                    },
+                    error:function(e){
+                        console.log(e);
                     }
                 });
             });

@@ -57,12 +57,15 @@
                                 </svg></span></a></div>
                     Boostez votre annonce !
                 </h1>
-                <form class="jQ9_D" method="POST" accept="">
+                <form class="jQ9_D">
+                        <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                     <ul class="_3uJrb">
                         <li class="O1pUl _29GcC" data-qa-id="galleryOptions">
                             <div class="_3AVwH">
                                 <div class="_2liz6">
-                                    <div class="_2Dlhe"><svg width="12rem" height="15.9rem">
+                                    <div class="_2Dlhe">
+                                       
+                                        <svg width="12rem" height="15.9rem">
                                             <defs>
                                                 <rect id="gallery_mobile__a" x="0" y="0" width="120" height="159"
                                                     rx="4"></rect>
@@ -113,10 +116,7 @@
                                                             <use xlink:href="#gallery_mobile__c"></use>
                                                         </mask>
                                                         <use fill="#F56B2A" xlink:href="#gallery_mobile__c"></use>
-                                                        <image mask="url(#gallery_mobile__d)" x="-19" y="-48"
-                                                            width="179" height="120"
-                                                            xlink:href="https://img5.leboncoin.fr/ad-image/037d216478a483c0f97d3dbe3b616522a0b90889.jpg"
-                                                            preserveAspectRatio="xMidYMid slice"></image>
+                                                      
                                                         <rect fill="#F56B2A" x="1" y="57" width="106.598" height="3.955"
                                                             rx="1.978"></rect>
                                                         <rect fill="#F56B2A" x="1" y="66" width="106.598" height="3.955"
@@ -124,8 +124,11 @@
                                                     </g>
                                                 </g>
                                             </g>
-                                        </svg></div>
-                                    <div class="_1l3a3"><svg width="24.2rem" height="14.5rem">
+                                        </svg>
+                                    </div>
+                                    <div class="_1l3a3">
+                                            
+                                        <svg width="24.2rem" height="14.5rem">
                                             <defs>
                                                 <rect id="gallery_desk__a" x="0" y="0" width="240" height="143" rx="4">
                                                 </rect>
@@ -159,10 +162,7 @@
                                                             <use xlink:href="#gallery_desk__d"></use>
                                                         </mask>
                                                         <use fill="#F56B2A" xlink:href="#gallery_desk__d"></use>
-                                                        <image mask="url(#gallery_desk__e)" x="-20" y="-25.756"
-                                                            width="132" height="88.667"
-                                                            xlink:href="https://img5.leboncoin.fr/ad-image/037d216478a483c0f97d3dbe3b616522a0b90889.jpg"
-                                                            preserveAspectRatio="xMidYMid slice"></image>
+                                                       
                                                         <use fill="#CAD1D9" xlink:href="#gallery_desk__f"></use>
                                                         <rect fill="#F56B2A" y="57" width="70" height="3.955"
                                                             rx="1.978"></rect>
@@ -234,19 +234,21 @@
                                 </div>
                             </div>
                             <div class="rq5Gw">
-                                <a data-name="gallery" data-qa-id="gallery" id="seven_visible" data-value="17" class="side-ad Uxtbb visible">
+                                <a data-name="gallery" data-qa-id="gallery" id="seven_visible" data-value="17"
+                                    class="side-ad Uxtbb visible">
                                     <span data-name="gallery" class="FTchl"></span><span class="mj0hi">
                                         <span class="_3UZbV">pendant 7 jours</span>
                                         <span class="_2V8v8">17 €</span>
                                     </span>
                                 </a>
-                                <a data-name="gallery30" data-qa-id="gallery30" data-value="45" id="thirty_visible" class="side-ad Uxtbb visible">
+                                <a data-name="gallery30" data-qa-id="gallery30" data-value="45" id="thirty_visible"
+                                    class="side-ad Uxtbb visible">
                                     <span data-name="gallery30" class="FTchl"></span><span class="mj0hi">
                                         <span class="_3UZbV">pendant 30 jours</span>
                                         <span class="_2V8v8">45 € </span>
                                     </span>
                                 </a>
-                                            
+
                             </div>
                         </li>
                         <li class="O1pUl _29GcC _1ehwn" data-qa-id="daily_bumpOptions">
@@ -333,10 +335,7 @@
                                                         <use xlink:href="#daily_bump_mobile__h"></use>
                                                     </mask>
                                                     <use fill="#F56B2A" xlink:href="#daily_bump_mobile__h"></use>
-                                                    <image mask="url(#daily_bump_mobile__i)" x="-8" y="-1" width="75"
-                                                        height="50"
-                                                        xlink:href="https://img5.leboncoin.fr/ad-image/037d216478a483c0f97d3dbe3b616522a0b90889.jpg"
-                                                        preserveAspectRatio="xMidYMid slice"></image>
+                                                   
                                                     <rect fill="#F56B2A" mask="url(#daily_bump_mobile__i)" x="48.462"
                                                         y="11.364" width="84" height="5.682" rx="2"></rect>
                                                     <rect fill="#F56B2A" mask="url(#daily_bump_mobile__i)" x="48.462"
@@ -431,10 +430,7 @@
                                                             <use xlink:href="#daily_bump_desk__j"></use>
                                                         </mask>
                                                         <use fill="#F56B2A" xlink:href="#daily_bump_desk__j"></use>
-                                                        <image mask="url(#daily_bump_desk__k)" x="-7" y="-2" width="75"
-                                                            height="50"
-                                                            xlink:href="https://img5.leboncoin.fr/ad-image/037d216478a483c0f97d3dbe3b616522a0b90889.jpg"
-                                                            preserveAspectRatio="xMidYMid slice"></image>
+                                                       
                                                         <rect fill="#F56B2A" mask="url(#daily_bump_desk__k)" x="48.462"
                                                             y="11.364" width="84" height="5.682" rx="2"></rect>
                                                         <rect fill="#F56B2A" mask="url(#daily_bump_desk__k)" x="48.462"
@@ -456,22 +452,25 @@
                                         href="/deposer-une-annonce/options/apercu/daily_bump">Aperçu</a>
                                 </div>
                             </div>
-                            <div class="rq5Gw"><a data-name="daily_bump" data-qa-id="daily_bump" data-value="30" id="seven_first" class="top-ad Uxtbb first"><span
-                                        data-name="daily_bump" class="FTchl"></span><span class="mj0hi"><span
-                                            class="_3UZbV">chaque jour pendant 7 jours</span><span class="_2V8v8">
+                            <div class="rq5Gw"><a data-name="daily_bump" data-qa-id="daily_bump" data-value="30"
+                                    id="seven_first" class="top-ad Uxtbb first"><span data-name="daily_bump"
+                                        class="FTchl"></span><span class="mj0hi"><span class="_3UZbV">chaque jour
+                                            pendant 7 jours</span><span class="_2V8v8">
                                             <!-- react-text: 4788 -->30
                                             <!-- /react-text -->
                                             <!-- react-text: 4789 --> €
                                             <!-- /react-text --></span></span></a><a data-name="daily_bump30"
-                                    data-qa-id="daily_bump30" id="thirty_first" data-value="85" class="top-ad Uxtbb first"><span data-name="daily_bump30"
-                                        class="FTchl"></span><span class="mj0hi"><span class="_3UZbV">chaque jour
+                                    data-qa-id="daily_bump30" id="thirty_first" data-value="85"
+                                    class="top-ad Uxtbb first"><span data-name="daily_bump30" class="FTchl"></span><span
+                                        class="mj0hi"><span class="_3UZbV">chaque jour
                                             pendant 30 jours</span><span class="_2V8v8">
                                             <!-- react-text: 4795 -->85
                                             <!-- /react-text -->
                                             <!-- react-text: 4796 --> €
                                             <!-- /react-text --></span></span></a><a data-name="sub_toplist"
-                                    data-qa-id="sub_toplist" id="sixty_first" data-value="34" class="top-ad Uxtbb first"><span data-name="sub_toplist"
-                                        class="FTchl"></span><span class="mj0hi"><span class="_3UZbV">chaque semaine
+                                    data-qa-id="sub_toplist" id="sixty_first" data-value="34"
+                                    class="top-ad Uxtbb first"><span data-name="sub_toplist" class="FTchl"></span><span
+                                        class="mj0hi"><span class="_3UZbV">chaque semaine
                                             pendant 60 jours</span><span class="_2V8v8">
                                             <!-- react-text: 4802 -->34
                                             <!-- /react-text -->
@@ -611,11 +610,8 @@
                                                         <mask id="urgent_desk__i" fill="#fff">
                                                             <use xlink:href="#urgent_desk__h"></use>
                                                         </mask>
-                                                        <use fill="#CBD1D9" xlink:href="#urgent_desk__h"></use>
-                                                        <image mask="url(#urgent_desk__i)" x="-11" y="-7" width="60.5"
-                                                            height="41"
-                                                            xlink:href="https://img5.leboncoin.fr/ad-image/037d216478a483c0f97d3dbe3b616522a0b90889.jpg"
-                                                            preserveAspectRatio="xMidYMid slice"></image>
+                                                        <use fill="#F56B2A" xlink:href="#urgent_desk__h"></use>
+                                                       
                                                         <rect fill="#CAD1D9" x="34.841" y="2.303" width="90"
                                                             height="4.607" rx="2.303"></rect>
                                                         <rect fill="#CAD1D9" x="34.841" y="12.669" width="90"
@@ -664,32 +660,38 @@
                                         href="/deposer-une-annonce/options/apercu/urgent">Aperçu</a>
                                 </div>
                             </div>
-                            <div class="rq5Gw"><a data-name="urgent" data-qa-id="urgent" id="sixty_urgent" data-value="8" class="star-ad Uxtbb"><span
-                                        data-name="urgent" class="FTchl"></span><span class="mj0hi"><span
-                                            class="_3UZbV">pendant 60 jours</span><span class="_2V8v8">
+                            <div class="rq5Gw"><a data-name="urgent" data-qa-id="urgent" id="sixty_urgent"
+                                    data-value="8" class="star-ad Uxtbb"><span data-name="urgent"
+                                        class="FTchl"></span><span class="mj0hi"><span class="_3UZbV">pendant 60
+                                            jours</span><span class="_2V8v8">
                                             <!-- react-text: 4913 -->8
                                             <!-- /react-text -->
                                             <!-- react-text: 4914 --> €
                                             <!-- /react-text --></span></span></a></div>
                         </li>
                     </ul>
-                    <button class="_2sNbI _1xIyN _2xk2l _1FJuS" id="out_pay" type="submit" data-qa-id="submitButton">
+                    <button class="_2sNbI _1xIyN _2xk2l _1FJuS" id="out_pay"  data-qa-id="submitButton">
                         <!-- react-text: 5471 -->Déposer
                         <!-- /react-text -->
                         <!-- react-text: 5472 --> sans booster mon annonce
                         <!-- /react-text --></button>
 
-                        <div class="_3oVtB" id="real_pay" data-qa-id="stickyBarElement" style="display:none">
-                            <div class="_2gBdJ _3Z0Dn">
-                                <div class="_3M9Fx">
-                                    <div>
-                                        <span class="xNOu1" data-qa-id="stickyPriceElement">
-                                            </span>
-                                        </div>
-                                        <div class="_1HH9H" data-qa-id="stickyPaymentLink">Détail du paiement</div>
-                                    </div>
-                                    <div>
-                        <button class="_2sNbI _1xIyN _2xk2l _1lcUU" id="btn_pay" type="button" data-qa-id="stickySubmitButton"><!-- react-text: 5493 -->Valider et payer<!-- /react-text --></button></div></div></div>
+                    <div class="_3oVtB" id="real_pay" data-qa-id="stickyBarElement" style="display:none">
+                        <div class="_2gBdJ _3Z0Dn">
+                            <div class="_3M9Fx">
+                                <div>
+                                    <span class="xNOu1" data-qa-id="stickyPriceElement">
+                                    </span>
+                                </div>
+                                <div class="_1HH9H" data-qa-id="stickyPaymentLink">Détail du paiement</div>
+                            </div>
+                            <div>
+                                <button class="_2sNbI _1xIyN _2xk2l _1lcUU" id="btn_pay" type="button"
+                                    data-qa-id="stickySubmitButton">
+                                    <!-- react-text: 5493 -->Valider et payer
+                                    <!-- /react-text --></button></div>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -725,66 +727,139 @@
 </body>
 <script>
     $(document).ready(function () {
-      var flag=true;
-      var one=0;
-      var sum=0;
 
-      /// ad value variable
-      var side_ad_val = 0;
-      var top_ad_val = 0;
-      var star_ad_val = 0;
-        //   ***end ***///
+         var post_id="{{$post_id}}";
+         console.log(post_id);
+        var flag = true;
+        var one = 0;
+        var sum = 0;
 
-    var value=0;
-      function ad_value(){
-          value = side_ad_val + top_ad_val + star_ad_val;
-          if(value == 0){
-            $('#out_pay').css('display','block');
-            $('#real_pay').css('display','none');
-          }else{
-            $('.xNOu1').html(value+" €");
-            $('#out_pay').css('display','none');
-            $('#real_pay').css('display','block');
-          }
-      }
-        $('.side-ad').click(function(){
-            if($(this).hasClass("_278OL")){
+        /// ad value variable
+        var side_ad_val = 0;
+        var top_ad_val = 0;
+        var star_ad_val = 0;
+        //   ***end ***///           
+        var value = 0;
+
+
+        function ad_value() {
+            value = side_ad_val + top_ad_val + star_ad_val;
+            if (value == 0) {
+                $('#out_pay').css('display', 'block');
+                $('#real_pay').css('display', 'none');
+            } else {
+                $('.xNOu1').html(value + " €");
+                $('#out_pay').css('display', 'none');
+                $('#real_pay').css('display', 'block');
+            }
+        }
+        $('.side-ad').click(function () {
+            if ($(this).hasClass("_278OL")) {
                 $(this).removeClass("_278OL");
                 side_ad_val -= parseInt($(this).data('value'));
-            }else {
+            } else {
                 $('.side-ad').removeClass("_278OL");
                 $(this).addClass("_278OL");
                 side_ad_val = parseInt($(this).data('value'));
             }
             ad_value();
         })
-        $('.top-ad').click(function(){
-            if($(this).hasClass("_278OL")){
+        $('.top-ad').click(function () {
+            if ($(this).hasClass("_278OL")) {
                 $(this).removeClass("_278OL");
                 top_ad_val -= parseInt($(this).data('value'));
-            }else {
+            } else {
                 $('.top-ad').removeClass("_278OL");
                 $(this).addClass("_278OL");
                 top_ad_val = parseInt($(this).data('value'));
             }
             ad_value();
         })
-        $('.star-ad').click(function(){
-            if($(this).hasClass("_278OL")){
+        $('.star-ad').click(function () {
+            if ($(this).hasClass("_278OL")) {
                 $(this).removeClass("_278OL");
                 star_ad_val -= parseInt($(this).data('value'));
-            }else {
+            } else {
                 $('.star-ad').removeClass("_278OL");
                 $(this).addClass("_278OL");
                 star_ad_val = parseInt($(this).data('value'));
             }
             ad_value();
         });
-        $('#btn_pay').click(function(){
-           console.log(value);
+        $('#btn_pay').click(function (event) {
+            event.preventDefault();
+            // location.href="{{URL::to('frontoffice/cardpay')}}?"+"pay="+value
+           console.log(side_ad_val);
+           console.log(top_ad_val);
+           console.log(star_ad_val);
+            $.ajax({
+                type:"POST",
+                url:"{{route('payout')}}",
+                data:{
+                   id:post_id,
+                   enable:1,
+                   amount:value,
+                   side_amount:side_ad_val,
+                   top_amount:top_ad_val,
+                   star_amount:star_ad_val,
+                   _token:$('input[name=_token]').val(),
+                },
+                dataType:"json",
+                success:function(data){
+                    if(data.error)
+                    {
+                       alert(data.result);
+                    }
+                    else{
+                        console.log(data.result);
+                    } 
+
+                },
+                error:function(e){
+
+                      console.log(e);
+                }
+
+ 
+            });
 
         });
+      
+    $('#out_pay').on('click',function(event){
+        event.preventDefault();
+        $.ajax({
         
+           type:"POST",
+           url:"{{route('woutpay')}}",
+          data:
+          {
+            id:post_id,
+            enable:1,
+            _token: $('input[name=_token]').val(),
+          },
+          dataType:"json",
+          success:function(data){
+             if(data.error)
+             {
+                alert(data.result);
+             }
+             else{
+                console.log(data.result);
+                location.href="{{route('viewadmob')}}"
+             }
+        
+          },
+          error:function(e){
+              console.log(e);
+          }
+
+        });
+
+
+       });
+
+
+
     });
 
 </script>

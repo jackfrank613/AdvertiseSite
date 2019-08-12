@@ -66,7 +66,7 @@ class PostAdmobController extends BaseController
       // print_r($request);exit;
      
       $data=$_POST;
-     
+     // echo json_encode(array('error'=>false,'result'=>$data)); exit;
       $input_categoryType=array(
          'sub_id'=>$data['sub_id'],
          'adName'=>$data['adName'],
@@ -240,24 +240,29 @@ class PostAdmobController extends BaseController
       public function addInformation(){
        
          $data=$_POST;
+      
          $date = date('Y-m-d H:i:s');
          $input_category_information=array(
           'email'=>$data['email'],
           'phone'=>$data['phone'],
           'id' => $data['id'],
-          'enable'=>$data['enable'],
           'create_time'=>$date,
           'user_id'=>$data['user_id'],
         );
-          // echo json_encode(array('result'=>$data['id']));
+          
+          
          $result=PostedAdmob::where('id',"=",$data['id'])->update($input_category_information);
-       
+         
         if($result)
         {
-          echo json_encode(array('error'=>false,'result'=>"success"));
+          $post_id=$data['id'];
+
+          Session::put('post_id', $post_id);
+          echo json_encode(array('error'=>false,'result'=>$post_id));
+
         }
         else{
-          echo json_encode(array('error'=>false,'result'=>"error"));
+          echo json_encode(array('error'=>true,'result'=>"error"));
 
         }
       }

@@ -53,6 +53,8 @@ Route::group([
       //admob payment route
       Route::get('/admobpayment','PaymentAdmobController@getPaymentpage')->name('admobpayment');
       Route::get('/cardpay','PaymentAdmobController@getCardpayment')->name('cardpay');
+      Route::post('/woutpay','PaymentAdmobController@availAdbomb')->name('woutpay');
+      Route::post('/payout','PaymentAdmobController@payoutAdmob')->name('payout');
 
       Route::get('/aditems/filter','FilterController@filterFunction')->name('filter');
       Route::post('/aditems/filterads','FilterController@filter_ads')->name('filterads');
