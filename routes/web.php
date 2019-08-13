@@ -111,7 +111,12 @@ Route::group([
         //get help page
 
        Route::get('/help','HelpController@index')->name('help');
+
+      //chatting system
+       Route::get('/chat', 'ChatController@index')->name('chat');
   });
+
+
 // Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+
