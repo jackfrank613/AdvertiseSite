@@ -76,62 +76,33 @@
 
                 <section class="S6kt5">
                     <h2>Saisissez votre numéro de carte bancaire</h2>
-                    <form method="POST" id="adyen-encrypted-form">
-                        <ul>
-                            <li class="_2ZsK8"><img
-                                    src="//static-rav.leboncoin.fr/c618edcfb1b2e8de4181e98117836b2a.png"><img
-                                    src="//static-rav.leboncoin.fr/3372f2f8b0f0e200a0b390db08d793b9.png"><img
-                                    src="//static-rav.leboncoin.fr/f19f3e05905b4e4a3e649e419ad65556.png"><span
-                                    class="_1vK7W _3D9j0" name="lock"><svg viewBox="0 0 24 24" data-name="Calque 1"
-                                        focusable="false">
-                                        <path
-                                            d="M18.75 8h-1.13V5.71a5.62 5.62 0 1 0-11.24 0V8H5.25A2.27 2.27 0 0 0 3 10.29v11.42A2.27 2.27 0 0 0 5.25 24h13.5A2.27 2.27 0 0 0 21 21.71V10.29A2.27 2.27 0 0 0 18.75 8zM12 18.29A2.29 2.29 0 1 1 14.25 16 2.27 2.27 0 0 1 12 18.29zM15.38 8H8.62V5.71a3.38 3.38 0 1 1 6.76 0z">
-                                        </path>
-                                    </svg></span></li>
-                            <li><label for="card_number">Numéro de carte *</label><input type="text" id="card_number"
-                                    data-encrypted-name="card_number" autocomplete="off" maxlength="19" value=""
-                                    class=""></li>
-                            <li><label>Expire fin *</label>
-                                <div class="_6wDtW">
-                                    <div class="selectWrapper _2mFNZ"><select type="select" data-encrypted-name="exp_mm"
-                                            autocomplete="off" data-qa-id="card_exp_mm" class="select">
-                                            <option value="01">01</option>
-                                            <option value="02">02</option>
-                                            <option value="03">03</option>
-                                            <option value="04">04</option>
-                                            <option value="05">05</option>
-                                            <option value="06">06</option>
-                                            <option value="07">07</option>
-                                            <option value="08">08</option>
-                                            <option value="09">09</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                        </select></div><span class="_3af6D">/</span>
-                                    <div class="selectWrapper _2mFNZ"><select type="select" data-encrypted-name="exp_yy"
-                                            data-qa-id="card_exp_aaaa" autocomplete="off" class="select">
-                                            <option value="2019">2019</option>
-                                            <option value="2020">2020</option>
-                                            <option value="2021">2021</option>
-                                            <option value="2022">2022</option>
-                                            <option value="2023">2023</option>
-                                            <option value="2024">2024</option>
-                                            <option value="2025">2025</option>
-                                            <option value="2026">2026</option>
-                                            <option value="2027">2027</option>
-                                            <option value="2028">2028</option>
-                                        </select></div>
+                    <div class="card">
+                            <form action="{{route('process')}}" method="post" id="payment-form">
+                                @csrf                    
+                                <div class="form-group">
+                                    <div class="card-header">
+                                        <label for="card-element">
+                                                Entrez vos informations de carte de crédit
+                                        </label>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="card-element">
+                                        <!-- A Stripe Element will be inserted here. -->
+                                        </div>
+                                        <!-- Used to display form errors. -->
+                                        <div id="card-errors" role="alert"></div>
+                                        <input type="hidden" name="total_value" value="48" />
+                                    </div>
                                 </div>
-                            </li>
-                            <li><label for="cvc">Cryptogramme *</label><input type="text" id="cvc"
-                                    data-encrypted-name="cvc" autocomplete="off" maxlength="3" size="4" value=""
-                                    class=""></li>
-                        </ul><button class="_2sNbI _1xIyN _2xk2l" type="submit" data-qa-id="deal_payment_submit">
-                            <!-- react-text: 157 -->Valider
-                            <!-- /react-text --></button>
-                    </form>
+                                <div class="card-footer">
+                                        <button class="_2sNbI _1xIyN _2xk2l _1lcUU" id="btn_pay" type="submit"
+                                        data-qa-id="stickySubmitButton">Valider</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                  <div class="_2e0qf">Informations:</div>
-                    <div class="_38Fo3"><span class="_1JWO_" id="span1"><img
+                    <div class="_38Fo3" style="margin:0 0 1rem"><span class="_1JWO_" id="span1"><img
                                 src="//static-rav.leboncoin.fr/46c5e452fd381c4d2b435ac7eff43df9.png"></span>
                         <div class="D0sVS">
                             <div class="ezWFo">Le responsable de traitement, les destinataires et la finalité de la
@@ -139,27 +110,18 @@
                             <div class="_2CroS" id="cr_1" style="display:none">Dans le cadre de l’exécution du contrat qui nous lie, vos données de paiement sont indispensables à LBC France pour donner suite à votre paiement. A cette fin, elles sont transmises à notre prestataire de service de paiement, qui concourt techniquement à réaliser la finalité ci-dessus. Nous sommes susceptibles de traiter vos données de manière automatisée à des fins de lutte contre la fraude. Ce traitement pourra donner lieu à un blocage automatique de votre transaction.</div>
                         </div>
                     </div>
-                    <div class="_38Fo3"><span class="_1JWO_" id="span2"><img
+                    <div class="_38Fo3" style="margin:0 0 1rem"><span class="_1JWO_" id="span2"><img
                                 src="//static-rav.leboncoin.fr/46c5e452fd381c4d2b435ac7eff43df9.png"></span>
                         <div class="D0sVS">
                             <div class="ezWFo">En savoir plus sur vos droits, la durée de conservation de vos données et
                                 les moyens de nous contacter</div>
                              <div class="_2CroS" id="cr_2" style="display:none"><!-- react-text: 279 -->Vos données seront conservées par notre prestataire de paiement pendant 13 mois, à l’exception du cryptogramme que notre prestataire ne conserve que le temps d’exécuter la transaction. Pour plus d’informations sur vos droits, contactez notre <!-- /react-text --><!-- react-text: 280 --><!-- /react-text --><a href="https://assistance.leboncoin.info/hc/fr" target="_blank" rel="noopener">service client</a><!-- react-text: 282 -->, ou<!-- /react-text --><a href="https://www.leboncoin.fr/dc/cookies/#19" target="_blank" rel="noopener"><!-- react-text: 284 --><!-- /react-text --><!-- react-text: 285 --> notre délégué à la protection des données.<!-- /react-text --></a></div>
                         </div>
-                    </div>
+                </div>
                 </section>
             </section>
         </div>
     </div>
-    <footer class="_2TcK4">
-        <div class="_2cF5E">
-            <div class="_1-1SA">
-                <span>Jamii 2019 - 2030</span>
-            </div>
-        </div>
-    </footer>
-
-
 
 </body>
 
@@ -170,6 +132,7 @@
 
 <script type="text/javascript" src="{{asset('js/jquery.magnific-popup.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
+<script src="https://js.stripe.com/v3/"></script>
 
 <script>
 
@@ -200,8 +163,69 @@ $(document).ready(function(){
        }
     });
 
+   // Create a Stripe client.
+   var stripe = Stripe('{{ env("STRIPE_KEY") }}');
+
+   var elements = stripe.elements();
+   var style = {
+        base: {
+            color: '#32325d',
+            fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+            fontSmoothing: 'antialiased',
+            fontSize: '16px',
+            '::placeholder': {
+            color: '#aab7c4'
+            }
+        },
+        invalid: {
+            color: '#fa755a',
+            iconColor: '#fa755a'
+        }
+};
 
 
+ var card = elements.create('card', {style: style});
+
+// Add an instance of the card Element into the `card-element` <div>.
+ card.mount('#card-element');
+
+  // Handle real-time validation errors from the card Element.
+card.addEventListener('change', function(event) {
+  var displayError = document.getElementById('card-errors');
+  if (event.error) {
+    displayError.textContent = event.error.message;
+  } else {
+    displayError.textContent = '';
+  }
+});
+// Handle form submission.
+var form = document.getElementById('payment-form');
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  stripe.createToken(card).then(function(result) {
+    if (result.error) {
+      // Inform the user if there was an error.
+      var errorElement = document.getElementById('card-errors');
+      errorElement.textContent = result.error.message;
+    } else {
+      // Send the token to your server.
+     // console.log(result.token);
+     stripeTokenHandler(result.token);
+    }
+  });
+});
+
+function stripeTokenHandler(token) {
+  // Insert the token ID into the form so it gets submitted to the server
+  var form = document.getElementById('payment-form');
+  var hiddenInput = document.createElement('input');
+  hiddenInput.setAttribute('type', 'hidden');
+  hiddenInput.setAttribute('name', 'stripeToken');
+  hiddenInput.setAttribute('value', token.id);
+  form.appendChild(hiddenInput);
+  // Submit the form
+  form.submit();
+}
 });
 
 </script>

@@ -56,6 +56,8 @@ Route::group([
       Route::post('/woutpay','PaymentAdmobController@availAdbomb')->name('woutpay');
       Route::post('/payout','PaymentAdmobController@payoutAdmob')->name('payout');
 
+      Route::post('/process','PaymentAdmobController@withStripePayment')->name('process');
+
       Route::get('/aditems/filter','FilterController@filterFunction')->name('filter');
       Route::post('/aditems/filterads','FilterController@filter_ads')->name('filterads');
       Route::get('/aditems/filterSearch','FilterController@filterSearch')->name('filterSearch');

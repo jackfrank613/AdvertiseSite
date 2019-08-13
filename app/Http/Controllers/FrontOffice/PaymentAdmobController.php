@@ -57,4 +57,14 @@ class PaymentAdmobController extends Controller
        Session::put('payid',$p_id);
 
     }
+
+    public function withStripePayment(Request $request){
+     
+        $data=$_POST;
+        \Stripe\Stripe::setApiKey('sk_test_loaCudYPovZN7DP8R2fW6NbU00TPdHDXqv');
+        $charge = \Stripe\Charge::create(['amount' => 100*100, 'currency' => 'eur', 'source' =>$data['stripeToken'], 'description' => 'posted advertise']);
+        echo($charge);exit;
+
+
+    }
 }

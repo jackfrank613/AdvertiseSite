@@ -681,6 +681,7 @@
                             <div class="_3M9Fx">
                                 <div>
                                     <span class="xNOu1" data-qa-id="stickyPriceElement">
+                                        
                                     </span>
                                 </div>
                                 <div class="_1HH9H" data-qa-id="stickyPaymentLink">Détail du paiement</div>
