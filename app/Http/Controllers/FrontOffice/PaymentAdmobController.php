@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Session;
 use App\PostedAdmob;
 use App\PaymentModel;
+use App\BoostAdmob;
 
 class PaymentAdmobController extends Controller
 {
@@ -19,9 +20,11 @@ class PaymentAdmobController extends Controller
          return view('frontoffice/home/paymentadmobpage')->with(compact('post_id'));
     }
 
-    public function getCardpayment(){
-
-        return view('frontoffice/home/cardpayment');
+    public function getCardpayment(Request $request){
+        $boost_id=$request->boost;
+        $result=BoostAdmob::where('b_id','=',$boost_id)->first();
+        $amount=$result->amount;
+        return view('frontoffice/home/cardpayment')->with(compact('boost_id','amount'));
     }
 
     public function availAdbomb(){
@@ -44,27 +47,78 @@ class PaymentAdmobController extends Controller
 
     }
 
-    public function payoutAdmob(){
+    public function boostAdmob(){
           
         $data=$_POST;
-    
+       
        $input_amount=array(
-            'ad_id'=>$data['id'],
-            'amount'=>$data['amount'],      
+            'post_id'=>583,
+            'amount'=>$data['amount'],
+            'post_style'=>$data['post_style']
+                  
        );
-
-       $p_id=PaymentModel::insertGetId($input_amount);
-       Session::put('payid',$p_id);
+       $boost_id=BoostAdmob::insertGetId($input_amount);
+     //  echo json_encode(array("result"=>$boost_id));exit;
+       if($boost_id){
+        
+         echo json_encode(array("error"=>false,"result"=>$boost_id));exit;
+       }
+       else{
+        echo json_encode(array("error"=>ture,"result"=>"error"));exit;
+       }
 
     }
 
     public function withStripePayment(Request $request){
      
-        $data=$_POST;
+       // $data=$_POST;
+      //  echo $request->boost_id;exit;
+        $result=BoostAdmob::where('b_id','=',$request->boost_id)->first();
+        $amount=$result->amount;
         \Stripe\Stripe::setApiKey('sk_test_loaCudYPovZN7DP8R2fW6NbU00TPdHDXqv');
-        $charge = \Stripe\Charge::create(['amount' => 100*100, 'currency' => 'eur', 'source' =>$data['stripeToken'], 'description' => 'posted advertise']);
-        echo($charge);exit;
+        $charge = \Stripe\Charge::create(['amount' => $amount*100, 'currency' => 'eur', 'source' =>$request->stripeToken, 'description' => 'paid for advertise']);
+        // echo($charge);exit;
+        if(isset($charge))
+        {
+        
+           $input_active=array(
+            'post_time'=>date('Y-m-d H:i:s'),
+             'pay_active'=>1,
+             'updated_at'=>date('Y-m-d H:i:s')
+           );
 
+           $check=BoostAdmob::where('b_id','=',$request->boost_id)->update($input_active);
+            if($check)
+            {
+                $input_payment=array(
+                  'boost_id'=>$request->boost_id,
+                  'amount'=>$amount,
+                  'active'=>1,
+                  'pay_date'=>date('Y-m-d H:i:s')
+                );
+                $pay_id=PaymentModel::insertGetId($input_payment);
+                $status="Le paiement est traité avec succès!";
+                // echo json_encode(array('error'=>false,"result"=>"Le paiement est traité avec succès!"));exit;
+                $status="Le paiement est traité avec succès!!";
+              return redirect()->route('status',['status' => $status]);
+            }
+            else{
+                echo json_encode(array('error'=>false,"result"=>"bosst information is not exist."));exit;
+            }
+        }
+        else{
+            $status="Le paiement est refusé!";
+            return redirect()->route('status',['status' => $status]);
+            echo json_encode(array('error'=>false,"result"=>"Le paiement est refusé!"));exit;
+        }
+      
+    }
+
+    public function getStatus(Request $request){
+        
+        // echo $request->status;exit;
+        $status=$request->status;
+        return view('frontoffice.home.processpayment')->with(compact('status'));
 
     }
 }

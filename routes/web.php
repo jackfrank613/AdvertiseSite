@@ -54,10 +54,10 @@ Route::group([
       Route::get('/admobpayment','PaymentAdmobController@getPaymentpage')->name('admobpayment');
       Route::get('/cardpay','PaymentAdmobController@getCardpayment')->name('cardpay');
       Route::post('/woutpay','PaymentAdmobController@availAdbomb')->name('woutpay');
-      Route::post('/payout','PaymentAdmobController@payoutAdmob')->name('payout');
-
+      Route::post('/boost','PaymentAdmobController@boostAdmob')->name('boost');
+   
       Route::post('/process','PaymentAdmobController@withStripePayment')->name('process');
-
+      Route::get('/getstatus','PaymentAdmobController@getStatus')->name('status');
       Route::get('/aditems/filter','FilterController@filterFunction')->name('filter');
       Route::post('/aditems/filterads','FilterController@filter_ads')->name('filterads');
       Route::get('/aditems/filterSearch','FilterController@filterSearch')->name('filterSearch');
@@ -113,10 +113,10 @@ Route::group([
        Route::get('/help','HelpController@index')->name('help');
 
       //chatting system
-       Route::get('/chat', 'ChatController@index')->name('chat');
+       Route::get('/chat/{id}', 'ChatController@index')->name('chat');
   });
 
 
-// Auth::routes();
+Auth::routes();
 
 

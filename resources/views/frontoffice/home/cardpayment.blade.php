@@ -71,7 +71,7 @@
         <div>
             <section class="_1B6_e">
                 <section>
-                    <h2>Total : 45,00 € TTC </h2>
+                    <h2>Total : {{$amount}} € TTC </h2>
                 </section>
 
                 <section class="S6kt5">
@@ -91,7 +91,7 @@
                                         </div>
                                         <!-- Used to display form errors. -->
                                         <div id="card-errors" role="alert"></div>
-                                        <input type="hidden" name="total_value" value="48" />
+                                        <input type="hidden" name="boost_id" value={{$boost_id}} />
                                     </div>
                                 </div>
                                 <div class="card-footer">
@@ -138,6 +138,8 @@
 
 $(document).ready(function(){
 
+      var boost_id="{{$boost_id}}";
+      console.log(boost_id);
       var flag=true;
     $('#span1').click(function(){
        if(flag)
@@ -223,6 +225,7 @@ function stripeTokenHandler(token) {
   hiddenInput.setAttribute('name', 'stripeToken');
   hiddenInput.setAttribute('value', token.id);
   form.appendChild(hiddenInput);
+  console.log(form);
   // Submit the form
   form.submit();
 }

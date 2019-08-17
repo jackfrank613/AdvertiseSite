@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
 
     <!-- Custom stlylesheet -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+
     <link rel="stylesheet" href="{{asset('css/pay.css')}}">
     <link type="text/css" rel="stylesheet" href="{{asset('css/header.css')}}">
 
@@ -68,25 +68,15 @@
     </header>
 
     <div class="_1i0e0 _1auRJ" style="margin-top:80px">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="panel panel-default" id="app">
-                        <div class="panel-heading">Chats</div>
-        
-                        <div class="panel-body">
-                            <chat-messages :messages="messages"></chat-messages>
-                        </div>
-                        <div class="panel-footer">
-                            <chat-form
-                                v-on:messagesent="addMessage"
-                                :user="{{ Auth::user() }}"
-                            ></chat-form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       <section class="S6kt5">
+            <div class="_-iQiq" style="background-color:green;padding:20px">
+            
+                    <h1 class="_1XU38" style="color:white">{{$status}}</h1>
+
+             </div>
+              
+          
+       </section>
     </div>
 
 </body>
@@ -98,7 +88,5 @@
 
 <script type="text/javascript" src="{{asset('js/jquery.magnific-popup.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
-
-
 
 </html>

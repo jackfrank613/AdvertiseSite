@@ -670,7 +670,7 @@
                                             <!-- /react-text --></span></span></a></div>
                         </li>
                     </ul>
-                    <button class="_2sNbI _1xIyN _2xk2l _1FJuS" id="out_pay"  data-qa-id="submitButton">
+                    <button class="_2sNbI _1xIyN _2xk2l _1FJuS" id="out_pay" type="button" data-qa-id="submitButton">
                         <!-- react-text: 5471 -->Déposer
                         <!-- /react-text -->
                         <!-- react-text: 5472 --> sans booster mon annonce
@@ -741,7 +741,7 @@
         var star_ad_val = 0;
         //   ***end ***///           
         var value = 0;
-
+        var style="";
 
         function ad_value() {
             value = side_ad_val + top_ad_val + star_ad_val;
@@ -752,6 +752,34 @@
                 $('.xNOu1').html(value + " €");
                 $('#out_pay').css('display', 'none');
                 $('#real_pay').css('display', 'block');
+
+                if(side_ad_val !=0 && top_ad_val !=0 && star_ad_val !=0)
+                {
+                    style=","+"side"+","+"top"+","+"star"+",";
+                }
+                else if(side_ad_val ==0 && top_ad_val !=0 && star_ad_val !=0){
+                    style=","+"top"+","+"star"+",";
+                }
+                else if(side_ad_val !=0 && top_ad_val ==0 && star_ad_val !=0)
+                {
+                    style=","+"side"+","+"star"+",";
+                }
+                else if(side_ad_val !=0 && top_ad_val !=0 && star_ad_val ==0)
+                {
+                    style=","+"side"+","+"top"+",";
+                }
+                else if(side_ad_val ==0 && top_ad_val ==0 && star_ad_val !=0)
+                {
+                    style=","+"star"+",";
+                }
+                else if(side_ad_val ==0 && top_ad_val !=0 && star_ad_val ==0)
+                {
+                    style=","+"top"+",";
+                }
+                else {
+                    style=","+"side"+",";
+                }
+                console.log(style);
             }
         }
         $('.side-ad').click(function () {
@@ -789,20 +817,14 @@
         });
         $('#btn_pay').click(function (event) {
             event.preventDefault();
-            // location.href="{{URL::to('frontoffice/cardpay')}}?"+"pay="+value
-           console.log(side_ad_val);
-           console.log(top_ad_val);
-           console.log(star_ad_val);
+         
             $.ajax({
                 type:"POST",
-                url:"{{route('payout')}}",
+                url:"{{route('boost')}}",
                 data:{
-                   id:post_id,
-                   enable:1,
+                   post_id:post_id,
+                   post_style:style,
                    amount:value,
-                   side_amount:side_ad_val,
-                   top_amount:top_ad_val,
-                   star_amount:star_ad_val,
                    _token:$('input[name=_token]').val(),
                 },
                 dataType:"json",
@@ -812,7 +834,7 @@
                        alert(data.result);
                     }
                     else{
-                        console.log(data.result);
+                        location.href="{{URL::to('frontoffice/cardpay')}}?"+"boost="+data.result
                     } 
 
                 },
@@ -827,36 +849,8 @@
         });
       
     $('#out_pay').on('click',function(event){
-        event.preventDefault();
-        $.ajax({
-        
-           type:"POST",
-           url:"{{route('woutpay')}}",
-          data:
-          {
-            id:post_id,
-            enable:1,
-            _token: $('input[name=_token]').val(),
-          },
-          dataType:"json",
-          success:function(data){
-             if(data.error)
-             {
-                alert(data.result);
-             }
-             else{
-                console.log(data.result);
-                location.href="{{route('viewadmob')}}"
-             }
-        
-          },
-          error:function(e){
-              console.log(e);
-          }
-
-        });
-
-
+        console.log('test');
+        location.href="{{URL::to('frontoffice/aditems')}}"
        });
 
 

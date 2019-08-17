@@ -11,10 +11,12 @@
         "php": "^7.1.3",
         "fideloper/proxy": "^4.0",
         "illuminate/pagination": "^5.8",
+        "laravel-frontend-presets/bulma": "^2.0",
         "laravel/cashier": "^9.3",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
-        "maxh/php-nominatim": "^2.2"
+        "maxh/php-nominatim": "^2.2",
+        "pusher/pusher-php-server": "^4.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
