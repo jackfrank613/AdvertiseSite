@@ -38,7 +38,7 @@
     <header>
         <div class="_2zoz9">
             <nav class="_2_L_T">
-                <a title="Retour" data-test-id="link" class="trackable">
+                <a title="Retour" href="{{route('viewadmob')}}" data-test-id="link" class="trackable">
                     <div class="_3swxq">
                         <span class="_1oSml _1Cvux _3FKvu">
                             <svg data-name="Calque 1" viewBox="0 0 24 24" width="1em" height="1em">

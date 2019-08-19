@@ -234,14 +234,14 @@
                                 </div>
                             </div>
                             <div class="rq5Gw">
-                                <a data-name="gallery" data-qa-id="gallery" id="seven_visible" data-value="17"
+                                <a data-name="gallery" data-qa-id="gallery" id="seven_visible" data-value="17" data-date="7"
                                     class="side-ad Uxtbb visible">
                                     <span data-name="gallery" class="FTchl"></span><span class="mj0hi">
                                         <span class="_3UZbV">pendant 7 jours</span>
                                         <span class="_2V8v8">17 €</span>
                                     </span>
                                 </a>
-                                <a data-name="gallery30" data-qa-id="gallery30" data-value="45" id="thirty_visible"
+                                <a data-name="gallery30" data-qa-id="gallery30" data-value="45" data-date=" 30" id="thirty_visible"
                                     class="side-ad Uxtbb visible">
                                     <span data-name="gallery30" class="FTchl"></span><span class="mj0hi">
                                         <span class="_3UZbV">pendant 30 jours</span>
@@ -452,7 +452,7 @@
                                         href="/deposer-une-annonce/options/apercu/daily_bump">Aperçu</a>
                                 </div>
                             </div>
-                            <div class="rq5Gw"><a data-name="daily_bump" data-qa-id="daily_bump" data-value="30"
+                            <div class="rq5Gw"><a data-name="daily_bump" data-qa-id="daily_bump" data-value="30" data-date="7"
                                     id="seven_first" class="top-ad Uxtbb first"><span data-name="daily_bump"
                                         class="FTchl"></span><span class="mj0hi"><span class="_3UZbV">chaque jour
                                             pendant 7 jours</span><span class="_2V8v8">
@@ -460,7 +460,7 @@
                                             <!-- /react-text -->
                                             <!-- react-text: 4789 --> €
                                             <!-- /react-text --></span></span></a><a data-name="daily_bump30"
-                                    data-qa-id="daily_bump30" id="thirty_first" data-value="85"
+                                    data-qa-id="daily_bump30" id="thirty_first" data-value="85" data-date="30"
                                     class="top-ad Uxtbb first"><span data-name="daily_bump30" class="FTchl"></span><span
                                         class="mj0hi"><span class="_3UZbV">chaque jour
                                             pendant 30 jours</span><span class="_2V8v8">
@@ -468,7 +468,7 @@
                                             <!-- /react-text -->
                                             <!-- react-text: 4796 --> €
                                             <!-- /react-text --></span></span></a><a data-name="sub_toplist"
-                                    data-qa-id="sub_toplist" id="sixty_first" data-value="34"
+                                    data-qa-id="sub_toplist" id="sixty_first" data-value="34" date-date="60"
                                     class="top-ad Uxtbb first"><span data-name="sub_toplist" class="FTchl"></span><span
                                         class="mj0hi"><span class="_3UZbV">chaque semaine
                                             pendant 60 jours</span><span class="_2V8v8">
@@ -660,8 +660,8 @@
                                         href="/deposer-une-annonce/options/apercu/urgent">Aperçu</a>
                                 </div>
                             </div>
-                            <div class="rq5Gw"><a data-name="urgent" data-qa-id="urgent" id="sixty_urgent"
-                                    data-value="8" class="star-ad Uxtbb"><span data-name="urgent"
+                            <div class="rq5Gw"><a data-name="urgent"  data-date="60" data-qa-id="urgent" id="sixty_urgent"
+                                    data-value="8"  class="star-ad Uxtbb"><span data-name="urgent" 
                                         class="FTchl"></span><span class="mj0hi"><span class="_3UZbV">pendant 60
                                             jours</span><span class="_2V8v8">
                                             <!-- react-text: 4913 -->8
@@ -739,12 +739,19 @@
         var side_ad_val = 0;
         var top_ad_val = 0;
         var star_ad_val = 0;
+
+        var side_date=0;
+        var top_date=0;
+        var star_date=0;
         //   ***end ***///           
         var value = 0;
+        var show_date=0;
         var style="";
 
         function ad_value() {
             value = side_ad_val + top_ad_val + star_ad_val;
+            show_date=side_date+top_date+star_date;
+            console.log(value);
             if (value == 0) {
                 $('#out_pay').css('display', 'block');
                 $('#real_pay').css('display', 'none');
@@ -755,41 +762,46 @@
 
                 if(side_ad_val !=0 && top_ad_val !=0 && star_ad_val !=0)
                 {
-                    style=","+"side"+","+"top"+","+"star"+",";
+                    style="side"+","+"top"+","+"star";
+                   
                 }
                 else if(side_ad_val ==0 && top_ad_val !=0 && star_ad_val !=0){
-                    style=","+"top"+","+"star"+",";
+                    style="top"+","+"star";
                 }
                 else if(side_ad_val !=0 && top_ad_val ==0 && star_ad_val !=0)
                 {
-                    style=","+"side"+","+"star"+",";
+                    style="side"+","+"star";
                 }
                 else if(side_ad_val !=0 && top_ad_val !=0 && star_ad_val ==0)
                 {
-                    style=","+"side"+","+"top"+",";
+                    style="side"+","+"top";
                 }
                 else if(side_ad_val ==0 && top_ad_val ==0 && star_ad_val !=0)
                 {
-                    style=","+"star"+",";
+                    style="star";
                 }
                 else if(side_ad_val ==0 && top_ad_val !=0 && star_ad_val ==0)
                 {
-                    style=","+"top"+",";
+                    style="top";
                 }
                 else {
-                    style=","+"side"+",";
+                    style="side";
                 }
-                console.log(style);
+               // console.log(style);
             }
         }
         $('.side-ad').click(function () {
             if ($(this).hasClass("_278OL")) {
                 $(this).removeClass("_278OL");
                 side_ad_val -= parseInt($(this).data('value'));
+                side_date-=parseInt($(this).data('date'));
             } else {
                 $('.side-ad').removeClass("_278OL");
                 $(this).addClass("_278OL");
-                side_ad_val = parseInt($(this).data('value'));
+                side_ad_val =parseInt($(this).data('value'));
+                side_date=parseInt($(this).data('date'));
+                console.log(side_date);
+
             }
             ad_value();
         })
@@ -797,10 +809,12 @@
             if ($(this).hasClass("_278OL")) {
                 $(this).removeClass("_278OL");
                 top_ad_val -= parseInt($(this).data('value'));
+                top_date-=parseInt($(this).data('date'));
             } else {
                 $('.top-ad').removeClass("_278OL");
                 $(this).addClass("_278OL");
                 top_ad_val = parseInt($(this).data('value'));
+                top_date=parseInt($(this).data('date'));
             }
             ad_value();
         })
@@ -808,10 +822,12 @@
             if ($(this).hasClass("_278OL")) {
                 $(this).removeClass("_278OL");
                 star_ad_val -= parseInt($(this).data('value'));
+                star_date-=parseInt($(this).data('date'));
             } else {
                 $('.star-ad').removeClass("_278OL");
                 $(this).addClass("_278OL");
                 star_ad_val = parseInt($(this).data('value'));
+                star_date=parseInt($(this).data('date'));
             }
             ad_value();
         });
@@ -824,6 +840,10 @@
                 data:{
                    post_id:post_id,
                    post_style:style,
+                   side_date:side_date,
+                   top_date:top_date,
+                   star_date:star_date,
+                   total_period:show_date,
                    amount:value,
                    _token:$('input[name=_token]').val(),
                 },
