@@ -96,49 +96,17 @@
                                                                     <!-- /react-text --></span></span></li>
                                                     </ul>
                                                 </div>
-                                                <div class="_1okrU _2tSFG hidden">
-                                                    <div>
-                                                        <ul class="mwDh_">
-                                                            <li class="_13C73"
-                                                                data-qa-id="cta-keywords_suggestion-desktop">
-                                                                <div class="_2EKK7"><span class="_1Fe7S"><span
-                                                                            class="_1oSml _3_8LY"></span></span><span
-                                                                        class="_1xVDP"
-                                                                        data-qa-id="text-keywords_suggestion-desktop"><span
-                                                                            class="_3gkYY">
-                                                                            <font style="vertical-align: inherit;">
-                                                                                <font style="vertical-align: inherit;">
-                                                                                    text</font>
-                                                                            </font>
-                                                                        </span><!-- react-text: 27194 -->
-                                                                        <font style="vertical-align: inherit;">
-                                                                            <font style="vertical-align: inherit;"> ile
-                                                                            </font>
-                                                                        </font><!-- /react-text -->
-                                                                    </span><span class="_3MNzo">
-                                                                        <!-- react-text: 27196 -->
-                                                                        <!-- /react-text -->
-                                                                        <!-- react-text: 27197 -->
-                                                                        <font style="vertical-align: inherit;">
-                                                                            <font style="vertical-align: inherit;">in
-                                                                            </font><span class="_3j9Ur"
-                                                                                data-qa-id="text-keywords_suggestion_category-desktop">
-                                                                                <font style="vertical-align: inherit;">
-                                                                                    Industrial Equipment</font>
-                                                                            </span>
-                                                                        </font><!-- /react-text -->
-                                                                        <!-- react-text: 27198 -->
-                                                                        <!-- /react-text --><span class="_3j9Ur"
-                                                                            data-qa-id="text-keywords_suggestion_category-desktop">
-                                                                            <font style="vertical-align: inherit;">
-                                                                            </font>
-                                                                        </span>
-                                                                    </span></div>
-                                                            </li>
+                                                <div class="_1okrU">
+                                                  <div class="_2dGFl">
+                                                        <div class="_3vHTu"><div>
+                                                            <label data-qa-id="checkbox-title_only-desktop" class="_2BJZq">
+                                                            <span class="_1SRTJ" data-qa-id="text-title_only-desktop">Recherche dans le titre uniquement</span>
+                                            
+                                                            <span class="R3YOB"></span></label></div></div>
+                                                        </div>
+                                                   </div>
 
-                                                        </ul>
-                                                    </div>
-                                                </div>
+                                                  
                                             </div>
                                         </div>
                                         <div class="AGP6T">
@@ -593,251 +561,8 @@
                             </div>
                         </div>
                         <div class="_2qwGs" data-reactid="1623">
-                            <div data-reactid="1624">
-                                <div class="_2_etK" data-reactid="1625">
-                                    <ul data-reactid="1626">
-                                        <li itemscope="" itemtype="http://schema.org/Offer" class="_3eDdy"
-                                            data-reactid="1627">
-                                            <div class="_3Zm0x" data-qa-id="listitem_save_ad" data-reactid="1628">
-                                                <div data-reactid="1629">
-                                                    <div class="_3C4to" data-reactid="1630">
-                                                        <div class="" data-reactid="1631"><span class="_1vK7W"
-                                                                name="heartoutline"><svg viewBox="0 0 24 24"
-                                                                    data-name="Calque 1" focusable="false">
-                                                                    <path
-                                                                        d="M21.19 2.24A6.76 6.76 0 0 0 12 3.61a6.76 6.76 0 0 0-9.19-1.37A6.89 6.89 0 0 0 0 7.58c-.16 4.84 4 8.72 10.26 14.66l.12.12a2.32 2.32 0 0 0 3.23 0l.13-.12C20 16.29 24.15 12.41 24 7.57a6.89 6.89 0 0 0-2.81-5.33zm-9.07 18.15l-.12.12-.12-.12C6.17 15 2.4 11.46 2.4 7.86a4.18 4.18 0 0 1 4.2-4.37 4.68 4.68 0 0 1 4.28 3h2.25a4.66 4.66 0 0 1 4.27-3 4.18 4.18 0 0 1 4.2 4.37c0 3.6-3.77 7.14-9.48 12.53z">
-                                                                    </path>
-                                                                </svg></span></div>
-                                                    </div>
-                                                </div>
-                                            </div><a title="PROMO villa10 per,pisc vue pano ss vis a vis calme"
-                                                class="_2fKRW" data-qa-id="aditem_container" href="#"
-                                                data-reactid="1633"><span class="_1sbqp" data-reactid="1634">À LA
-                                                    UNE</span>
-                                                <div class="_2-jsN" data-reactid="1635">
-                                                    <div class="LazyLoad is-visible" data-reactid="1636">
-                                                        <div>
-                                                            <div class="_6ntGx"
-                                                                style="background-image: url(&quot;https://img2.leboncoin.fr/ad-image/f1c0f263a7b96540fe08647d87c59ac413c92e7e.jpg&quot;);">
-                                                            </div><img
-                                                                src="https://img2.leboncoin.fr/ad-image/f1c0f263a7b96540fe08647d87c59ac413c92e7e.jpg"
-                                                                itemprop="image"
-                                                                content="https://img2.leboncoin.fr/ad-image/f1c0f263a7b96540fe08647d87c59ac413c92e7e.jpg"
-                                                                alt="subject">
-                                                        </div>
-                                                    </div><span class="_3R0AG" data-reactid="1637"><span
-                                                            class="_1vK7W _1eOK1" name="camera"><svg height="22"
-                                                                width="24" viewBox="0 0 24 22" focusable="false">
-                                                                <path
-                                                                    d="M12 8.556c1.988 0 3.6 1.642 3.6 3.667 0 2.024-1.612 3.666-3.6 3.666s-3.6-1.642-3.6-3.666c0-2.025 1.612-3.667 3.6-3.667zm0 9.778c3.313 0 6-2.738 6-6.111 0-3.375-2.687-6.112-6-6.112-3.312 0-6 2.737-6 6.112 0 3.373 2.688 6.11 6 6.11zm9.6-15.89c1.32 0 2.4 1.1 2.4 2.444v14.667C24 20.9 22.92 22 21.6 22H2.4C1.08 22 0 20.9 0 19.555V4.89c0-1.345 1.08-2.445 2.4-2.445h3.804L7.68.795A2.415 2.415 0 0 1 9.456 0h5.088c.672 0 1.32.294 1.764.794l1.488 1.65H21.6z"
-                                                                    fill="#000"></path>
-                                                            </svg></span><span data-reactid="1639">10</span></span>
-                                                </div>
-                                                <div class="_3beID" data-reactid="1640">
-                                                    <section class="irAof" data-reactid="1641">
-                                                        <div data-reactid="1642">
-                                                            <p class="_3ZfBw" data-reactid="1643"><span itemprop="name"
-                                                                    data-qa-id="aditem_title" data-reactid="1644">PROMO
-                                                                    villa10 per,pisc vue pano ss vis a vis calme</span>
-                                                            </p>
-                                                            <div class="CeFtS" itemprop="priceSpecification"
-                                                                itemscope=""
-                                                                itemtype="http://schema.org/PriceSpecification"
-                                                                data-qa-id="aditem_price" data-reactid="1645">
-                                                                <meta itemprop="priceCurrency" content="EUR"
-                                                                    data-reactid="1646">
-                                                                <div class="CeFtS" itemprop="priceSpecification"
-                                                                    itemscope=""
-                                                                    itemtype="http://schema.org/PriceSpecification"
-                                                                    data-qa-id="aditem_price" data-reactid="1647"><span
-                                                                        data-reactid="1648">
-                                                                        <!-- react-text: 1649 -->à partir de
-                                                                        <!-- /react-text -->
-                                                                        <!-- react-text: 1650 -->
-                                                                        <!-- /react-text --><span itemprop="price"
-                                                                            class="_1_bNq" data-reactid="1651">
-                                                                            <!-- react-text: 1652 -->240
-                                                                            <!-- /react-text -->
-                                                                            <!-- react-text: 1653 -->&nbsp;€
-                                                                            <!-- /react-text --></span>
-                                                                        <!-- react-text: 1654 -->
-                                                                        <!-- /react-text -->
-                                                                        <!-- react-text: 1655 -->/ nuit
-                                                                        <!-- /react-text --></span></div>
-                                                            </div>
-                                                        </div>
-                                                        <div data-reactid="1656">
-                                                            <p class="_2a7dC" itemprop="alternateName"
-                                                                content="Locations &amp; Gîtes"
-                                                                data-qa-id="aditem_category" data-reactid="1657">
-                                                                <!-- react-text: 1658 -->Locations &amp; Gîtes
-                                                                <!-- /react-text -->
-                                                            </p>
-                                                            <p class="_1s5WJ" itemprop="availableAtOrFrom"
-                                                                data-qa-id="aditem_location" data-reactid="1659">
-                                                                Marmande 47200</p>
-                                                        </div>
-                                                    </section>
-                                                    <div class="_3A9T7" data-reactid="1660">
-                                                        <div class="_3AnuW" data-reactid="1661">
-                                                            <div class="_3jAsY" data-reactid="1662">
-                                                                <div class="_3KcVT" data-reactid="1663"><span
-                                                                        class="_1vK7W" name="star"><svg
-                                                                            viewBox="0 0 24 24" data-name="Calque 1"
-                                                                            focusable="false">
-                                                                            <path
-                                                                                d="M22.66 8l-6.75-.59L13.23.87a1.35 1.35 0 0 0-2.53 0L8 7.43 1.28 8a1.55 1.55 0 0 0-.84 2.62l5.2 4.66-1.55 6.87a1.44 1.44 0 0 0 2.11 1.61l5.8-3.65 5.76 3.65a1.41 1.41 0 0 0 2.11-1.61L18.3 15.3l5.2-4.66A1.51 1.51 0 0 0 22.66 8z">
-                                                                            </path>
-                                                                        </svg></span></div>
-                                                                <div class="_1MBDf" data-reactid="1665">Urgent</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li itemscope="" itemtype="http://schema.org/Offer" class="_3eDdy"
-                                            data-reactid="1666">
-                                            <div class="_3Zm0x" data-qa-id="listitem_save_ad" data-reactid="1667">
-                                                <div data-reactid="1668">
-                                                    <div class="_3C4to" data-reactid="1669">
-                                                        <div class="" data-reactid="1670"><span class="_1vK7W"
-                                                                name="heartoutline"><svg viewBox="0 0 24 24"
-                                                                    data-name="Calque 1" focusable="false">
-                                                                    <path
-                                                                        d="M21.19 2.24A6.76 6.76 0 0 0 12 3.61a6.76 6.76 0 0 0-9.19-1.37A6.89 6.89 0 0 0 0 7.58c-.16 4.84 4 8.72 10.26 14.66l.12.12a2.32 2.32 0 0 0 3.23 0l.13-.12C20 16.29 24.15 12.41 24 7.57a6.89 6.89 0 0 0-2.81-5.33zm-9.07 18.15l-.12.12-.12-.12C6.17 15 2.4 11.46 2.4 7.86a4.18 4.18 0 0 1 4.2-4.37 4.68 4.68 0 0 1 4.28 3h2.25a4.66 4.66 0 0 1 4.27-3 4.18 4.18 0 0 1 4.2 4.37c0 3.6-3.77 7.14-9.48 12.53z">
-                                                                    </path>
-                                                                </svg></span></div>
-                                                    </div>
-                                                </div>
-                                            </div><a title="Rachete comptant mobilier ancien tableaux bibelots"
-                                                class="_2fKRW" data-qa-id="aditem_container" href="#"
-                                                data-reactid="1672"><span class="_1sbqp" data-reactid="1673">À LA
-                                                    UNE</span>
-                                                <div class="_2-jsN" data-reactid="1674">
-                                                    <div class="LazyLoad is-visible" data-reactid="1675">
-                                                        <div>
-                                                            <div class="_6ntGx"
-                                                                style="background-image: url(&quot;https://img7.leboncoin.fr/ad-image/c3910eb4331acf7272dafb06f2f3331018a1d3e7.jpg&quot;);">
-                                                            </div><img
-                                                                src="https://img7.leboncoin.fr/ad-image/c3910eb4331acf7272dafb06f2f3331018a1d3e7.jpg"
-                                                                itemprop="image"
-                                                                content="https://img7.leboncoin.fr/ad-image/c3910eb4331acf7272dafb06f2f3331018a1d3e7.jpg"
-                                                                alt="subject">
-                                                        </div>
-                                                    </div><span class="_3R0AG" data-reactid="1676"><span
-                                                            class="_1vK7W _1eOK1" name="camera"><svg height="22"
-                                                                width="24" viewBox="0 0 24 22" focusable="false">
-                                                                <path
-                                                                    d="M12 8.556c1.988 0 3.6 1.642 3.6 3.667 0 2.024-1.612 3.666-3.6 3.666s-3.6-1.642-3.6-3.666c0-2.025 1.612-3.667 3.6-3.667zm0 9.778c3.313 0 6-2.738 6-6.111 0-3.375-2.687-6.112-6-6.112-3.312 0-6 2.737-6 6.112 0 3.373 2.688 6.11 6 6.11zm9.6-15.89c1.32 0 2.4 1.1 2.4 2.444v14.667C24 20.9 22.92 22 21.6 22H2.4C1.08 22 0 20.9 0 19.555V4.89c0-1.345 1.08-2.445 2.4-2.445h3.804L7.68.795A2.415 2.415 0 0 1 9.456 0h5.088c.672 0 1.32.294 1.764.794l1.488 1.65H21.6z"
-                                                                    fill="#000"></path>
-                                                            </svg></span><span data-reactid="1678">5</span></span>
-                                                </div>
-                                                <div class="_3beID" data-reactid="1679">
-                                                    <section class="irAof" data-reactid="1680">
-                                                        <div data-reactid="1681">
-                                                            <p class="_3ZfBw" data-reactid="1682"><span itemprop="name"
-                                                                    data-qa-id="aditem_title"
-                                                                    data-reactid="1683">Rachete comptant mobilier ancien
-                                                                    tableaux bibelots</span></p>
-                                                        </div>
-                                                        <div data-reactid="1684">
-                                                            <p class="_2a7dC" itemprop="alternateName"
-                                                                content="Ameublement" data-qa-id="aditem_category"
-                                                                data-reactid="1685"><span class="_3IXZH"
-                                                                    data-reactid="1686">(Pro)&nbsp;</span>
-                                                                <!-- react-text: 1687 -->Ameublement
-                                                                <!-- /react-text -->
-                                                            </p>
-                                                            <p class="_1s5WJ" itemprop="availableAtOrFrom"
-                                                                data-qa-id="aditem_location" data-reactid="1688">
-                                                                Oloron-Sainte-Marie 64400</p>
-                                                        </div>
-                                                    </section>
-                                                    <div class="_3A9T7" data-reactid="1689"></div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li itemscope="" itemtype="http://schema.org/Offer" class="_3eDdy"
-                                            data-reactid="1690">
-                                            <div class="_3Zm0x" data-qa-id="listitem_save_ad" data-reactid="1691">
-                                                <div data-reactid="1692">
-                                                    <div class="_3C4to" data-reactid="1693">
-                                                        <div class="" data-reactid="1694"><span class="_1vK7W"
-                                                                name="heartoutline"><svg viewBox="0 0 24 24"
-                                                                    data-name="Calque 1" focusable="false">
-                                                                    <path
-                                                                        d="M21.19 2.24A6.76 6.76 0 0 0 12 3.61a6.76 6.76 0 0 0-9.19-1.37A6.89 6.89 0 0 0 0 7.58c-.16 4.84 4 8.72 10.26 14.66l.12.12a2.32 2.32 0 0 0 3.23 0l.13-.12C20 16.29 24.15 12.41 24 7.57a6.89 6.89 0 0 0-2.81-5.33zm-9.07 18.15l-.12.12-.12-.12C6.17 15 2.4 11.46 2.4 7.86a4.18 4.18 0 0 1 4.2-4.37 4.68 4.68 0 0 1 4.28 3h2.25a4.66 4.66 0 0 1 4.27-3 4.18 4.18 0 0 1 4.2 4.37c0 3.6-3.77 7.14-9.48 12.53z">
-                                                                    </path>
-                                                                </svg></span></div>
-                                                    </div>
-                                                </div>
-                                            </div><a title="Batiment metal de 8m par 15m" class="_2fKRW"
-                                                data-qa-id="aditem_container" href="#" data-reactid="1696"><span
-                                                    class="_1sbqp" data-reactid="1697">À LA
-                                                    UNE</span>
-                                                <div class="_2-jsN" data-reactid="1698">
-                                                    <div class="LazyLoad is-visible" data-reactid="1699">
-                                                        <div>
-                                                            <div class="_6ntGx"
-                                                                style="background-image: url(&quot;https://img1.leboncoin.fr/ad-image/b0cc1ba1d4ad6877ab4456f16efb44057242f030.jpg&quot;);">
-                                                            </div><img
-                                                                src="https://img1.leboncoin.fr/ad-image/b0cc1ba1d4ad6877ab4456f16efb44057242f030.jpg"
-                                                                itemprop="image"
-                                                                content="https://img1.leboncoin.fr/ad-image/b0cc1ba1d4ad6877ab4456f16efb44057242f030.jpg"
-                                                                alt="subject">
-                                                        </div>
-                                                    </div><span class="_3R0AG" data-reactid="1700"><span
-                                                            class="_1vK7W _1eOK1" name="camera"><svg height="22"
-                                                                width="24" viewBox="0 0 24 22" focusable="false">
-                                                                <path
-                                                                    d="M12 8.556c1.988 0 3.6 1.642 3.6 3.667 0 2.024-1.612 3.666-3.6 3.666s-3.6-1.642-3.6-3.666c0-2.025 1.612-3.667 3.6-3.667zm0 9.778c3.313 0 6-2.738 6-6.111 0-3.375-2.687-6.112-6-6.112-3.312 0-6 2.737-6 6.112 0 3.373 2.688 6.11 6 6.11zm9.6-15.89c1.32 0 2.4 1.1 2.4 2.444v14.667C24 20.9 22.92 22 21.6 22H2.4C1.08 22 0 20.9 0 19.555V4.89c0-1.345 1.08-2.445 2.4-2.445h3.804L7.68.795A2.415 2.415 0 0 1 9.456 0h5.088c.672 0 1.32.294 1.764.794l1.488 1.65H21.6z"
-                                                                    fill="#000"></path>
-                                                            </svg></span><span data-reactid="1702">10</span></span>
-                                                </div>
-                                                <div class="_3beID" data-reactid="1703">
-                                                    <section class="irAof" data-reactid="1704">
-                                                        <div data-reactid="1705">
-                                                            <p class="_3ZfBw" data-reactid="1706"><span itemprop="name"
-                                                                    data-qa-id="aditem_title"
-                                                                    data-reactid="1707">Batiment metal de 8m par
-                                                                    15m</span></p>
-                                                            <div class="CeFtS" itemprop="priceSpecification"
-                                                                itemscope=""
-                                                                itemtype="http://schema.org/PriceSpecification"
-                                                                data-qa-id="aditem_price" data-reactid="1708">
-                                                                <meta itemprop="priceCurrency" content="EUR"
-                                                                    data-reactid="1709">
-                                                                <div class="CeFtS" itemprop="priceSpecification"
-                                                                    itemscope=""
-                                                                    itemtype="http://schema.org/PriceSpecification"
-                                                                    data-qa-id="aditem_price" data-reactid="1710"><span
-                                                                        class="_1_bNq" data-reactid="1711"><span
-                                                                            itemprop="price" data-reactid="1712">3
-                                                                            990</span><!-- react-text: 1713 -->&nbsp;€
-                                                                        <!-- /react-text --></span></div>
-                                                            </div>
-                                                        </div>
-                                                        <div data-reactid="1714">
-                                                            <p class="_2a7dC" itemprop="alternateName"
-                                                                content="Équipements industriels"
-                                                                data-qa-id="aditem_category" data-reactid="1715"><span
-                                                                    class="_3IXZH"
-                                                                    data-reactid="1716">(Pro)&nbsp;</span>
-                                                                <!-- react-text: 1717 -->Équipements industriels
-                                                                <!-- /react-text -->
-                                                            </p>
-                                                            <p class="_1s5WJ" itemprop="availableAtOrFrom"
-                                                                data-qa-id="aditem_location" data-reactid="1718">Pau
-                                                                64000</p>
-                                                        </div>
-                                                    </section>
-                                                    <div class="_3A9T7" data-reactid="1719"></div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div data-reactid="1624" id="side_list">
+                                
                             </div>
                             <div class="advertisingSkyscraper" data-reactid="1720">
                                 <div class="initPosition" data-reactid="1721" >
@@ -1060,7 +785,12 @@
 </body>
 <script>
     $(document).ready(function () {
-
+        $(window).keydown(function(event){
+            if(event.keyCode == 13) {
+                event.preventDefault();
+                return false;
+            }
+       });
 
         var flag = true;
         var classname = document.getElementsByClassName("_Ctitle");
@@ -1086,6 +816,42 @@
 
 
         });
+  
+         //cursor event
+         $('#searchtext').on('focus',function(){   
+                $('._1okrU').addClass("_2tSFG");    
+             
+        });
+        $('._1okrU ').on('click','._2EKK7',function(){
+          
+            //console.log();
+           $('input[name=search]').val($(this).data('value'));
+             $('._1okrU').removeClass("_2tSFG");           
+        });
+        $('input[name=search]').bind('keyup',function(){
+             var text=$('input[name=search]').val();
+             console.log(text);
+              $.ajax({
+                 type:"POST",
+                 url:"{{route('subjectlist')}}",
+                 data:{
+                      text:text,
+                     _token:$('input[name=_token]').val(),
+                 },
+                //  dataType: "json",
+                 success:function(data){
+
+                   
+                       $('._1okrU').html(data);
+                       console.log(data);
+                   
+                 },
+                 error:function(e){
+                     console.log(e);
+                 }
+              });
+        });
+       
         $("#Trselect").on('click', function () {
             $('#Lclist').css("display", "none");
             $('._Cname').html("Toutes catégories");
@@ -1100,61 +866,6 @@
         for (var i = 0; i < classname.length; i++) {
             classname[i].addEventListener('click', myFunction, false);
         }
-
-        // $(function () {
-        //     var ad_total_count = < ? php echo json_encode($count) ? > ;
-        //     var current_page = < ? php echo json_encode($current_page) ? > ;
-        //     var page_count = < ? php echo json_encode($page_count) ? > ;
-        //     current_page = (current_page !== "undefined") ? current_page : 1;
-        //     page_count = (page_count !== "undefined") ? page_count : 40;
-        //     console.log(current_page);
-        //     $('#pagination').pagination({
-        //         items: ad_total_count,
-        //         itemsOnPage: page_count,
-        //         displayedPages: 10,
-        //         currentPage: current_page,
-        //         cssStyle: 'light-theme',
-        //         hrefTextPrefix: "{{ URL::to('frontoffice/getdata/') }}/"
-        //     });
-
-
-
-        // });
-        // get search result blade page by using filtering 
-      
-      
-        // $('#search_result').on('submit', function (e) {
-        //     e.preventDefault();
-            
-        //     var type = {{$ad_type}};
-        //     var search = {{$search}};
-        //     var location = {{$location}};
-        //     var distance = {{$distance}};
-        //     $.ajax({
-        //         type: 'POST',
-        //         url: "{{route('filterads')}}",
-        //         data: {
-        //             ad_type: type,
-        //             // title: title,
-        //             // urgent: urgent,
-        //             search: search,
-        //             location: location,
-        //             distance: distance,
-        //             // min_price: min_price,
-        //             // max_price: max_price,
-        //             // _token:$('input[name=_token]').val(),
-        //         },
-        //         dataType:'json', 
-        //         success: function (data) {
-        //             console.log(data.result);
-        //             $('#advertiseList').html();
-        //             $('#advertiseList').html(data.result);
-        //         },
-        //         error: function (e) {
-        //             console.log(e);
-        //         }
-        //     });
-        // });
 
             var type = "{{$ad_type}}";
             var search = "{{$search}}";
@@ -1186,14 +897,18 @@
                 },
                 dataType:'json', 
                 success: function (data) {
-                    console.log(data.result);
+                   // console.log(data.result);
                     $('#advertiseList').html();
+                    $('#side_list').html();
                     $('#advertiseList').html(data.result);
+                    $('#side_list').html(data.sresult);
                 },
                 error: function (e) {
                     console.log(e);
                 }
             });
+            
+
     });
 </script>
 @yield('after-script')

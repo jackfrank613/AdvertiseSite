@@ -1384,7 +1384,7 @@ module.exports = function spread(callback) {
 
 
 var bind = __webpack_require__(/*! ./helpers/bind */ "./node_modules/axios/lib/helpers/bind.js");
-var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/axios/node_modules/is-buffer/index.js");
+var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/is-buffer/index.js");
 
 /*global toString:true*/
 
@@ -1688,28 +1688,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/axios/node_modules/is-buffer/index.js":
-/*!************************************************************!*\
-  !*** ./node_modules/axios/node_modules/is-buffer/index.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/*!
- * Determine if an object is a Buffer
- *
- * @author   Feross Aboukhadijeh <https://feross.org>
- * @license  MIT
- */
-
-module.exports = function isBuffer (obj) {
-  return obj != null && obj.constructor != null &&
-    typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
-}
-
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/ChatForm.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/components/ChatForm.vue?vue&type=script&lang=js& ***!
@@ -1735,14 +1713,18 @@ __webpack_require__.r(__webpack_exports__);
   props: ['user'],
   data: function data() {
     return {
-      newMessage: ''
+      newMessage: ""
     };
   },
   methods: {
     sendMessage: function sendMessage() {
-      this.$emit('messagesent', {
-        user: this.user,
-        message: this.newMessage
+      axios.post('http://localhost/jamii/public/frontoffice/messages', {
+        message: this.newMessage,
+        user: this.user
+      }).then(function (response) {
+        console.log(response.data);
+      })["catch"](function (error) {
+        console.log(error);
       });
       this.newMessage = '';
     }
@@ -1776,9 +1758,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['messages']
+  props: [],
+  data: function data() {
+    return {
+      my_messages: []
+    };
+  },
+  methods: {
+    read: function read() {
+      var _this = this;
+
+      axios.get('http://localhost/jamii/public/frontoffice/messages').then(function (response) {
+        _this.my_messages = response.data; //console.log('messages',this.my_messages);
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  },
+  created: function created() {
+    this.read();
+  }
 });
 
 /***/ }),
@@ -6224,6 +6224,28 @@ __webpack_require__.r(__webpack_exports__);
 
 }));
 //# sourceMappingURL=bootstrap.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/is-buffer/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/is-buffer/index.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+module.exports = function isBuffer (obj) {
+  return obj != null && obj.constructor != null &&
+    typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
+}
 
 
 /***/ }),
@@ -47377,25 +47399,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("ul", { staticClass: "chat" }, [
-    _c("div", { staticClass: "chat-body clearfix" }, [
-      _c("div", { staticClass: "header" }, [
-        _c("strong", { staticClass: "primary-font" }, [
-          _vm._v(
-            "\n                    " +
-              _vm._s(_vm.message.user.name) +
-              "\n                "
-          )
+  return _c(
+    "ul",
+    { staticClass: "chat" },
+    _vm._l(this.my_messages, function(message) {
+      return _c("li", { key: message["m_id"], staticClass: "left clearfix" }, [
+        _c("div", { staticClass: "chat-body clearfix" }, [
+          _c("div", { staticClass: "header" }, [
+            _c("strong", { staticClass: "primary-font" }, [
+              _vm._v(
+                "\n                   " +
+                  _vm._s(message["message"]) +
+                  "\n                "
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("p", [_vm._v("\n               test\n            ")])
         ])
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "\n                " + _vm._s(_vm.message.message) + "\n            "
-        )
       ])
-    ])
-  ])
+    }),
+    0
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -59561,31 +59586,10 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('chat-messages', __webpack_require__(/*! ./components/ChatMessages.vue */ "./resources/assets/js/components/ChatMessages.vue"));
-Vue.component('chat-form', __webpack_require__(/*! ./components/ChatForm.vue */ "./resources/assets/js/components/ChatForm.vue"));
+Vue.component('chat-messages', __webpack_require__(/*! ./components/ChatMessages.vue */ "./resources/assets/js/components/ChatMessages.vue")["default"]);
+Vue.component('chat-form', __webpack_require__(/*! ./components/ChatForm.vue */ "./resources/assets/js/components/ChatForm.vue")["default"]);
 var app = new Vue({
-  el: '#app',
-  data: {
-    messages: []
-  },
-  created: function created() {
-    this.fetchMessages();
-  },
-  methods: {
-    fetchMessages: function fetchMessages() {
-      var _this = this;
-
-      axios.get('/messages').then(function (response) {
-        _this.messages = response.data;
-      });
-    },
-    addMessage: function addMessage(message) {
-      this.messages.push(message);
-      axios.post('/messages', message).then(function (response) {
-        console.log(response.data);
-      });
-    }
-  }
+  el: '#app'
 });
 
 /***/ }),
@@ -59646,9 +59650,9 @@ if (token) {
 window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
-  key: 'e6b28e2ae515ea2c6118',
-  cluster: 'eu' // encrypted: true
-
+  key: '440659d774ebf4524338',
+  cluster: 'eu',
+  forceTLS: true
 });
 
 /***/ }),
@@ -59791,6 +59795,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/assets/sass/app.scss":
+/*!****************************************!*\
+  !*** ./resources/assets/sass/app.scss ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
 /*!***************************************************************************!*\
   !*** multi ./resources/assets/js/app.js ./resources/assets/sass/app.scss ***!
@@ -59799,7 +59814,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\xampp\htdocs\jamii\resources\assets\js\app.js */"./resources/assets/js/app.js");
-!(function webpackMissingModule() { var e = new Error("Cannot find module 'C:\\xampp\\htdocs\\jamii\\resources\\assets\\sass\\app.scss'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\jamii\resources\assets\sass\app.scss */"./resources/assets/sass/app.scss");
 
 
 /***/ })

@@ -50,6 +50,8 @@ Route::group([
       Route::post('/advertise/addshop','PostAdmobController@addShop')->name('addShop');
       Route::post('/advertise/addclothing','PostAdmobController@addClothing')->name('addClothing');
 
+     
+
       //admob payment route
       Route::get('/admobpayment','PaymentAdmobController@getPaymentpage')->name('admobpayment');
       Route::get('/cardpay','PaymentAdmobController@getCardpayment')->name('cardpay');
@@ -61,7 +63,8 @@ Route::group([
       Route::get('/aditems/filter','FilterController@filterFunction')->name('filter');
       Route::post('/aditems/filterads','FilterController@filter_ads')->name('filterads');
       Route::get('/aditems/filterSearch','FilterController@filterSearch')->name('filterSearch');
-      
+       //getting subject list route
+      Route::post('/sublist','FilterController@getsubList')->name('subjectlist');
 
 
 
@@ -113,10 +116,12 @@ Route::group([
        Route::get('/help','HelpController@index')->name('help');
 
       //chatting system
-       Route::get('/chat/{id}', 'ChatController@index')->name('chat');
+      Route::get('/chat', 'ChatController@index');
+      Route::get('messages', 'ChatController@fetchMessages')->name('messages');
+      Route::post('messages', 'ChatController@sendMessage')->name('messages1');
   });
-
-
 Auth::routes();
+
+
 
 

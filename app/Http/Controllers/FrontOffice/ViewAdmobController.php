@@ -169,7 +169,7 @@ class ViewAdmobController extends Controller
     public function sendMailbox($userid,$name)
     {
        // print_r($userid);exit;
-
-        return view('frontoffice.home.sendmessage')->with(compact('name'));
+       
+        return view('frontoffice.home.sendmessage')->with(compact('name','userid'));
     }
 }

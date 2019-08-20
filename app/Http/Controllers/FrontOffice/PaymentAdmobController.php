@@ -57,12 +57,13 @@ class PaymentAdmobController extends Controller
        $input_amount=array(
             'post_id'=>$data['post_id'],
             'amount'=>$data['amount'],
-            'post_style'=>$data['post_style'],
+            'side_style'=>$data['side_style'],
+            'top_style'=>$data['top_style'],
+            'star_style'=>$data['star_style'],
             'side_date'=>$data['side_date'],
             'top_date'=>$data['top_date'],
             'star_date'=>$data['star_date'],
             'total_period'=>$data['total_period'],
-            'post_time'=>date('Y-m-d H:i:s')
 
        );
        $boost_id=BoostAdmob::insertGetId($input_amount);
@@ -91,7 +92,6 @@ class PaymentAdmobController extends Controller
         {
         
            $input_active=array(
-            'post_time'=>date('Y-m-d H:i:s'),
              'pay_active'=>1,
              'updated_at'=>date('Y-m-d H:i:s')
            );

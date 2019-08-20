@@ -25,7 +25,6 @@ class FilterController extends Controller
 
     {
            $data=$_POST;
-        
            $ad_type=$data['ad_type'];
            $search=$data['search'];
            $location=$data['location'];
@@ -38,26 +37,35 @@ class FilterController extends Controller
            $page_count=$data['page_count'];
            $current_page=$data['currentPage'];
            $admobs=[];
+           $side_admobs=[];
+           $top_admobs=[];
            $offset=0;
+           $s_offset=0;
         //  echo json_encode(array("result"=>$min_price));exit;
          if($search == "search" && $ad_type == "type" &&  $location == "location" && $distance == "distance" && $min_price == "Prix min" && $max_price == "Prix max" && $urgent == 0 && $title == 0)
 
          {       
-           
+  
             // 
             if($current_page == 1)
             {
                 $offset=0;
+                $s_offset=0;
             }
             else
             {
                 $offset = $page_count*($current_page-1)+1;
+                $s_offset=3*($current_page-1)+1;
             }
            // 
             $particular_count=JamiiUser::where('type','=','particular')->get()->count();
             $professional_count=JamiiUser::where('type','=','professional')->get()->count();
-            $admobs=PostedAdmob::where('enable',1)->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->get()->toarray();
-           // echo json_encode(array("result"=>$admobs));exit;
+            $n_admobs=PostedAdmob::where('enable',1)->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->leftJoin('jamii_boost','jamii_postedadmob.boost_id','=','jamii_boost.b_id')->get()->toarray();
+            $top_admobs=PostedAdmob::where([['jamii_postedadmob.enable',1],['jamii_boost.pay_active',1],['jamii_boost.top_style',1]])->inRandomOrder()->leftJoin('jamii_boost','jamii_postedadmob.boost_id','=','jamii_boost.b_id')->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->get()->toarray();
+            $admobs['n_admob']=$n_admobs;
+            $admobs['t_admob']=$top_admobs;
+            $s_admobs=PostedAdmob::where([['jamii_postedadmob.enable',1],['jamii_boost.pay_active',1],['jamii_boost.side_style',1]])->inRandomOrder()->offset($s_offset)->limit(3)->leftJoin('jamii_boost','jamii_postedadmob.boost_id','=','jamii_boost.b_id')->get()->toarray();
+            $side_admobs=$s_admobs;
          }
          else{
            
@@ -133,7 +141,7 @@ class FilterController extends Controller
         
          $today = date('Y-m-d');
          $yesterday = date('Y-m-d', strtotime('-1 days'));
-         foreach($admobs as $one){
+         foreach($admobs['n_admob'] as $one){
              $date=date('Y-m-d',strtotime($one['create_time']));
              if(strtotime($date) == strtotime($today)){
                  $one['create_time'] = "Today " . date('H:i',strtotime($one['create_time']));
@@ -141,14 +149,37 @@ class FilterController extends Controller
                  $one['create_time'] = "Yesterday " . date('H:i',strtotime($one['create_time']));
                  
              }
-             $result[]= $one;
+             $admobs['n_admob'][]= $one;
             }
         
-        
-         //echo json_encode(array("result"=>$result));exit; 
+            
+           // echo json_encode(array("result"=>$admobs));exit;
 
-         $returnHTML=view('frontoffice.others.firstadmobe')->with(compact('result','count', 'current_page', 'page_count','particular_count','professional_count','min_price','max_price','ad_type','search','location','distance','urgent','title'))->render();
-          echo json_encode(array("result"=>$returnHTML));exit; 
+         $returnHTML=view('frontoffice.others.firstadmobe')->with(compact('admobs','count', 'current_page', 'page_count','particular_count','professional_count','min_price','max_price','ad_type','search','location','distance','urgent','title'))->render();
+         $returnSideHtml=view('frontoffice.others.sideadmobe')->with(compact('side_admobs'))->render();
+    
+         echo json_encode(array("result"=>$returnHTML,"sresult"=>$returnSideHtml));exit; 
     
    }
+
+
+   public function getsubList(){
+      
+    $data=$_POST;
+    // $data['text'] = "car";
+    //echo json_encode(array('error'=>false,'result'=>"test"));exit;
+    $result=PostedAdmob::where([['enable','=',1],['subject','LIKE','%' .$data['text'] . '%']])->get()->toarray();
+    if(isset($result))
+    {
+        // echo json_encode($result);exit;
+        $returnhtml=view('frontoffice.others.searchitem')->with(compact('result'))->render();
+        // echo $returnhtml;exit;
+        echo $returnhtml;exit;
+    }
+    else{
+        echo json_encode(array('error'=>true,'result'=>'data is empty!'));exit;
+    }
+
+
+  }
 }

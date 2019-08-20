@@ -9,6 +9,8 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use App\JamiiUser;
+use App\Message;
 
 class MessageSent implements ShouldBroadcast
 {
@@ -33,7 +35,7 @@ class MessageSent implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct(User $user, Message $message)
+    public function __construct(JamiiUser $user, Message $message)
     {
         $this->user = $user;
         $this->message = $message;
@@ -46,6 +48,16 @@ class MessageSent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('chat');
+        return new PresenceChannel('chatroom');
     }
+
+    /**
+ * The event's broadcast name.
+ *
+ * @return string
+ */
+public function broadcastAs()
+{
+    return 'my_event';
+}
 }

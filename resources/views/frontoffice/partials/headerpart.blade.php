@@ -15,7 +15,7 @@
                 <div class="R9zev">
                     <div class="qFeQO">
                         <div class="K_Lvh">
-                            <a href="#">
+                            <a href="{{route('home')}}">
                                 <h2 class="_logo">Jamii</h2>
                             </a>
                         </div>

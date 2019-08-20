@@ -540,5 +540,5 @@ class PostAdmobController extends BaseController
       }
     }
 
-    
+ 
 }

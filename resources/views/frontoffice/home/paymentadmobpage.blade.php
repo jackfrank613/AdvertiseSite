@@ -743,7 +743,11 @@
         var side_date=0;
         var top_date=0;
         var star_date=0;
-        //   ***end ***///           
+        //   ***end ***///  
+        
+        var side_style=0;
+        var top_style=0;
+        var star_style=0;
         var value = 0;
         var show_date=0;
         var style="";
@@ -751,7 +755,6 @@
         function ad_value() {
             value = side_ad_val + top_ad_val + star_ad_val;
             show_date=side_date+top_date+star_date;
-            console.log(value);
             if (value == 0) {
                 $('#out_pay').css('display', 'block');
                 $('#real_pay').css('display', 'none');
@@ -762,32 +765,49 @@
 
                 if(side_ad_val !=0 && top_ad_val !=0 && star_ad_val !=0)
                 {
-                    style="side"+","+"top"+","+"star";
+                    side_style=1;
+                    top_style=1;
+                    star_style=1;
                    
                 }
                 else if(side_ad_val ==0 && top_ad_val !=0 && star_ad_val !=0){
-                    style="top"+","+"star";
+                    side_style=0;
+                    top_style=1;
+                    star_style=1;
                 }
                 else if(side_ad_val !=0 && top_ad_val ==0 && star_ad_val !=0)
                 {
-                    style="side"+","+"star";
+                    side_style=1;
+                    star_style=1;
+                    top_style=0;
+
                 }
                 else if(side_ad_val !=0 && top_ad_val !=0 && star_ad_val ==0)
                 {
-                    style="side"+","+"top";
+                    side_style=1;
+                    top_style=1;
+                    star_style=0;
                 }
                 else if(side_ad_val ==0 && top_ad_val ==0 && star_ad_val !=0)
                 {
-                    style="star";
+                    star_style=1;
+                    top_style=0;
+                    side_style=0;
                 }
                 else if(side_ad_val ==0 && top_ad_val !=0 && star_ad_val ==0)
                 {
-                    style="top";
+                    top_style=1;
+                    star_style=0;
+                    side_style=0;
                 }
                 else {
-                    style="side";
+                     side_style=1;
+                     top_style=0;
+                     star_style=0;
                 }
-               // console.log(style);
+               console.log(top_style);
+               console.log(side_style);
+               console.log(star_style);
             }
         }
         $('.side-ad').click(function () {
@@ -839,7 +859,9 @@
                 url:"{{route('boost')}}",
                 data:{
                    post_id:post_id,
-                   post_style:style,
+                   side_style:side_style,
+                   top_style:top_style,
+                   star_style:star_style,
                    side_date:side_date,
                    top_date:top_date,
                    star_date:star_date,

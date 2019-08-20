@@ -301,7 +301,7 @@
     <!--Dialog-->
     <!-- Home Section -->
     <div id="home" class="banner-area">
-        <div class="bg-img overlay" style="background-image:url('public/img/background.jpg')"></div>
+        <div class="bg-img overlay" style="background-image:url('img/background.jpg')"></div>
 
         <!-- Background Image -->
 
@@ -372,7 +372,7 @@
                                             xml:space="preserve" data-reactid="146">
                                             <g data-reactid="147"><a title="Alsace" class="trackable" href="#"
                                                     data-reactid="148">
-                                                    <g id="alsace" class="_31AQE" data-reactid="149">
+                                                    <g id="Alsace" class="_31AQE" data-reactid="149">
                                                         <path d="M540.3,215.4c4.4-4.6,13.2-22.6,13.4-27.6c0.4-8-11-10.8-7.6-15.4
       c2.3-3.2,7.8-2.7,9.1-5.9c1.8-4.1,1.5-8.9,0.8-12.5c-0.8-4.4-10.9-1-13.8-7.1
       c-2-4.4,3-10.7,7.6-9.9c5.2,0.9,5,6.3,13.8,5.3c7.2-0.8,5.6-3.6,9.4-7.6
@@ -383,7 +383,7 @@
       c-2.1-1.7-4.1-4.2-6.1-6.9c-1.1-1.6,6.1-5,5.2-6.6C550.1,218.5,539.7,215.2,540.3,215.4z" data-reactid="150"></path>
                                                     </g>
                                                 </a><a title="Aquitaine" class="trackable" href="#" data-reactid="151">
-                                                    <g id="aquitaine" class="_31AQE" data-reactid="152">
+                                                    <g id="Aquitaine" class="_31AQE" data-reactid="152">
                                                         <path d="M179.2,536.8c-6.1-2.9-11.8-6.1-15-9.7c-1.2,1.7-4.1,4.2-5.2,3.9c-1.3-0.3-0.5-4.3-0.4-5
       c0.7-4.9-0.2-7-1.5-7.8c-1.6-1-3.9-0.8-4.9-0.9c-3.8-0.3-6.6-3.6-7.6-5.9c2-0.5,7.1-3.6,10.3-6.8
       c1.7-1.7,2.2-3.9,2.5-5.7c0.3-2,0.1-3.1,1.3-5.3c1-2,2-3.2,2.8-5.1c1.6-4,2.7-10.8,3.5-15
@@ -403,7 +403,7 @@
       c-0.6-2-2.8-3-4.2-3C186.8,539.5,180,537.2,179.2,536.8z" data-reactid="153"></path>
                                                     </g>
                                                 </a><a title="Auvergne" class="trackable" href="#" data-reactid="154">
-                                                    <g id="auvergne" class="_31AQE" data-reactid="155">
+                                                    <g id="Auvergne" class="_31AQE" data-reactid="155">
                                                         <path d="M405.9,308.9c-1.1-2.2-1.6-5.4-2.4-7.8c-0.5-1.4-1.2-2.6-2-2.8c-1.9-0.6-4-0.3-6.2-0.2
       c-2.6,0-5.2-0.1-7.5-0.3c-5.1-0.4-9-1.7-12-3.3c-2.1-1.1-3.4-2.2-4.2-2.8c-1.5,1.9-2.7,2.7-4.3,3.4
       c-2.5,1-10.2-0.2-12,1.9c-1.3,1.6-0.4,5.3-0.6,7.5c-0.2,2.5-0.5,2.5-0.8,2.9c-1.5,3.1-9.9,2-11.3,5
@@ -424,7 +424,7 @@
                                                     </g>
                                                 </a><a title="Basse-Normandie" class="trackable" href="#"
                                                     data-reactid="157">
-                                                    <g id="basse_normandie" class="_31AQE" data-reactid="158">
+                                                    <g id="Basse-Normandie" class="_31AQE" data-reactid="158">
                                                         <path d="M272.7,169.4c-1.4-3.2,3.6-6.7,2.3-7.6c-2.9-2.2-6.3-4.7-9.4-6.6c-2.8-1.7-5.1-0.8-6.9-2
       c-4.5-3-2.3-20.9-6-25c-2.6-2.8,0.2-7.7-2.1-10.1c-1.1-1.1-2.3-1.2-3.4-1.9
       c-5.2,5-11.6,9.9-16.2,11.4c-7.4,2.5-20.4-5.9-24.6-7.4c-2.9-1-8.1-2.2-11-0.7
@@ -439,7 +439,7 @@
       c0.9-3.1,6.2-4.4,5.9-8.2C278.4,175.3,273.7,171.5,272.7,169.4z" data-reactid="159"></path>
                                                     </g>
                                                 </a><a title="Bourgogne" class="trackable" href="#" data-reactid="160">
-                                                    <g id="bourgogne" class="_31AQE" data-reactid="161">
+                                                    <g id="Bourgogne" class="_31AQE" data-reactid="161">
                                                         <path d="M371,291.9c0.3-2.3,0.6-4.7,0.5-7.2c-0.1-6.5-2.9-13.6-4.7-18.8
       c-3.8-11.3-2.3-27.2-3.1-33.8c-0.6-5.8,12.4-15,11.3-19.7c-1.3-5.6-5.1-10-6.3-11
       c0.4,0,1.4-0.1,1.7-1.7c0.6-2.7,0.1-7.3,2.4-9.4c0.6-0.5,1-1,1.7-1.3c1.7-0.7,4.1-0.7,6.6-1.2
@@ -460,7 +460,7 @@
       c-3.4,0-11.6,0.4-18.2-1.2C375.2,295.7,370.6,292.2,371,291.9z" data-reactid="162"></path>
                                                     </g>
                                                 </a><a title="Bretagne" class="trackable" href="#" data-reactid="163">
-                                                    <g id="bretagne" class="_31AQE _20Pcj" data-reactid="164">
+                                                    <g id="Bretagne" class="_31AQE _20Pcj" data-reactid="164">
                                                         <path d="M154.8,161c1,2.2,0.2,4.7,0.4,6.8c-1,0.8-10.8-0.2-16.5-0.4c-0.6-2.8-2.3-4.1-4.5-4.2
       c-4.5,0-12.3,6.2-15.8,5.7c-2.2-0.3-3.7-2.9-5.8-6.1c-1.7-2.6-3.9-5.6-6.4-7.8
       c-3.7-3.5-10.1-4-12.9-4.3c-4.1-0.4-7.5-0.2-8.9,0.1c-7.6,7.5-9.9,8.6-12.5,8.4
@@ -479,7 +479,7 @@
       c-2.5-0.1-1.9-5.5-1.7-8.4c-1.1,0.7-2.4,0.6-3.6,0.4C161.4,170,155.8,162.4,154.8,161z" data-reactid="165"></path>
                                                     </g>
                                                 </a><a title="Centre" class="trackable" href="#" data-reactid="166">
-                                                    <g id="centre" class="_31AQE" data-reactid="167">
+                                                    <g id="Centre" class="_31AQE" data-reactid="167">
                                                         <path d="M270.3,284.8c1.3,1.1,3.4,8.2,3.9,10.7c1.2,5.1-0.7,8,1.2,9.2
       c7.5,4.9,12.8,10.6,11.9,14.1c2.4,0.9,4.9,1.6,7.5,2.2c2.4,0.5,4-0.9,6.8-1.2
       c2.6-0.4,6.5,0.3,8.8,0.2c3.5-0.1,5.1-3.8,8.3-4.4c4.6-1,10.6,0.9,13.6,1.7c3.3,0.8,5.6,3.3,6.6,3.9
@@ -498,7 +498,7 @@
                                                     </g>
                                                 </a><a title="Champagne-Ardenne" class="trackable" href="#"
                                                     data-reactid="169">
-                                                    <g id="champagne_ardenne" class="_31AQE" data-reactid="170">
+                                                    <g id="Champagne-Ardenne" class="_31AQE" data-reactid="170">
                                                         <path d="M387.2,163.5c-2.4-5.5-1.1-5.7,5.7-8.7c2.6-1.1,4.8-3.4,6.7-6.5c1.1-1.8-4.4-6.8-3.5-9.1
       c0.7-1.9,3.1,0,3.8-2c1.3-3.8-3.4-6.2-2.4-10.4c1.6-6.5,15.3-1.7,17.5-7.6c3.3-8.9-4.2-13.9,0.1-17
       c2.5-1.8,5-1.7,6.6-5c1.7-3.6-0.3-9.8,6.9-13.6c1.2,0.8,3.6,1.5,5.9-0.5c2.1-1.9,2.6-3.2,5.8-8.9
@@ -514,7 +514,7 @@
       c-0.5-1-1.2-2-1.6-3c-0.8-2,4.3-11.5,2.8-14.7C390.7,165.9,388.9,167.5,387.2,163.5z" data-reactid="171"></path>
                                                     </g>
                                                 </a><a title="Corse" class="trackable" href="#" data-reactid="172">
-                                                    <g id="corse" class="_31AQE _2HlCq" data-reactid="173">
+                                                    <g id="Corse" class="_31AQE _2HlCq" data-reactid="173">
                                                         <path d="M560.7,552.2c0,0,10.4,0,7.3-4.4c-3-4.4-11-2.4-4.9-7.7c6.1-5.2,21.2-26.6,31.7-20.5
       c3.5,2.1,6-0.9,3.7-10.5c-2.3-9.6,6.1-7.9,5.8-4.3c-0.2,3.7,0,19.7,0,19.7s4.4,1.1,2.8,12.4
       c-1.6,11.3,6.1,8-0.4,20.4c-6.5,12.3-4.5,22.5-4.6,26c-0.1,3.4-5.9,4.5-6.2,11.7
@@ -524,7 +524,7 @@
                                                     </g>
                                                 </a><a title="Franche-Comté" class="trackable" href="#"
                                                     data-reactid="175">
-                                                    <g id="franche_comte" class="_31AQE" data-reactid="176">
+                                                    <g id="Franche-Comté" class="_31AQE" data-reactid="176">
                                                         <path d="M539.9,215.8c-1.9-0.6-10.9-3.4-17.2-7.5c-3,1.4-7.4,3.7-11.1,3.6
       c-3.5-0.1-5.7-3.5-8.9-3c-2.4,0.4-6.6,2.7-7,3.2c-3.3,3.5-6.2,7.2-6.9,7.9
       c-1.7,1.6,4.3,10.1,2.3,11.3c-2.5,1.4-5.3,2.2-8.1,1.7c-1.4-0.3-2.7-0.1-3.6-0.5
@@ -537,7 +537,7 @@
                                                     </g>
                                                 </a><a title="Haute-Normandie" class="trackable" href="#"
                                                     data-reactid="178">
-                                                    <g id="haute_normandie" class="_31AQE" data-reactid="179">
+                                                    <g id="Haute-Normandie" class="_31AQE" data-reactid="179">
                                                         <path d="M274.7,162.1c-2.9-2.2-6.3-4.7-9.4-6.6c-2.8-1.7-5.1-0.8-6.9-2c-4.5-3-2.3-20.9-6-25
       c-2.6-2.8,0.2-7.7-2.1-10.1c-1.1-1.1-2.3-1.2-3.4-1.9c-1-0.8-3.9-2.8-3.2-6.7
       c0.6-3.1,3.8-5.6,7.6-8.6c1.7-1.3,6.5-6.7,10.7-8.6c2.6-1.1,8.4-2.1,12.5-2.5c5.1-0.5,12-4.1,17-7.8
@@ -549,7 +549,7 @@
                                                     </g>
                                                 </a><a title="Ile-de-France" class="trackable" href="#"
                                                     data-reactid="181">
-                                                    <g id="ile_de_france" class="_31AQE _20Pcj" data-reactid="182">
+                                                    <g id="Ile-de-France" class="_31AQE _20Pcj" data-reactid="182">
                                                         <path d="M348.1,138.9c4.1,2.8,13.4,8.3,21.2,2.4c4.8-3.6,16.3,16.5,23,13.5
       c-2.3,1.2-5.9,2.2-6.5,3.8c-0.8,2,0.7,4.3,1.1,5.6c0.6,1.8,3.3,3.2,4.2,4.4c1.4,1.9,1.6,3.3,1.3,4.5
       c-1,4.9-3.1,9.7-3.1,11.9c-4.3,3.2-13.5,3.1-15.1,4.1c-5.6,3.5-2,11.1-5,12.1c-3,1-7.7-0.8-9.2-0.8
@@ -561,7 +561,7 @@
                                                     </g>
                                                 </a><a title="Languedoc-Roussillon" class="trackable" href="#"
                                                     data-reactid="184">
-                                                    <g id="languedoc_roussillon" class="_31AQE" data-reactid="185">
+                                                    <g id="Languedoc-Roussillon" class="_31AQE" data-reactid="185">
                                                         <path d="M429.7,507.9c-5.8-8.2-8.6-6.5-15.5-0.2c-1.1,1-3.6,3.6-6.2,6c-5.5,5.3-12.9,8-17.4,7.2
       c-2.1,1.4-5.9,4.3-11.7,9.8c-2,1.9-3.2,3.3-4.4,6.1c-1,2.3-0.8,3.7,0.6,6.3c1,1.9,1.7,4.9,1.3,9.6
       c-0.2,3.1,1.3,7.8,2.4,11.4c0.5,1.5,2.5,8,2.2,10.9c-0.1,1.3-0.6,2.8-2.1,2.4
@@ -578,7 +578,7 @@
                                                         </path>
                                                     </g>
                                                 </a><a title="Limousin" class="trackable" href="#" data-reactid="187">
-                                                    <g id="limousin" class="_31AQE" data-reactid="188">
+                                                    <g id="Limousin" class="_31AQE" data-reactid="188">
                                                         <path d="M338.5,320.8c3.2,3.9,10.4,5.1,12.5,9c2,3.6,0.6,8.5,1.1,10.8c2.9,13.1-7.2,8.9-7.8,15.3
       c-0.8,8.3,6.7,19.8,6.5,24.4c-0.2,3-10,4.5-13.9,8.2c-5.2,4.8-4.8,12.7-4.8,15.2
       c0,3.2-2.4,6.2-3.7,7.9c-0.7-0.2-3-0.4-5.8-0.5c-3.8-0.1-8.2,0.2-9.5-0.5c-2-1-4.1-2.4-6.2-3.6
@@ -593,7 +593,7 @@
       c1.8,0.8,3.1,1.8,3.9,2.5C338.1,320.4,338.4,320.7,338.5,320.8z" data-reactid="189"></path>
                                                     </g>
                                                 </a><a title="Lorraine" class="trackable" href="#" data-reactid="190">
-                                                    <g id="lorraine" class="_31AQE" data-reactid="191">
+                                                    <g id="Lorraine" class="_31AQE" data-reactid="191">
                                                         <path d="M470.8,104.6c-0.5,0.6-2.2,2.5-4.3,3.1c-1.5,0.4-4.2-2.5-6-2.2c-1.2,0.2-2.4,2.2-3.5,5.1
       c-0.8,2.1,3.5,6.7,2.7,9.3c-0.7,2.4-2.8,3.6-4.3,5.6c-1,1.3,2,14.3,0,19.2c-0.6,1.5-2,1.7-2.9,3
       c-1.7,2.5,3.1,19,7.4,23.3c1,1,8,3.5,13.8,9.5c1.8,1.9,1.2,5.7,3.1,7.9c1.8,2.1,6.6,0,8.5,2.1
@@ -607,7 +607,7 @@
                                                     </g>
                                                 </a><a title="Midi-Pyrénées" class="trackable" href="#"
                                                     data-reactid="193">
-                                                    <g id="midi_pyrenees" class="_31AQE" data-reactid="194">
+                                                    <g id="Midi-Pyrénées" class="_31AQE" data-reactid="194">
                                                         <path d="M312.4,567.8c3.2-0.8,18.7-1.2,19.7-5.9c0.7-3.4-9.4-4-10.8-8.5c-3.1-9.8,1.3-11,0.4-17
       c-0.8-5.2-11.5-10.3-12.6-15c-0.5-2,1-5.9,3.7-9c3.6-4,36.9,3.6,40.9-2.6c1.1-1.6-0.3-4.1,0.2-6
       c1.1-3.9,15.1-6.5,17.9-12.8c0.5-1.2,6.2-0.5,8.5-3.3c4.4-5.3,11.3-11.9,10.9-14.8
@@ -626,7 +626,7 @@
                                                     </g>
                                                 </a><a title="Nord-Pas-de-Calais" class="trackable" href="#"
                                                     data-reactid="196">
-                                                    <g id="nord_pas_de_calais" class="_31AQE" data-reactid="197">
+                                                    <g id="Nord-Pas-de-Calais" class="_31AQE" data-reactid="197">
                                                         <path d="M311.6,21.9c0,0,29.5-7.8,34.1-10.1c4.6-2.3,6.6,4.3,6.6,6.9c0,2.7,1,7.6,1.7,7.8
       c0.7,0.2,10.6,7.4,22.1,6.9c0,0,1.6,12.6,6.2,15.2c0,0,4.5-3,6.5,0c1.9,3,6.7,10.4,15.5,10.7
       c8.8,0.4,17.1,1,13.9,5.2c-3.2,4.3-1.5,9,2.3,11.1c1.9,1,3.8,3.9,5.8,6
@@ -638,7 +638,7 @@
                                                     </g>
                                                 </a><a title="Pays de la Loire" class="trackable" href="#"
                                                     data-reactid="199">
-                                                    <g id="pays_de_la_loire" class="_31AQE _20Pcj" data-reactid="200">
+                                                    <g id="Pays de la Loire" class="_31AQE _20Pcj" data-reactid="200">
                                                         <path d="M154.3,255.7c-0.2-0.3-0.9-1.7-2.4-2.7c-1.7-1.1-4.4-1.6-6.3-1.5c-2.4,0.2-5.2,2.5-8,3.2
       c-2.2,0.5-4.3,0.9-6.2,0.9c-2.3,0-4.4-0.4-6.3-0.5c0-1.4,1-7.5,2.1-13.1c2,0.2,5.9-0.5,10.6-4.6
       c2.6-2.2,6.7-5.4,9.6-8.3c2.7-2.8,11.7,0.8,14.3-2.3c1.6-2,3.7-6.9,6.8-7.7
@@ -657,7 +657,7 @@
       c-0.7-1.1-4.4-5.8-0.4-9.4c2.4-2.1,7.1-0.8,11.9,0.3C154.2,259.4,155,256.6,154.3,255.7z" data-reactid="201"></path>
                                                     </g>
                                                 </a><a title="Picardie" class="trackable" href="#" data-reactid="202">
-                                                    <g id="picardie" class="_31AQE" data-reactid="203">
+                                                    <g id="Picardie" class="_31AQE" data-reactid="203">
                                                         <path d="M348.5,138.5c4.1,2.8,13.4,8.3,21.2,2.4c4.8-3.6,16.3,16.5,23,13.5
       c2.6-1.1,4.8-3.4,6.7-6.5c1.1-1.8-4.4-6.8-3.5-9.1c0.7-1.9,3.1,0,3.8-2c1.3-3.8-3.4-6.2-2.4-10.4
       c1.6-6.5,15.3-1.7,17.5-7.6c3.3-8.9-4.2-13.9,0.1-17c2.5-1.8,5-1.7,6.6-5c1.7-3.6-0.3-9.8,6.9-13.6
@@ -670,7 +670,7 @@
                                                     </g>
                                                 </a><a title="Poitou-Charentes" class="trackable" href="#"
                                                     data-reactid="205">
-                                                    <g id="poitou_charentes" class="_31AQE" data-reactid="206">
+                                                    <g id="Poitou-Charentes" class="_31AQE" data-reactid="206">
                                                         <path d="M198.8,385.2c10.9-2.2,13.4,7,14.6,8.9c1.4,2,5.7,6.5,7.9,5.5c6.6-3,12.9-6.1,18.5-9
       c2.3-1.2-0.1-9.3,2-10.4c2-1,3.1-2.6,4.6-3.6c2.6-1.7,5.2-2.6,7.5-3.7c1.5-0.7-0.2-4.6,1.2-7
       c1.7-2.9,6.6-4.4,7.8-3.8c0.1,0.1,0.1-4.7,4.2-7.7c2.3-1.7,7.7-4.3,7.6-8
@@ -685,7 +685,7 @@
                                                     </g>
                                                 </a><a title="Provence-Alpes-Côte d'Azur" class="trackable" href="#"
                                                     data-reactid="208">
-                                                    <g id="provence_alpes_cote_d_azur" class="_31AQE _20Pcj"
+                                                    <g id="Provence-Alpes-Côte d'Azur" class="_31AQE _20Pcj"
                                                         data-reactid="209">
                                                         <path d="M429.3,507.9c2.2,1,1.9,2.6,14.5,2.1c2.5-0.1,4.8,0.7,6.9,2c1.2,0.7,4.2,2.9,7,3.3
       c3.1,0.4,6.4,0,9.6,0.4c4.7,0.5,9.6,0.9,13.8,2.9c2.3,1.1,5.1,2.9,7.1,4.3c4.3,2.8,10.8,3,14.4,3.4
@@ -704,7 +704,7 @@
                                                     </g>
                                                 </a><a title="Rhône-Alpes" class="trackable" href="#"
                                                     data-reactid="211">
-                                                    <g id="rhone_alpes" class="_31AQE" data-reactid="212">
+                                                    <g id="Rhône-Alpes" class="_31AQE" data-reactid="212">
                                                         <path d="M475.1,312.3c1.1,4.8,4.7,6.8,6.3,9.9c1.8,3.4,6.9-8.3,8.9-5.5c2,2.8,4.5,3,6.5,4.8
       c3.3,3.1,10-9.5,14-7.8c0,0.5,0.2,1.4,0.5,2.1c0.8,1.6,3.8,2.8,0.9,6.1c-5.9,6.8-4.7,8.6,0.4,9.6
       c7.6,1.4,10.5-8.7,10.2-12.6c2-2.1,7.2-4.6,8-4.8c4.4-1.1,5.1-1.1,11.4,0.4c1.5,8.4,4.5,15,6.1,17.9
@@ -723,7 +723,7 @@
       c1.7-2,3.3-2.8,4.6-4.4c1.2-1.4,3.5,0.5,6.1,1.6C471.6,310.7,474.9,311.6,475.1,312.3z" data-reactid="213"></path>
                                                     </g>
                                                 </a><a title="Guadeloupe" class="trackable" href="#" data-reactid="214">
-                                                    <g id="guadeloupe" class="_31AQE _2HlCq" data-reactid="215">
+                                                    <g id="Guadeloupe" class="_31AQE _2HlCq" data-reactid="215">
                                                         <path
                                                             d="M132.6,689.9c2.7,2.5,3.2-2.1,3.2-2.1C135.4,684.4,129.9,687.5,132.6,689.9z"
                                                             data-reactid="216"></path>
@@ -742,7 +742,7 @@
         c0,0,9.5-3.8,14-2.6c0,0-7.1-3.5-10.3-6.7C173.3,631.8,172.5,630.7,167.9,632.9z" data-reactid="220"></path>
                                                     </g>
                                                 </a><a title="Martinique" class="trackable" href="#" data-reactid="221">
-                                                    <g id="martinique" class="_31AQE _2HlCq" data-reactid="222">
+                                                    <g id="Martinique" class="_31AQE _2HlCq" data-reactid="222">
                                                         <path d="M237.8,612.9c0,0-9.8,10.8,1.8,18.6c5.7,3.8-1.6,8.2,5.5,14.8
       c7.1,6.6,14.6,10.2,12.1,16.6c-2.6,6.4-2.6,13.9,5.3,17.9c0,0-1.6-8.6,7.9-3.8c0,0,4.6-5.5,4.6,1.3
       c0,0,7.1-4.2,12.2,2.6c0,0,6-0.7,3.1,4.2c-2.9,4.9,2.7,5.6,2.7,5.6s5.3-13.4,7.7-14.7
@@ -751,7 +751,7 @@
       c3.3-3.3,5.5-5.5,0.2-4.4c-5.3,1.1-10.4,5.1-13.7-0.5s-17.4-19.7-34.9-15" data-reactid="223"></path>
                                                     </g>
                                                 </a><a title="Guyane" class="trackable" href="#" data-reactid="224">
-                                                    <g id="guyane" class="_31AQE _2HlCq" data-reactid="225">
+                                                    <g id="Guyane" class="_31AQE _2HlCq" data-reactid="225">
                                                         <path d="M349.7,621.3c0,0,0.4,5.1-4.4,7.9c-4.8,2.7-6.9,9.9-5.8,13.3c1.1,3.5,2.4,4.6,2.2,8.8
       c-0.2,4.2,11.2,10,9.9,13.1c-1.3,3.1-2.7,1.5-4,6c-1.3,4.6-2,10.2-5.9,12.8
       c-3.8,2.6,2.9,3.3,5.7,4.8c2.7,1.5,2.9,2.2,5.7-1.6c2.7-3.8,6.2-2,8.4-0.9c2.2,1.1,9.3,5.8,12.4,3.7
@@ -759,7 +759,7 @@
       c-4.4-0.2-9-11-11.3-11.2c-2.4-0.2-9,0.4-12.6-2.7C355.3,622.6,351.3,620,349.7,621.3z" data-reactid="226"></path>
                                                     </g>
                                                 </a><a title="Réunion" class="trackable" href="#" data-reactid="227">
-                                                    <g id="reunion" class="_31AQE _2HlCq" data-reactid="228">
+                                                    <g id="Réunion" class="_31AQE _2HlCq" data-reactid="228">
                                                         <path d="M437.1,648.7c0,0-7.3,1.1,0,9.7c7.3,8.6,2.7,11.7,6,15.5c3.3,3.8,9,2.9,13.5,6.4
       c4.6,3.5,15.1,10.6,27.4,7.3c2.7-0.7,13,1.6,12.4-4c-0.5-5.7,1.3-13.1,2.4-15
       c1.1-2,3.9-4.9-4.6-10.9c-3.3-2.3-0.9-5.5-6.9-9c-6-3.5,4.6-8.6-10.4-14.8c-15-6.2-23.4-2.6-26.9,0
@@ -978,44 +978,44 @@
                     <ul data-reactid="342">
                         <li class="_3f3p2" data-reactid="343"><a title="EMPLOI" class="trackable" href="#"
                                 data-reactid="344">EMPLOI</a></li>
-                        <li class="" data-reactid="345"><a title="Offres d'emploi" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="345"><a title="Offres d'emploi" class="trackable" href="#"
                                 data-reactid="346">Offres d'emploi</a></li>
-                        <li class="" data-reactid="347"><a href="https://go.onelink.me/3471221858/bcf737d8"
+                        <li class="ad_topic" data-reactid="347"><a href="https://go.onelink.me/3471221858/bcf737d8"
                                 target="_self" title="Offres d'emploi Cadres" class="trackable"
                                 data-reactid="348">Offres d'emploi Cadres</a></li>
                         <li class="_3f3p2" data-reactid="349"><a title="VEHICULES" class="trackable" href="#"
                                 data-reactid="350">VEHICULES</a></li>
-                        <li class="" data-reactid="351"><a title="Voitures" class="trackable"
-                                href="{{route('production')}}" data-reactid="352">Voitures</a></li>
-                        <li class="" data-reactid="353"><a title="Motos" class="trackable" href="/motos/offres/"
+                        <li class="ad_topic" data-reactid="351"><a title="Voitures" class="trackable"
+                                href="#" data-reactid="352">Voitures</a></li>
+                        <li class="ad_topic" data-reactid="353"><a title="Motos" class="trackable" href="#"
                                 data-reactid="354">Motos</a></li>
-                        <li class="" data-reactid="355"><a title="Caravaning" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="355"><a title="Caravaning" class="trackable" href="#"
                                 data-reactid="356">Caravaning</a></li>
-                        <li class="" data-reactid="357"><a title="Utilitaires" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="357"><a title="Utilitaires" class="trackable" href="#"
                                 data-reactid="358">Utilitaires</a></li>
-                        <li class="" data-reactid="359"><a href="#" target="_self" title="Camions" class="trackable"
+                        <li class="ad_topic" data-reactid="359"><a href="#" target="_self" title="Camions" class="trackable"
                                 data-reactid="360">Camions</a></li>
-                        <li class="" data-reactid="361"><a title="Nautisme" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="361"><a title="Nautisme" class="trackable" href="#"
                                 data-reactid="362">Nautisme</a></li>
-                        <li class="" data-reactid="363"><a title="Equipement Auto" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="363"><a title="Equipement Auto" class="trackable" href="#"
                                 data-reactid="364">Equipement Auto</a></li>
-                        <li class="" data-reactid="365"><a title="Equipement Moto" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="365"><a title="Equipement Moto" class="trackable" href="#"
                                 data-reactid="366">Equipement Moto</a></li>
-                        <li class="" data-reactid="367"><a title="Equipement Caravaning" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="367"><a title="Equipement Caravaning" class="trackable" href="#"
                                 data-reactid="368">Equipement Caravaning</a></li>
-                        <li class="" data-reactid="369"><a title="Equipement Nautisme" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="369"><a title="Equipement Nautisme" class="trackable" href="#"
                                 data-reactid="370">Equipement Nautisme</a></li>
                         <li class="_3f3p2" data-reactid="371"><a title="IMMOBILIER" class="trackable" href="#"
                                 data-reactid="372">IMMOBILIER</a></li>
-                        <li class="" data-reactid="373"><a title="Ventes immobilières" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="373"><a title="Ventes immobilières" class="trackable" href="#"
                                 data-reactid="374">Ventes immobilières</a></li>
-                        <li class="" data-reactid="375"><a href="#" target="_self" title="Immobilier Neuf"
+                        <li class="ad_topic" data-reactid="375"><a href="#" target="_self" title="Immobilier Neuf"
                                 class="trackable" data-reactid="376">Immobilier Neuf</a></li>
-                        <li class="" data-reactid="377"><a title="Locations" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="377"><a title="Locations" class="trackable" href="#"
                                 data-reactid="378">Locations</a></li>
-                        <li class="" data-reactid="379"><a title="Colocations" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="379"><a title="Colocations" class="trackable" href="#"
                                 data-reactid="380">Colocations</a></li>
-                        <li class="" data-reactid="381"><a title="Bureaux &amp; Commerces" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="381"><a title="Bureaux &amp; Commerces" class="trackable" href="#"
                                 data-reactid="382">Bureaux &amp; Commerces</a></li>
                     </ul>
                 </div>
@@ -1023,51 +1023,51 @@
                     <ul data-reactid="384">
                         <li class="_3f3p2" data-reactid="385"><a title="VACANCES" class="trackable" href="#"
                                 data-reactid="386">VACANCES</a></li>
-                        <li class="" data-reactid="387"><a title="Locations &amp; Gîtes" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="387"><a title="Locations &amp; Gîtes" class="trackable" href="#"
                                 data-reactid="388">Locations &amp; Gîtes</a></li>
-                        <li class="" data-reactid="389"><a title="Chambres d'hôtes" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="389"><a title="Chambres d'hôtes" class="trackable" href="#"
                                 data-reactid="390">Chambres d'hôtes</a></li>
-                        <li class="" data-reactid="391"><a title="Campings" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="391"><a title="Campings" class="trackable" href="#"
                                 data-reactid="392">Campings</a></li>
-                        <li class="" data-reactid="393"><a title="Hôtels" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="393"><a title="Hôtels" class="trackable" href="#"
                                 data-reactid="394">Hôtels</a></li>
-                        <li class="" data-reactid="395"><a title="Hébergements insolites" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="395"><a title="Hébergements insolites" class="trackable" href="#"
                                 data-reactid="396">Hébergements insolites</a>
                         </li>
-                        <li class="" data-reactid="397"><a href="#" target="_self" title="Ventes privées vacances"
+                        <li class="ad_topic" data-reactid="397"><a href="#" target="_self" title="Ventes privées vacances"
                                 class="trackable" data-reactid="398">Ventes privées vacances</a></li>
                         <li class="_3f3p2" data-reactid="399"><a title="MAISON" class="trackable" href="#"
                                 data-reactid="400">MAISON</a></li>
-                        <li class="" data-reactid="401"><a title="Ameublement" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="401"><a title="Ameublement" class="trackable" href="#"
                                 data-reactid="402">Ameublement</a></li>
-                        <li class="" data-reactid="403"><a title="Electroménager" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="403"><a title="Electroménager" class="trackable" href="#"
                                 data-reactid="404">Electroménager</a></li>
-                        <li class="" data-reactid="405"><a title="Arts de la table" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="405"><a title="Arts de la table" class="trackable" href="#"
                                 data-reactid="406">Arts de la table</a></li>
-                        <li class="" data-reactid="407"><a title="Décoration" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="407"><a title="Décoration" class="trackable" href="#"
                                 data-reactid="408">Décoration</a></li>
-                        <li class="" data-reactid="409"><a title="Linge de maison" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="409"><a title="Linge de maison" class="trackable" href="#"
                                 data-reactid="410">Linge de maison</a></li>
-                        <li class="" data-reactid="411"><a title="Bricolage" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="411"><a title="Bricolage" class="trackable" href="#"
                                 data-reactid="412">Bricolage</a></li>
-                        <li class="" data-reactid="413"><a title="Jardinage" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="413"><a title="Jardinage" class="trackable" href="#"
                                 data-reactid="414">Jardinage</a></li>
                         <li class="_3f3p2" data-reactid="415"><a title="MODE" class="trackable" href="#"
                                 data-reactid="416">MODE</a></li>
-                        <li class="" data-reactid="417"><a title="Vêtements" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="417"><a title="Vêtements" class="trackable" href="#"
                                 data-reactid="418">Vêtements</a></li>
-                        <li class="" data-reactid="419"><a title="Chaussures" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="419"><a title="Chaussures" class="trackable" href="#"
                                 data-reactid="420">Chaussures</a></li>
-                        <li class="" data-reactid="421"><a title="Accessoires &amp; Bagagerie" class="trackable"
+                        <li class="ad_topic" data-reactid="421"><a title="Accessoires &amp; Bagagerie" class="trackable"
                                 href="#" data-reactid="422">Accessoires &amp; Bagagerie</a>
                         </li>
-                        <li class="" data-reactid="423"><a title="Montres &amp; Bijoux" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="423"><a title="Montres &amp; Bijoux" class="trackable" href="#"
                                 data-reactid="424">Montres &amp; Bijoux</a></li>
-                        <li class="" data-reactid="425"><a title="Equipement bébé" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="425"><a title="Equipement bébé" class="trackable" href="#"
                                 data-reactid="426">Equipement bébé</a></li>
-                        <li class="" data-reactid="427"><a title="Vêtements bébé" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="427"><a title="Vêtements bébé" class="trackable" href="#"
                                 data-reactid="428">Vêtements bébé</a></li>
-                        <li class="" data-reactid="429"><a href="#" target="_self" title="Videdressing"
+                        <li class="ad_topic" data-reactid="429"><a href="#" target="_self" title="Videdressing"
                                 class="trackable" data-reactid="430">Videdressing</a></li>
                     </ul>
                 </div>
@@ -1075,37 +1075,37 @@
                     <ul data-reactid="432">
                         <li class="_3f3p2" data-reactid="433"><a title="MULTIMEDIA" class="trackable" href="#"
                                 data-reactid="434">MULTIMEDIA</a></li>
-                        <li class="" data-reactid="435"><a title="Informatique" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="435"><a title="Informatique" class="trackable" href="#"
                                 data-reactid="436">Informatique</a></li>
-                        <li class="" data-reactid="437"><a title="Consoles &amp; Jeux vidéo" class="trackable"
+                        <li class="ad_topic" data-reactid="437"><a title="Consoles &amp; Jeux vidéo" class="trackable"
                                 href="#"" data-reactid=" 438">Consoles &amp; Jeux vidéo</a>
                         </li>
-                        <li class="" data-reactid="439"><a title="Image &amp; Son" class="trackable"
+                        <li class="ad_topic" data-reactid="439"><a title="Image &amp; Son" class="trackable"
                                 href="#"" data-reactid=" 440">Image &amp; Son</a></li>
-                        <li class="" data-reactid="441"><a title="Téléphonie" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="441"><a title="Téléphonie" class="trackable" href="#"
                                 data-reactid="442">Téléphonie</a></li>
                         <li class="_3f3p2" data-reactid="443"><a title="LOISIRS" class="trackable" href="#"
                                 data-reactid="444">LOISIRS</a></li>
-                        <li class="" data-reactid="445"><a title="DVD / Films" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="445"><a title="DVD / Films" class="trackable" href="#"
                                 data-reactid="446">DVD / Films</a></li>
-                        <li class="" data-reactid="447"><a title="CD / Musique" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="447"><a title="CD / Musique" class="trackable" href="#"
                                 data-reactid="448">CD / Musique</a></li>
-                        <li class="" data-reactid="449"><a title="Livres" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="449"><a title="Livres" class="trackable" href="#"
                                 data-reactid="450">Livres</a></li>
-                        <li class="" data-reactid="451"><a title="Animaux" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="451"><a title="Animaux" class="trackable" href="#"
                                 data-reactid="452">Animaux</a></li>
-                        <li class="" data-reactid="453"><a title="Vélos" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="453"><a title="Vélos" class="trackable" href="#"
                                 data-reactid="454">Vélos</a></li>
-                        <li class="" data-reactid="455"><a title="Sports &amp; Hobbies" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="455"><a title="Sports &amp; Hobbies" class="trackable" href="#"
                                 data-reactid="456">Sports &amp; Hobbies</a></li>
-                        <li class="" data-reactid="457"><a title="Instruments de musique" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="457"><a title="Instruments de musique" class="trackable" href="#"
                                 data-reactid="458">Instruments de musique</a>
                         </li>
-                        <li class="" data-reactid="459"><a title="Collection" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="459"><a title="Collection" class="trackable" href="#"
                                 data-reactid="460">Collection</a></li>
-                        <li class="" data-reactid="461"><a title="Jeux &amp; Jouets" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="461"><a title="Jeux &amp; Jouets" class="trackable" href="#"
                                 data-reactid="462">Jeux &amp; Jouets</a></li>
-                        <li class="" data-reactid="463"><a title="Vins &amp; Gastronomie" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="463"><a title="Vins &amp; Gastronomie" class="trackable" href="#"
                                 data-reactid="464">Vins &amp; Gastronomie</a></li>
                     </ul>
                 </div>
@@ -1114,45 +1114,45 @@
                         <li class="_3f3p2" data-reactid="467"><a title="MATERIEL PROFESSIONNEL" class="trackable"
                                 href="#" data-reactid="468">MATERIEL PROFESSIONNEL</a>
                         </li>
-                        <li class="" data-reactid="469"><a title="Matériel Agricole" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="469"><a title="Matériel Agricole" class="trackable" href="#"
                                 data-reactid="470">Matériel Agricole</a></li>
-                        <li class="" data-reactid="471"><a title="Transport - Manutention" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="471"><a title="Transport - Manutention" class="trackable" href="#"
                                 data-reactid="472">Transport - Manutention</a>
                         </li>
-                        <li class="" data-reactid="473"><a title="BTP - Chantier Gros-oeuvre" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="473"><a title="BTP - Chantier Gros-oeuvre" class="trackable" href="#"
                                 data-reactid="474">BTP - Chantier
                                 Gros-oeuvre</a></li>
-                        <li class="" data-reactid="475"><a title="Outillage - Matériaux 2nd-oeuvre" class="trackable"
+                        <li class="ad_topic" data-reactid="475"><a title="Outillage - Matériaux 2nd-oeuvre" class="trackable"
                                 href="#" data-reactid="476">Outillage - Matériaux
                                 2nd-oeuvre</a></li>
-                        <li class="" data-reactid="477"><a title="Équipements Industriels" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="477"><a title="Équipements Industriels" class="trackable" href="#"
                                 data-reactid="478">Équipements Industriels</a>
                         </li>
-                        <li class="" data-reactid="479"><a title="Restauration - Hôtellerie" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="479"><a title="Restauration - Hôtellerie" class="trackable" href="#"
                                 data-reactid="480">Restauration - Hôtellerie</a>
                         </li>
-                        <li class="" data-reactid="481"><a title="Fournitures de Bureau" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="481"><a title="Fournitures de Bureau" class="trackable" href="#"
                                 data-reactid="482">Fournitures de Bureau</a></li>
-                        <li class="" data-reactid="483"><a title="Commerces &amp; Marchés" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="483"><a title="Commerces &amp; Marchés" class="trackable" href="#"
                                 data-reactid="484">Commerces &amp; Marchés</a></li>
-                        <li class="" data-reactid="485"><a title="Matériel Médical" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="485"><a title="Matériel Médical" class="trackable" href="#"
                                 data-reactid="486">Matériel Médical</a></li>
                         <li class="_3f3p2" data-reactid="487"><a title="SERVICES" class="trackable" href="#"
                                 data-reactid="488">SERVICES</a></li>
-                        <li class="" data-reactid="489"><a title="Prestations de services" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="489"><a title="Prestations de services" class="trackable" href="#"
                                 data-reactid="490">Prestations de services</a>
                         </li>
-                        <li class="" data-reactid="491"><a title="Billetterie" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="491"><a title="Billetterie" class="trackable" href="#"
                                 data-reactid="492">Billetterie</a></li>
-                        <li class="" data-reactid="493"><a title="Evénements" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="493"><a title="Evénements" class="trackable" href="#"
                                 data-reactid="494">Evénements</a></li>
-                        <li class="" data-reactid="495"><a title="Cours particuliers" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="495"><a title="Cours particuliers" class="trackable" href="#"
                                 data-reactid="496">Cours particuliers</a></li>
-                        <li class="" data-reactid="497"><a title="Covoiturage" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="497"><a title="Covoiturage" class="trackable" href="#"
                                 data-reactid="498">Covoiturage</a></li>
                         <li class="_3f3p2" data-reactid="499"><a title="Autres" class="trackable" href="#"
                                 data-reactid="500">Autres</a></li>
-                        <li class="" data-reactid="501"><a title="Autres" class="trackable" href="#"
+                        <li class="ad_topic" data-reactid="501"><a title="Autres" class="trackable" href="#"
                                 data-reactid="502">Autres</a></li>
                     </ul>
                 </div>
@@ -1189,59 +1189,67 @@
 </body>
 <script>
     $(document).ready(function () {
+     
         $('.main-navbar li a').click(function () {
             console.log("rw");
             $('#Login_modal').modal('toggle');
         });
         $('#create_account').click(function () {
-            console.log("rw");
+            
             $('#Login_modal').modal('hide');
         });
         $('.back_loginmodal').click(function () {
             $('#Regsiter_modal').modal('toggle');
             $('#Login_modal').modal('toggle');
         });
-        // $('#loginform').on('submit', function (e) {
-        //     e.preventDefault();
-        //     var email = $('input[name=email]').val();
-        //     var password = $('input[name=password]').val();
-        //     if (email == "" || password == "") {
-        //         document.getElementById('login_request_error').innerHTML = "Error";
-        //         setTimeout(() => {
-        //             document.getElementById('login_request_error').innerHTML = "";
-        //         }, 2000);
-        //     } else {
-        //         var data = $('#loginform').serialize();
-        //         var url = $('#loginform').attr('action');
-        //         var base_url = {!! json_encode(url('/')) !!};
-        //         console.log(data);
-              
-        //         $.ajax({
-        //             type: 'POST',
-        //             url: url,
-        //             data: data,
-        //             dataType: "json",
-        //             success: function (data) {
-        //                 console.log(data);
-        //                 if (data.error) {
-        //                     document.getElementById('login_request_error').innerHTML = data
-        //                         .result;
-        //                     setTimeout(() => {
-        //                         document.getElementById('login_request_error')
-        //                             .innerHTML = "";
-        //                     }, 2000);
+        var mapClasses=document.getElementsByClassName('_31AQE');
+        var textClasses=document.getElementsByClassName('_3mctU');
 
-        //                 } else {
-        //                     console.log(data.result);
+        var i;
+        $('._3mctU').mouseenter(function(){
+          for(i=0;i<mapClasses.length;i++)
+          {
+           if($(this).data('map') == $(mapClasses[i]).attr("id")) 
+            {
+            
+                $(mapClasses[i]).addClass('_3g5HG');
+            }
+          }
+          
+        }); 
+        
+        $('._3mctU').mouseleave(function(){
+          for(i=0;i<mapClasses.length;i++)
+          {
+           if($(this).data('map') == $(mapClasses[i]).attr("id")) 
+            {
+                $(mapClasses[i]).removeClass('_3g5HG');
+            }
+          }  
+        });
 
-        //                    window.location = base_url + "/frontoffice/advertise";
-                             
-        //                 }
 
-        //             }
-        //         });
-        //     }
-        // });
+        $('._31AQE').mouseenter(function(){
+          for(i=0;i<textClasses.length;i++)
+          {
+           if($(this).attr('id') == $(textClasses[i]).data("map")) 
+            {
+            
+                $(textClasses[i]).addClass('_1zVCU');
+            }
+          }
+          
+        }); 
+        
+        $('._31AQE').mouseleave(function(){
+          for(i=0;i<textClasses.length;i++)
+          {
+           if($(this).attr('id') == $(textClasses[i]).data("map")) 
+            {
+                $(textClasses[i]).removeClass('_1zVCU');
+            }
+          }  
+        });
     });
 
 </script>

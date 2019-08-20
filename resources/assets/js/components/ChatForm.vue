@@ -16,19 +16,28 @@
 
         data() {
             return {
-                newMessage: ''
+                newMessage:"",
+                
             }
         },
 
         methods: {
             sendMessage() {
-                this.$emit('messagesent', {
-                    user: this.user,
-                    message: this.newMessage
-                });
-
+            axios.post('http://localhost/jamii/public/frontoffice/messages', {
+                message:  this.newMessage,
+                user: this.user,
+              })
+              .then(function (response) {
+                console.log(response.data);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
                 this.newMessage = ''
-            }
+
+
+            },
+
         }    
     }
 </script>

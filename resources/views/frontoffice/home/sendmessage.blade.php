@@ -63,13 +63,15 @@
                 <div data-reactid="154">Méfiez-vous des propositions trop alléchantes et des prix trop bas. Assurez-vous
                     de ne pas être victime d’une tentative d’escroquerie.<a data-reactid="157">En savoir plus</a></div>
             </div>
-            <form data-reactid="158">
+            <form id="init_message">
+                <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                 <div data-reactid="169"><label class="_2GeK6" for="body" data-reactid="170">
                         <!-- react-text: 171 -->Votre message
-                        <!-- /react-text --></label><textarea name="body" class="_2qGx6 _3Id6u" cols="20" rows="30"
+                        <!-- /react-text --></label>
+                        <textarea name="body" class="_2qGx6 _3Id6u" cols="20" rows="30"
                         data-reactid="172"></textarea></div>
                     <button class="_2sNbI e943h _3JCaR" type="submit"
-                    disabled="" data-reactid="173" style="background-color: #4183d7;
+                     data-reactid="173" style="background-color: #4183d7; pointer-events:visible!important;cursor:pointer;
                     color: white;">
                     <!-- react-text: 174 -->Envoyer votre message
                     <!-- /react-text --></button>
@@ -117,46 +119,40 @@
 </body>
 <script>
     $(document).ready(function () {
-        var slideIndex = 1;
-        showDivs(slideIndex);
+      var to_user="{{$userid}}";
 
-        $('#right_slider').on('click', function () {
+      $('#init_message').on('submit',function(event){
+        event.preventDefault();
+       var body=$('textarea[name=body]').val();
+    
+        $.ajax({
 
-            showDivs(slideIndex += 1);
+            type:'POST',
+            url:"{{route('messages')}}",
+            data:{
+                 message:body,
+                 to_user:to_user,
+                _token:$('input[name=_token]').val(),
+            },
+            dataType:"json",
+            success:function(data){
+                    if(data.error)
+                    {
+                       alert(data.result);
+                    }
+                    else{
+                       // location.href="{{URL::to('frontoffice/cardpay')}}?"+"boost="+data.result
+                    } 
 
+                },
+                error:function(e){
+
+                      console.log(e);
+                }
         });
 
-        $('#left_slider').on('click', function () {
-            showDivs(slideIndex -= 1);
-        });
-
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            var effect = document.getElementsByClassName("Lqamr ");
-            $(effect).removeClass("_3lGXV");
-            if (n > x.length) {
-                slideIndex = 1
-            }
-            if (n < 1) {
-                slideIndex = x.length
-            }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            x[slideIndex - 1].style.display = "block";
-            $(effect[slideIndex - 1]).addClass("_3lGXV");
-
-        }
-        $('#phone_click').on('click', function () {
-
-            $('#phone_click').css("display", "none");
-            $('#number_click').css("display", "block");
-
-
-
-        });
-
+      });
+       
     });
 
 </script>
