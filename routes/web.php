@@ -97,7 +97,8 @@ Route::group([
       //looking for posted admob.
       Route::get('/dadmob','DisplayAdmobController@getDisplaypage')->name('dadmob');
       //fixed posted admob controller
-      Route::get('/aditems','ViewAdmobController@index')->name('viewadmob');
+      Route::get('/aditems/','ViewAdmobController@index')->name('viewadmob');
+      Route::get('/aditems/offer/{state}','ViewAdmobController@getAreaProduction');
       Route::get('/aditems/{id}','ViewAdmobController@show')->name('showadmob');
       Route::get('/aditems/sendmessage/{userid}/{name}','ViewAdmobController@sendMailbox')->name('sendmessage');
       Route::get('/getdata/{page}','DisplayAdmobController@getData');

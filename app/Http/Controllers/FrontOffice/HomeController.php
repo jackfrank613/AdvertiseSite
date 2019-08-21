@@ -7,15 +7,16 @@ use App\Http\Controllers\Controller;
 use App\JamiiUser;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
-
-
+use App\PostedAdmob;
+use App\StateModel;
 class HomeController extends Controller
 {
     // hompage call
     public function getHomepage()
     {
-       
-        return view('frontoffice/home/homepage');
+        $counts=PostedAdmob::where('enable',1)->get()->count();
+        $states=StateModel::all();
+        return view('frontoffice/home/homepage')->with(compact('counts','states'));
     }
 
     public function getParticular(){
@@ -78,8 +79,6 @@ class HomeController extends Controller
         }
        
     }
-
-
     public function createUserprofessional(Request $request)
     {
         

@@ -30,8 +30,12 @@
     <ul class="undefined" data-reactid="382">
 
         <?php
-            $image1 = explode(",", $admobs['t_admob'][0]['camera'])[0];
-            // echo $image;
+        if(!empty($admobs['t_admob'])){
+            if($admobs['t_admob'][0]['camera'] != "")
+                $image1 = explode(",", $admobs['t_admob'][0]['camera'])[0];
+            else 
+                $image1 = "default";
+            // echo "sdfsdfsd";exit;
             ?>
         <li itemscope="" itemtype="http://schema.org/Offer" class="_3DFQ-" data-qa-id="aditem_container"
             data-reactid="383">
@@ -108,6 +112,9 @@
             <div class="__react_component_tooltip place-top type-dark " id="toggleSavedAd_0" data-id="tooltip"
                 data-reactid="416"></div>
         </li>
+        <?php
+        }
+        ?>
         
         @foreach($admobs['n_admob'] as $item)
         <?php

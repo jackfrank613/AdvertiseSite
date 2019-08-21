@@ -98,7 +98,7 @@
 <script>
 $(document).ready(function(){
 
-             var ad_total_count = < ? php echo json_encode($count) ? > ;
+            var ad_total_count = < ? php echo json_encode($count) ? > ;
             var current_page = < ? php echo json_encode($current_page) ? > ;
             var page_count = < ? php echo json_encode($page_count) ? > ;
             current_page = (current_page !== "undefined") ? current_page : 1;

@@ -36,6 +36,9 @@
     <link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('css/custom.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('css/header.css')}}">
+     <link type="text/css" rel="stylesheet" href="{{asset('css/home.css')}}">
+    
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -75,7 +78,7 @@
                                             <h3 class="_3MDJa _30A-8">Choisissez la catégorie</h3>
                                         </div>
                                         <div>
-                                            <div class="_2Xqu9">
+                                            <div class="_2Xqu9" style="display:none">
                                                 <div class="_27rom" role="combobox" aria-expanded="false"
                                                     aria-haspopup="listbox" aria-labelledby="downshift-2-label">
                                                   
@@ -552,6 +555,42 @@
                     <div class="_3Bswj">
                         <div class="_3QHYd">
                             <h3 class="_3MDJa _30A-8">Où se trouve votre bien ?</h3>
+                        </div>
+                        <div>
+                            <h2></h2>
+                         <div class="mapbackground">
+                                <select id="searcharea" name="state" autocomplete="off" data-qa-id="select-region_department">
+                                        <option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">S'il vous plaît, sélectionnez votre état</font></font></option>
+                                        <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Alsace</font></font></option>
+                                        <option value="2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Aquitaine</font></font></option>
+                                        <option value="3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Auvergne</font></font></option>
+                                        <option value="4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lower Normandy</font></font></option>
+                                        <option value="5"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bourgogne</font></font></option>
+                                        <option value="6"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bretagne</font></font></option>
+                                        <option value="7"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Centre</font></font></option>
+                                        <option value="8"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Champagne-Ardenne</font></font></option>
+                                        <option value="9"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corse</font></font></option>
+                                        <option value="10"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Franche-Comté</font></font></option>
+                                        <option value="11"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Haute-Normandie</font></font></option>
+                                       
+                                        <option value="12"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ile-de-France</font></font></option>
+                                        <option value="13"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Languedoc-Roussillon</font></font></option>
+                                        <option value="14"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Limousin</font></font></option>
+                                        <option value="15"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lorraine</font></font></option>
+                                        <option value="16"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Midi-Pyrénées</font></font></option>
+                                        <option value="17"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nord-Pas-de-Calais</font></font></option>
+                                        <option value="18"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Pays de la Loire</font></font></option>
+                                        <option value="19"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Picardie</font></font></option>
+                                        <option value="20"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Poitou-Charentes</font></font></option>
+                                        <option value="21"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Provence-Alpes-Côte d'Azur</font></font></option>
+                                        <option value="22"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rhône-Alpes</font></font></option>
+                                        <option value="23"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Guadeloupe</font></font></option>
+                                        <option value="24"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Martinique</font></font></option>
+                                        <option value="25"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Guyane</font></font></option>
+                                        <option value="26"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Réunion</font></font></option>
+                            </select>
+
+                         </div>
                         </div>
                         <div class="_2-T4y">
                             <form>
@@ -1580,7 +1619,7 @@
 
                 var places = searchBox.getPlaces();
                 // console.log(places[0]['name']); 
-
+                var state=$('select[name=state]').val();
                 addresses = places[0]['address_components'];
                 console.log(addresses);
                 for (var i = 0; i < addresses.length; i++) {
@@ -1650,6 +1689,7 @@
                     data: {
                         id:id,
                         c_name: city_name,
+                        state:state,
                         _token: $('input[name=_token]').val(),
                     },
                     dataType: "json",

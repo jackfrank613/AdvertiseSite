@@ -372,7 +372,9 @@
                                         </div>
                                     </div>
                                     <div class="TwSJ3">
-                                        <div class="_3Hx4s"><label class="WzIvr"><input type="checkbox" id="ctitle"
+                                        <div class="_3Hx4s">
+                                            
+                                            <label class="WzIvr" style="display:none"><input type="checkbox" id="ctitle"
                                                     name="it" data-qa-id="checkbox-title_only" value="1">
                                                 <!-- react-text: 773 -->Recherche dans le titre uniquement
                                                 <!-- /react-text --></label><label class="WzIvr"><input type="checkbox"
@@ -488,7 +490,7 @@
                                         <div class="_1uP35">
                                             <select data-qa-id="select-price_min" name="min_price" id="min_price">
                                                 <option>Prix min</option>
-                                                <option value="">0</option>
+                                                {{-- <option value="">0</option> --}}
                                                 <option value="10">10</option>
                                                 <option value="20">20</option>
                                                 <option value="30">30</option>
@@ -516,7 +518,10 @@
                                                 <option value="400">400</option>
                                                 <option value="500">500</option>
                                                 <option value="1000">1 000</option>
-                                                <option value="">1 000 +</option>
+                                                <option value="2000">2000</option>
+                                                <option value="4000">4000</option>
+                                                <option value="6000">6000</option>
+                                                <option value="8000">8000</option>
                                             </select></div>
                                     </div>
                                 </div>
@@ -556,7 +561,8 @@
                         <div class="_358dQ" data-reactid="355">
                             <div class="_2r1q3" data-reactid="356">
                                 <div data-reactid="357" id="advertiseList">
-                                   
+                                 <h2 id="empty_result" style="display:none">Le résultat n'est pas vide!</h2>
+                                        
                                 </div>
                             </div>
                         </div>
@@ -822,6 +828,10 @@
                 $('._1okrU').addClass("_2tSFG");    
              
         });
+
+        $('#checkbox-title_only-desktop').on('click',function(){
+            $('._1okrU').css("display","none");    
+        });
         $('._1okrU ').on('click','._2EKK7',function(){
           
             //console.log();
@@ -878,6 +888,7 @@
             var title="{{$title}}";
             var min_price="{{$min_price}}";
             var max_price="{{$max_price}}";
+
             $.ajax({
                 type: 'POST',
                 url: "{{route('filterads')}}",
@@ -897,11 +908,20 @@
                 },
                 dataType:'json', 
                 success: function (data) {
-                   // console.log(data.result);
+                    console.log(data.result);
+                    if(data.result !="")
+                    {
+
+                    $('#empty_result').css("display","none");
                     $('#advertiseList').html();
                     $('#side_list').html();
                     $('#advertiseList').html(data.result);
                     $('#side_list').html(data.sresult);
+                    }
+                    else{
+                        $('#empty_result').css("display","block");
+                    }
+             
                 },
                 error: function (e) {
                     console.log(e);

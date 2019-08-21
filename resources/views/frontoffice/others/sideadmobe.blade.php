@@ -1,10 +1,11 @@
 <div class="_2_etK" data-reactid="1625">
     <ul data-reactid="1626">
+@if (!empty($side_admobs))
 @foreach ($side_admobs as $item)
-<?php
-$image = explode(",", $item['camera'])[0];
-// echo $image;
-?>
+        <?php
+        $image = explode(",", $item['camera'])[0];
+        // echo $image;
+        ?>
  <li itemscope="" itemtype="http://schema.org/Offer" class="_3eDdy"
        data-reactid="1627">
        <div class="_3Zm0x" data-qa-id="listitem_save_ad" data-reactid="1628">
@@ -100,6 +101,11 @@ $image = explode(",", $item['camera'])[0];
        </a>
 </li>   
  @endforeach
+    
+@else
+    
+@endif
+
     
     </ul>
 </div>

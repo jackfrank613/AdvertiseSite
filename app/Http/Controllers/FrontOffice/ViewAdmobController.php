@@ -22,6 +22,8 @@ class ViewAdmobController extends Controller
     {
         //  
        
+       //print_r($state);exit;
+
         $ad_type=isset($request->ad_type)? $request->ad_type: "type";
         $search=isset($request->search)? $request->search: "search";
         $location=isset($request->location)?$request->location: "location";
@@ -30,7 +32,8 @@ class ViewAdmobController extends Controller
         $min_price=isset($request->min_price)?$request->min_price:"Prix min";
         //  print_r($min_price);exit;
         $max_price=isset($request->max_price)?$request->max_price:"Prix max";
-        $urgent=isset($request->ur)?$urgent->$request->ur:0;
+        $urgent=isset($request->ur)?$request->ur:0;
+        //  print_r($urgent);exit;
         $title=isset($request->it)?$request->it:0;
         $page_count=isset($request->page_count)?$request->page_count:20;
         $count=isset($request->count)?$request->count:PostedAdmob::count();
@@ -49,7 +52,7 @@ class ViewAdmobController extends Controller
            }
             // print_r($offset);exit;
              $admobs=PostedAdmob::where('enable',1)->orderBy('jamii_postedadmob.create_time','desc')->offset($offset)->limit($page_count)->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->get()->toarray();
-            //  $count=count($admobs);
+             $count=count($admobs);
             // print_r($count);exit;
            
         }
@@ -59,7 +62,7 @@ class ViewAdmobController extends Controller
                 if($search != "search")
                 {
 
-                   $count=PostedAdmob::where('enable',1)->where('subject','like',$search)->get()->count();
+                   $count=PostedAdmob::where('enable',1)->where('subject','LIKE','%' .$search. '%')->get()->count();
                    
                   // print_r($count);exit;
 
@@ -171,5 +174,9 @@ class ViewAdmobController extends Controller
        // print_r($userid);exit;
        
         return view('frontoffice.home.sendmessage')->with(compact('name','userid'));
+    }
+
+    public function getAreaProduction(){
+
     }
 }

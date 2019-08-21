@@ -34,6 +34,7 @@
     <link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('css/custom.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('css/header.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{asset('css/home.css')}}">
 
 
 </head>
@@ -63,9 +64,9 @@
                             <div class="PZs61">
 
                                 <h1>
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Connectez-vous pour retrouver vos favoris</font>
-                                    </font>
+                                    
+                                        Connectez-vous pour retrouver vos favoris
+                                    
                                 </h1>
                                 <div class="_2xBxS">
                                     <div class="_3tqKI">
@@ -74,9 +75,9 @@
                                                 alt="Saved Ads"></div>
                                         <div class="_1w6py">
                                             <h2>
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">Annonces sauvegardées</font>
-                                                </font>
+                                                
+                                                    Annonces sauvegardées
+                                                
                                             </h2>
                                             <p>En naviguant connecté, vous pouvez sauvegarder les annonces qui vous intéressent le plus pour les surveiller. Vous pourrez les retrouver quand vous voulez sur tous vos appareils.</p>
                                         </div>
@@ -87,9 +88,9 @@
                                                 alt="Saved Searches"></div>
                                         <div class="_1w6py">
                                             <h2>
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">Recherches sauvegardées</font>
-                                                </font>
+                                                
+                                                    Recherches sauvegardées
+                                                
                                             </h2>
                                             <p>Sauvegardez vos recherches pour consulter plus facilement les nouveaux résultats.</p>
                                         </div>
@@ -102,9 +103,9 @@
                                 <div>
                                     <div class="_3M53r">
                                         <div class="_3gfNn" data-qa-id="title">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Connexion</font>
-                                            </font>
+                                            
+                                                Connexion
+                                            
                                         </div>
                                         <div>
                                             <div class="_1uVWE">
@@ -113,10 +114,10 @@
                                                     @csrf
                                                     <div><label class="TMFen" for="email">
                                                             <!-- react-text: 36 -->
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">Adresse email
-                                                                </font>
-                                                            </font><!-- /react-text -->
+                                                            
+                                                                Adresse email
+                                                                
+                                                            <!-- /react-text -->
                                                         </label>
                                                         <div class="_2wuZK">
                                                             <input type="text" class="_2erBM _2yMsD"
@@ -127,10 +128,10 @@
                                                         <div>
                                                             <div><label class="TMFen" for="password">
                                                                     <!-- react-text: 43 -->
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">Mot de passe
-                                                                        </font>
-                                                                    </font><!-- /react-text -->
+                                                                    
+                                                                        Mot de passe
+                                                                        
+                                                                    <!-- /react-text -->
                                                                 </label>
                                                                 <div class="_2wuZK">
                                                                     <input type="password" class="_2erBM _2yMsD"
@@ -140,10 +141,7 @@
                                                                 </div>
                                                             </div><a data-qa-id="link-forgotten-password" class="_-0qA4"
                                                                 href="#">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Mot de passe oublié ?</font>
-                                                        
-                                                                </font>
+                                                                Mot de passe oublié ?
                                                             </a>
                                                         </div>
                                                     </div><button type="submit" data-qa-id="authmodal-login" style="background-color: #4183d7;
@@ -154,9 +152,7 @@
                                                                                                 margin-top:15px;
                                                                                                 border-radius: 5px;">
                                                         <!-- react-text: 48 -->
-                                                        <font style="vertical-align: inherit;">
-                                                            <font style="vertical-align: inherit;">Se connecter</font>
-                                                        </font><!-- /react-text -->
+                                                       Se connecter
                                                     </button>
                                                     @if(Session::has('error_message'))
                                                     <h5 style="color:red">{{ Session::get('error_message') }}</h5>
@@ -169,19 +165,17 @@
                                         <div class="_24yU7">
                                             <div class="_1uVWE">
                                                 <p class="hv-Tf">
-                                                    <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">Vous n’avez pas de compte ? </font>
-                                                            account ?
-                                                       
-                                                    </font>
+                                                    
+                                                        Vous n’avez pas de compte ?account ?
+                                                            
                                                 </p><button id="create_account"
                                                     class="_2sNbI _1xIyN GXQkc _2BP2c trackable"
                                                     data-qa-id="create-account" data-toggle="modal"
                                                     data-target="#Regsiter_modal">
                                                     <!-- react-text: 54 -->
-                                                    <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">Créer un compte</font>
-                                                    </font>
+                                                    
+                                                        Créer un compte
+                                                    
                                                 </button>
                                             </div>
                                         </div>
@@ -209,9 +203,9 @@
                     <div class="_3oF3k">
                         <div class="PZs61">
                             <h1>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Login to find your favorites</font>
-                                </font>
+                                
+                                    Login to find your favorites
+                                
                             </h1>
                             <div class="_2xBxS">
                                 <div class="_3tqKI">
@@ -220,17 +214,17 @@
                                             alt="Saved Ads"></div>
                                     <div class="_1w6py">
                                         <h2>
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Saved Ads</font>
-                                            </font>
+                                            
+                                                Saved Ads
+                                            
                                         </h2>
                                         <p>
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">By browsing connected, you can
-                                                    save the ads that interest you most to monitor them. </font>
-                                                <font style="vertical-align: inherit;">You can find them whenever you
-                                                    want on all your devices.</font>
-                                            </font>
+                                            
+                                                By browsing connected, you can
+                                                    save the ads that interest you most to monitor them. 
+                                                You can find them whenever you
+                                                    want on all your devices.
+                                            
                                         </p>
                                     </div>
                                 </div>
@@ -240,15 +234,15 @@
                                             alt="Saved Searches"></div>
                                     <div class="_1w6py">
                                         <h2>
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Saved Searches</font>
-                                            </font>
+                                            
+                                                Saved Searches
+                                            
                                         </h2>
                                         <p>
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Save your searches for easier
-                                                    viewing of new results.</font>
-                                            </font>
+                                            
+                                                Save your searches for easier
+                                                    viewing of new results.
+                                            
                                         </p>
                                     </div>
                                 </div>
@@ -318,7 +312,7 @@
                                 <!-- /react-text -->
                                 <!-- react-text: 117 -->
                                 <!-- /react-text --><span data-qa-id="ad_number" data-reactid="118">
-                                    <!-- react-text: 119 -->26,470,634
+                                    <!-- react-text: 119 -->{{$counts}}
                                     <!-- /react-text -->
                                     <!-- react-text: 120 --> petites annonces
                                     <!-- /react-text --></span><!-- react-text: 121 -->
@@ -372,7 +366,7 @@
                                             xml:space="preserve" data-reactid="146">
                                             <g data-reactid="147"><a title="Alsace" class="trackable" href="#"
                                                     data-reactid="148">
-                                                    <g id="Alsace" class="_31AQE" data-reactid="149">
+                                                    <g id="1" class="_31AQE" data-reactid="149">
                                                         <path d="M540.3,215.4c4.4-4.6,13.2-22.6,13.4-27.6c0.4-8-11-10.8-7.6-15.4
       c2.3-3.2,7.8-2.7,9.1-5.9c1.8-4.1,1.5-8.9,0.8-12.5c-0.8-4.4-10.9-1-13.8-7.1
       c-2-4.4,3-10.7,7.6-9.9c5.2,0.9,5,6.3,13.8,5.3c7.2-0.8,5.6-3.6,9.4-7.6
@@ -383,7 +377,7 @@
       c-2.1-1.7-4.1-4.2-6.1-6.9c-1.1-1.6,6.1-5,5.2-6.6C550.1,218.5,539.7,215.2,540.3,215.4z" data-reactid="150"></path>
                                                     </g>
                                                 </a><a title="Aquitaine" class="trackable" href="#" data-reactid="151">
-                                                    <g id="Aquitaine" class="_31AQE" data-reactid="152">
+                                                    <g id="2" class="_31AQE" data-reactid="152">
                                                         <path d="M179.2,536.8c-6.1-2.9-11.8-6.1-15-9.7c-1.2,1.7-4.1,4.2-5.2,3.9c-1.3-0.3-0.5-4.3-0.4-5
       c0.7-4.9-0.2-7-1.5-7.8c-1.6-1-3.9-0.8-4.9-0.9c-3.8-0.3-6.6-3.6-7.6-5.9c2-0.5,7.1-3.6,10.3-6.8
       c1.7-1.7,2.2-3.9,2.5-5.7c0.3-2,0.1-3.1,1.3-5.3c1-2,2-3.2,2.8-5.1c1.6-4,2.7-10.8,3.5-15
@@ -403,7 +397,7 @@
       c-0.6-2-2.8-3-4.2-3C186.8,539.5,180,537.2,179.2,536.8z" data-reactid="153"></path>
                                                     </g>
                                                 </a><a title="Auvergne" class="trackable" href="#" data-reactid="154">
-                                                    <g id="Auvergne" class="_31AQE" data-reactid="155">
+                                                    <g id="3" class="_31AQE" data-reactid="155">
                                                         <path d="M405.9,308.9c-1.1-2.2-1.6-5.4-2.4-7.8c-0.5-1.4-1.2-2.6-2-2.8c-1.9-0.6-4-0.3-6.2-0.2
       c-2.6,0-5.2-0.1-7.5-0.3c-5.1-0.4-9-1.7-12-3.3c-2.1-1.1-3.4-2.2-4.2-2.8c-1.5,1.9-2.7,2.7-4.3,3.4
       c-2.5,1-10.2-0.2-12,1.9c-1.3,1.6-0.4,5.3-0.6,7.5c-0.2,2.5-0.5,2.5-0.8,2.9c-1.5,3.1-9.9,2-11.3,5
@@ -424,7 +418,7 @@
                                                     </g>
                                                 </a><a title="Basse-Normandie" class="trackable" href="#"
                                                     data-reactid="157">
-                                                    <g id="Basse-Normandie" class="_31AQE" data-reactid="158">
+                                                    <g id="4" class="_31AQE" data-reactid="158">
                                                         <path d="M272.7,169.4c-1.4-3.2,3.6-6.7,2.3-7.6c-2.9-2.2-6.3-4.7-9.4-6.6c-2.8-1.7-5.1-0.8-6.9-2
       c-4.5-3-2.3-20.9-6-25c-2.6-2.8,0.2-7.7-2.1-10.1c-1.1-1.1-2.3-1.2-3.4-1.9
       c-5.2,5-11.6,9.9-16.2,11.4c-7.4,2.5-20.4-5.9-24.6-7.4c-2.9-1-8.1-2.2-11-0.7
@@ -439,7 +433,7 @@
       c0.9-3.1,6.2-4.4,5.9-8.2C278.4,175.3,273.7,171.5,272.7,169.4z" data-reactid="159"></path>
                                                     </g>
                                                 </a><a title="Bourgogne" class="trackable" href="#" data-reactid="160">
-                                                    <g id="Bourgogne" class="_31AQE" data-reactid="161">
+                                                    <g id="5" class="_31AQE" data-reactid="161">
                                                         <path d="M371,291.9c0.3-2.3,0.6-4.7,0.5-7.2c-0.1-6.5-2.9-13.6-4.7-18.8
       c-3.8-11.3-2.3-27.2-3.1-33.8c-0.6-5.8,12.4-15,11.3-19.7c-1.3-5.6-5.1-10-6.3-11
       c0.4,0,1.4-0.1,1.7-1.7c0.6-2.7,0.1-7.3,2.4-9.4c0.6-0.5,1-1,1.7-1.3c1.7-0.7,4.1-0.7,6.6-1.2
@@ -460,7 +454,7 @@
       c-3.4,0-11.6,0.4-18.2-1.2C375.2,295.7,370.6,292.2,371,291.9z" data-reactid="162"></path>
                                                     </g>
                                                 </a><a title="Bretagne" class="trackable" href="#" data-reactid="163">
-                                                    <g id="Bretagne" class="_31AQE _20Pcj" data-reactid="164">
+                                                    <g id="6" class="_31AQE _20Pcj" data-reactid="164">
                                                         <path d="M154.8,161c1,2.2,0.2,4.7,0.4,6.8c-1,0.8-10.8-0.2-16.5-0.4c-0.6-2.8-2.3-4.1-4.5-4.2
       c-4.5,0-12.3,6.2-15.8,5.7c-2.2-0.3-3.7-2.9-5.8-6.1c-1.7-2.6-3.9-5.6-6.4-7.8
       c-3.7-3.5-10.1-4-12.9-4.3c-4.1-0.4-7.5-0.2-8.9,0.1c-7.6,7.5-9.9,8.6-12.5,8.4
@@ -479,7 +473,7 @@
       c-2.5-0.1-1.9-5.5-1.7-8.4c-1.1,0.7-2.4,0.6-3.6,0.4C161.4,170,155.8,162.4,154.8,161z" data-reactid="165"></path>
                                                     </g>
                                                 </a><a title="Centre" class="trackable" href="#" data-reactid="166">
-                                                    <g id="Centre" class="_31AQE" data-reactid="167">
+                                                    <g id="7" class="_31AQE" data-reactid="167">
                                                         <path d="M270.3,284.8c1.3,1.1,3.4,8.2,3.9,10.7c1.2,5.1-0.7,8,1.2,9.2
       c7.5,4.9,12.8,10.6,11.9,14.1c2.4,0.9,4.9,1.6,7.5,2.2c2.4,0.5,4-0.9,6.8-1.2
       c2.6-0.4,6.5,0.3,8.8,0.2c3.5-0.1,5.1-3.8,8.3-4.4c4.6-1,10.6,0.9,13.6,1.7c3.3,0.8,5.6,3.3,6.6,3.9
@@ -498,7 +492,7 @@
                                                     </g>
                                                 </a><a title="Champagne-Ardenne" class="trackable" href="#"
                                                     data-reactid="169">
-                                                    <g id="Champagne-Ardenne" class="_31AQE" data-reactid="170">
+                                                    <g id="8" class="_31AQE" data-reactid="170">
                                                         <path d="M387.2,163.5c-2.4-5.5-1.1-5.7,5.7-8.7c2.6-1.1,4.8-3.4,6.7-6.5c1.1-1.8-4.4-6.8-3.5-9.1
       c0.7-1.9,3.1,0,3.8-2c1.3-3.8-3.4-6.2-2.4-10.4c1.6-6.5,15.3-1.7,17.5-7.6c3.3-8.9-4.2-13.9,0.1-17
       c2.5-1.8,5-1.7,6.6-5c1.7-3.6-0.3-9.8,6.9-13.6c1.2,0.8,3.6,1.5,5.9-0.5c2.1-1.9,2.6-3.2,5.8-8.9
@@ -514,7 +508,7 @@
       c-0.5-1-1.2-2-1.6-3c-0.8-2,4.3-11.5,2.8-14.7C390.7,165.9,388.9,167.5,387.2,163.5z" data-reactid="171"></path>
                                                     </g>
                                                 </a><a title="Corse" class="trackable" href="#" data-reactid="172">
-                                                    <g id="Corse" class="_31AQE _2HlCq" data-reactid="173">
+                                                    <g id="9" class="_31AQE _2HlCq" data-reactid="173">
                                                         <path d="M560.7,552.2c0,0,10.4,0,7.3-4.4c-3-4.4-11-2.4-4.9-7.7c6.1-5.2,21.2-26.6,31.7-20.5
       c3.5,2.1,6-0.9,3.7-10.5c-2.3-9.6,6.1-7.9,5.8-4.3c-0.2,3.7,0,19.7,0,19.7s4.4,1.1,2.8,12.4
       c-1.6,11.3,6.1,8-0.4,20.4c-6.5,12.3-4.5,22.5-4.6,26c-0.1,3.4-5.9,4.5-6.2,11.7
@@ -524,7 +518,7 @@
                                                     </g>
                                                 </a><a title="Franche-Comté" class="trackable" href="#"
                                                     data-reactid="175">
-                                                    <g id="Franche-Comté" class="_31AQE" data-reactid="176">
+                                                    <g id="10" class="_31AQE" data-reactid="176">
                                                         <path d="M539.9,215.8c-1.9-0.6-10.9-3.4-17.2-7.5c-3,1.4-7.4,3.7-11.1,3.6
       c-3.5-0.1-5.7-3.5-8.9-3c-2.4,0.4-6.6,2.7-7,3.2c-3.3,3.5-6.2,7.2-6.9,7.9
       c-1.7,1.6,4.3,10.1,2.3,11.3c-2.5,1.4-5.3,2.2-8.1,1.7c-1.4-0.3-2.7-0.1-3.6-0.5
@@ -537,7 +531,7 @@
                                                     </g>
                                                 </a><a title="Haute-Normandie" class="trackable" href="#"
                                                     data-reactid="178">
-                                                    <g id="Haute-Normandie" class="_31AQE" data-reactid="179">
+                                                    <g id="11" class="_31AQE" data-reactid="179">
                                                         <path d="M274.7,162.1c-2.9-2.2-6.3-4.7-9.4-6.6c-2.8-1.7-5.1-0.8-6.9-2c-4.5-3-2.3-20.9-6-25
       c-2.6-2.8,0.2-7.7-2.1-10.1c-1.1-1.1-2.3-1.2-3.4-1.9c-1-0.8-3.9-2.8-3.2-6.7
       c0.6-3.1,3.8-5.6,7.6-8.6c1.7-1.3,6.5-6.7,10.7-8.6c2.6-1.1,8.4-2.1,12.5-2.5c5.1-0.5,12-4.1,17-7.8
@@ -549,7 +543,7 @@
                                                     </g>
                                                 </a><a title="Ile-de-France" class="trackable" href="#"
                                                     data-reactid="181">
-                                                    <g id="Ile-de-France" class="_31AQE _20Pcj" data-reactid="182">
+                                                    <g id="12" class="_31AQE _20Pcj" data-reactid="182">
                                                         <path d="M348.1,138.9c4.1,2.8,13.4,8.3,21.2,2.4c4.8-3.6,16.3,16.5,23,13.5
       c-2.3,1.2-5.9,2.2-6.5,3.8c-0.8,2,0.7,4.3,1.1,5.6c0.6,1.8,3.3,3.2,4.2,4.4c1.4,1.9,1.6,3.3,1.3,4.5
       c-1,4.9-3.1,9.7-3.1,11.9c-4.3,3.2-13.5,3.1-15.1,4.1c-5.6,3.5-2,11.1-5,12.1c-3,1-7.7-0.8-9.2-0.8
@@ -561,7 +555,7 @@
                                                     </g>
                                                 </a><a title="Languedoc-Roussillon" class="trackable" href="#"
                                                     data-reactid="184">
-                                                    <g id="Languedoc-Roussillon" class="_31AQE" data-reactid="185">
+                                                    <g id="13" class="_31AQE" data-reactid="185">
                                                         <path d="M429.7,507.9c-5.8-8.2-8.6-6.5-15.5-0.2c-1.1,1-3.6,3.6-6.2,6c-5.5,5.3-12.9,8-17.4,7.2
       c-2.1,1.4-5.9,4.3-11.7,9.8c-2,1.9-3.2,3.3-4.4,6.1c-1,2.3-0.8,3.7,0.6,6.3c1,1.9,1.7,4.9,1.3,9.6
       c-0.2,3.1,1.3,7.8,2.4,11.4c0.5,1.5,2.5,8,2.2,10.9c-0.1,1.3-0.6,2.8-2.1,2.4
@@ -578,7 +572,7 @@
                                                         </path>
                                                     </g>
                                                 </a><a title="Limousin" class="trackable" href="#" data-reactid="187">
-                                                    <g id="Limousin" class="_31AQE" data-reactid="188">
+                                                    <g id="14" class="_31AQE" data-reactid="188">
                                                         <path d="M338.5,320.8c3.2,3.9,10.4,5.1,12.5,9c2,3.6,0.6,8.5,1.1,10.8c2.9,13.1-7.2,8.9-7.8,15.3
       c-0.8,8.3,6.7,19.8,6.5,24.4c-0.2,3-10,4.5-13.9,8.2c-5.2,4.8-4.8,12.7-4.8,15.2
       c0,3.2-2.4,6.2-3.7,7.9c-0.7-0.2-3-0.4-5.8-0.5c-3.8-0.1-8.2,0.2-9.5-0.5c-2-1-4.1-2.4-6.2-3.6
@@ -593,7 +587,7 @@
       c1.8,0.8,3.1,1.8,3.9,2.5C338.1,320.4,338.4,320.7,338.5,320.8z" data-reactid="189"></path>
                                                     </g>
                                                 </a><a title="Lorraine" class="trackable" href="#" data-reactid="190">
-                                                    <g id="Lorraine" class="_31AQE" data-reactid="191">
+                                                    <g id="15" class="_31AQE" data-reactid="191">
                                                         <path d="M470.8,104.6c-0.5,0.6-2.2,2.5-4.3,3.1c-1.5,0.4-4.2-2.5-6-2.2c-1.2,0.2-2.4,2.2-3.5,5.1
       c-0.8,2.1,3.5,6.7,2.7,9.3c-0.7,2.4-2.8,3.6-4.3,5.6c-1,1.3,2,14.3,0,19.2c-0.6,1.5-2,1.7-2.9,3
       c-1.7,2.5,3.1,19,7.4,23.3c1,1,8,3.5,13.8,9.5c1.8,1.9,1.2,5.7,3.1,7.9c1.8,2.1,6.6,0,8.5,2.1
@@ -607,7 +601,7 @@
                                                     </g>
                                                 </a><a title="Midi-Pyrénées" class="trackable" href="#"
                                                     data-reactid="193">
-                                                    <g id="Midi-Pyrénées" class="_31AQE" data-reactid="194">
+                                                    <g id="16" class="_31AQE" data-reactid="194">
                                                         <path d="M312.4,567.8c3.2-0.8,18.7-1.2,19.7-5.9c0.7-3.4-9.4-4-10.8-8.5c-3.1-9.8,1.3-11,0.4-17
       c-0.8-5.2-11.5-10.3-12.6-15c-0.5-2,1-5.9,3.7-9c3.6-4,36.9,3.6,40.9-2.6c1.1-1.6-0.3-4.1,0.2-6
       c1.1-3.9,15.1-6.5,17.9-12.8c0.5-1.2,6.2-0.5,8.5-3.3c4.4-5.3,11.3-11.9,10.9-14.8
@@ -626,7 +620,7 @@
                                                     </g>
                                                 </a><a title="Nord-Pas-de-Calais" class="trackable" href="#"
                                                     data-reactid="196">
-                                                    <g id="Nord-Pas-de-Calais" class="_31AQE" data-reactid="197">
+                                                    <g id="17" class="_31AQE" data-reactid="197">
                                                         <path d="M311.6,21.9c0,0,29.5-7.8,34.1-10.1c4.6-2.3,6.6,4.3,6.6,6.9c0,2.7,1,7.6,1.7,7.8
       c0.7,0.2,10.6,7.4,22.1,6.9c0,0,1.6,12.6,6.2,15.2c0,0,4.5-3,6.5,0c1.9,3,6.7,10.4,15.5,10.7
       c8.8,0.4,17.1,1,13.9,5.2c-3.2,4.3-1.5,9,2.3,11.1c1.9,1,3.8,3.9,5.8,6
@@ -638,7 +632,7 @@
                                                     </g>
                                                 </a><a title="Pays de la Loire" class="trackable" href="#"
                                                     data-reactid="199">
-                                                    <g id="Pays de la Loire" class="_31AQE _20Pcj" data-reactid="200">
+                                                    <g id="18" class="_31AQE _20Pcj" data-reactid="200">
                                                         <path d="M154.3,255.7c-0.2-0.3-0.9-1.7-2.4-2.7c-1.7-1.1-4.4-1.6-6.3-1.5c-2.4,0.2-5.2,2.5-8,3.2
       c-2.2,0.5-4.3,0.9-6.2,0.9c-2.3,0-4.4-0.4-6.3-0.5c0-1.4,1-7.5,2.1-13.1c2,0.2,5.9-0.5,10.6-4.6
       c2.6-2.2,6.7-5.4,9.6-8.3c2.7-2.8,11.7,0.8,14.3-2.3c1.6-2,3.7-6.9,6.8-7.7
@@ -657,7 +651,7 @@
       c-0.7-1.1-4.4-5.8-0.4-9.4c2.4-2.1,7.1-0.8,11.9,0.3C154.2,259.4,155,256.6,154.3,255.7z" data-reactid="201"></path>
                                                     </g>
                                                 </a><a title="Picardie" class="trackable" href="#" data-reactid="202">
-                                                    <g id="Picardie" class="_31AQE" data-reactid="203">
+                                                    <g id="19" class="_31AQE" data-reactid="203">
                                                         <path d="M348.5,138.5c4.1,2.8,13.4,8.3,21.2,2.4c4.8-3.6,16.3,16.5,23,13.5
       c2.6-1.1,4.8-3.4,6.7-6.5c1.1-1.8-4.4-6.8-3.5-9.1c0.7-1.9,3.1,0,3.8-2c1.3-3.8-3.4-6.2-2.4-10.4
       c1.6-6.5,15.3-1.7,17.5-7.6c3.3-8.9-4.2-13.9,0.1-17c2.5-1.8,5-1.7,6.6-5c1.7-3.6-0.3-9.8,6.9-13.6
@@ -670,7 +664,7 @@
                                                     </g>
                                                 </a><a title="Poitou-Charentes" class="trackable" href="#"
                                                     data-reactid="205">
-                                                    <g id="Poitou-Charentes" class="_31AQE" data-reactid="206">
+                                                    <g id="20" class="_31AQE" data-reactid="206">
                                                         <path d="M198.8,385.2c10.9-2.2,13.4,7,14.6,8.9c1.4,2,5.7,6.5,7.9,5.5c6.6-3,12.9-6.1,18.5-9
       c2.3-1.2-0.1-9.3,2-10.4c2-1,3.1-2.6,4.6-3.6c2.6-1.7,5.2-2.6,7.5-3.7c1.5-0.7-0.2-4.6,1.2-7
       c1.7-2.9,6.6-4.4,7.8-3.8c0.1,0.1,0.1-4.7,4.2-7.7c2.3-1.7,7.7-4.3,7.6-8
@@ -685,7 +679,7 @@
                                                     </g>
                                                 </a><a title="Provence-Alpes-Côte d'Azur" class="trackable" href="#"
                                                     data-reactid="208">
-                                                    <g id="Provence-Alpes-Côte d'Azur" class="_31AQE _20Pcj"
+                                                    <g id="21" class="_31AQE _20Pcj"
                                                         data-reactid="209">
                                                         <path d="M429.3,507.9c2.2,1,1.9,2.6,14.5,2.1c2.5-0.1,4.8,0.7,6.9,2c1.2,0.7,4.2,2.9,7,3.3
       c3.1,0.4,6.4,0,9.6,0.4c4.7,0.5,9.6,0.9,13.8,2.9c2.3,1.1,5.1,2.9,7.1,4.3c4.3,2.8,10.8,3,14.4,3.4
@@ -704,7 +698,7 @@
                                                     </g>
                                                 </a><a title="Rhône-Alpes" class="trackable" href="#"
                                                     data-reactid="211">
-                                                    <g id="Rhône-Alpes" class="_31AQE" data-reactid="212">
+                                                    <g id="22" class="_31AQE" data-reactid="212">
                                                         <path d="M475.1,312.3c1.1,4.8,4.7,6.8,6.3,9.9c1.8,3.4,6.9-8.3,8.9-5.5c2,2.8,4.5,3,6.5,4.8
       c3.3,3.1,10-9.5,14-7.8c0,0.5,0.2,1.4,0.5,2.1c0.8,1.6,3.8,2.8,0.9,6.1c-5.9,6.8-4.7,8.6,0.4,9.6
       c7.6,1.4,10.5-8.7,10.2-12.6c2-2.1,7.2-4.6,8-4.8c4.4-1.1,5.1-1.1,11.4,0.4c1.5,8.4,4.5,15,6.1,17.9
@@ -723,7 +717,7 @@
       c1.7-2,3.3-2.8,4.6-4.4c1.2-1.4,3.5,0.5,6.1,1.6C471.6,310.7,474.9,311.6,475.1,312.3z" data-reactid="213"></path>
                                                     </g>
                                                 </a><a title="Guadeloupe" class="trackable" href="#" data-reactid="214">
-                                                    <g id="Guadeloupe" class="_31AQE _2HlCq" data-reactid="215">
+                                                    <g id="23" class="_31AQE _2HlCq" data-reactid="215">
                                                         <path
                                                             d="M132.6,689.9c2.7,2.5,3.2-2.1,3.2-2.1C135.4,684.4,129.9,687.5,132.6,689.9z"
                                                             data-reactid="216"></path>
@@ -742,7 +736,7 @@
         c0,0,9.5-3.8,14-2.6c0,0-7.1-3.5-10.3-6.7C173.3,631.8,172.5,630.7,167.9,632.9z" data-reactid="220"></path>
                                                     </g>
                                                 </a><a title="Martinique" class="trackable" href="#" data-reactid="221">
-                                                    <g id="Martinique" class="_31AQE _2HlCq" data-reactid="222">
+                                                    <g id="24" class="_31AQE _2HlCq" data-reactid="222">
                                                         <path d="M237.8,612.9c0,0-9.8,10.8,1.8,18.6c5.7,3.8-1.6,8.2,5.5,14.8
       c7.1,6.6,14.6,10.2,12.1,16.6c-2.6,6.4-2.6,13.9,5.3,17.9c0,0-1.6-8.6,7.9-3.8c0,0,4.6-5.5,4.6,1.3
       c0,0,7.1-4.2,12.2,2.6c0,0,6-0.7,3.1,4.2c-2.9,4.9,2.7,5.6,2.7,5.6s5.3-13.4,7.7-14.7
@@ -751,7 +745,7 @@
       c3.3-3.3,5.5-5.5,0.2-4.4c-5.3,1.1-10.4,5.1-13.7-0.5s-17.4-19.7-34.9-15" data-reactid="223"></path>
                                                     </g>
                                                 </a><a title="Guyane" class="trackable" href="#" data-reactid="224">
-                                                    <g id="Guyane" class="_31AQE _2HlCq" data-reactid="225">
+                                                    <g id="25" class="_31AQE _2HlCq" data-reactid="225">
                                                         <path d="M349.7,621.3c0,0,0.4,5.1-4.4,7.9c-4.8,2.7-6.9,9.9-5.8,13.3c1.1,3.5,2.4,4.6,2.2,8.8
       c-0.2,4.2,11.2,10,9.9,13.1c-1.3,3.1-2.7,1.5-4,6c-1.3,4.6-2,10.2-5.9,12.8
       c-3.8,2.6,2.9,3.3,5.7,4.8c2.7,1.5,2.9,2.2,5.7-1.6c2.7-3.8,6.2-2,8.4-0.9c2.2,1.1,9.3,5.8,12.4,3.7
@@ -759,7 +753,7 @@
       c-4.4-0.2-9-11-11.3-11.2c-2.4-0.2-9,0.4-12.6-2.7C355.3,622.6,351.3,620,349.7,621.3z" data-reactid="226"></path>
                                                     </g>
                                                 </a><a title="Réunion" class="trackable" href="#" data-reactid="227">
-                                                    <g id="Réunion" class="_31AQE _2HlCq" data-reactid="228">
+                                                    <g id="26" class="_31AQE _2HlCq" data-reactid="228">
                                                         <path d="M437.1,648.7c0,0-7.3,1.1,0,9.7c7.3,8.6,2.7,11.7,6,15.5c3.3,3.8,9,2.9,13.5,6.4
       c4.6,3.5,15.1,10.6,27.4,7.3c2.7-0.7,13,1.6,12.4-4c-0.5-5.7,1.3-13.1,2.4-15
       c1.1-2,3.9-4.9-4.6-10.9c-3.3-2.3-0.9-5.5-6.9-9c-6-3.5,4.6-8.6-10.4-14.8c-15-6.2-23.4-2.6-26.9,0
@@ -809,81 +803,12 @@
                                 <div class="_2lehD _11PoU" data-reactid="237">
                                     <div class="_11AC0" data-reactid="238">
                                         <ul data-reactid="239">
-                                            <li data-reactid="240"><a title="Alsace" data-map="Alsace"
-                                                    class="_3mctU trackable" href="#" data-reactid="241">Alsace</a></li>
-                                            <li data-reactid="242"><a title="Aquitaine" data-map="Aquitaine"
-                                                    class="_3mctU trackable" href="#" data-reactid="243">Aquitaine</a>
-                                            </li>
-                                            <li data-reactid="244"><a title="Auvergne" data-map="Auvergne"
-                                                    class="_3mctU trackable" href="#" data-reactid="245">Auvergne</a>
-                                            </li>
-                                            <li data-reactid="246"><a title="Basse-Normandie" data-map="Basse-Normandie"
-                                                    class="_3mctU trackable" href="#"
-                                                    data-reactid="247">Basse-Normandie</a></li>
-                                            <li data-reactid="248"><a title="Bourgogne" data-map="Bourgogne"
-                                                    class="_3mctU trackable" href="#" data-reactid="249">Bourgogne</a>
-                                            </li>
-                                            <li data-reactid="250"><a title="Bretagne" data-map="Bretagne"
-                                                    class="_3mctU trackable" href="#" data-reactid="251">Bretagne</a>
-                                            </li>
-                                            <li data-reactid="252"><a title="Centre" data-map="Centre"
-                                                    class="_3mctU trackable" href="#" data-reactid="253">Centre</a></li>
-                                            <li data-reactid="254"><a title="Champagne-Ardenne"
-                                                    data-map="Champagne-Ardenne" class="_3mctU trackable" href="#"
-                                                    data-reactid="255">Champagne-Ardenne</a></li>
-                                            <li data-reactid="256"><a title="Corse" data-map="Corse"
-                                                    class="_3mctU trackable" href="#" data-reactid="257">Corse</a></li>
-                                            <li data-reactid="258"><a title="Franche-Comté" data-map="Franche-Comté"
-                                                    class="_3mctU trackable" href="#"
-                                                    data-reactid="259">Franche-Comté</a></li>
-                                            <li data-reactid="260"><a title="Haute-Normandie" data-map="Haute-Normandie"
-                                                    class="_3mctU trackable" href="#"
-                                                    data-reactid="261">Haute-Normandie</a></li>
-                                            <li data-reactid="262"><a title="Ile-de-France" data-map="Ile-de-France"
-                                                    class="_3mctU trackable" href="#"
-                                                    data-reactid="263">Ile-de-France</a></li>
-                                            <li data-reactid="264"><a title="Languedoc-Roussillon"
-                                                    data-map="Languedoc-Roussillon" class="_3mctU trackable" href="#"
-                                                    data-reactid="265">Languedoc-Roussillon</a></li>
-                                            <li data-reactid="266"><a title="Limousin" data-map="Limousin"
-                                                    class="_3mctU trackable" href="#" data-reactid="267">Limousin</a>
-                                            </li>
-                                            <li data-reactid="268"><a title="Lorraine" data-map="Lorraine"
-                                                    class="_3mctU trackable" href="#" data-reactid="269">Lorraine</a>
-                                            </li>
-                                            <li data-reactid="270"><a title="Midi-Pyrénées" data-map="Midi-Pyrénées"
-                                                    class="_3mctU trackable" href="#"
-                                                    data-reactid="271">Midi-Pyrénées</a></li>
-                                            <li data-reactid="272"><a title="Nord-Pas-de-Calais"
-                                                    data-map="Nord-Pas-de-Calais" class="_3mctU trackable" href="#"
-                                                    data-reactid="273">Nord-Pas-de-Calais</a></li>
-                                            <li data-reactid="274"><a title="Pays de la Loire"
-                                                    data-map="Pays de la Loire" class="_3mctU trackable" href="#"
-                                                    data-reactid="275">Pays de
-                                                    la Loire</a></li>
-                                            <li data-reactid="276"><a title="Picardie" data-map="Picardie"
-                                                    class="_3mctU trackable" href="#" data-reactid="277">Picardie</a>
-                                            </li>
-                                            <li data-reactid="278"><a title="Poitou-Charentes"
-                                                    data-map="Poitou-Charentes" class="_3mctU trackable" href="#"
-                                                    data-reactid="279">Poitou-Charentes</a></li>
-                                            <li data-reactid="280"><a title="Provence-Alpes-Côte d'Azur"
-                                                    data-map="Provence-Alpes-Côte d'Azur" class="_3mctU trackable"
-                                                    href="#" data-reactid="281">Provence-Alpes-Côte d'Azur</a></li>
-                                            <li class="mbs" data-reactid="282"><a title="Rhône-Alpes"
-                                                    data-map="Rhône-Alpes" class="_3mctU trackable" href="#"
-                                                    data-reactid="283">Rhône-Alpes</a></li>
-                                            <li data-reactid="284"><a title="Guadeloupe" data-map="Guadeloupe"
-                                                    class="_3mctU trackable" href="#" data-reactid="285">Guadeloupe</a>
-                                            </li>
-                                            <li data-reactid="286"><a title="Martinique" data-map="Martinique"
-                                                    class="_3mctU trackable" href="#" data-reactid="287">Martinique</a>
-                                            </li>
-                                            <li data-reactid="288"><a title="Guyane" data-map="Guyane"
-                                                    class="_3mctU trackable" href="#" data-reactid="289">Guyane</a></li>
-                                            <li data-reactid="290"><a title="Réunion" data-map="Réunion"
-                                                    class="_3mctU trackable" href="#" data-reactid="291">Réunion</a>
-                                            </li>
+
+                                           @foreach ($states as $item)
+                                           <li data-reactid="240"><a title="{{$item['st_name']}}" data-map="{{$item['st_id']}}"
+                                            class="_3mctU trackable" href="{{URL::to('frontoffice/aditems/offer')}}/{{$item['r_name']}}" data-reactid="241">{{$item['st_name']}}</a></li>  
+                                           @endforeach
+                                    
                                         </ul>
                                     </div>
                                 </div>
@@ -1179,9 +1104,9 @@
     <!-- /Preloader -->
 
     <!-- jQuery Plugins -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="{{asset('js/owl.carousel.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/jquery.magnific-popup.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
@@ -1202,53 +1127,38 @@
             $('#Regsiter_modal').modal('toggle');
             $('#Login_modal').modal('toggle');
         });
-        var mapClasses=document.getElementsByClassName('_31AQE');
-        var textClasses=document.getElementsByClassName('_3mctU');
+
 
         var i;
-        $('._3mctU').mouseenter(function(){
-          for(i=0;i<mapClasses.length;i++)
-          {
-           if($(this).data('map') == $(mapClasses[i]).attr("id")) 
-            {
-            
-                $(mapClasses[i]).addClass('_3g5HG');
-            }
-          }
-          
+        $('._3mctU').mouseover(function(){
+            var target  = $(this).data('map');
+            console.log(target);
+            $('g#' + target).addClass("_3g5HG");
         }); 
         
-        $('._3mctU').mouseleave(function(){
-          for(i=0;i<mapClasses.length;i++)
-          {
-           if($(this).data('map') == $(mapClasses[i]).attr("id")) 
-            {
-                $(mapClasses[i]).removeClass('_3g5HG');
-            }
-          }  
+        $('._3mctU').mouseout(function(){
+        
+            var target  = $(this).data('map');
+            console.log(target);
+            $('g#' + target).removeClass("_3g5HG");
         });
+         
 
-
-        $('._31AQE').mouseenter(function(){
-          for(i=0;i<textClasses.length;i++)
-          {
-           if($(this).attr('id') == $(textClasses[i]).data("map")) 
-            {
-            
-                $(textClasses[i]).addClass('_1zVCU');
-            }
-          }
+        $('g').mouseover(function(){
+          // console.log('test');
+          var id=this.id;
+          console.log(id);
+          if(id != "")
+          $('a[data-map=' + id + ']').addClass("_mapBack");
           
-        }); 
-        
-        $('._31AQE').mouseleave(function(){
-          for(i=0;i<textClasses.length;i++)
-          {
-           if($(this).attr('id') == $(textClasses[i]).data("map")) 
-            {
-                $(textClasses[i]).removeClass('_1zVCU');
-            }
-          }  
+        });
+        $('g').mouseout(function(){
+          // console.log('test');
+          var id=this.id;
+          console.log(id);
+          if(id != "")
+          $('a[data-map=' + id + ']').removeClass("_mapBack");
+          
         });
     });
 

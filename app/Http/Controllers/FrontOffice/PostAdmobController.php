@@ -285,7 +285,8 @@ class PostAdmobController extends BaseController
        // print_r($result);exit;
        $input_image=array(
          'id'=>$data['id'],
-         'adress'=>$data['c_name']
+         'adress'=>$data['c_name'],
+         'state_id'=>$data['state']
        );
       PostedAdmob::where('id','=',$data['id'])->update($input_image);
 
