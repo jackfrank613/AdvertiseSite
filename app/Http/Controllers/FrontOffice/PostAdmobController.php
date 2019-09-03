@@ -51,7 +51,8 @@ class PostAdmobController extends BaseController
 
         }
         $data['subcategories'] = $subcategory;
-        $user_id=4;
+        $user_id=Session::get('user_id');
+  
         $user=JamiiUser::where('u_id',$user_id)->first();
         $email=$user->email;
       //  print_r($email);exit;
@@ -72,12 +73,6 @@ class PostAdmobController extends BaseController
          'adName'=>$data['adName'],
          'adType'=>$data['adType'],
       );
-   
-    // $input_categoryType=array(
-    //      'sub_id'=>33,
-    //      'adName'=>"dfdfdf",
-    //      'adType'=>"dfsdfd",
-    //   );
    
     
       $id=PostedAdmob::insertGetId($input_categoryType); 

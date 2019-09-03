@@ -22105,8 +22105,8 @@ input.edit {
     cursor: pointer
 }
 
-._3C4to svg>path {
-    fill: #1a1a1a
+.orange_heart svg>path {
+    fill: #f56b2a;
 }
 
 ._2zA3I svg>path {
@@ -22982,8 +22982,8 @@ input.edit {
     }
 }
 
-._3DFQ->a:visited {
-    background-color: #e6ebef
+._3beID{
+    background-color: white;
 }
 
 ._3DFQ->a:hover {

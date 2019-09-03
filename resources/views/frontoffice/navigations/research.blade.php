@@ -42,7 +42,7 @@
 
 <body>
    
-    @include('frontoffice.partials.headerpart')
+    @include('frontoffice.partials.header')
     <section>
         <div class="_3p2mW">
             <div class="_3Cgb0">
@@ -50,7 +50,7 @@
                     <img src="../img/m_research.PNG" alt="Vous n‘avez pas encore de recherche sauvegardée"
                         title="Vous n‘avez pas encore de recherche sauvegardée" class="_1hKxU">
                     <h1 class="_1XU38">Vous n‘avez pas encore de recherche sauvegardée</h1>
-                    <span class="_28rnK"><a class="_2sNbI _1xIyN _2xk2l _2yLrh trackable" href="#" type="submit"
+                    <span class="_28rnK"><a class="_2sNbI _1xIyN _2xk2l _2yLrh trackable" href="{{route('viewadmob')}}" type="submit"
                             alt="Créer une nouvelle recherche" title="Créer une nouvelle recherche"
                             data-qa-id="noresult-cta-button">Créer une nouvelle recherche</a></span>
                     <img src="../img/research.PNG" alt="" class="gnz2y">

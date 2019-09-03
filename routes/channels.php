@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Session; 
 /*
 |--------------------------------------------------------------------------
 | Broadcast Channels
@@ -14,6 +15,8 @@
 Broadcast::channel('App.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
-Broadcast::channel('chatroom', function ($user) {
-    return 1;
-  });
+ Broadcast::channel('chat.{toUserId}',function($toUserId){
+     $user_id=Session::get('user_id');
+     echo $user_id;exit;
+    return $user_id==$toUserId;
+ });

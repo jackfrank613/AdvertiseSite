@@ -5,45 +5,43 @@ namespace App\Http\Controllers\FrontOffice;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Events\MessageSent;
+use App\Events\MessageSentEvent;
+use Illuminate\Support\Facades\Session;
 use App\Message;
 class ChatController extends Controller
 {
     // show chats
     public function index(){
-        return view('frontoffice.home.chat');
+        return view('frontoffice.home.newchat');
     }
 
     //Fetch all messages
-    public function fetchMessages(){
-        
-        $result=Message::all();
-        json_encode('test');
-        print_r(json_encode($result));exit;
-        
+    public function fetch(){
+        $userid=Session::get('user_id');
 
+       $result=Message::where('from_user',$userid)->get();
+        return $result;
+       
     }
 
-    public function sendMessage(Request $request){
+    public function sentMessage(Request $request)
+    {
 
-        //  $check=Message::insertGetId();
-        //
-        $user=$request->input('user');
-        $message=$request->input('message');
-        echo json_encode($message);exit;
-       // event(new MessageSent($user, $message))->toOthers();
-        $input_messages=array(
-           
-            'message'=>$request->input('message'),
-            'from_user'=>1,
-            'to_user'=>$request->input('user'),
-            'message_time'=>date('Y-m-d H:i:s')
-
-        );
-      //  
-        $message_id=Message::insertGetId($input_messages);   
-       // 
-       
+      
+      $to_user=$request->input('user');
+     
+      $from_user=Session::get('user_id');
+     
+      $messages=$request->input('message');
+     
+      $input_message=array(
+          'message'=>$messages,
+          'from_user'=>$from_user,
+          'to_user'=>$to_user
+      ); 
+      broadcast(new MessageSentEvent($to_user,$from_user,$messages))->toOthers();
+    
+      return ['status' =>"Message sent"];
     }
    
 }

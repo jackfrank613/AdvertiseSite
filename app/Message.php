@@ -9,10 +9,9 @@ class Message extends Model
 {
     //
     protected $table="jamii_message";
-    
-    public function user()
-    {
-      return $this->belongsTo(JamiiUser::class);
+    protected $fillable =['message','m_id'];
+    public function user(){
+        return $this->belongsTo('App\JamiiUser');
     }
 
 

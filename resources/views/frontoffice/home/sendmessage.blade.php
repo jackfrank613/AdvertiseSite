@@ -34,6 +34,9 @@
     <link type="text/css" rel="stylesheet" href="{{asset('css/custom.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('css/header.css')}}">
     <link type="text/css" rel="stylesheet" href="{{asset('css/showitem.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{asset('css/messaging.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{asset('css/custommessage.css')}}">
+
 
 
 
@@ -41,54 +44,18 @@
 
 <body>
     <!-- Header -->
-    @include('frontoffice.partials.headerpart')
+    @include('frontoffice.partials.header')
     <!-- Header -->
 
-    <section class="_1i0e0 _3Mbar" data-reactid="142">
-        <section class="YVjlD _2nUlH" data-reactid="143" style="
-            padding: 20px;">
-            <h1 class="LjS8Y" data-reactid="144">
-                <!-- react-text: 145 -->Envoyer un message à {{$name}}
-                <!-- /react-text --><span class="_1vK7W _2UWWZ" name="salesprospecting"
-                    data-tip="Opposé au démarchage commercial" data-place="bottom" currentitem="false"><svg
-                        viewBox="0 0 24 24" data-name="Calque 1" focusable="false">
-                        <path
-                            d="M23.67 22.05L1.87.43a1.08 1.08 0 0 0-1.54 0A1 1 0 0 0 .33 2l.67.71 3.4 3.37v13.47a2.2 2.2 0 0 0 2.21 2.17h13.54l2 2a1.06 1.06 0 0 0 1.54 0 1.16 1.16 0 0 0-.02-1.67zm-14.2-11l2 1.95H10a1.17 1.17 0 0 1-1.08-1 .86.86 0 0 1 .55-.92zm.55 6.3a1.1 1.1 0 0 1-1.1-1.09A1.18 1.18 0 0 1 10 15.2h3.63l2.2 2.18zM16.62 10.86a1.17 1.17 0 0 1 1.1 1.14 1.31 1.31 0 0 1-.44.86l4.85 4.78V7.38a2.14 2.14 0 0 0-.66-1.52L16.18.65A2.2 2.2 0 0 0 14.64 0H6.72a2.39 2.39 0 0 0-1.66.76l10.24 10.1zm-2.2-4.34V1.63l6.06 6h-5a1.09 1.09 0 0 1-1.06-1.11z">
-                        </path>
-                    </svg>
-                    <div class="__react_component_tooltip place-top type-dark " data-id="tooltip"></div>
-                </span></h1>
-            <div class="_2Kpxj _2yDC9" data-reactid="149">
-                <div class="_1jIsn" data-reactid="150"><span class="_1BHQN" data-reactid="151">Attention:</span></div>
-                <div data-reactid="154">Méfiez-vous des propositions trop alléchantes et des prix trop bas. Assurez-vous
-                    de ne pas être victime d’une tentative d’escroquerie.<a data-reactid="157">En savoir plus</a></div>
-            </div>
-            <form id="init_message">
-                <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-                <div data-reactid="169"><label class="_2GeK6" for="body" data-reactid="170">
-                        <!-- react-text: 171 -->Votre message
-                        <!-- /react-text --></label>
-                        <textarea name="body" class="_2qGx6 _3Id6u" cols="20" rows="30"
-                        data-reactid="172"></textarea></div>
-                    <button class="_2sNbI e943h _3JCaR" type="submit"
-                     data-reactid="173" style="background-color: #4183d7; pointer-events:visible!important;cursor:pointer;
-                    color: white;">
-                    <!-- react-text: 174 -->Envoyer votre message
-                    <!-- /react-text --></button>
-            </form>
-            <div class="_26R2k" data-qa-id="cnil_container" data-reactid="175">
-                <p class="d1zJr" data-reactid="176">Information :</p>
-                <div data-reactid="177">
-                    <div class="_3Dg4T" data-reactid="178"><span class="TextLink-15wnQ" data-reactid="179">Le
-                            responsable de traitement, les destinataires et la finalité de la collecte des
-                            données.</span></div>
-                    <div class="_3Dg4T" data-reactid="180"><span class="TextLink-15wnQ" data-reactid="181">En savoir
-                            plus sur vos droits, la durée de conservation de vos données et les moyens de nous
-                            contacter.</span></div>
-                </div>
-            </div>
-        </section>
-    </section>
+    <section id="messaging" class="messaging"><div class="msg-layout"><div id="messaging-widget-conversations-list" class="msg-list msg-layout__primary"><div class="msg-list__scroller" msg-test="conversationsListScroller" style="height: 808px;"><ul class="msg-list__items"><div style="height: 0px;"></div> <li class="msg-list__item selected" data-selected="true"><div class="msg-list__thumbnail_container"><img src="https://img1.leboncoin.fr/ad-thumb/f18cc4a45d0b63f38e6be40c20166f9d2f9db303.jpg" alt="Porcelain soup tureen" class="msg-list__thumbnail_img"></div> <div class="msg-list__text"><div class="msg-list__username"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apple</font></font></div> <div class="msg-list__product"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Porcelain soup tureen</font></font></div> <div class="msg-list__preview msg-list__preview_avatar"><!----> <span class="msg-list__message"><!----> <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            15:50 - Your offer has been sent to the seller.
+            </font></font></span></span> <!----></div></div> <div class="msg-list__settings"><span class="msg-list__settings_delete msg-list__settings_delete_visible"></span></div></li> <li msg-test="conversations-list_loading" class="msg_list__items_loading_container" style="display: none;"><div class="msg_list__items_loading_spinner"></div></li> <li style="display: none;"><div class="msg-list__error_banner_container" msg-test="conversations-list__error-banner"><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Error loading conversations</font></font></span> <button msg-test="error-banner__retry" class="msg-list__error_banner_button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Retry</font></font></button></div></li> <div style="height: 0px;"></div></ul></div></div> <div class="msg-layout__secondary"><div><div id="messaging-widget-header" class="msg-header"><div class="msg-header__username"><a href="https://www.leboncoin.fr/profil/d80869cb-8e30-4b64-9ba3-5b9ad5c13df3" title="Apple" class="msg-header__link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apple</font></font></a> <!----> <!----></div> <a href="https://www.leboncoin.fr/arts_de_la_table/1573457792.htm" title="Porcelain soup tureen" class="msg-header__product"><div class="msg-header__thumb_container"><img src="https://img1.leboncoin.fr/ad-thumb/f18cc4a45d0b63f38e6be40c20166f9d2f9db303.jpg" alt="Porcelain soup tureen" class="msg-header__thumb_img"></div> <div class="msg-header__meta"><h3 class="msg-header__title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Porcelain soup tureen</font></font></h3> <div class="msg-header__price"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">€ 30</font></font></div></div></a> <div class="msg-header__menu"><button type="button" class="msg-control msg-control_settings msg-header__control msg-header__control_settings msg-control_settings_closed"></button> <button type="button" class="msg-control msg-control_close msg-header__control msg-header__control_close"></button> <!----></div></div></div> <section class="msg-chat__wrapper"><div id="messaging-widget-messages-list" data-sticktobottom="true" data-triggerrender="0" class="msg-chat"><!----> <!----> <ul class="msg-chat__items msg-chat__items_extensibility" style=""><!----> <!----> <li class="msg-chat__item msg-chat__item_right-person"><div class="msg-chat__time"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Today</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , 15:49</font></font></div> <!----> <div class="msg-chat__bubble msg-chat__bubble_first-in-group msg-chat__bubble_first-person msg-chat__bubble_first-person__first-in-group"> <div class="msg-chat__text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hello</font></font></div></div> <!----> <span class="msg-chat__item_status"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+  sent
+</font></font></span></li><li class="msg-chat__item msg-chat__item_right-person"><!----> <!----> <div class="msg-chat__bubble msg-chat__bubble_first-person"> <div class="msg-chat__text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">i will buy</font></font></div></div> <!----> <!----></li><li class="msg-chat__item msg-chat__item_system msg-chat__item_extensibility"><div class="msg-chat__time"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Today</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , 15:50</font></font></div> <div class="msg-chat__bubble msg-chat__bubble_system msg-chat__bubble_system_extensibility"><div class="msg-attachment_system"><div class="msg-attachment__system_text"><img src="https://static-rav.leboncoin.fr/p2p/web.png" class="msg-attachment__system_extensibility_image"> <span class="msg-attachment__system_extensibility_header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Secure payment</font></font></span></div> <div class="msg-attachment__system_extensibility_text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Your offer has been sent to the seller.</font></font></div> <div class="msg-attachment__system_extensibility_subText"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The seller has 24 hours to answer.</font></font></div> <!----></div></div></li><li class="msg-chat__item msg-chat__item_system msg-chat__item_extensibility"><div class="msg-chat__time"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Today</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , 15:51</font></font></div> <div class="msg-chat__bubble msg-chat__bubble_system msg-chat__bubble_system_extensibility"><div class="msg-attachment_system"><div class="msg-attachment__system_text"><img src="https://static-rav.leboncoin.fr/p2p/web.png" class="msg-attachment__system_extensibility_image"> <span class="msg-attachment__system_extensibility_header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Secure payment</font></font></span></div> <div class="msg-attachment__system_extensibility_text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Offer canceled.</font></font></div> <div class="msg-attachment__system_extensibility_subText"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">You can send a new offer</font></font></div> <!----></div></div></li> <!----> <!----></ul></div> <div class="msg-chat__extensibility_bar"> <button type="button" msg-test="integration-trigger" class="msg-chat__extensibility_bar-button msg-chat__extensibility_bar-integration_button msg-chat__extensibility_bar-button--single"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+  Make an offer
+</font></font></button> <!----></div></section> <div><div id="messaging-widget-chat-input" class="msg-input"><!---->  <button type="button" class="msg-input__control msg-control msg-control_attachment msg-control_attachment_icon_clip"></button> <input id="messaging-widget-input-upload-attachment" type="file" accept=".pdf,.jpg,.jpeg,.jpe,.jif,.jfif,.jfi,.png,.bmp,.dib,.tiff,.tif" class="msg-control_attachment_file"> <textarea msg-test="text-input-area" maxlength="30000" autocomplete="off" placeholder="Écrivez votre message..." id="messaging-widget-textarea" class="msg-input__textarea" style=""></textarea> <button msg-test="send-button" type="button" disabled="disabled" class="msg-input__button msg-input__button_disabled"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+      To send
+    </font></font></button></div></div></div></div></section>
     <!--Middle Section-->
 
 

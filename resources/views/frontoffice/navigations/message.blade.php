@@ -40,7 +40,7 @@
 
 <body>
 
-    @include('frontoffice.partials.headerpart')
+    @include('frontoffice.partials.header')
     <section>
         <div class="msg-empty__content">
             <div class="msg-empty__picture">

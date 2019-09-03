@@ -33,4 +33,5 @@ class DisplayAdmobController extends Controller
         
         return view('frontoffice.home.displayadmob')->with(compact('result','count', 'current_page', 'page_count' ));
     }
+    
 }

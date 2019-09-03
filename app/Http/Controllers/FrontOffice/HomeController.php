@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\PostedAdmob;
 use App\StateModel;
+use App\Category;
+use App\SubCategory;
 class HomeController extends Controller
 {
     // hompage call
@@ -16,7 +18,12 @@ class HomeController extends Controller
     {
         $counts=PostedAdmob::where('enable',1)->get()->count();
         $states=StateModel::all();
-        return view('frontoffice/home/homepage')->with(compact('counts','states'));
+        $categories=Category::get()->toarray();
+        $subcategories=SubCategory::get()->toarray();
+        $objects['category']=$categories;
+        $objects['subcategory']=$subcategories;
+     //   print_r($objects);exit;
+        return view('frontoffice/home/homepage')->with(compact('counts','states','objects'));
     }
 
     public function getParticular(){
@@ -30,14 +37,19 @@ class HomeController extends Controller
     }
     public function getHomelogin(Request $request)
     {    
+        
         $condition  = array('email' => $request->email, 'password' => md5($request->password)); 
-      // print_r($condition);exit;
-        $request->session()->put('user', 'testing');
+     
         $exist_check=JamiiUser::where($condition)->count();
-       // print_r($exist_check);exit;
+
       if($exist_check>0)
       {
-        return redirect('frontoffice/advertise'); 
+        $result = JamiiUser::where($condition)->first();
+        $id=$result->u_id;
+        $name=$result->name;
+        session(['user_id' => $id]);
+        session(['user_name'=>$name]);
+        return redirect('frontoffice/'); 
       }
       else{
         return back()->with('error_message', 'Login failed.')->withInput();
@@ -68,11 +80,12 @@ class HomeController extends Controller
             
             $id = JamiiUser::create($input_data)->id;
             session(['user_id' => $id]);
+            session(['user_name'=>$request->name]);
 
             if($id > 0){
                 
-                return redirect('frontoffice/advertise');
-                //echo json_encode(Session::get('userid'));exit;
+                return redirect('frontoffice/');
+               
             }else {
                 return back()->with('error_message', 'Invalid Username or Password')->withInput();
             }
@@ -109,13 +122,24 @@ class HomeController extends Controller
             );
             $id = JamiiUser::create($input_data)->id;
             session(['user_id' => $id]);
+            session(['user_name'=>$request->lastname]);
             if($id > 0){
-                return redirect('frontoffice/advertise');
+              //  echo json_encode(Session::get('user_id'));exit;
+              return redirect('frontoffice/');
 
             }else {
                 return back()->with('error_message', 'Invalid Username or Password')->withInput();
 
             }
         }
+  }
+
+  public function userLogout(Request $request){
+
+    // print_r('test');exit;
+    $request->session()->forget('user_id');
+    $request->session()->forget('user_name');
+    return redirect('frontoffice/');
+
   }
 } 

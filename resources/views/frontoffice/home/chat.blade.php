@@ -1,7 +1,5 @@
 @extends('layouts.app')
-
 @section('content')
-
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -12,7 +10,9 @@
                     <chat-messages></chat-messages>
                 </div>
                 <div class="panel-footer">
-                    <chat-form :user="1"></chat-form>
+                    <chat-form
+                        :user="{{$userid}}"
+                    ></chat-form>
                 </div>
             </div>
         </div>

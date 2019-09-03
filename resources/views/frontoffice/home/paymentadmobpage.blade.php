@@ -41,7 +41,7 @@
 
 <body>
     <!-- Header -->
-    @include('frontoffice.partials.headerpart')
+    @include('frontoffice.partials.header')
     <!-- Header -->
 
     <section>

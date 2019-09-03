@@ -15,16 +15,17 @@
                     <div class="R9zev">
                         <div class="qFeQO">
                             <div class="K_Lvh">
-                                <a href="#">
+                                <a href="{{route('home')}}">
                                     <h2 class="_logo">Jamii</h2>
                                 </a>
                             </div>
                             <div class="_2ITMP _Place_button">
+
                                 <nav class="_2cE2d">
                                     <div class="ZGBSO">
                                         <div class="evhnB">
-                                            <a title="Déposer une annonce" data-qa-id="header_newad_link" href="{{route('cusadmob')}}"
-                                                class="trackable" data-reactid="28">
+                                            <a title="Déposer une annonce" data-qa-id="header_newad_link" class="trackable" 
+                                                @if(Session::has('user_id')) href="{{route('advertise')}}" @else data-toggle="modal" data-target="#Login_modal"  @endif  data-reactid="28">
                                                 <div class="_21saW _3vGiz" data-reactid="29">
                                                     <div class="WFlbY" data-reactid="30"><span class="_1vK7W _1MlsO"
                                                             name="newadoutline"><svg viewBox="0 0 24 24"
@@ -65,8 +66,10 @@
                         <div class="s_gWv">
                             <div class="_1tksy">
 
-                                <a title="Mes recherches" class="trackable" data-toggle="modal"
-                                    data-target="#Login_modal" data-reactid="40">
+                                <a title="Mes recherches" class="trackable" @if(Session::has('user_id'))
+                                    href="{{route('research')}}" @else data-toggle="modal" data-target="#Login_modal"
+                                    @endif data-reactid="40">
+
                                     <div class="_3Vuug" data-reactid="41">
                                         <div class="_6rJYh" data-reactid="42"><span class="_1vK7W _71Wec"
                                                 name="notifoutline"><svg viewBox="0 0 24 24" data-name="Calque 1"
@@ -79,8 +82,9 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a title="Mes favoris" class="trackable" data-toggle="modal" data-target="#Login_modal"
-                                    data-reactid="45">
+                                <a title="Mes favoris" class="trackable" @if(Session::has('user_id'))
+                                    href="{{route('favorite')}}" @else data-toggle="modal" data-target="#Login_modal"
+                                    @endif data-reactid="45">
                                     <div class="_3Vuug" data-reactid="46">
                                         <div class="_6rJYh" data-reactid="47"><span class="_1vK7W _71Wec"
                                                 name="heartoutline"><svg viewBox="0 0 24 24" data-name="Calque 1"
@@ -92,8 +96,9 @@
                                         <div class="_5GFF2" data-text="Mes favoris" data-reactid="49">Mes favoris</div>
                                     </div>
                                 </a>
-                                <a title="Messages" class="trackable" data-toggle="modal" data-target="#Login_modal"
-                                    data-reactid="50">
+                                <a title="Messages" class="trackable" @if(Session::has('user_id'))
+                                    href="{{route('favorite')}}" @else data-toggle="modal" data-target="#Login_modal"
+                                    @endif data-reactid="50">
                                     <div class="_3Vuug" data-reactid="51">
                                         <div class="_6rJYh" data-reactid="52"><span class="_1vK7W _71Wec"
                                                 name="messageoutline"><svg viewBox="0 0 24 24" data-name="Calque 1"
@@ -111,20 +116,57 @@
                                         <div class="_5GFF2" data-text="Messages" data-reactid="54">Messages</div>
                                     </div>
                                 </a>
-                                <div class="_3Vuug _1ZnAB _1H2hI" data-toggle="modal" data-target="#Login_modal"
-                                    data-reactid="55" data-qa-id="profilarea-logged" id="drop_group">
-                                    <div class="_6rJYh" data-reactid="56">
-                                        <span class="_1vK7W _71Wec" name="useroutline">
-                                            <svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false">
-                                                <path
-                                                    d="M12 12a5.92 5.92 0 0 0 5.86-6A5.93 5.93 0 0 0 12 0a5.93 5.93 0 0 0-5.86 6A5.92 5.92 0 0 0 12 12zm0-9a3 3 0 1 1-2.93 3A3 3 0 0 1 12 3zM22.46 22.13a10.68 10.68 0 0 0-10.46-8 10.68 10.68 0 0 0-10.46 8A1.5 1.5 0 0 0 2.61 24a1.46 1.46 0 0 0 1.78-1.08A7.72 7.72 0 0 1 12 17.09a7.72 7.72 0 0 1 7.61 5.78A1.48 1.48 0 0 0 21 24a1.12 1.12 0 0 0 .36-.05 1.5 1.5 0 0 0 1.1-1.82z">
-                                                </path>
-                                            </svg></span></div>
-                                    <div class="_5GFF2" data-text="jack" data-reactid="58">Se connecter</div>
 
-                                </div>
+                                <a class="trackable dropdown-toggle" @if(Session::has('user_id')) data-toggle="dropdown" @else
+                                    data-toggle="modal" data-target="#Login_modal" @endif>
+
+                                    <div class="_3Vuug _1ZnAB _1H2hI" data-reactid="55" data-qa-id="profilarea-logged"
+                                       >
+                                        <div class="_6rJYh" data-reactid="56">
+                                            <span class="_1vK7W _71Wec" name="useroutline">
+                                                <svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false">
+                                                    <path
+                                                        d="M12 12a5.92 5.92 0 0 0 5.86-6A5.93 5.93 0 0 0 12 0a5.93 5.93 0 0 0-5.86 6A5.92 5.92 0 0 0 12 12zm0-9a3 3 0 1 1-2.93 3A3 3 0 0 1 12 3zM22.46 22.13a10.68 10.68 0 0 0-10.46-8 10.68 10.68 0 0 0-10.46 8A1.5 1.5 0 0 0 2.61 24a1.46 1.46 0 0 0 1.78-1.08A7.72 7.72 0 0 1 12 17.09a7.72 7.72 0 0 1 7.61 5.78A1.48 1.48 0 0 0 21 24a1.12 1.12 0 0 0 .36-.05 1.5 1.5 0 0 0 1.1-1.82z">
+                                                    </path>
+                                                </svg></span></div>
+                                        <div class="_5GFF2" data-text="jack" data-reactid="58">@if(Session::has('user_name')) <?php echo Session::get('user_name') ?> @else  <?php echo "Se déconnecter" ?>  @endif </div>
+                                        <ul class="dropdown-menu">
+                                                <div class="_3QR8U">
+                                                        <ul>
+                                                            <a class="trackable" href="{{route('admob')}}">
+                                                                <li class="_2Yoaz" style="color:black">
+                                                                    Mes annonces
+                                                                </li>
+                                                            </a>
+                                                            <a class="trackable" href="{{route('transaction')}}">
+                                                                <li class="_2Yoaz" style="color:black">Mes transactions</li>
+                                                            </a>
+                                                            <a class="trackable" href="{{route('account')}}">
+                                                                <li class="_2Yoaz" style="color:black">Mon compte</li>
+                                                            </a>
+                                                            <a class="trackable" href="{{route('purchase')}}">
+                                                                <li class="_2Yoaz" style="color:black">Mes achats</li>
+                                                            </a>
+                                                            <a class="trackable" href="{{route('booking')}}">
+                                                                <li class="_2Yoaz">Mes réservations</li>
+                                                            </a>
+                                                            <a class="trackable" href="{{route('userout')}}">
+                                                                <li class="_2Yoaz _3e-pq trackable" data-qa-id="profilarea-logout" style="color:black">Se
+                                                                    déconnecter</li>
+                                                            </a>
+                
+                                                        </ul>
+                                                    </div>
+                                              </ul>
+                                    </div>
+
+                                </a>
+
+                           
 
                             </div>
+
+
                         </div>
 
                     </div>
@@ -153,8 +195,9 @@
                 <div class="_1K5oX" data-reactid="72">
                     <nav class="_15SxP" data-reactid="73">
                         <div data-reactid="74">
-                            <li class="_3d08G" data-reactid="75"><a title="Déposer une annonce"
-                                    data-qa-id="mobile_newad_link" href="#" class="trackable" data-reactid="76"><span
+                            <li class="_3d08G" data-reactid="75">
+                                <a title="Déposer une annonce"  class="trackable" 
+                                    data-qa-id="mobile_newad_link" @if(Session::has('user_id')) href="{{route('advertise')}}" @else href="{{route('cusadmob')}}" @endif data-reactid="76"><span
                                         class="_1vK7W" name="newadoutline"><svg viewBox="0 0 24 24" data-name="Calque 1"
                                             focusable="false">
                                             <path
@@ -165,9 +208,14 @@
                                             </path>
                                         </svg></span><span class="b8icv" data-reactid="78">Déposer une
                                         annonce</span></a></li>
-                            <li class="_3d08G" data-reactid="79"><a title="Rechercher" class="trackable"
-                                    href="{{route('viewadmob')}}" data-reactid="80"><span class="_1vK7W"
-                                        name="search"><svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false">
+                            <li class="_3d08G" data-reactid="79">
+                                
+                                <a title="Rechercher"  class="trackable" href="{{route('viewadmob')}}" data-reactid="80">
+                                  
+                                    <span class="_1vK7W"  name="search">
+                                       
+                                        
+                                        <svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false">
                                             <path
                                                 d="M23.58 21.45l-7-7a9.42 9.42 0 0 0 1.62-6.87A9.13 9.13 0 0 0 10.34.07a9.25 9.25 0 0 0-2.81 18.27 9.25 9.25 0 0 0 7-1.76l7 7a1.54 1.54 0 0 0 2.11 0 1.56 1.56 0 0 0-.06-2.13zM9.22 15.5a6.37 6.37 0 1 1 6.33-6.37 6.33 6.33 0 0 1-6.33 6.37z">
                                             </path>
@@ -248,34 +296,35 @@
 </header>
 @section('after-script')
 <script>
+    var flag = true;
+
+    function openDialog() {
+        console.log("text");
+    
+    }
+
     $(document).ready(function () {
-        var flag=true;
+
+
         $('#Nav_bar').on('click', function () {
             $("#generate_nav").addClass("Ke0bY");
         });
         $('#distroy_nav').on('click', function () {
             $("#generate_nav").removeClass("Ke0bY");
         });
-        $('#drop_group').on('click',function(){
-           
-            if(flag)
-            {
-                $(this).addClass("_22bjY");
-                flag=false
+
+
+
+        $(window).on('scroll', function () {
+            if (Math.round($(window).scrollTop()) > 100) {
+                $('.totalbar').addClass('scrolled');
+            } else {
+                $('.totalbar').removeClass('scrolled');
             }
-            else{
-                $(this).removeClass("_22bjY");
-               flag=true;
-            }
-          
         });
-        $(window).on('scroll', function() {
-        if (Math.round($(window).scrollTop()) > 100) {
-          $('.totalbar').addClass('scrolled');
-        } else {
-          $('.totalbar').removeClass('scrolled');
-        }
-      });
     });
+
 </script>
+
+
 @endsection

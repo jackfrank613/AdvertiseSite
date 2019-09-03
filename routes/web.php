@@ -14,7 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
- 
+ Route::group([
+    'prefix'=>'backoffice',
+    'namespace'=>'BackOffice',
+ ],function(){
+     //admin login route
+    Route::get('/','AdminHomeController@getLoginPage')->name('adminlogin');
+    Route::get('/home','AdminHomeController@getHomeview')->name('adminhome');
+    Route::get('/particular','AdminHomeController@getParticularView')->name('particularview');
+    Route::get('/professional','AdminHomeController@getProfessionalView')->name('professionalview');
+    Route::get('/general','AdminHomeController@getGeneralView')->name('generalview');
+    Route::get('/boost','AdminHomeController@getBoostView')->name('boostview');
+
+ });
  
 Route::group([
     'prefix'=>'frontoffice',
@@ -28,6 +40,7 @@ Route::group([
       Route::get('/professional','HomeController@getProfessional')->name('professional');
       Route::post('/signup','HomeController@createParticularUser')->name('signup');
       Route::post('/prosignup','HomeController@createUserprofessional')->name('prosignup');
+      Route::get('/userlogout','HomeController@userLogout')->name('userout');
      
     
       //post admob
@@ -83,6 +96,9 @@ Route::group([
       Route::get('/research','NavigationsController@getResearch')->name('research');
       Route::get('/favorite','NavigationsController@getFavorite')->name('favorite');
       Route::get('/message','NavigationsController@getMessage')->name('message');
+      Route::post('/deletefavorite','NavigationsController@deleteFavorite')->name('deletefavorite');
+    
+
       //profile route of user
       Route::get('/admob','ProfileController@getAdmob')->name('admob');
       Route::get('/transaction','ProfileController@getTransaction')->name('transaction');
@@ -90,6 +106,9 @@ Route::group([
       Route::get('/account','ProfileController@getAccount')->name('account');
       Route::get('/mycv','ProfileController@getMycv')->name('mycv');
       Route::get('/booking','ProfileController@getBooking')->name('booking');
+
+
+        
       //post my advertise route
       Route::get('/postadmob','PostAdmobController@getPostadmob')->name('postadmob');
       Route::get('/production','PostAdmobController@getProduction')->name('production');
@@ -111,18 +130,36 @@ Route::group([
        Route::get('/cusadmob','CusAdmobPostController@index')->name('cusadmob');
        Route::post('/cusadmob/uploadpic','CusAdmobPostController@upLoadpic')->name('uploadpic');
        Route::post('/adddata/','PostAdmobController@addData')->name('addData');
+           
 
+       //vote route
+
+       Route::post('/vote','ViewAdmobController@upVote')->name('vote');
+       Route::post('/downvote','ViewAdmobcontroller@downVote')->name('downvote');
         //get help page
 
        Route::get('/help','HelpController@index')->name('help');
 
       //chatting system
       Route::get('/chat', 'ChatController@index');
-      Route::get('messages', 'ChatController@fetchMessages')->name('messages');
-      Route::post('messages', 'ChatController@sendMessage')->name('messages1');
+      Route::get('messages', 'ChatController@fetch');
+      Route::post('messages', 'ChatController@sentMessage');
   });
 Auth::routes();
+Broadcast::routes();
 
+Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('config:clear');
+    $exitCode = Artisan::call('cache:clear');
+    $exitCode = Artisan::call('config:cache');
+    return 'DONE'; //Return anything
+});
 
-
+Route::get('/chat',function(){
+  return view('chat');
+});
+Route::get('/message', 'MessageController@index')->name('message');
+Route::post('/message', 'MessageController@store')->name('message.store');
+Route::post('/firebase','FirebaseController@index');

@@ -51,7 +51,7 @@
 
 <body>
     <!-- Header -->
-    @include('frontoffice.partials.headerpart')
+    @include('frontoffice.partials.header')
     <!-- /Header -->
 
     <!-- Home Section -->
@@ -654,7 +654,7 @@
                                                                 <!-- /react-text --></label>
                                                             <div class="_2wuZK">
                                                                 <input type="text" class="_2erBM QY7wN"
-                                                                    data-qa-id="newad-input_email" value=""
+                                                                    data-qa-id="newad-input_email" value="{{$email}}"
                                                                     name="email"></div>
                                                         </div>
                                                     </div>
@@ -665,7 +665,7 @@
                                                                 <!-- react-text: 607 -->*
                                                                 <!-- /react-text --></label>
                                                             <div class="_2wuZK"><input type="tel" class="_2erBM"
-                                                                    data-qa-id="newad-input_phone" maxlength="10" value="1564048124"
+                                                                    data-qa-id="newad-input_phone" maxlength="10" value=""
                                                                     name="phone"></div>
                                                         </div>
                                                     </div>

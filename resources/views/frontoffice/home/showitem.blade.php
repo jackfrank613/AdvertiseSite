@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
+    <meta property="og:url"                content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="{{$admob['subject']}}"/>
+    <meta property="og:description"        content="{{$admob['price']}}" />
+    <meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
     <title>Jamii</title>
 
     <!-- Google font -->
@@ -42,13 +46,13 @@
 
 <body>
     <!-- Header -->
-    @include('frontoffice.partials.headerpart')
+    @include('frontoffice.partials.header')
     <!-- Header -->
 
     <section>
         <div>
-        
-    
+
+
             <section class="_20rd1">
                 <section class="_3ULJg">
                     <div class="Breadcrumb-1zlWo">
@@ -150,7 +154,7 @@
                                 </div>
                                 <div class="_3Q4C8 FtWCC" data-pub-id="clicked_annonce_saved_gallery">
                                     <div>
-                                        <div class="_3C4to">
+                                        <div class="_3C4to" data-id="{{$admob['id']}}">
                                             <div class="_2152u"><span class="_1vK7W" name="heartoutline"><svg
                                                         viewBox="0 0 24 24" data-name="Calque 1" focusable="false">
                                                         <path
@@ -209,7 +213,7 @@
                                         </div>
                                         <div class="_1aCZv" data-qa-id="adview_location_informations">
                                             <span>{{$admob['adress']}}</span>
-                                            <div class="_2eUnk"><button
+                                            <div class="_2eUnk" data-toggle="modal" data-target="#map_modal"><button
                                                     class="_2sNbI _1xIyN _2BP2c UbPim mapmodal_button">
                                                     <!-- react-text: 5978 -->Voir sur la carte
                                                     <!-- /react-text --></button></div>
@@ -222,7 +226,7 @@
                             <div>
                                 <div class="GaC6X _2dGRO">
                                     <div class="VJs40">
-                                        <div class="_3aIph trackable" data-qa-id="adview_share_print">
+                                        <div class="_3aIph trackable" data-qa-id="adview_share_print" id="print">
                                             <div class="_1IOEw"><span class="_1vK7W" name="print"><svg
                                                         viewBox="0 0 24 24" data-name="Calque 1" focusable="false">
                                                         <path
@@ -231,7 +235,7 @@
                                                     </svg></span></div>
                                             <div class="aN-Dk">Imprimer</div>
                                         </div>
-                                        <div class="_3aIph _3IZzv trackable" data-qa-id="adview_share_email">
+                                        <div class="_3aIph _3IZzv" id="adview_share_email">
                                             <div class="_1IOEw"><span class="_1vK7W" name="mail"><svg
                                                         viewBox="0 0 24 24" data-name="Calque 1" focusable="false">
                                                         <path
@@ -241,6 +245,7 @@
                                             <div class="aN-Dk">Partager par mail</div>
                                         </div>
                                         <div class="_3aIph _3AFi4 trackable" data-qa-id="adview_share_facebook">
+                                           <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html">
                                             <div>
                                                 <div class="_1IOEw"><span class="_1vK7W" name="facebook"><svg
                                                             viewBox="0 0 24 24" data-name="Calque 1" focusable="false">
@@ -250,8 +255,9 @@
                                                         </svg></span></div>
                                                 <div class="aN-Dk">Partager sur facebook</div>
                                             </div>
+                                        </a>
                                         </div>
-                                        <div class="_3p0gz">
+                                        <div class="_3p0gz" style="display:none">
                                             <div class="_3aIph trackable" data-qa-id="adview_share_rights"><a
                                                     rel="nofollow"
                                                     href="https://www.leboncoin.fr/dc/vos_droits_et_obligations"
@@ -267,7 +273,71 @@
                                                 </a></div>
                                         </div>
                                     </div>
-
+                                    <div class="_37ZQe" style="display:none" id="adview_share_email_open">
+                                        <div class="_1s6CW" data-qa-id="adview_share_email_container">
+                                            <div class="Hy5ro"><span class="_1vK7W" name="close"><svg
+                                                        viewBox="0 0 24 24" data-name="Calque 1" focusable="false">
+                                                        <path
+                                                            d="M23.47 20.9l-8.9-8.9 8.9-8.9A1.81 1.81 0 0 0 20.9.55L12 9.43 3.1.53A1.82 1.82 0 0 0 .53 3.1l8.9 8.9-8.9 8.9a1.82 1.82 0 0 0 2.57 2.57l8.9-8.9 8.9 8.9a1.82 1.82 0 0 0 2.57-2.57z">
+                                                        </path>
+                                                    </svg></span></div>
+                                            <div class="_2yZdO">Partager l’annonce par email</div>
+                                            <div>
+                                                <form class="_24z72">
+                                                    <div class="_1RQ3i">
+                                                        <div class="_2Sei5">
+                                                            <div><label class="TMFen" for="email">
+                                                                    <!-- react-text: 37183 -->Votre adresse mail
+                                                                    <!-- /react-text -->
+                                                                    <!-- react-text: 37184 -->*
+                                                                    <!-- /react-text --></label>
+                                                                <div class="_2wuZK"><input type="text"
+                                                                        class="_2erBM _1ON-K"
+                                                                        data-qa-id="input-text-email" value=""
+                                                                        name="email"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="_2Sei5">
+                                                            <div><label class="TMFen" for="emailFriend">
+                                                                    <!-- react-text: 37190 -->L’adresse mail de votre
+                                                                    ami(e)
+                                                                    <!-- /react-text -->
+                                                                    <!-- react-text: 37191 -->*
+                                                                    <!-- /react-text --></label>
+                                                                <div class="_2wuZK"><input type="text"
+                                                                        class="_2erBM _1ON-K"
+                                                                        data-qa-id="input-text-emailFriend" value=""
+                                                                        name="emailFriend"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div><button class="_2sNbI e943h trackable" type="submit" style="background: #149cef;
+                                                    color: white;"
+                                                        disabled="">
+                                                        <!-- react-text: 37195 -->Envoyer
+                                                        <!-- /react-text --></button>
+                                                </form>
+                                                <div class="_3LLEl">
+                                                    <div class="_1aAt3" data-qa-id="cnil_container">
+                                                        <div>
+                                                            <div class="_1RIu-" data-qa-id="cnil_link_data_gathering">
+                                                                <span class="uzj13"><span class="_3cXiP">Me
+                                                                        renseigner</span><!-- react-text: 37202 --> sur
+                                                                    le responsable de traitement, les destinataires et
+                                                                    la finalité de la collecte des données.
+                                                                    <!-- /react-text --></span></div>
+                                                            <div class="_1RIu-"
+                                                                data-qa-id="cnil_link_opposition_rights"><span
+                                                                    class="uzj13"><span class="_3cXiP">Me
+                                                                        renseigner</span><!-- react-text: 37206 --> sur
+                                                                    mes droits, la durée de conservation de mes données
+                                                                    et les moyens de nous contacter.
+                                                                    <!-- /react-text --></span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div><!-- react-empty: 6014 -->
@@ -279,43 +349,42 @@
                                 <ul class="_3stQa">
                                     @foreach ($similars as $one)
                                     <li class="_3D9GO">
-                                    <a class="xA__p trackable" title="Taille haie"
-                                    href="{{URL::to('frontoffice/aditems')}}/{{$one['id']}}">
-                                        <figure class="_2nHTx">
-                                            <div class="_5ZXm_">
-                                                <div class="_2ge_d">
-                                                    <img
-                                                        src="{{asset('/img/picture')}}/{{explode(",",$one['camera'])[0]}}"
-                                                        class="_29EFB" alt="Taille haie"></div>
-                                                <figcaption class="_1CCIO"><span class="_1vK7W"
-                                                        name="camera_old"><svg height="32" width="32"
-                                                            viewBox="0 0 32 32" class="_1f3Hk" focusable="false">
-                                                            <g fill="none">
-                                                                <circle cx="16" cy="16" fill="#000" r="4.267">
-                                                                </circle>
-                                                                <path
-                                                                    d="M12 2.667L9.56 5.333H5.333A2.675 2.675 0 0 0 2.667 8v16c0 1.467 1.2 2.667 2.666 2.667h21.334c1.466 0 2.666-1.2 2.666-2.667V8c0-1.467-1.2-2.667-2.666-2.667H22.44L20 2.667h-8z"
-                                                                    fill="#000"></path>
-                                                                <path d="M0 0h32v32H0z"></path>
-                                                            </g>
-                                                        </svg></span>
-                                                    <div class="_1pYJt">{{count(explode(",",$one['camera']))}}</div>
-                                                </figcaption>
+                                        <a class="xA__p trackable" title="Taille haie"
+                                            href="{{URL::to('frontoffice/aditems')}}/{{$one['id']}}">
+                                            <figure class="_2nHTx">
+                                                <div class="_5ZXm_">
+                                                    <div class="_2ge_d">
+                                                        <img src="{{asset('/img/picture')}}/{{explode(",",$one['camera'])[0]}}"
+                                                            class="_29EFB" alt="Taille haie"></div>
+                                                    <figcaption class="_1CCIO"><span class="_1vK7W"
+                                                            name="camera_old"><svg height="32" width="32"
+                                                                viewBox="0 0 32 32" class="_1f3Hk" focusable="false">
+                                                                <g fill="none">
+                                                                    <circle cx="16" cy="16" fill="#000" r="4.267">
+                                                                    </circle>
+                                                                    <path
+                                                                        d="M12 2.667L9.56 5.333H5.333A2.675 2.675 0 0 0 2.667 8v16c0 1.467 1.2 2.667 2.666 2.667h21.334c1.466 0 2.666-1.2 2.666-2.667V8c0-1.467-1.2-2.667-2.666-2.667H22.44L20 2.667h-8z"
+                                                                        fill="#000"></path>
+                                                                    <path d="M0 0h32v32H0z"></path>
+                                                                </g>
+                                                            </svg></span>
+                                                        <div class="_1pYJt">{{count(explode(",",$one['camera']))}}</div>
+                                                    </figcaption>
+                                                </div>
+                                            </figure>
+                                            <div class="_34QNM">
+                                                <div class="_3RDHA">Taille haie</div>
+                                                <p class="_1-aXU">Saint-Médard-en-Jalles</p>
+                                                <div class="_386c2 _2Fe1I"><span class="_1F5u3">
+                                                        <!-- react-text: 6222 -->{{$one['price']}}
+                                                        <!-- /react-text -->
+                                                        <!-- react-text: 6223 --> €
+                                                        <!-- /react-text --></span>
+                                                    <div class="_1fCKz"></div>
+                                                </div>
                                             </div>
-                                        </figure>
-                                        <div class="_34QNM">
-                                            <div class="_3RDHA">Taille haie</div>
-                                            <p class="_1-aXU">Saint-Médard-en-Jalles</p>
-                                            <div class="_386c2 _2Fe1I"><span class="_1F5u3">
-                                                    <!-- react-text: 6222 -->{{$one['price']}}
-                                                    <!-- /react-text -->
-                                                    <!-- react-text: 6223 --> €
-                                                    <!-- /react-text --></span>
-                                                <div class="_1fCKz"></div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                  </li>
+                                        </a>
+                                    </li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -421,8 +490,9 @@
                                                 <div class="_2sPVF trackable"
                                                     data-qa-id="adview_button_contact_contact">
                                                     <div>
-                                                        <a
-                                                            href="{{URL::to('frontoffice/aditems/sendmessage')}}/{{$admob['user_id']}}/{{$admob['name']}}">
+                                                        <a href="#">
+                                                            {{-- href="{{URL::to('frontoffice/aditems/sendmessage')}}/{{$admob['user_id']}}/{{$admob['name']}}">
+                                                            --}}
                                                             <button class="_2sNbI _1xIyN GXQkc _2xk2l"
                                                                 id="message_click" style="background:#f56b2a"><span
                                                                     class="_1vK7W _1eOK1 QKFCn" name="message"><svg
@@ -460,7 +530,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body" style="height:500px">
-                            <div id="dialog_map" style="height:100%"></div>
+                        <div id="dialog_map" style="height:100%"></div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -499,12 +569,14 @@
     <script type="text/javascript" src="{{asset('js/jquery.magnific-popup.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/Pagination.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+      <script src="{{ asset('js/share.js') }}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXAEJOmp7v7uXD-Vrmaw6xjBl_ZExIn7g&libraries=places">
     </script>
 </body>
 <script>
     var poly;
-    var address ="{{$admob['adress']}}";
+    var address = "{{$admob['adress']}}";
 
     function initAutocomplete() {
         var geocoder = new google.maps.Geocoder();
@@ -535,6 +607,7 @@
         google.maps.event.addDomListener(window, "load", initAutocomplete);
 
     }
+
     function dialog_map_init() {
         var geocoder = new google.maps.Geocoder();
         geocoder.geocode({
@@ -571,7 +644,94 @@
 
         var slideIndex = 1;
         showDivs(slideIndex);
+        $('#print').on('click', function () {
+            window.print();
+        });
+        $('#adview_share_email').on('click', function () {
+            if (!$('#adview_share_email').hasClass('email_open')) {
+                $('._37ZQe').css('display', 'block');
+                $('#adview_share_email').addClass('email_open');
+            } else {
+                $('._37ZQe').css('display', 'none');
+                $('#adview_share_email').removeClass('email_open');
+            }
+        });
+        $('._37ZQe').on('click','.Hy5ro',function(){
+            $('._37ZQe').css('display', 'none');
+            $('#adview_share_email').removeClass('email_open');
+        });
+        $('._3C4to').on('click', function () {
+            id = $(this).data('id');
+            var span = $(this).find('span');
+            console.log(id);
+            if (!$(span).hasClass("orange_heart")) {
+                vote = 1;
+                onVoteRequest();
+                $(span).html(
+                    '<svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false"><path d="M21.19 2.24A6.76 6.76 0 0 0 12 3.61a6.76 6.76 0 0 0-9.19-1.37A6.88 6.88 0 0 0 0 7.58c-.15 4.84 4 8.72 10.26 14.64l.13.12a2.32 2.32 0 0 0 3.23 0l.12-.12C20 16.3 24.16 12.42 24 7.58a6.88 6.88 0 0 0-2.81-5.34z"></path></svg>'
+                    );
+                $(span).addClass("orange_heart");
+            } else {
+                vote = 0;
+                if (favoriteid != 0) downVote();
+                $(span).removeClass("orange_heart");
+                $(span).html(
+                    '<svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false"><path d="M21.19 2.24A6.76 6.76 0 0 0 12 3.61a6.76 6.76 0 0 0-9.19-1.37A6.89 6.89 0 0 0 0 7.58c-.16 4.84 4 8.72 10.26 14.66l.12.12a2.32 2.32 0 0 0 3.23 0l.13-.12C20 16.29 24.15 12.41 24 7.57a6.89 6.89 0 0 0-2.81-5.33zm-9.07 18.15l-.12.12-.12-.12C6.17 15 2.4 11.46 2.4 7.86a4.18 4.18 0 0 1 4.2-4.37 4.68 4.68 0 0 1 4.28 3h2.25a4.66 4.66 0 0 1 4.27-3 4.18 4.18 0 0 1 4.2 4.37c0 3.6-3.77 7.14-9.48 12.53z"></path></svg>'
+                    );
+            }
 
+        });
+
+        function onVoteRequest() {
+            $.ajax({
+                type: "POST",
+                url: "{{route('vote')}}",
+                data: {
+                    id: id,
+                    vote: vote,
+                    _token: "{{ csrf_token() }}",
+                },
+                dataType: "json",
+                success: function (data) {
+                    //   console.log(data);
+                    if (!data.error) {
+                        favoriteid = data.result;
+                        console.log(favoriteid);
+                    } else {
+                        alert(data.result);
+                    }
+                },
+                error: function (e) {
+                    console.log(e);
+                }
+            });
+        }
+
+        function downVote() {
+            $.ajax({
+                type: "POST",
+                url: "{{route('downvote')}}",
+                data: {
+                    id: id,
+                    vote: vote,
+                    favoriteid: favoriteid,
+                    _token: "{{ csrf_token() }}",
+                },
+                dataType: "json",
+                success: function (data) {
+                    //   console.log(data);
+                    if (!data.error) {
+
+                    } else {
+
+                    }
+
+                },
+                error: function (e) {
+                    console.log(e);
+                }
+            });
+        }
         $('#right_slider').on('click', function () {
 
             showDivs(slideIndex += 1);
@@ -605,12 +765,12 @@
             $('#phone_click').css("display", "none");
             $('#number_click').css("display", "block");
         });
-
+    
     });
     $('.mapmodal_button').click(function () {
         dialog_map_init();
-        $('#map_modal').modal('toggle');
-    })
+      //  $('#map_modal').modal('toggle');
+    });
 
 </script>
 

@@ -8,7 +8,7 @@
         ?>
  <li itemscope="" itemtype="http://schema.org/Offer" class="_3eDdy"
        data-reactid="1627">
-       <div class="_3Zm0x" data-qa-id="listitem_save_ad" data-reactid="1628">
+       <div class="_3Zm0x" data-qa-id="listitem_save_ad" data-id="{{$item['id']}}" data-reactid="1628">
            <div data-reactid="1629">
                <div class="_3C4to" data-reactid="1630">
                    <div class="" data-reactid="1631"><span class="_1vK7W"
@@ -109,3 +109,81 @@
     
     </ul>
 </div>
+<script>
+ $(document).ready(function(){
+    
+    var vote=0;
+    var id=0;
+    var favoriteid=0;
+    $('._2qwGs').on('click','._3Zm0x',function(){
+        id=$(this).data('id');
+        var span=$(this).find('span');
+        
+        if(!$(span).hasClass("orange_heart")){
+                vote=1;
+                onVoteRequest();
+                $(span).html('<svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false"><path d="M21.19 2.24A6.76 6.76 0 0 0 12 3.61a6.76 6.76 0 0 0-9.19-1.37A6.88 6.88 0 0 0 0 7.58c-.15 4.84 4 8.72 10.26 14.64l.13.12a2.32 2.32 0 0 0 3.23 0l.12-.12C20 16.3 24.16 12.42 24 7.58a6.88 6.88 0 0 0-2.81-5.34z"></path></svg>');
+                $(span).addClass("orange_heart");
+           }else{
+                vote=0;
+                if(favoriteid !=0) downVote();
+                $(span).removeClass("orange_heart");
+                $(span).html('<svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false"><path d="M21.19 2.24A6.76 6.76 0 0 0 12 3.61a6.76 6.76 0 0 0-9.19-1.37A6.89 6.89 0 0 0 0 7.58c-.16 4.84 4 8.72 10.26 14.66l.12.12a2.32 2.32 0 0 0 3.23 0l.13-.12C20 16.29 24.15 12.41 24 7.57a6.89 6.89 0 0 0-2.81-5.33zm-9.07 18.15l-.12.12-.12-.12C6.17 15 2.4 11.46 2.4 7.86a4.18 4.18 0 0 1 4.2-4.37 4.68 4.68 0 0 1 4.28 3h2.25a4.66 4.66 0 0 1 4.27-3 4.18 4.18 0 0 1 4.2 4.37c0 3.6-3.77 7.14-9.48 12.53z"></path></svg>');
+           } 
+        });
+           function onVoteRequest(){
+            $.ajax({
+              type:"POST",
+              url:"{{route('vote')}}",
+              data:{
+                   id:id,
+                   vote:vote,
+                  _token:"{{ csrf_token() }}",
+              },
+              dataType:"json",
+              success:function(data){
+                //   console.log(data);
+                if(!data.error){
+                    favoriteid=data.result;
+                    console.log(favoriteid);
+                }
+               else{
+                   alert(data.result);
+               }
+              },
+              error:function(e){
+                 console.log(e);
+               }
+            });
+        }
+
+        function downVote(){
+            $.ajax({
+              type:"POST",
+              url:"{{route('downvote')}}",
+              data:{
+                   id:id,
+                   vote:vote,
+                   favoriteid:favoriteid,
+                  _token:"{{ csrf_token() }}",
+              },
+              dataType:"json",
+              success:function(data){
+                //   console.log(data);
+                if(!data.error){
+                   
+                }
+                else{
+
+                }
+               
+              },
+              error:function(e){
+                 console.log(e);
+               }
+            });
+        }
+    
+ });
+
+</script>

@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-     
+   
     <title>Jamii</title>
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Alex Brush' rel='stylesheet'>
-
+  
     <!-- Bootstrap -->
     <link type="text/css" rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
 
@@ -36,20 +36,277 @@
     <link type="text/css" rel="stylesheet" href="{{asset('css/header.css')}}">
     <link type="text/css" rel="stylesheet" href="{{asset('css/Pagination.css')}}">
 
-
+    <style>
+            .ad_topic:hover{
+                text-decoration: underline;
+            }
+            ._3f3p2 a{
+                font-weight: bold;
+            }
+           </style>
+          
 </head>
 
 <body>
     <!-- Header -->
-    @include('frontoffice.partials.headerpart')
+    @include('frontoffice.partials.header')
     <!-- Header -->
+    <!--Dialog-->
+    <!--Login_modal-->
+    <div class="modal _3vig1 globalContent contentAfterOpen" id="Login_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
 
+                <!-- Modal Header -->
+                <!-- <div class="modal-header">
+                    <h1 class="modal-title">LogIn</h1>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div> -->
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="_1lEHL">
+                        <div class="_3oF3k">
+                            <div class="PZs61">
+
+                                <h1>
+
+                                    Connectez-vous pour retrouver vos favoris
+
+                                </h1>
+                                <div class="_2xBxS">
+                                    <div class="_3tqKI">
+                                        <div class="_1sEbc"><img
+                                                src="//static-rav.leboncoin.fr/0e3b77656afbf2453c54854f82591e3b.png"
+                                                alt="Saved Ads"></div>
+                                        <div class="_1w6py">
+                                            <h2>
+
+                                                Annonces sauvegardées
+
+                                            </h2>
+                                            <p>En naviguant connecté, vous pouvez sauvegarder les annonces qui vous
+                                                intéressent le plus pour les surveiller. Vous pourrez les retrouver
+                                                quand vous voulez sur tous vos appareils.</p>
+                                        </div>
+                                    </div>
+                                    <div class="_2eODT">
+                                        <div class="_1sEbc"><img
+                                                src="//static-rav.leboncoin.fr/57932636817eb6df6d73c423b4183d55.png"
+                                                alt="Saved Searches"></div>
+                                        <div class="_1w6py">
+                                            <h2>
+
+                                                Recherches sauvegardées
+
+                                            </h2>
+                                            <p>Sauvegardez vos recherches pour consulter plus facilement les nouveaux
+                                                résultats.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="_3oF3k">
+                            <section>
+                                <div>
+                                    <div class="_3M53r">
+                                        <div class="_3gfNn" data-qa-id="title">
+
+                                            Connexion
+
+                                        </div>
+                                        <div>
+                                            <div class="_1uVWE">
+                                                <form class="_382l8" method="POST" action="{{route('homelogin')}}">
+                                                    @csrf
+                                                    <div><label class="TMFen" for="email">
+                                                            <!-- react-text: 36 -->
+
+                                                            Adresse email
+
+                                                            <!-- /react-text -->
+                                                        </label>
+                                                        <div class="_2wuZK">
+                                                            <input type="text" class="_2erBM _2yMsD"
+                                                                data-qa-id="authmodal-email" value="" name="email">
+                                                        </div>
+                                                    </div>
+                                                    <div class="_1QRTe">
+                                                        <div>
+                                                            <div><label class="TMFen" for="password">
+                                                                    <!-- react-text: 43 -->
+
+                                                                    Mot de passe
+
+                                                                    <!-- /react-text -->
+                                                                </label>
+                                                                <div class="_2wuZK">
+                                                                    <input type="password" class="_2erBM _2yMsD"
+                                                                        data-qa-id="authmodal-password" value=""
+                                                                        name="password">
+
+                                                                </div>
+                                                            </div><a data-qa-id="link-forgotten-password" class="_-0qA4"
+                                                                href="#">
+                                                                Mot de passe oublié ?
+                                                            </a>
+                                                        </div>
+                                                    </div><button type="submit" data-qa-id="authmodal-login"
+                                                        style="background-color: #4183d7;
+                                                                                                    color: white;
+                                                                                                    width: 100%;
+                                                                                                    height: 40px;
+                                                                                                    border-width: inherit;
+                                                                                                    margin-top:15px;
+                                                                                                    border-radius: 5px;">
+                                                        <!-- react-text: 48 -->
+                                                        Se connecter
+                                                    </button>
+                                                    @if(Session::has('error_message'))
+                                                    <h5 style="color:red">{{ Session::get('error_message') }}</h5>
+                                                    @endif
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="_3m_rz">
+                                        <div class="_24yU7">
+                                            <div class="_1uVWE">
+                                                <p class="hv-Tf">
+
+                                                    Vous n’avez pas de compte ?account ?
+
+                                                </p><button id="create_account"
+                                                    class="_2sNbI _1xIyN GXQkc _2BP2c trackable"
+                                                    data-qa-id="create-account" data-toggle="modal"
+                                                    data-target="#Regsiter_modal">
+                                                    <!-- react-text: 54 -->
+
+                                                    Créer un compte
+
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--Login_modal-->
+    <!--Register_modal-->
+    <div class="modal _3vig1 globalContent contentAfterOpen" id="Regsiter_modal">
+        <div class="modal-dialog">
+            <div class="_2y5yt JEb3x">
+                <div class="_1lEHL">
+                    <div class="_3oF3k">
+                        <div class="PZs61">
+                            <h1>
+
+                                Login to find your favorites
+
+                            </h1>
+                            <div class="_2xBxS">
+                                <div class="_3tqKI">
+                                    <div class="_1sEbc"><img
+                                            src="//static-rav.leboncoin.fr/0e3b77656afbf2453c54854f82591e3b.png"
+                                            alt="Saved Ads"></div>
+                                    <div class="_1w6py">
+                                        <h2>
+
+                                            Saved Ads
+
+                                        </h2>
+                                        <p>
+
+                                            By browsing connected, you can
+                                            save the ads that interest you most to monitor them.
+                                            You can find them whenever you
+                                            want on all your devices.
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="_2eODT">
+                                    <div class="_1sEbc"><img
+                                            src="//static-rav.leboncoin.fr/57932636817eb6df6d73c423b4183d55.png"
+                                            alt="Saved Searches"></div>
+                                    <div class="_1w6py">
+                                        <h2>
+
+                                            Saved Searches
+
+                                        </h2>
+                                        <p>
+
+                                            Save your searches for easier
+                                            viewing of new results.
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="_3oF3k">
+                        <section>
+                            <div>
+                                <div class="_3M53r">
+                                    <div class="_3gfNn" data-qa-id="title">Création de compte</div>
+                                    <div>
+                                        <div class="_1uVWE">
+                                            <div class="pUskR"> Choisissez votre type de compte : </div>
+                                            <div class="_24z04"><span class="_28rnK"><a
+                                                        class="_2sNbI _1xIyN GXQkc _2BP2c trackable"
+                                                        href="{{route('particular')}}"
+                                                        data-qa-id="button-create-account-part">
+                                                        <!-- react-text: 64 -->Particulier
+                                                        <!-- /react-text --></a></span><span class="_28rnK"><a
+                                                        class="_2sNbI _1xIyN GXQkc _2BP2c trackable"
+                                                        href="{{route('professional')}}"
+                                                        data-qa-id="button-create-account-pro">
+                                                        <!-- react-text: 67 -->Professionnel
+                                                        <!-- /react-text --></a></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="_3m_rz back_loginmodal">
+                                    <div class="_24yU7"><a class="_3BMJ7 trackable"><span class="_1vK7W K5CQx"
+                                                name="arrowleft"><svg viewBox="0 0 24 24" data-name="Calque 1"
+                                                    focusable="false">
+                                                    <path
+                                                        d="M22.46 10.43H5.26l7.51-7.72a1.63 1.63 0 0 0 0-2.25 1.52 1.52 0 0 0-2.17 0L.45 10.88a1.61 1.61 0 0 0 0 2.23L10.6 23.54a1.52 1.52 0 0 0 2.17 0 1.61 1.61 0 0 0 0-2.23l-7.51-7.72h17.2a1.58 1.58 0 0 0 0-3.16z">
+                                                    </path>
+                                                </svg></span><!-- react-text: 72 -->Retour à la connexion
+                                            <!-- /react-text --></a></div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--Register_modal-->
     <section>
 
         <div class="_3iQ0i" style="pointer-events: inherit;">
             <div class="_1ydbl">
                 <form id="search_result" method="GET" action="{{route('viewadmob')}}">
                     <input type="hidden" name="_token" id="token" value="{{csrf_token()}}">
+                    <input type="hidden" name="state" id="state" value="{{$st_id}}">
+                    <input type="hidden" name="sub" id="sub" value="{{$scategory}}">
                     <div class="_3mkBC" style="display:flex;"><label class="radio" for="offer"><input type="radio"
                                 id="offer" name="ad_type" value="sell" checked><!-- react-text: 653 -->Offres
                             <!-- /react-text --></label><label class="radio" for="demand" style="margin-top:0px"><input
@@ -97,16 +354,21 @@
                                                     </ul>
                                                 </div>
                                                 <div class="_1okrU">
-                                                  <div class="_2dGFl">
-                                                        <div class="_3vHTu"><div>
-                                                            <label data-qa-id="checkbox-title_only-desktop" class="_2BJZq">
-                                                            <span class="_1SRTJ" data-qa-id="text-title_only-desktop">Recherche dans le titre uniquement</span>
-                                            
-                                                            <span class="R3YOB"></span></label></div></div>
-                                                        </div>
-                                                   </div>
+                                                    <div class="_2dGFl">
+                                                        <div class="_3vHTu">
+                                                            <div>
+                                                                <label data-qa-id="checkbox-title_only-desktop"
+                                                                    class="_2BJZq">
+                                                                    <span class="_1SRTJ"
+                                                                        data-qa-id="text-title_only-desktop">Recherche
+                                                                        dans le titre uniquement</span>
 
-                                                  
+                                                                    <span class="R3YOB"></span></label></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
                                             </div>
                                         </div>
                                         <div class="AGP6T">
@@ -373,7 +635,7 @@
                                     </div>
                                     <div class="TwSJ3">
                                         <div class="_3Hx4s">
-                                            
+
                                             <label class="WzIvr" style="display:none"><input type="checkbox" id="ctitle"
                                                     name="it" data-qa-id="checkbox-title_only" value="1">
                                                 <!-- react-text: 773 -->Recherche dans le titre uniquement
@@ -504,7 +766,8 @@
                                                 <option value="500">500</option>
                                                 <option value="1000">1 000</option>
                                             </select></div><span class="_2oGk4 XtGYX">et</span>
-                                        <div class="_1uP35"><select data-qa-id="select-price_max" name="max_price" id="max_price">
+                                        <div class="_1uP35"><select data-qa-id="select-price_max" name="max_price"
+                                                id="max_price">
                                                 <option>Prix max</option>
                                                 <option value="10">10</option>
                                                 <option value="20">20</option>
@@ -528,8 +791,8 @@
                             </div>
                         </section><!-- react-empty: 827 -->
                     </div>
-               
-               
+
+
                 </form>
             </div>
 
@@ -538,7 +801,7 @@
             <div class="l17WS bgMain" data-reactid="327">
                 <div data-reactid="328">
                     <div class="_36eyL" data-reactid="329">
-                        <h1 data-reactid="330" style="font-size:18px">Annonces&nbsp;: Aquitaine</h1>
+                        <h1 data-reactid="330" style="font-size:18px">{{$sub_name}}&nbsp;: {{$st_name}}</h1>
                     </div>
                     <div class="apn-lt" data-reactid="331"><span id="lt-l" class="teal-apn"
                             data-reactid="332"></span><span id="lt-xl" class="teal-apn" data-reactid="333"></span></div>
@@ -561,17 +824,17 @@
                         <div class="_358dQ" data-reactid="355">
                             <div class="_2r1q3" data-reactid="356">
                                 <div data-reactid="357" id="advertiseList">
-                                 <h2 id="empty_result" style="display:none">Le résultat n'est pas vide!</h2>
-                                        
+                                    <h2 id="empty_result" style="display:none">Le résultat n'est pas vide!</h2>
+
                                 </div>
                             </div>
                         </div>
                         <div class="_2qwGs" data-reactid="1623">
                             <div data-reactid="1624" id="side_list">
-                                
+
                             </div>
                             <div class="advertisingSkyscraper" data-reactid="1720">
-                                <div class="initPosition" data-reactid="1721" >
+                                <div class="initPosition" data-reactid="1721">
                                     <div class="_39t72" data-reactid="1722"
                                         style="width: 310px; height: 620px; position: relative;">
                                         <div class="apn-sk skyscraper _3beIN _3O6XM" data-reactid="1723"><span id="sk-l"
@@ -599,169 +862,185 @@
                 <div class="_1l3a3">
                     <section class="_33mha">
                         <div class="_1i0e0 _1YhkB">
-                            <div class="_3UM0h">
-                                <ul>
-                                    <li class="_3f3p2"><a title="EMPLOI" class="trackable" href="#">EMPLOI</a></li>
-                                    <li class=""><a title="Offres d'emploi" class="trackable"
-                                            href="/offres_d_emploi/offres/aquitaine/">Offres d'emploi</a></li>
-                                    <li class=""><a href="#" target="_self" title="Offres d'emploi Cadres"
-                                            class="trackable">Offres d'emploi Cadres</a>
-                                    </li>
-                                    <li class="_3f3p2"><a title="VEHICULES" class="trackable" href="#">VEHICULES</a>
-                                    </li>
-                                    <li class=""><a title="Voitures" class="trackable" href="#">Voitures</a></li>
-                                    <li class=""><a title="Motos" class="trackable" href="#">Motos</a></li>
-                                    <li class=""><a title="Caravaning" class="trackable" href="#">Caravaning</a></li>
-                                    <li class=""><a title="Utilitaires" class="trackable" href="#">Utilitaires</a></li>
-                                    <li class=""><a href="#" target="_self" title="Camions"
-                                            class="trackable">Camions</a></li>
-                                    <li class=""><a title="Nautisme" class="trackable" href="#">Nautisme</a></li>
-                                    <li class=""><a title="Equipement Auto" class="trackable" href="#">Equipement
-                                            Auto</a></li>
-                                    <li class=""><a title="Equipement Moto" class="trackable" href="#">Equipement
-                                            Moto</a></li>
-                                    <li class=""><a title="Equipement Caravaning" class="trackable" href="#">Equipement
-                                            Caravaning</a>
-                                    </li>
-                                    <li class=""><a title="Equipement Nautisme" class="trackable" href="#">Equipement
-                                            Nautisme</a></li>
-                                    <li class="_3f3p2"><a title="IMMOBILIER" class="trackable" href="#">IMMOBILIER</a>
-                                    </li>
-                                    <li class=""><a title="Ventes immobilières" class="trackable" href="#">Ventes
-                                            immobilières</a></li>
-                                    <li class=""><a href="#" target="_self" title="Immobilier Neuf"
-                                            class="trackable">Immobilier Neuf</a></li>
-                                    <li class=""><a title="Locations" class="trackable" href="#">Locations</a></li>
-                                    <li class=""><a title="Colocations" class="trackable" href="#">Colocations</a></li>
-                                    <li class=""><a title="Bureaux &amp; Commerces" class="trackable" href="#">Bureaux
-                                            &amp; Commerces</a></li>
-                                </ul>
-                            </div>
-                            <div class="_3UM0h">
-                                <ul>
-                                    <li class="_3f3p2"><a title="VACANCES" class="trackable" href="#">VACANCES</a></li>
-                                    <li class=""><a title="Locations &amp; Gîtes" class="trackable" href="#">Locations
-                                            &amp; Gîtes</a></li>
-                                    <li class=""><a title="Chambres d'hôtes" class="trackable" href="#">Chambres
-                                            d'hôtes</a></li>
-                                    <li class=""><a title="Campings" class="trackable" href="#">Campings</a></li>
-                                    <li class=""><a title="Hôtels" class="trackable" href="#">Hôtels</a></li>
-                                    <li class=""><a title="Hébergements insolites" class="trackable"
-                                            href="#">Hébergements insolites</a>
-                                    </li>
-                                    <li class=""><a href="#" target="_self" title="Ventes privées vacances"
-                                            class="trackable">Ventes
-                                            privées vacances</a></li>
-                                    <li class="_3f3p2"><a title="MAISON" class="trackable" href="#">MAISON</a></li>
-                                    <li class=""><a title="Ameublement" class="trackable" href="#">Ameublement</a></li>
-                                    <li class=""><a title="Electroménager" class="trackable" href="#">Electroménager</a>
-                                    </li>
-                                    <li class=""><a title="Arts de la table" class="trackable" href="#">Arts de la
-                                            table</a></li>
-                                    <li class=""><a title="Décoration" class="trackable" href="#">Décoration</a></li>
-                                    <li class=""><a title="Linge de maison" class="trackable" href="#">Linge de
-                                            maison</a></li>
-                                    <li class=""><a title="Bricolage" class="trackable" href="#">Bricolage</a></li>
-                                    <li class=""><a title="Jardinage" class="trackable" href="#">Jardinage</a></li>
-                                    <li class="_3f3p2"><a title="MODE" class="trackable" href="#">MODE</a></li>
-                                    <li class=""><a title="Vêtements" class="trackable" href="#">Vêtements</a></li>
-                                    <li class=""><a title="Chaussures" class="trackable" href="#">Chaussures</a></li>
-                                    <li class=""><a title="Accessoires &amp; Bagagerie" class="trackable"
-                                            href="#">Accessoires &amp;
-                                            Bagagerie</a></li>
-                                    <li class=""><a title="Montres &amp; Bijoux" class="trackable" href="#">Montres
-                                            &amp; Bijoux</a></li>
-                                    <li class=""><a title="Equipement bébé" class="trackable" href="#">Equipement
-                                            bébé</a></li>
-                                    <li class=""><a title="Vêtements bébé" class="trackable" href="#">Vêtements bébé</a>
-                                    </li>
-                                    <li class=""><a href="#" target="_self" title="Videdressing"
-                                            class="trackable">Videdressing</a></li>
-                                </ul>
-                            </div>
-                            <div class="_3UM0h">
-                                <ul>
-                                    <li class="_3f3p2"><a title="MULTIMEDIA" class="trackable" href="#">MULTIMEDIA</a>
-                                    </li>
-                                    <li class=""><a title="Informatique" class="trackable" href="#">Informatique</a>
-                                    </li>
-                                    <li class=""><a title="Consoles &amp; Jeux vidéo" class="trackable"
-                                            href="/consoles_jeux_video/offres/aquitaine/">Consoles &amp; Jeux vidéo</a>
-                                    </li>
-                                    <li class=""><a title="Image &amp; Son" class="trackable" href="#">Image &amp;
-                                            Son</a></li>
-                                    <li class=""><a title="Téléphonie" class="trackable" href="#">Téléphonie</a></li>
-                                    <li class="_3f3p2"><a title="LOISIRS" class="trackable" href="#">LOISIRS</a></li>
-                                    <li class=""><a title="DVD / Films" class="trackable" href="#">DVD / Films</a></li>
-                                    <li class=""><a title="CD / Musique" class="trackable" href="#">CD / Musique</a>
-                                    </li>
-                                    <li class=""><a title="Livres" class="trackable" href="#">Livres</a></li>
-                                    <li class=""><a title="Animaux" class="trackable" href="#">Animaux</a></li>
-                                    <li class=""><a title="Vélos" class="trackable" href="#">Vélos</a></li>
-                                    <li class=""><a title="Sports &amp; Hobbies" class="trackable" href="#">Sports &amp;
-                                            Hobbies</a></li>
-                                    <li class=""><a title="Instruments de musique" class="trackable"
-                                            href="#">Instruments de musique</a>
-                                    </li>
-                                    <li class=""><a title="Collection" class="trackable" href="#">Collection</a></li>
-                                    <li class=""><a title="Jeux &amp; Jouets" class="trackable" href="#">Jeux &amp;
-                                            Jouets</a></li>
-                                    <li class=""><a title="Vins &amp; Gastronomie" class="trackable" href="#">Vins &amp;
-                                            Gastronomie</a></li>
-                                </ul>
-                            </div>
-                            <div class="_3UM0h">
-                                <ul>
-                                    <li class="_3f3p2"><a title="MATERIEL PROFESSIONNEL" class="trackable"
-                                            href="#">MATERIEL
-                                            PROFESSIONNEL</a></li>
-                                    <li class=""><a title="Matériel Agricole" class="trackable" href="#">Matériel
-                                            Agricole</a></li>
-                                    <li class=""><a title="Transport - Manutention" class="trackable" href="#">Transport
-                                            - Manutention</a>
-                                    </li>
-                                    <li class=""><a title="BTP - Chantier Gros-oeuvre" class="trackable" href="#">BTP -
-                                            Chantier
-                                            Gros-oeuvre</a></li>
-                                    <li class=""><a title="Outillage - Matériaux 2nd-oeuvre" class="trackable"
-                                            href="#">Outillage -
-                                            Matériaux 2nd-oeuvre</a></li>
-                                    <li class=""><a title="Équipements Industriels" class="trackable"
-                                            href="#">Équipements
-                                            Industriels</a></li>
-                                    <li class=""><a title="Restauration - Hôtellerie" class="trackable"
-                                            href="#">Restauration -
-                                            Hôtellerie</a></li>
-                                    <li class=""><a title="Fournitures de Bureau" class="trackable" href="#">Fournitures
-                                            de Bureau</a>
-                                    </li>
-                                    <li class=""><a title="Commerces &amp; Marchés" class="trackable" href="#">Commerces
-                                            &amp; Marchés</a></li>
-                                    <li class=""><a title="Matériel Médical" class="trackable" href="#">Matériel
-                                            Médical</a></li>
-                                    <li class="_3f3p2"><a title="SERVICES" class="trackable" href="#">SERVICES</a></li>
-                                    <li class=""><a title="Prestations de services" class="trackable"
-                                            href="#">Prestations de
-                                            services</a></li>
-                                    <li class=""><a title="Billetterie" class="trackable" href="#">Billetterie</a></li>
-                                    <li class=""><a title="Evénements" class="trackable" href="#">Evénements</a></li>
-                                    <li class=""><a title="Cours particuliers" class="trackable" href="#">Cours
-                                            particuliers</a></li>
-                                    <li class=""><a title="Covoiturage" class="trackable" href="#">Covoiturage</a></li>
-                                    <li class="_3f3p2"><a title="Autres" class="trackable" href="#">Autres</a></li>
-                                    <li class=""><a title="Autres" class="trackable" href="#">Autres</a></li>
-                                </ul>
-                            </div>
+                                <div class="_3UM0h" data-reactid="341">
+                                        <ul data-reactid="342">
+                                            <li class="_3f3p2" data-reactid="343"><a title="EMPLOI" class="trackable"
+                                                    data-reactid="344">EMPLOI</a></li>
+                                            <li class="ad_topic" data-reactid="345"><a title="Offres d'emploi" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=1"
+                                                    data-reactid="346">Offres d'emploi</a></li>
+                                            <li class="_3f3p2" data-reactid="349"><a title="VEHICULES" 
+                                                    data-reactid="350">VEHICULES</a></li>
+                                            <li class="ad_topic" data-reactid="351"><a title="Voitures" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=2"
+                                                    href="#" data-reactid="352">Voitures</a></li>
+                                            <li class="ad_topic" data-reactid="353"><a title="Motos" class="trackable"  href="{{URL::to('frontoffice/aditems/')}}?sub=3"
+                                                    data-reactid="354">Motos</a></li>
+                                            <li class="ad_topic" data-reactid="355"><a title="Caravaning" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=4"
+                                                    data-reactid="356">Caravaning</a></li>
+                                            <li class="ad_topic" data-reactid="357"><a title="Utilitaires" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=5"
+                                                    data-reactid="358">Utilitaires</a></li>
+                                            <li class="ad_topic" data-reactid="361"><a title="Nautisme" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=9"
+                                                    data-reactid="362">Nautisme</a></li>
+                                            <li class="ad_topic" data-reactid="363"><a title="Equipement Auto" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=6"
+                                                    data-reactid="364">Equipement Auto</a></li>
+                                            <li class="ad_topic" data-reactid="365"><a title="Equipement Moto" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=7"
+                                                    data-reactid="366">Equipement Moto</a></li>
+                                            <li class="ad_topic" data-reactid="367"><a title="Equipement Caravaning" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=8"
+                                                    data-reactid="368">Equipement Caravaning</a></li>
+                                            <li class="ad_topic" data-reactid="369"><a title="Equipement Nautisme" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=10"
+                                                    data-reactid="370">Equipement Nautisme</a></li>
+                                            <li class="_3f3p2" data-reactid="371"><a title="IMMOBILIER" class="trackable" 
+                                                    data-reactid="372">IMMOBILIER</a></li>
+                                            <li class="ad_topic" data-reactid="373"><a title="Ventes immobilières" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=11"
+                                                    data-reactid="374">Ventes immobilières</a></li>
+                                            <li class="ad_topic" data-reactid="375"><a href="{{URL::to('frontoffice/aditems/')}}?sub=3" target="_self" title="Immobilier Neuf"
+                                                    class="trackable" data-reactid="376">Immobilier Neuf</a></li>
+                                            <li class="ad_topic" data-reactid="377"><a title="Locations" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=12"
+                                                    data-reactid="378">Locations</a></li>
+                                            <li class="ad_topic" data-reactid="379"><a title="Colocations" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=13"
+                                                    data-reactid="380">Colocations</a></li>
+                                            <li class="ad_topic" data-reactid="381"><a title="Bureaux &amp; Commerces" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=14"
+                                                    data-reactid="382">Bureaux &amp; Commerces</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="_3UM0h" data-reactid="383">
+                                        <ul data-reactid="384">
+                                            <li class="_3f3p2" data-reactid="385"><a title="VACANCES" class="trackable" 
+                                                    data-reactid="386">VACANCES</a></li>
+                                            <li class="ad_topic" data-reactid="387"><a title="Locations &amp; Gîtes" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=15"
+                                                    data-reactid="388">Locations &amp; Gîtes</a></li>
+                                            <li class="ad_topic" data-reactid="389"><a title="Chambres d'hôtes" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=16"
+                                                    data-reactid="390">Chambres d'hôtes</a></li>
+                                            <li class="ad_topic" data-reactid="391"><a title="Campings" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=17"
+                                                    data-reactid="392">Campings</a></li>
+                                            <li class="ad_topic" data-reactid="395"><a title="Hébergements insolites" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=18"
+                                                    data-reactid="396">Hébergements insolites</a>
+                                            </li>
+                                            <li class="ad_topic" data-reactid="397"><a href="{{URL::to('frontoffice/aditems/')}}?sub=3" target="_self" title="Ventes privées vacances"
+                                                    class="trackable" data-reactid="398">Ventes privées vacances</a></li>
+                                            <li class="_3f3p2" data-reactid="399"><a title="MAISON" class="trackable"
+                                                    data-reactid="400">MAISON</a></li>
+                                            <li class="ad_topic" data-reactid="401"><a title="Ameublement" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=23"
+                                                    data-reactid="402">Ameublement</a></li>
+                                            <li class="ad_topic" data-reactid="403"><a title="Electroménager" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=24"
+                                                    data-reactid="404">Electroménager</a></li>
+                                            <li class="ad_topic" data-reactid="405"><a title="Arts de la table" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=25"
+                                                    data-reactid="406">Arts de la table</a></li>
+                                            <li class="ad_topic" data-reactid="407"><a title="Décoration" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=26"
+                                                    data-reactid="408">Décoration</a></li>
+                                            <li class="ad_topic" data-reactid="409"><a title="Linge de maison" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=27"
+                                                    data-reactid="410">Linge de maison</a></li>
+                                            <li class="ad_topic" data-reactid="411"><a title="Bricolage" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=28"
+                                                    data-reactid="412">Bricolage</a></li>
+                                            <li class="ad_topic" data-reactid="413"><a title="Jardinage" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=29"
+                                                    data-reactid="414">Jardinage</a></li>
+                                            <li class="_3f3p2" data-reactid="415"><a title="MODE" class="trackable" 
+                                                    data-reactid="416">MODE</a></li>
+                                            <li class="ad_topic" data-reactid="417"><a title="Vêtements" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=30"
+                                                    data-reactid="418">Vêtements</a></li>
+                                            <li class="ad_topic" data-reactid="419"><a title="Chaussures" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=31"
+                                                    data-reactid="420">Chaussures</a></li>
+                                            <li class="ad_topic" data-reactid="421"><a title="Accessoires &amp; Bagagerie" class="trackable"
+                                                href="{{URL::to('frontoffice/aditems/')}}?sub=32" data-reactid="422">Accessoires &amp; Bagagerie</a>
+                                            </li>
+                                            <li class="ad_topic" data-reactid="423"><a title="Montres &amp; Bijoux" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=33"
+                                                    data-reactid="424">Montres &amp; Bijoux</a></li>
+                                            <li class="ad_topic" data-reactid="425"><a title="Equipement bébé" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=34"
+                                                    data-reactid="426">Equipement bébé</a></li>
+                                            <li class="ad_topic" data-reactid="427"><a title="Vêtements bébé" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=35"
+                                                    data-reactid="428">Vêtements bébé</a></li>
+                                        
+                                        </ul>
+                                    </div>
+                                    <div class="_3UM0h" data-reactid="431">
+                                        <ul data-reactid="432">
+                                            <li class="_3f3p2" data-reactid="433"><a title="MULTIMEDIA" class="trackable" 
+                                                    data-reactid="434">MULTIMEDIA</a></li>
+                                            <li class="ad_topic" data-reactid="435"><a title="Informatique" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=19"
+                                                    data-reactid="436">Informatique</a></li>
+                                            <li class="ad_topic" data-reactid="437"><a title="Consoles &amp; Jeux vidéo" class="trackable"
+                                                href="{{URL::to('frontoffice/aditems/')}}?sub=20" data-reactid=" 438">Consoles &amp; Jeux vidéo</a>
+                                            </li>
+                                            <li class="ad_topic" data-reactid="439"><a title="Image &amp; Son" class="trackable"
+                                                href="{{URL::to('frontoffice/aditems/')}}?sub=21" data-reactid=" 440">Image &amp; Son</a></li>
+                                            <li class="ad_topic" data-reactid="441"><a title="Téléphonie" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=22"
+                                                    data-reactid="442">Téléphonie</a></li>
+                                            <li class="_3f3p2" data-reactid="443"><a title="LOISIRS" class="trackable" 
+                                                    data-reactid="444">LOISIRS</a></li>
+                                            <li class="ad_topic" data-reactid="445"><a title="DVD / Films" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=36"
+                                                    data-reactid="446">DVD / Films</a></li>
+                                            <li class="ad_topic" data-reactid="447"><a title="CD / Musique" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=37"
+                                                    data-reactid="448">CD / Musique</a></li>
+                                            <li class="ad_topic" data-reactid="449"><a title="Livres" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=38"
+                                                    data-reactid="450">Livres</a></li>
+                                            <li class="ad_topic" data-reactid="451"><a title="Animaux" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=39"
+                                                    data-reactid="452">Animaux</a></li>
+                                            <li class="ad_topic" data-reactid="453"><a title="Vélos" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=40"
+                                                    data-reactid="454">Vélos</a></li>
+                                            <li class="ad_topic" data-reactid="455"><a title="Sports &amp; Hobbies" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=41"
+                                                    data-reactid="456">Sports &amp; Hobbies</a></li>
+                                            <li class="ad_topic" data-reactid="457"><a title="Instruments de musique" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=42"
+                                                    data-reactid="458">Instruments de musique</a>
+                                            </li>
+                                            <li class="ad_topic" data-reactid="459"><a title="Collection" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=43"
+                                                    data-reactid="460">Collection</a></li>
+                                            <li class="ad_topic" data-reactid="461"><a title="Jeux &amp; Jouets" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=44"
+                                                    data-reactid="462">Jeux &amp; Jouets</a></li>
+                                            <li class="ad_topic" data-reactid="463"><a title="Vins &amp; Gastronomie" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=45"
+                                                    data-reactid="464">Vins &amp; Gastronomie</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="_3UM0h" data-reactid="465">
+                                        <ul data-reactid="466">
+                                            <li class="_3f3p2" data-reactid="467"><a title="MATERIEL PROFESSIONNEL" class="trackable"
+                                                     data-reactid="468">MATERIEL PROFESSIONNEL</a>
+                                            </li>
+                                            <li class="ad_topic" data-reactid="469"><a title="Matériel Agricole" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=46"
+                                                    data-reactid="470">Matériel Agricole</a></li>
+                                            <li class="ad_topic" data-reactid="471"><a title="Transport - Manutention" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=47"
+                                                    data-reactid="472">Transport - Manutention</a>
+                                            </li>
+                                            <li class="ad_topic" data-reactid="473"><a title="BTP - Chantier Gros-oeuvre" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=48"
+                                                    data-reactid="474">BTP - Chantier
+                                                    Gros-oeuvre</a></li>
+                                            <li class="ad_topic" data-reactid="475"><a title="Outillage - Matériaux 2nd-oeuvre" class="trackable"
+                                                href="{{URL::to('frontoffice/aditems/')}}?sub=49" data-reactid="476">Outillage - Matériaux
+                                                    2nd-oeuvre</a></li>
+                                            <li class="ad_topic" data-reactid="477"><a title="Équipements Industriels" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=50"
+                                                    data-reactid="478">Équipements Industriels</a>
+                                            </li>
+                                            <li class="ad_topic" data-reactid="479"><a title="Restauration - Hôtellerie" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=51"
+                                                    data-reactid="480">Restauration - Hôtellerie</a>
+                                            </li>
+                                            <li class="ad_topic" data-reactid="481"><a title="Fournitures de Bureau" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=52"
+                                                    data-reactid="482">Fournitures de Bureau</a></li>
+                                            <li class="ad_topic" data-reactid="483"><a title="Commerces &amp; Marchés" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=53"
+                                                    data-reactid="484">Commerces &amp; Marchés</a></li>
+                                            <li class="ad_topic" data-reactid="485"><a title="Matériel Médical" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=54"
+                                                    data-reactid="486">Matériel Médical</a></li>
+                                            <li class="_3f3p2" data-reactid="487"><a title="SERVICES" class="trackable" 
+                                                    data-reactid="488">SERVICES</a></li>
+                                            <li class="ad_topic" data-reactid="489"><a title="Prestations de services" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=55"
+                                                    data-reactid="490">Prestations de services</a>
+                                            </li>
+                                            <li class="ad_topic" data-reactid="491"><a title="Billetterie" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=56"
+                                                    data-reactid="492">Billetterie</a></li>
+                                            <li class="ad_topic" data-reactid="493"><a title="Evénements" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=57"
+                                                    data-reactid="494">Evénements</a></li>
+                                            <li class="ad_topic" data-reactid="495"><a title="Cours particuliers" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=58"
+                                                    data-reactid="496">Cours particuliers</a></li>
+                                            <li class="ad_topic" data-reactid="497"><a title="Covoiturage" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=59"
+                                                    data-reactid="498">Covoiturage</a></li>
+                                            <li class="_3f3p2" data-reactid="499"><a title="Autres" class="trackable" 
+                                                    data-reactid="500">Autres</a></li>
+                                            <li class="ad_topic" data-reactid="501"><a title="Autres" class="trackable" href="{{URL::to('frontoffice/aditems/')}}?sub=60"
+                                                    data-reactid="502">Autres</a></li>
+                                        </ul>
+                                    </div>
                         </div>
                     </section>
                 </div>
             </div>
 
-        </div>
-
-    </section>
-
-    <!--Middle Section-->
 
 
 
@@ -791,12 +1070,25 @@
 </body>
 <script>
     $(document).ready(function () {
-        $(window).keydown(function(event){
-            if(event.keyCode == 13) {
+        $(window).keydown(function (event) {
+            if (event.keyCode == 13) {
                 event.preventDefault();
                 return false;
             }
-       });
+        });
+
+        $('.main-navbar li a').click(function () {
+            console.log("rw");
+            $('#Login_modal').modal('toggle');
+        });
+        $('#create_account').click(function () {
+
+            $('#Login_modal').modal('hide');
+        });
+        $('.back_loginmodal').click(function () {
+            $('#Regsiter_modal').modal('toggle');
+            $('#Login_modal').modal('toggle');
+        });
 
         var flag = true;
         var classname = document.getElementsByClassName("_Ctitle");
@@ -822,46 +1114,46 @@
 
 
         });
-  
-         //cursor event
-         $('#searchtext').on('focus',function(){   
-                $('._1okrU').addClass("_2tSFG");    
-             
+
+        //cursor event
+        $('#searchtext').on('focus', function () {
+            $('._1okrU').addClass("_2tSFG");
+
         });
 
-        $('#checkbox-title_only-desktop').on('click',function(){
-            $('._1okrU').css("display","none");    
+        $('#checkbox-title_only-desktop').on('click', function () {
+            $('._1okrU').css("display", "none");
         });
-        $('._1okrU ').on('click','._2EKK7',function(){
-          
+        $('._1okrU ').on('click', '._2EKK7', function () {
+
             //console.log();
-           $('input[name=search]').val($(this).data('value'));
-             $('._1okrU').removeClass("_2tSFG");           
+            $('input[name=search]').val($(this).data('value'));
+            $('._1okrU').removeClass("_2tSFG");
         });
-        $('input[name=search]').bind('keyup',function(){
-             var text=$('input[name=search]').val();
-             console.log(text);
-              $.ajax({
-                 type:"POST",
-                 url:"{{route('subjectlist')}}",
-                 data:{
-                      text:text,
-                     _token:$('input[name=_token]').val(),
-                 },
+        $('input[name=search]').bind('keyup', function () {
+            var text = $('input[name=search]').val();
+            console.log(text);
+            $.ajax({
+                type: "POST",
+                url: "{{route('subjectlist')}}",
+                data: {
+                    text: text,
+                    _token: $('input[name=_token]').val(),
+                },
                 //  dataType: "json",
-                 success:function(data){
+                success: function (data) {
 
-                   
-                       $('._1okrU').html(data);
-                       console.log(data);
-                   
-                 },
-                 error:function(e){
-                     console.log(e);
-                 }
-              });
+
+                    $('._1okrU').html(data);
+                    console.log(data);
+
+                },
+                error: function (e) {
+                    console.log(e);
+                }
+            });
         });
-       
+
         $("#Trselect").on('click', function () {
             $('#Lclist').css("display", "none");
             $('._Cname').html("Toutes catégories");
@@ -877,57 +1169,59 @@
             classname[i].addEventListener('click', myFunction, false);
         }
 
-            var type = "{{$ad_type}}";
-            var search = "{{$search}}";
-            var location = "{{$location}}";
-            var distance = "{{$distance}}";
-            var total_count="{{$count}}";
-            var page_count="{{$page_count}}";
-            var currentPage="{{$current_page}}";
-            var urgent="{{$urgent}}";
-            var title="{{$title}}";
-            var min_price="{{$min_price}}";
-            var max_price="{{$max_price}}";
+        var type = "{{$ad_type}}";
+        var search = "{{$search}}";
+        var location = "{{$location}}";
+        var distance = "{{$distance}}";
+        var total_count = "{{$count}}";
+        var page_count = "{{$page_count}}";
+        var currentPage = "{{$current_page}}";
+        var urgent = "{{$urgent}}";
+        var title = "{{$title}}";
+        var min_price = "{{$min_price}}";
+        var max_price = "{{$max_price}}";
+        var st_id = "{{$st_id}}";
+        var scategory="{{$scategory}}";
+        // console.log(st_id);
+        $.ajax({
+            type: 'POST',
+            url: "{{route('filterads')}}",
+            data: {
+                ad_type: type,
+                title: title,
+                urgent: urgent,
+                search: search,
+                location: location,
+                distance: distance,
+                min_price: min_price,
+                max_price: max_price,
+                total_count: total_count,
+                page_count: page_count,
+                currentPage: currentPage,
+                st_id: st_id,
+                scategory:scategory,
+                _token: $('input[name=_token]').val(),
+            },
+            dataType: 'json',
+            success: function (data) {
+                console.log(data.result);
+                if (data.result != "") {
 
-            $.ajax({
-                type: 'POST',
-                url: "{{route('filterads')}}",
-                data: {
-                    ad_type: type,
-                    title: title,
-                    urgent: urgent,
-                    search: search,
-                    location: location,
-                    distance: distance,
-                    min_price: min_price,
-                    max_price: max_price,
-                    total_count:total_count,
-                    page_count:page_count,
-                    currentPage:currentPage,
-                     _token:$('input[name=_token]').val(),
-                },
-                dataType:'json', 
-                success: function (data) {
-                    console.log(data.result);
-                    if(data.result !="")
-                    {
-
-                    $('#empty_result').css("display","none");
+                    $('#empty_result').css("display", "none");
                     $('#advertiseList').html();
                     $('#side_list').html();
                     $('#advertiseList').html(data.result);
                     $('#side_list').html(data.sresult);
-                    }
-                    else{
-                        $('#empty_result').css("display","block");
-                    }
-             
-                },
-                error: function (e) {
-                    console.log(e);
+                } else {
+                    $('#empty_result').css("display", "block");
                 }
-            });
-            
+
+            },
+            error: function (e) {
+                console.log(e);
+            }
+        });
+
 
     });
 </script>

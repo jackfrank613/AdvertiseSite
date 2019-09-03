@@ -43,5 +43,13 @@ return [
             'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
         ],
     ],
+    'firebase' => [
+        'api_key' => 'AIzaSyB9OiZxj6qg6GMxAOUgvsj08jy1jO4dZtQ',
+        'auth_domain' => 'jamiifrance.firebaseapp.com',
+        'database_url' => 'https://jamiifrance.firebaseio.com',
+        'secret' => '6P5MgvtPB3gG68lB3pYEDZd6Nh1MZNP2C2FmbCX8',
+        'storage_bucket' => 'jamiifrance.appspot.com',
+        'appId'=>'1:173946993173:web:420701531132bb72'
+    ]
 
 ];

@@ -46,7 +46,7 @@
 </head>
 
 <body>
-    @include('frontoffice.partials.headerpart')
+    @include('frontoffice.partials.header')
     <section>
         <div>
             <div>
