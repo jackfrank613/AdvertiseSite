@@ -1171,6 +1171,7 @@
 
         var type = "{{$ad_type}}";
         var search = "{{$search}}";
+        if(search !="search") $('input[name=search]').val(search);
         var location = "{{$location}}";
         var distance = "{{$distance}}";
         var total_count = "{{$count}}";
@@ -1179,7 +1180,9 @@
         var urgent = "{{$urgent}}";
         var title = "{{$title}}";
         var min_price = "{{$min_price}}";
+        if(min_price !="min_price") $('select[name=min_price]').val(min_price);
         var max_price = "{{$max_price}}";
+        if(max_price !="max_price") $('select[name=max_price]').val(max_price);
         var st_id = "{{$st_id}}";
         var scategory="{{$scategory}}";
         // console.log(st_id);

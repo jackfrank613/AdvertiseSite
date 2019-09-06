@@ -1,13 +1,13 @@
 <template>
     <div>
        
-        <form class="form">
+        <div class="form">
             <textarea id="body" cols="25" rows="5" class="form-input" v-model="newMessage">
              </textarea>
             <div style="text-align:right">
                 <button class="notice" @click="sendMessage">Send</button>
             </div>
-        </form>
+        </div>
     </div>
 </template>
 <script>
@@ -49,7 +49,7 @@ export default {
             // database.ref('/blog/posts/' + newPostKey).update(postData);
             //console.log(this.newMessage);
             Event.$emit('sentmessage',{message:this.newMessage,type:"me"});
-            axios.post('http://localhost/jamii/public/message', {message:this.newMessage,to:this.touser}).then(response => {
+            axios.post('http://localhost/jamii/public/frontoffice/message', {message:this.newMessage,to:this.touser}).then(response => {
               console.log(response.data);
             });
             this.newMessage="";

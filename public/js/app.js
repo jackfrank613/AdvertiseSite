@@ -1776,7 +1776,7 @@ __webpack_require__.r(__webpack_exports__);
         message: this.newMessage,
         type: "me"
       });
-      axios.post('http://localhost/jamii/public/message', {
+      axios.post('http://localhost/jamii/public/frontoffice/message', {
         message: this.newMessage,
         to: this.touser
       }).then(function (response) {
@@ -1860,7 +1860,7 @@ __webpack_require__.r(__webpack_exports__);
     fetchData: function fetchData() {
       var _this = this;
 
-      axios.get('http://localhost/jamii/public/message').then(function (response) {
+      axios.get('http://localhost/jamii/public/frontoffice/message').then(function (response) {
         _this.messages = response.data;
         console.log(response.data);
       });
@@ -1898,7 +1898,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  created: function created() {// console.log('test');
+  props: ['postid'],
+  created: function created() {
+    this.fechProduction();
+  },
+  methods: {
+    fechProduction: function fechProduction() {}
   }
 });
 
@@ -48329,7 +48334,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("form", { staticClass: "form" }, [
+    _c("div", { staticClass: "form" }, [
       _c("textarea", {
         directives: [
           {

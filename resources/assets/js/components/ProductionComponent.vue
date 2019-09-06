@@ -10,8 +10,14 @@
 </template>
 <script>
 export default {
+    props:['postid'],
     created(){
-       // console.log('test');
+       this.fechProduction();
+    },
+    methods:{
+        fechProduction(){
+          
+        }
     }
 }
 </script>

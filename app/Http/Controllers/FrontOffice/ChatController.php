@@ -7,41 +7,47 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Events\MessageSentEvent;
 use Illuminate\Support\Facades\Session;
+use App\JamiiUser;
 use App\Message;
+use App\PostedAdmob;
 class ChatController extends Controller
 {
     // show chats
-    public function index(){
-        return view('frontoffice.home.newchat');
-    }
-
-    //Fetch all messages
-    public function fetch(){
-        $userid=Session::get('user_id');
-
-       $result=Message::where('from_user',$userid)->get();
-        return $result;
-       
-    }
-
-    public function sentMessage(Request $request)
-    {
-
-      
-      $to_user=$request->input('user');
-     
-      $from_user=Session::get('user_id');
-     
-      $messages=$request->input('message');
-     
-      $input_message=array(
-          'message'=>$messages,
-          'from_user'=>$from_user,
-          'to_user'=>$to_user
-      ); 
-      broadcast(new MessageSentEvent($to_user,$from_user,$messages))->toOthers();
+   
+  public function getChatview(Request $request){
     
-      return ['status' =>"Message sent"];
+    $to_user=$request->user;
+    $post_id=$request->post;
+
+    $admob=PostedAdmob::where('id',$post_id)->first();
+    
+    return view('chat')->with(compact('to_user','post_id','admob'));
+
+
     }
+  public function index(){
+
+      $messages=Message::all();
+    //  print_r($messages);exit;
+      return response()->json($messages);
+  }
+
+  public function store(Request $request)
+{
+     
+     $user_id=2;
+     $body=$request->input('message');
+     $to_user=$request->input('to');
+     $input_message=array(
+       'from_user'=>$user_id,
+       'to_user'=>$to_user,
+       'message'=>$body,
+       'type'=>"me"
+     );
+     $m_id=Message::insertGetId($input_message);
+     $result=Message::where('m_id',$m_id)->get();
+     echo $result ;exit;
+  
+}
    
 }

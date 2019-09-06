@@ -175,7 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Jorenvh\Share\Providers\ShareServiceProvider::class,
-
+        Srmklive\PayPal\Providers\PayPalServiceProvider::class
     ],
 
     /*
@@ -228,6 +228,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Share' => Jorenvh\Share\ShareFacade::class,
+        'PayPal' => Srmklive\PayPal\Facades\PayPal::class
 
     ],
 

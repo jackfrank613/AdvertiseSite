@@ -13,6 +13,9 @@ use App\StateModel;
 use App\SubCategory;
 use App\FavoriteModel;
 
+use App\ResearchModel;
+use Carbon\Carbon;
+
 
 class ViewAdmobController extends Controller
 {
@@ -414,6 +417,27 @@ class ViewAdmobController extends Controller
         }
         else{
             echo json_encode(array('error'=>true,"result"=>"error"));
+        }
+
+    }
+
+
+    public function addPartSearch(){
+        $data=$_POST;
+        $user_id=Session::get('user_id');
+        if(!empty($user_id)){
+            $dt = Carbon::now();
+            $input_research=array(
+                'category'=>$data['search'],
+                'r_user_id'=>$user_id,
+                'r_state'=>$data['r_state'],
+                'save_time'=>$dt->toDayDateTimeString()
+              );
+              $research_id=ResearchModel::insertGetId($input_research);
+              echo json_encode(array('error'=>false,"result"=>$research_id));
+        }
+        else{
+            echo json_encode(array('error'=>true,"result"=>"You didn't register yet!"));
         }
 
     }

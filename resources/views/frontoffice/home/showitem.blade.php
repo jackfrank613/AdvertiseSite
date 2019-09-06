@@ -490,7 +490,7 @@
                                                 <div class="_2sPVF trackable"
                                                     data-qa-id="adview_button_contact_contact">
                                                     <div>
-                                                        <a href="#">
+                                                        <a href="javascript:sendMessage({{$admob['user_id']}},{{{$admob['id']}}});">
                                                             {{-- href="{{URL::to('frontoffice/aditems/sendmessage')}}/{{$admob['user_id']}}/{{$admob['name']}}">
                                                             --}}
                                                             <button class="_2sNbI _1xIyN GXQkc _2xk2l"
@@ -574,6 +574,15 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXAEJOmp7v7uXD-Vrmaw6xjBl_ZExIn7g&libraries=places">
     </script>
 </body>
+<script>
+
+function sendMessage(userid,postid){
+    console.log(postid);
+    window.location="{{URL::to('frontoffice/chat')}}?"+"user="+userid+"&"+"post="+postid
+}
+
+</script>
+
 <script>
     var poly;
     var address = "{{$admob['adress']}}";

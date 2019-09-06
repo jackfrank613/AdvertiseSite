@@ -77,12 +77,12 @@
                 <section class="S6kt5">
                     <h2>Saisissez votre numéro de carte bancaire</h2>
                     <div class="card">
-                            <form action="{{route('process')}}" method="post" id="payment-form">
+                            <form action="{{route('stripeprocess')}}" method="post" id="payment-form">
                                 @csrf                    
                                 <div class="form-group">
                                     <div class="card-header">
                                         <label for="card-element">
-                                                Entrez vos informations de carte de crédit
+                                                Entrez vos informations de carte de crédit avec Stripe
                                         </label>
                                     </div>
                                     <div class="card-body">
@@ -91,7 +91,7 @@
                                         </div>
                                         <!-- Used to display form errors. -->
                                         <div id="card-errors" role="alert"></div>
-                                        <input type="hidden" name="boost_id" value={{$boost_id}} />
+                                        <input type="hidden" name="boost_id" value="{{$boost_id}}" />
                                     </div>
                                 </div>
                                 <div class="card-footer">
@@ -100,7 +100,31 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>
+                            <h2 class="w3-text-blue">Payer avec PayPal</h2>
+                            <form class="w3-container w3-display-middle w3-card-4 " method="POST" id="payment-payal-form"  action="{{route('paypalprocess')}}">
+                                @csrf      
+                                <input type="hidden" name="amount" value="{{$amount}}"/>     
+                                <button class="_2sNbI _1xIyN _2xk2l _1lcUU" id="btn_pay" type="submit"
+                                        data-qa-id="stickySubmitButton">Payer avec PayPal</button>
+                              </form>
+                              @if ($message = Session::get('success'))
+                            <div class="w3-panel w3-green w3-display-container">
+                                <span onclick="this.parentElement.style.display='none'"
+                                        class="w3-button w3-green w3-large w3-display-topright">&times;</span>
+                                <p>{!! $message !!}</p>
+                            </div>
+                            <?php Session::forget('success');?>
+                            @endif
+                            @if ($message = Session::get('error'))
+                            <div class="w3-panel w3-red w3-display-container">
+                                <span onclick="this.parentElement.style.display='none'"
+                                        class="w3-button w3-red w3-large w3-display-topright">&times;</span>
+                                <p>{!! $message !!}</p>
+                            </div>
+                            <?php Session::forget('error');?>
+                            @endif
+                    </div>
+                        
                  <div class="_2e0qf">Informations:</div>
                     <div class="_38Fo3" style="margin:0 0 1rem"><span class="_1JWO_" id="span1"><img
                                 src="//static-rav.leboncoin.fr/46c5e452fd381c4d2b435ac7eff43df9.png"></span>

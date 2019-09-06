@@ -199,7 +199,7 @@
         </li>
         @endforeach
         <div class="_4cOP1" data-reactid="1596">
-            <!-- react-empty: 1597 --><button class="_2sNbI _1xIyN _2xk2l _2B6ae _1Q7d5 _2qyUu"
+            <!-- react-empty: 1597 --><button class="_2sNbI _1xIyN _2xk2l _2B6ae _1Q7d5 _2qyUu" id="btn_save"
                 data-reactid="1598"><span class="_1vK7W _1eOK1 QKFCn _2-_jT" name="notifoutline"><svg
                         viewBox="0 0 24 24" data-name="Calque 1" focusable="false">
                         <path
@@ -254,7 +254,46 @@
             });
 
         });
+        var search_type="";
+        var r_state=0;
+        $('#btn_save').on('click',function(){
+          if($('input[name=search]').val() !="")
+          {
+              search_type=$('input[name=search]').val();
+            //   console.log(search_type);
+            r_state=1;
+            
+            }
+            else{
+                search_type="Toutes catégories";
+                r_state=0;
+            }
 
+            $.ajax({
+              type:"POST",
+              url:"{{route('partsearch')}}",
+              data:{                
+              search:search_type,
+              r_state:r_state,      
+             _token:"{{ csrf_token() }}",
+              },
+              dataType:"json",
+              success:function(data){
+
+                if(data.error){
+                  alert(data.result);
+                }
+                else{
+                   window.location="{{ URL::to('frontoffice/research')}}?"+"search="+search_type;
+                }
+                  
+              },
+              error:function(e){
+                  console.log(e);
+              }
+            });
+
+        });
         $('._2Njaz').on('click', '.W5Mie',function(){
           id=$(this).data('id');
            var span = $(this).find('span');

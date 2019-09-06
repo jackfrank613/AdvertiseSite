@@ -22,7 +22,7 @@ export default {
     methods:{
          
          fetchData(){
-              axios.get('http://localhost/jamii/public/message').then(response => {
+              axios.get('http://localhost/jamii/public/frontoffice/message').then(response => {
                 this.messages = response.data;
                 console.log(response.data);
             });

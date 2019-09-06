@@ -71,7 +71,9 @@ Route::group([
       Route::post('/woutpay','PaymentAdmobController@availAdbomb')->name('woutpay');
       Route::post('/boost','PaymentAdmobController@boostAdmob')->name('boost');
    
-      Route::post('/process','PaymentAdmobController@withStripePayment')->name('process');
+      Route::post('/stripeprocess','PaymentAdmobController@withStripePayment')->name('stripeprocess');
+      Route::post('/paypalprocess','PaypalPaymentController@payWithpaypal')->name('paypalprocess');
+      Route::post('/status','PaypalPaymentController@getPaymentStatus')->name('status');
       Route::get('/getstatus','PaymentAdmobController@getStatus')->name('status');
       Route::get('/aditems/filter','FilterController@filterFunction')->name('filter');
       Route::post('/aditems/filterads','FilterController@filter_ads')->name('filterads');
@@ -97,7 +99,7 @@ Route::group([
       Route::get('/favorite','NavigationsController@getFavorite')->name('favorite');
       Route::get('/message','NavigationsController@getMessage')->name('message');
       Route::post('/deletefavorite','NavigationsController@deleteFavorite')->name('deletefavorite');
-    
+      Route::post('/deleteresearch','NavigationsController@deleteResearch')->name('deleteresearch');
 
       //profile route of user
       Route::get('/admob','ProfileController@getAdmob')->name('admob');
@@ -115,6 +117,7 @@ Route::group([
 
       //looking for posted admob.
       Route::get('/dadmob','DisplayAdmobController@getDisplaypage')->name('dadmob');
+
       //fixed posted admob controller
       Route::get('/aditems/','ViewAdmobController@index')->name('viewadmob');
       Route::get('/aditems/offer/{state}','ViewAdmobController@getAreaProduction');
@@ -136,14 +139,21 @@ Route::group([
 
        Route::post('/vote','ViewAdmobController@upVote')->name('vote');
        Route::post('/downvote','ViewAdmobcontroller@downVote')->name('downvote');
-        //get help page
+      Route::post('/partsearch','ViewAdmobcontroller@addPartSearch')->name('partsearch');
+       
+       //get help page
 
        Route::get('/help','HelpController@index')->name('help');
 
       //chatting system
-      Route::get('/chat', 'ChatController@index');
-      Route::get('messages', 'ChatController@fetch');
-      Route::post('messages', 'ChatController@sentMessage');
+      // Route::get('/chat', 'ChatController@index');
+      // Route::get('messages', 'ChatController@fetch');
+      // Route::post('messages', 'ChatController@sentMessage');
+      Route::get('/chat','ChatController@getChatview')->name('chat');
+      Route::get('/message', 'ChatController@index')->name('message');
+      Route::post('/message', 'ChatController@store')->name('message.store');
+      Route::post('/firebase','FirebaseController@index');
+      
   });
 Auth::routes();
 Broadcast::routes();
@@ -157,9 +167,4 @@ Route::get('/clear-cache', function() {
     return 'DONE'; //Return anything
 });
 
-Route::get('/chat',function(){
-  return view('chat');
-});
-Route::get('/message', 'MessageController@index')->name('message');
-Route::post('/message', 'MessageController@store')->name('message.store');
-Route::post('/firebase','FirebaseController@index');
+

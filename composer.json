@@ -19,7 +19,10 @@
         "laravel/tinker": "^1.0",
         "maxh/php-nominatim": "^2.2",
         "mpociot/laravel-firebase-sync": "^1.0",
-        "pusher/pusher-php-server": "^4.0"
+        "paypal/paypal-checkout-sdk": "1.0.0",
+        "paypal/rest-api-sdk-php": "^1.14",
+        "pusher/pusher-php-server": "^4.0",
+        "srmklive/paypal": "~1.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
