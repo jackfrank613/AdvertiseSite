@@ -12,26 +12,27 @@
 </template>
 <script>
 
-//  import Firebase from 'firebase'
-// var database = Firebase.initializeApp({
-//       apiKey: 'apAIzaSyB9OiZxj6qg6GMxAOUgvsj08jy1jO4dZtQiKey',
-//       authDomain: 'jamiifrance.firebaseapp.com',
-//       databaseURL:'https://jamiifrance.firebaseio.com',
-//       projectId: '1:173946993173:web:420701531132bb72',
-//       storageBucket:'jamiifrance.appspot.com',
-//       secret: '6P5MgvtPB3gG68lB3pYEDZd6Nh1MZNP2C2FmbCX8'
-//   }).database();
-//   var ref = database.ref("blog/posts");
+import Firebase from '../firebase.js'
 
-//   ref.on('value', function(snapshot){
-//     var changedUser = snapshot.val();
-//     console.log(changedUser);
-//   });
 
 export default {
-     props:['touser'],
+     props:['touser','postid','userid'],
+
+     data(){
+         return{
+            //messageid:this.userid+"-"+this.touser+"-"+this.postid
+         }
+     },
      created(){
-       console.log(this.touser);
+        
+        console.log(Firebase.database());
+        // var ref = database.ref(this.userid);
+
+        // ref.on('value', function(snapshot){
+        //     var changedUser = snapshot.val();
+        //     console.log(changedUser);
+        // });
+       //console.log(this.postid);
      },
     data(){
        return{
@@ -41,19 +42,17 @@ export default {
     methods:{
         sendMessage(){
                         // Get a key for a new Post.
-            // var newPostKey = database.ref("blog/posts").push().key;
-            // console.log(newPostKey);
-            // var postData = {message: "trsdfksd", date: "2016-9-3"};
-            // // Write the new post's data simultaneously in the posts list and the user's post list.
-
-            // database.ref('/blog/posts/' + newPostKey).update(postData);
-            //console.log(this.newMessage);
+            // Write the new post's data simultaneously in the posts list and the user's post list.
+            console.log(this.newMessage);
+            var newPostKey = Firebase.database().ref(this.userid+"-"+this.touser+"-"+this.postid).push().key;
+            console.log(newPostKey);
+            var postData = {fromuser:this.userid, touser: this.touser,message:this.newMessage};
+            Firebase.database().ref("/"+this.userid+"-"+this.touser+"-"+this.postid+"/"+ newPostKey).update(postData);
             Event.$emit('sentmessage',{message:this.newMessage,type:"me"});
             axios.post('http://localhost/jamii/public/frontoffice/message', {message:this.newMessage,to:this.touser}).then(response => {
               console.log(response.data);
             });
             this.newMessage="";
-           
         },
         object(){
 

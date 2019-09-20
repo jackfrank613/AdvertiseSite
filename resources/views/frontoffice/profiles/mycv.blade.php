@@ -8,7 +8,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jamii</title>
-
+    
+    <meta name="csrf_token" content="{{csrf_token()}}">
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Alex Brush' rel='stylesheet'>
@@ -48,8 +49,8 @@
 <body>
     @include('frontoffice.partials.header')
     <section>
-    <div>
-       <div>
+        <div>
+            <div>
                 <div class="xkw6H">
                     <ul class="_1i0e0 AVKQ-">
                         <li class="_3Y9_a rljXf">
@@ -128,8 +129,7 @@
                             </a></li>
                         <div class="_1A0X5">
                             <div class="_1l3a3">
-                                <div class="_36XVT"><a href="{{route('purchase')}}"
-                                        data-qa-id="credit-link-desktop">
+                                <div class="_36XVT"><a href="{{route('purchase')}}" data-qa-id="credit-link-desktop">
                                         <div class="trackable">
                                             Acheter des crédits
                                         </div>
@@ -145,14 +145,35 @@
                         </div>
                     </ul>
                 </div>
-        </div>
+            </div>
 
         </div>
-       </div>
-       <div class="_3cy_x "><div class="_1i0e0"><div><h1 class="_1AkIi" style="font-size:20px;font-weight:100" >Mon CV</h1><div class="_22THp" aria-disabled="false"><p class="_30AGx">Enregistrez votre CV pour faciliter vos candidatures.</p><button class="_2sNbI _1xIyN _2xk2l trackable" type="button"><span class="_1vK7W _1eOK1 QKFCn" name="upload"><svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false"><path d="M5.76 9.32h2.17v7.06a1.39 1.39 0 0 0 1.36 1.41h5.42a1.39 1.39 0 0 0 1.36-1.41V9.32h2.17a1.42 1.42 0 0 0 1-2.4L13 .42a1.28 1.28 0 0 0-1.9 0l-6.29 6.5a1.42 1.42 0 0 0 .95 2.4zM20.14 21.18H3.86a1.41 1.41 0 0 0 0 2.82h16.28a1.41 1.41 0 0 0 0-2.82z"></path></svg></span><!-- react-text: 4325 -->Ajouter un CV<!-- /react-text --></button><input type="file" accept=".pdf,.doc,.docx" multiple="" autocomplete="off" style="display: none;"></div></div></div></div>
-        
+        </div>
+        <div class="_3cy_x ">
+            <div class="_1i0e0">
+                <div>
+                    <h1 class="_1AkIi" style="font-size:20px;font-weight:100">Mon CV</h1>
+                    <div class="_22THp" aria-disabled="false">
+                        <p class="_30AGx">Enregistrez votre CV pour faciliter vos candidatures.</p>
+                          {{-- <form action="{{route('fileupload')}} method="post" enctype="multipart/form-data"> --}}
+                            <input type="file" name="select_file" accept=".pdf,.doc,.docx" multiple=""
+                            autocomplete="off" style="display: none;">
+                            <button
+                            class="_2sNbI _1xIyN _2xk2l trackable" id="cv_upload" type="submit"><span class="_1vK7W _1eOK1 QKFCn"
+                                name="upload"><svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false">
+                                    <path
+                                        d="M5.76 9.32h2.17v7.06a1.39 1.39 0 0 0 1.36 1.41h5.42a1.39 1.39 0 0 0 1.36-1.41V9.32h2.17a1.42 1.42 0 0 0 1-2.4L13 .42a1.28 1.28 0 0 0-1.9 0l-6.29 6.5a1.42 1.42 0 0 0 .95 2.4zM20.14 21.18H3.86a1.41 1.41 0 0 0 0 2.82h16.28a1.41 1.41 0 0 0 0-2.82z">
+                                    </path>
+                                </svg></span><!-- react-text: 4325 -->Ajouter un CV
+                            <!-- /react-text --></button>
+                        {{-- </form> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
-   
+
     <!-- @include('frontoffice.partials.profilefooter') -->
 
     <!-- Preloader -->
@@ -175,10 +196,45 @@
     <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
     <script>
         $(document).ready(function () {
-         
+            $("#cv_upload").on('click',function(){
+
+              $('input[name=select_file]').trigger('click');
+            });
+
+      $('input[name=select_file]').on('change',function(){
+           var formData=new FormData();
+           formData.append('cv', $('input[name=select_file]')[0].files[0]);
+           formData.append('_token',"{{csrf_token()}}"); 
+           $.ajax({
+              type:"POST",
+              enctype:'multipart/form-data',
+              url:"{{route('fileupload')}}",
+              data:formData,
+              cache:false,
+              contentType:false,
+              processData:false,
+              success:function(data){
+
+                if(!data.error){
+                    console.log(data.result);
+                }
+                else{
+                  alert(data.result);
+                }
+                
+
+              },
+              error:function(e){
+                  console.log(e);
+              }
+
+
+           });
+            
+         });
 
         });
-  
+     
     </script>
 
     @yield('after-script')

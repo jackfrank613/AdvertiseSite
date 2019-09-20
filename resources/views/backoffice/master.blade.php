@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="location listing creative">
-    <meta name="author" content="CodePassenger">
+	<meta name="author" content="CodePassenger">
+	<meta name="csrf_token" content="{{csrf_token()}}">
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" type='text/css'>
@@ -20,7 +21,7 @@
     <link rel="stylesheet" href="{{asset('css/admin/other/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/admin/other/jquery-ui.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/admin/other/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{asset('css/lobipanel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/other/lobipanel.min.css')}}">
 
     <!-- BX Slider CSS -->
     <link rel="stylesheet" href="{{asset('/css/admin/other/jquery.bxslider.css')}}">
@@ -28,7 +29,39 @@
     <link rel="stylesheet" href="{{asset('css/admin/main/style.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/admin/main/responsive.css')}}">
-    <link rel="stylesheet" href="{{asset('css/admin/main/icons.css')}}">
+	<link rel="stylesheet" href="{{asset('css/admin/main/icons.css')}}">
+	<script src="{{asset('js/admin/other/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{asset('js/admin/other/tether.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+ 
+	<style>
+	.table-bordered td, .table-bordered th {
+			border: 1px solid #eceeef;
+			text-align: center;
+			vertical-align: middle;
+      }
+	  button.done{
+		padding: 6px 10px;
+        border-radius: 5px;
+		background: #9dcb45;
+		color: white;
+	  }
+
+	  button.active{
+		  padding: 6px 10px;
+		  background: red;
+		  border-radius: 5px;
+		  color: white;
+	  }
+	  /* table span.done{
+		  width: 100px;
+		  height: 50px;
+	  }
+	  table .active{
+		  width: 100px;
+		  height: 50px;
+	  } */
+	</style>
  
 </head>
 <body class="dashboard">
@@ -116,30 +149,22 @@
 						</div>
 						<div class="menu-content" data-content>
 							<div class="nav-item">
-								<a href="dashboard-all-message.html">
+								<a href="{{route('activeuser')}}">
 									<span class="menu-icon-wrap bullet"></span>
 									<span class="menu-title">All Users</span>
 								</a>
 							</div>
 							<div class="nav-item">
-								<a href="dashboard-unread-message.html">
+								<a href="{{route('activeadmob')}}">
 									<span class="menu-icon-wrap bullet"></span>
-									<span class="menu-title">Boost Users</span>
+									<span class="menu-title">All Admobs</span>
 								</a>
 							</div>
 						</div>
 					</div>
 					<div class="slide-navigation-wrap">
-						<div class="nav-item" data-control>
-							<a  href="dashboard-invoices.html">
-								<span class="menu-icon-wrap fa fa-map-marker"></span>
-								<span class="menu-title">Map</span>
-							</a>
-						</div>
-					</div>
-					<div class="slide-navigation-wrap">
 						<div class="nav-item">
-							<a href="dashboard-invoices.html">
+							<a href="{{route('adminlogin')}}">
 								<span class="menu-icon-wrap fa fa-sign-out"></span>
 								<span class="menu-title">Log out</span>
 							</a>
@@ -151,10 +176,7 @@
         <!-- Slide Menu Section -->
 		@yield('content')
 	</div>
-    <script src="{{asset('js/admin/other/jquery-3.2.1.min.js')}}"></script>
-    <script src="{{asset('js/admin/other/tether.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
- 
+
     <script src="{{asset('js/admin/other/jquery.bxslider.js')}}"></script>
   
     <script src="{{asset('js/admin/other/jquery.magnific-popup.min.js')}}"></script>
@@ -162,14 +184,14 @@
     <script src="{{asset('js/admin/other/jquery-ui.min.js')}}"></script>
     <script src="{{asset('js/admin/other/jquery.waypoints.min.js')}}"></script>
     <script src="{{asset('js/admin/other/jquery.counterup.min.js')}}"></script>
-    <script src="{{asset('js/admin/other/lobipanel.min.js')}}"></script>
+    {{-- <script src="{{asset('js/admin/other/lobipanel.min.js')}}"></script> --}}
     <script src="{{asset('js/admin/other/jquery.accordion.js')}}"></script>
     <script src="{{asset('js/admin/other/jquery.slimscroll.min.js')}}"></script>
     <!-- Tinymce-JS -->
     <script src="{{asset('js/admin/other/tinymce/tinymce.min.js')}}"></script>
     <!-- Google-map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmiJjq5DIg_K9fv6RE72OY__p9jz0YTMI"></script>
-    <script src="{{asset('js/admin/other/gmap3.min.js')}}"></script>
+    {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmiJjq5DIg_K9fv6RE72OY__p9jz0YTMI"></script> --}}
+    {{-- <script src="{{asset('js/admin/other/gmap3.min.js')}}"></script> --}}
     <script src="{{asset('js/admin/main/custom.js')}}"></script>
 </body>
 </html>

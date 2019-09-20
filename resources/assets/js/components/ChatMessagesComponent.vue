@@ -1,13 +1,13 @@
 <template>
     <div id="scroll" class="message-area" ref="message_div">
-      <message-component>
+      <message-component :touser="this.touser" :postid="this.postid" :userid="this.userid">
       </message-component>
     </div>
 </template>
 
 <script>
 export default {
-  
+      props:['touser','postid','userid'],
   created(){
 
       this.scrollEnd();

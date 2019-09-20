@@ -1,11 +1,11 @@
 @extends('backoffice.master')
 
 @section('content')
-<div class="page-container-wrap" style="margin-left:50px">
+<div class="page-container-wrap">
     <div class="container-fluid">
         <div class="dashBoard-section-1 nmbr-statistic-area">
             <div class="row">
-              <div class="col-xs-12">
+                <div class="col-xs-12 col-md-12 col-sm-12">
                 <div class="box-widget ui-sortable" data-lobipanel-child-inner-id="eaT4cacZGQ">
                     <div class="panel panel-default lobipanel" data-inner-id="eaT4cacZGQ" data-index="0"
                         style="display: block;">
@@ -14,14 +14,15 @@
                         </div>
                         <div class="panel-body">
                             <form>
+                                <div class="table-responsive" >
                                 <table class="table table-bordered table-striped">
                                         <thead>
                                                 <tr>
                                                     <th style="width: 20px;">No</th>
-                                                    <th style="width: 60px;">
+                                                    {{-- <th style="width: 60px;">
                                                         <a href="javascript:editSelectedUser();" class="btn btn-default btn-icon"><i class="fa fa-edit"></i></a>
                                                         <a href="javascript:deleteSelectedUser()" class="btn btn-default btn-icon" style="color: red;"><i class="fa fa-trash-o"></i></a>
-                                                    </th>
+                                                    </th> --}}
                                                     <th>Owner Name</th>
                                                     <th>Admob Type</th>
                                                     <th>Title</th>
@@ -40,7 +41,7 @@
                                       @foreach($results as $item)
                                       <tr>
                                       <td style="text-align:center;">{{$index++}}</td>
-                                      <td style="text-align:center;"><input type="checkbox" name="user_ids[]" value="{{$item['u_id']}}" class="uer_ids"></td>
+                                      {{-- <td style="text-align:center;"><input type="checkbox" name="user_ids[]" value="{{$item['u_id']}}" class="uer_ids"></td> --}}
                                       <td>{{$item['name']}}</td>
                                       <td>{{$item['adType']}}</td>
                                       <td>{{$item['subject']}}</td>
@@ -50,18 +51,18 @@
                                       <td>{{$item['price']}}&nbsp;€</td>
                                       <td>{{$item['create_time']}}</td>
                                        <td>
-                                            <a href="#" class="btn btn-default btn-icon"><i class="fa fa-edit"></i></a>
-                                            <a href="javascript:deleteGame({{$item['id']}})" class="btn btn-default btn-icon" style="color: red;"><i class="fa fa-trash-o"></i></a>
+                                            {{-- <a href="#" class="btn btn-default btn-icon"><i class="fa fa-edit"></i></a> --}}
+                                            <a class="btn btn-default btn-icon deleteGeneral" data-id="{{$item['id']}}" style="color: red;"><i class="fa fa-trash-o"></i></a>
                                        </td>
                                     </tr>
                                       @endforeach
                                      </tbody>
                                      <tfoot>
                                             <th>No</th>
-                                            <th style="width: 60px;">
+                                            {{-- <th style="width: 60px;">
                                                     <a href="javascript:editSelectedUser();" class="btn btn-default btn-icon"><i class="fa fa-edit"></i></a>
                                                     <a href="javascript:deleteSelectedUser()" class="btn btn-default btn-icon" style="color: red;"><i class="fa fa-trash-o"></i></a>
-                                                </th>
+                                                </th> --}}
                                                 <th>Owner Name</th>
                                                 <th>Admob Type</th>
                                                 <th>Title</th>
@@ -74,12 +75,13 @@
                                                 <th style="width: 60px;">Action</th>
                                      </tfoot>
                                 </table>
+                                </div>
                                
                               {{$results->links()}}
                              
                               
                             </form><!-- basic-table-block -->
-                        </div>
+                        </table>
                         <!--panel Body -->
                     </div>
                     <!--panel -->
@@ -90,5 +92,36 @@
         
     </div>
 </div>
+
+<script>
+        $('.deleteGeneral').click(function(){
+                  var $this = $(this);
+                  var ad_id=$(this).data('id');
+                  $.ajax({
+                      type:"POST",
+                      url:"{{route('deletegeneral')}}",
+                      data:{
+                           ad_id:ad_id,
+                          _token:"{{csrf_token()}}"
+                      },
+                      dataType:"json",
+                      success:function(data){
+                      if(!data.error){
+                          console.log(data.result);
+                          $($this).parents('tr').remove();
+                      }
+                      else{
+                          alert(data.result);
+                      }
+                      },
+                      error:function(e){
+                          console.log(e);
+                      }
+          
+          
+                  });
+              });
+      
+      </script>
 
 @endsection

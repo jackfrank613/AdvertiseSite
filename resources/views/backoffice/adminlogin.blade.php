@@ -48,35 +48,18 @@
                                     <h4>Sign in</h4>
                                 </div>
                                 <div class="form-block">
-                                    <form class="form-common">
+                                    <form class="form-common" action="{{route('ownerlogin')}}">
                                         <div class="form-group">
-                                            <label for="userName">Username or Email Address *</label>
-                                            <input type="text" class="form-control" id="userName" placeholder="Enter your Username">
+                                            <label for="userName">Admin Name *</label>
+                                            <input type="text" class="form-control" name="name" id="userName" placeholder="Enter your Name">
                                         </div>
                                         <div class="form-group">
                                             <label for="password">Password *</label>
-                                            <input type="password" class="form-control" id="password" placeholder="Enter your Passwoed">
+                                            <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Passwoed">
                                         </div>
-                                        <div class="form-group row form-check-row">
-                                            <div class="col-md-6">
-                                                <div class="row">
-                                                    <div class="form-check">
-                                                        <label class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input">
-                                                        <span class="custom-control-indicator"></span>
-                                                        <span class="custom-control-description">Remember Me</span>
-                                                    </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="row">
-                                                    <div class="forgot-link-block">
-                                                        <a href="#" class="forgot-link">Forget Password?</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                       <div>
+                                        <span style="color:red">@if(Session::has('error_message')) Login failed @endif</span>
+                                       </div>
                                         <div class="form-group">
                                             <div class="form-btn-block">
                                                 <button type="submit" class="form-btn">Sign in</button>

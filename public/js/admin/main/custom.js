@@ -88,37 +88,37 @@ jQuery(document).ready(function () {
     /*--------------------------------------------
     		Lobipanel  Settings
     ---------------------------------------------*/
-    $('.panel').lobiPanel({
-        tooltips: true,
-        draggable: true,
-        reload: {
-            icon: 'fa fa-refresh',
-            tooltip: 'Reload'
-        },
-        editTitle: {
-            icon: 'fa fa-edit',
-            icon2: 'fa fa-save',
-            tooltip: 'Edit title'
-        },
-        unpin: {
-            icon: 'fa fa-arrows',
-            tooltip: 'Unpin'
-        },
-        minimize: {
-            icon: 'fa fa-chevron-up',
-            icon2: 'fa fa-chevron-down',
-            tooltip: 'Minimize'
-        },
-        close: {
-            icon: 'fa fa-times-circle',
-            tooltip: 'Close'
-        },
-        expand: {
-            icon: 'fa fa-expand',
-            icon2: 'fa fa-compress',
-            tooltip: 'Fullscreen'
-        }
-    });
+    // $('.panel').lobiPanel({
+    //     tooltips: true,
+    //     draggable: true,
+    //     reload: {
+    //         icon: 'fa fa-refresh',
+    //         tooltip: 'Reload'
+    //     },
+    //     editTitle: {
+    //         icon: 'fa fa-edit',
+    //         icon2: 'fa fa-save',
+    //         tooltip: 'Edit title'
+    //     },
+    //     unpin: {
+    //         icon: 'fa fa-arrows',
+    //         tooltip: 'Unpin'
+    //     },
+    //     minimize: {
+    //         icon: 'fa fa-chevron-up',
+    //         icon2: 'fa fa-chevron-down',
+    //         tooltip: 'Minimize'
+    //     },
+    //     close: {
+    //         icon: 'fa fa-times-circle',
+    //         tooltip: 'Close'
+    //     },
+    //     expand: {
+    //         icon: 'fa fa-expand',
+    //         icon2: 'fa fa-compress',
+    //         tooltip: 'Fullscreen'
+    //     }
+    // });
 
     /*-----------------------------------------------------------
     	Testimonial Settings

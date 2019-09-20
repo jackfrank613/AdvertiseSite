@@ -16,14 +16,9 @@ class MessageController extends Controller
 
 
   public function getChatview(Request $request){
-    echo 'test';exit;
     $to_user=$request->user;
     $post_id=$request->post;
-
-    $admobs=PostedAdmob::where('id',$post_id)->first();
-    echo $admobs;exit;
-
-
+      return view('chat')->with(compact('to_user','post_id'));
     }
   public function index(){
 

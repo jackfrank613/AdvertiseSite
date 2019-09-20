@@ -20,11 +20,27 @@ Route::get('/', function () {
  ],function(){
      //admin login route
     Route::get('/','AdminHomeController@getLoginPage')->name('adminlogin');
+    Route::get('/login','AdminHomeController@adminLogin')->name('ownerlogin');
     Route::get('/home','AdminHomeController@getHomeview')->name('adminhome');
     Route::get('/particular','AdminHomeController@getParticularView')->name('particularview');
     Route::get('/professional','AdminHomeController@getProfessionalView')->name('professionalview');
     Route::get('/general','AdminHomeController@getGeneralView')->name('generalview');
     Route::get('/boost','AdminHomeController@getBoostView')->name('boostview');
+    Route::get('/activeuser','AdminHomeController@getUserActive')->name('activeuser');
+
+    Route::get('/activeadmob','AdminHomeController@getAdmobActive')->name('activeadmob');
+    Route::post('/deleteadmobaction','AdminHomeController@deleteAdmobaction')->name('deleteAdmobaction');
+    Route::post('/admobenable','AdminHomeController@addAdmobActive')->name('admobenable');
+    Route::post('/userenable','AdminHomeController@userEnable')->name('userenable');
+    Route::post('/deleteuser','AdminHomeController@deleteUser')->name('deleteuser');
+    Route::post('/deleteparticular','AdminHomeController@deleteParticular')->name('deleteparticular');
+    Route::post('/deleteprofessional','AdminHomeController@deleteProfessional')->name('deleteprofessional');
+    Route::post('/deleteboost','AdminHomeController@deleteBoost')->name('deleteboost');
+    Route::post('/deletegeneral','AdminHomeController@deleteGeneral')->name('deletegeneral');
+    // Route::get('/adminlogout','AdminHomeController@logLout')->name('adminlogout');
+
+     
+
 
  });
  
@@ -108,7 +124,8 @@ Route::group([
       Route::get('/account','ProfileController@getAccount')->name('account');
       Route::get('/mycv','ProfileController@getMycv')->name('mycv');
       Route::get('/booking','ProfileController@getBooking')->name('booking');
-
+      
+      Route::post('/fileupload','ProfileController@addUserCv')->name('fileupload');
 
         
       //post my advertise route
@@ -137,9 +154,9 @@ Route::group([
 
        //vote route
 
-       Route::post('/vote','ViewAdmobController@upVote')->name('vote');
-       Route::post('/downvote','ViewAdmobcontroller@downVote')->name('downvote');
-      Route::post('/partsearch','ViewAdmobcontroller@addPartSearch')->name('partsearch');
+        Route::post('/vote','ViewAdmobController@upVote')->name('vote');
+        Route::post('/downvote','ViewAdmobcontroller@downVote')->name('downvote');
+        Route::post('/partsearch','ViewAdmobcontroller@addPartSearch')->name('partsearch');
        
        //get help page
 
@@ -153,8 +170,14 @@ Route::group([
       Route::get('/message', 'ChatController@index')->name('message');
       Route::post('/message', 'ChatController@store')->name('message.store');
       Route::post('/firebase','FirebaseController@index');
+      Route::post('/production','ChatController@getProduction')->name('production');
+      Route::get('production','ChatController@getAllProduction');
+      Route::post('/indmessage','ChatController@getIndividualMessage');
+      Route::post('/removelogo','ChatController@removeLogo');
+
+
       
-  });
+    });
 Auth::routes();
 Broadcast::routes();
 

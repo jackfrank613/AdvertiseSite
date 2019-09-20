@@ -21,7 +21,6 @@ class SearchController extends Controller
         {
            
             $admobs=PostedAdmob::select('id','subject','camera','price','adName','star_style','pay_active','adress','post_time')->where([['jamii_postedadmob.state_id','=',$st_id],['jamii_postedadmob.enable','=',1]])->orderBy('jamii_postedadmob.create_time','desc')->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->leftJoin('jamii_boost','jamii_postedadmob.boost_id','=','jamii_boost.b_id')->get()->toarray();
-
         }
         else{
             $admobs=PostedAdmob::select('id','subject','camera','price','adName','star_style','pay_active','adress','post_time')->where([['jamii_postedadmob.enable','=',1]])->orderBy('jamii_postedadmob.create_time','desc')->leftJoin('jamii_subcategory','jamii_postedadmob.sub_id','=','jamii_subcategory.s_id')->leftJoin('jamii_boost','jamii_postedadmob.boost_id','=','jamii_boost.b_id')->get()->toarray();

@@ -48,7 +48,251 @@
     <!-- Header -->
     @include('frontoffice.partials.header')
     <!-- Header -->
+  <!--Dialog-->
+    <!--Login_modal-->
+    <div class="modal _3vig1 globalContent contentAfterOpen" id="Login_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
 
+                <!-- Modal Header -->
+                <!-- <div class="modal-header">
+                <h1 class="modal-title">LogIn</h1>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div> -->
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="_1lEHL">
+                        <div class="_3oF3k">
+                            <div class="PZs61">
+
+                                <h1>
+                                    
+                                        Connectez-vous pour retrouver vos favoris
+                                    
+                                </h1>
+                                <div class="_2xBxS">
+                                    <div class="_3tqKI">
+                                        <div class="_1sEbc"><img
+                                                src="//static-rav.leboncoin.fr/0e3b77656afbf2453c54854f82591e3b.png"
+                                                alt="Saved Ads"></div>
+                                        <div class="_1w6py">
+                                            <h2>
+                                                
+                                                    Annonces sauvegardées
+                                                
+                                            </h2>
+                                            <p>En naviguant connecté, vous pouvez sauvegarder les annonces qui vous intéressent le plus pour les surveiller. Vous pourrez les retrouver quand vous voulez sur tous vos appareils.</p>
+                                        </div>
+                                    </div>
+                                    <div class="_2eODT">
+                                        <div class="_1sEbc"><img
+                                                src="//static-rav.leboncoin.fr/57932636817eb6df6d73c423b4183d55.png"
+                                                alt="Saved Searches"></div>
+                                        <div class="_1w6py">
+                                            <h2>
+                                                
+                                                    Recherches sauvegardées
+                                                
+                                            </h2>
+                                            <p>Sauvegardez vos recherches pour consulter plus facilement les nouveaux résultats.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="_3oF3k">
+                            <section>
+                                <div>
+                                    <div class="_3M53r">
+                                        <div class="_3gfNn" data-qa-id="title">
+                                            
+                                                Connexion
+                                            
+                                        </div>
+                                        <div>
+                                            <div class="_1uVWE">
+                                                <form  class="_382l8" method="POST"
+                                                action="{{route('homelogin')}}">
+                                                    @csrf
+                                                    <div><label class="TMFen" for="email">
+                                                            <!-- react-text: 36 -->
+                                                            
+                                                                Adresse email
+                                                                
+                                                            <!-- /react-text -->
+                                                        </label>
+                                                        <div class="_2wuZK">
+                                                            <input type="text" class="_2erBM _2yMsD"
+                                                                data-qa-id="authmodal-email" value="" name="email">
+                                                        </div>
+                                                    </div>
+                                                    <div class="_1QRTe">
+                                                        <div>
+                                                            <div><label class="TMFen" for="password">
+                                                                    <!-- react-text: 43 -->
+                                                                    
+                                                                        Mot de passe
+                                                                        
+                                                                    <!-- /react-text -->
+                                                                </label>
+                                                                <div class="_2wuZK">
+                                                                    <input type="password" class="_2erBM _2yMsD"
+                                                                        data-qa-id="authmodal-password" value=""
+                                                                        name="password">
+
+                                                                </div>
+                                                            </div><a data-qa-id="link-forgotten-password" class="_-0qA4"
+                                                                href="#">
+                                                                Mot de passe oublié ?
+                                                            </a>
+                                                        </div>
+                                                    </div><button type="submit" data-qa-id="authmodal-login" style="background-color: #4183d7;
+                                                                                                color: white;
+                                                                                                width: 100%;
+                                                                                                height: 40px;
+                                                                                                border-width: inherit;
+                                                                                                margin-top:15px;
+                                                                                                border-radius: 5px;">
+                                                        <!-- react-text: 48 -->
+                                                       Se connecter
+                                                    </button>
+                                                    @if(Session::has('error_message'))
+                                                    <h5 style="color:red">{{ Session::get('error_message') }}</h5>
+                                                    @endif
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="_3m_rz">
+                                        <div class="_24yU7">
+                                            <div class="_1uVWE">
+                                                <p class="hv-Tf">
+                                                    
+                                                        Vous n’avez pas de compte ?account ?
+                                                            
+                                                </p><button id="create_account"
+                                                    class="_2sNbI _1xIyN GXQkc _2BP2c trackable"
+                                                    data-qa-id="create-account" data-toggle="modal"
+                                                    data-target="#Regsiter_modal">
+                                                    <!-- react-text: 54 -->
+                                                    
+                                                        Créer un compte
+                                                    
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--Login_modal-->
+    <!--Register_modal-->
+    <div class="modal _3vig1 globalContent contentAfterOpen" id="Regsiter_modal">
+        <div class="modal-dialog">
+            <div class="_2y5yt JEb3x">
+                <div class="_1lEHL">
+                    <div class="_3oF3k">
+                        <div class="PZs61">
+                            <h1>
+                                
+                                    Login to find your favorites
+                                
+                            </h1>
+                            <div class="_2xBxS">
+                                <div class="_3tqKI">
+                                    <div class="_1sEbc"><img
+                                            src="//static-rav.leboncoin.fr/0e3b77656afbf2453c54854f82591e3b.png"
+                                            alt="Saved Ads"></div>
+                                    <div class="_1w6py">
+                                        <h2>
+                                            
+                                                Saved Ads
+                                            
+                                        </h2>
+                                        <p>
+                                            
+                                                By browsing connected, you can
+                                                    save the ads that interest you most to monitor them. 
+                                                You can find them whenever you
+                                                    want on all your devices.
+                                            
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="_2eODT">
+                                    <div class="_1sEbc"><img
+                                            src="//static-rav.leboncoin.fr/57932636817eb6df6d73c423b4183d55.png"
+                                            alt="Saved Searches"></div>
+                                    <div class="_1w6py">
+                                        <h2>
+                                            
+                                                Saved Searches
+                                            
+                                        </h2>
+                                        <p>
+                                            
+                                                Save your searches for easier
+                                                    viewing of new results.
+                                            
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="_3oF3k">
+                        <section>
+                            <div>
+                                <div class="_3M53r">
+                                    <div class="_3gfNn" data-qa-id="title">Création de compte</div>
+                                    <div>
+                                        <div class="_1uVWE">
+                                            <div class="pUskR"> Choisissez votre type de compte : </div>
+                                            <div class="_24z04"><span class="_28rnK"><a
+                                                        class="_2sNbI _1xIyN GXQkc _2BP2c trackable"
+                                                        href="{{route('particular')}}"
+                                                        data-qa-id="button-create-account-part">
+                                                        <!-- react-text: 64 -->Particulier
+                                                        <!-- /react-text --></a></span><span class="_28rnK"><a
+                                                        class="_2sNbI _1xIyN GXQkc _2BP2c trackable"
+                                                        href="{{route('professional')}}"
+                                                        data-qa-id="button-create-account-pro">
+                                                        <!-- react-text: 67 -->Professionnel
+                                                        <!-- /react-text --></a></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="_3m_rz back_loginmodal">
+                                    <div class="_24yU7"><a class="_3BMJ7 trackable"><span class="_1vK7W K5CQx"
+                                                name="arrowleft"><svg viewBox="0 0 24 24" data-name="Calque 1"
+                                                    focusable="false">
+                                                    <path
+                                                        d="M22.46 10.43H5.26l7.51-7.72a1.63 1.63 0 0 0 0-2.25 1.52 1.52 0 0 0-2.17 0L.45 10.88a1.61 1.61 0 0 0 0 2.23L10.6 23.54a1.52 1.52 0 0 0 2.17 0 1.61 1.61 0 0 0 0-2.23l-7.51-7.72h17.2a1.58 1.58 0 0 0 0-3.16z">
+                                                    </path>
+                                                </svg></span><!-- react-text: 72 -->Retour à la connexion
+                                            <!-- /react-text --></a></div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--Register_modal-->
     <section>
         <div>
 
@@ -505,7 +749,12 @@
                                                                     message</span></button>
                                                         </a>
                                                     </div>
-                                                </div>
+                                                    @if(session()->has('message'))
+                                                    <div class="alert alert-success">
+                                                        {{ session()->get('message') }}
+                                                    </div>
+                                                @endif
+                                               </div>
                                                 <span class="trackable"><button class="_2sNbI ObuDQ GXQkc _2xk2l _2SmEn"
                                                         data-qa-id="offer-button" style="display: none"><span
                                                             class="_1vK7W _1eOK1 QKFCn" name="deliverylbcoutline"><svg

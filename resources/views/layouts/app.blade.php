@@ -19,6 +19,8 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     
         <!-- Styles -->
+          <!-- Font Awesome Icon -->
+        <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
        
         <!-- Custom stlylesheet -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
